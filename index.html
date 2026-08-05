@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Kill Team Rules Tablet Dashboard</title>
+    <style>
+        :root {
+            --bg-dark: #121316;
+            --panel-bg: #1c1e24;
+            --card-bg: #252830;
+            --accent-orange: #d9531e;
+            --accent-gold: #f39c12;
+            --text-light: #eceef1;
+            --text-dim: #9aa0ac;
+            --border-color: #333742;
+            --pinned-bg: #1e222d;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: var(--panel-bg);
+            border-bottom: 2px solid var(--accent-orange);
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 50px;
+        }
+
+        header h1 {
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--accent-orange);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .faction-select {
+            background-color: var(--bg-dark);
+            color: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .faction-select option {
+            background-color: var(--panel-bg);
+            color: var(--text-light);
+        }
+
+        .dashboard {
+            display: grid;
+            grid-template-columns: 280px 1fr 300px;
+            height: calc(100vh - 50px);
+            width: 100vw;
+            overflow: hidden;
+        }
+
+        .sidebar-left {
+            background-color: var(--panel-bg);
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .search-box {
+            padding: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-dark);
+            color: #fff;
+            font-size: 0.9rem;
+        }
+
+        .nav-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 10px;
+        }
+
+        .category-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+            font-weight: bold;
+            margin: 12px 6px 6px 6px;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-item {
+            padding: 12px 10px;
+            border-radius: 6px;
+            margin-bottom: 4px;
+            background-color: transparent;
+            color: var(--text-dim);
+            font-size: 0.95rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s;
+        }
+
+        .nav-item:active, .nav-item.active {
+            background-color: var(--accent-orange);
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .main-content {
+            padding: 20px;
+            overflow-y: auto;
+            background-color: var(--bg-dark);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .card-detail {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 2px solid var(--accent-orange);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .card-title h2 {
+            font-size: 1.5rem;
+            color: #fff;
+        }
+
+        .card-subtitle {
+            font-size: 0.85rem;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+
+        .pin-btn {
+            background-color: var(--accent-orange);
+            color: #fff;
+            border: none;
+            padding: 8px 14px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+
+        .pin-btn:disabled {
+            background-color: #555;
+            cursor: not-allowed;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-bottom: 15px;
+            background: var(--panel-bg);
+            padding: 10px;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .stat-box .label {
+            font-size: 0.7rem;
+            color: var(--text-dim);
+            text-transform: uppercase;
+        }
+
+        .stat-box .value {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--accent-gold);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.85rem;
+        }
+
+        th, td {
+            padding: 8px 10px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: var(--panel-bg);
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            font-size: 0.75rem;
+        }
+
+        .rule-text {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: var(--text-light);
+            margin-bottom: 12px;
+        }
+
+        .keywords {
+            margin-top: 15px;
+            font-size: 0.75rem;
+            color: var(--text-dim);
+            border-top: 1px dashed var(--border-color);
+            padding-top: 10px;
+            text-transform: uppercase;
+        }
+
+        .sidebar-right {
+            background-color: var(--pinned-bg);
+            border-left: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            padding: 12px;
+            overflow: hidden;
+        }
+
+        .pinned-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 10px;
+        }
+
+        .pinned-header h3 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            color: var(--accent-gold);
+        }
+
+        .pinned-count {
+            font-size: 0.8rem;
+            background-color: var(--panel-bg);
+            padding: 2px 8px;
+            border-radius: 10px;
+        }
+
+        .pinned-list {
+            flex: 1;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .pinned-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--accent-orange);
+            border-radius: 6px;
+            padding: 10px;
+            position: relative;
+        }
+
+        .pinned-card h4 {
+            font-size: 0.9rem;
+            color: #fff;
+            margin-bottom: 4px;
+            padding-right: 20px;
+        }
+
+        .pinned-card .unpin-btn {
+            position: absolute;
+            top: 6px;
+            right: 6px;
+            background: none;
+            border: none;
+            color: var(--text-dim);
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+
+        .pinned-card .mini-body {
+            font-size: 0.8rem;
+            color: var(--text-dim);
+            line-height: 1.3;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 50px 20px;
+            color: var(--text-dim);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1><span>⚔️</span> Kill Team Dashboard</h1>
+        <div class="header-actions">
+            <select id="factionDropdown" class="faction-select" onchange="switchFaction(this.value)">
+                <option value="" disabled selected>Loading Factions...</option>
+            </select>
+        </div>
+    </header>
+
+    <div class="dashboard">
+        <div class="sidebar-left">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search rules or operatives..." onkeyup="filterNav()">
+            </div>
+            <div class="nav-list" id="navList"></div>
+        </div>
+
+        <div class="main-content" id="mainContent">
+            <div class="empty-state">
+                <h2>Loading Factions from Repository...</h2>
+            </div>
+        </div>
+
+        <div class="sidebar-right">
+            <div class="pinned-header">
+                <h3>Quick Reference</h3>
+                <span class="pinned-count" id="pinCount">0 / 8</span>
+            </div>
+            <div class="pinned-list" id="pinnedList">
+                <div style="text-align:center; color:var(--text-dim); font-size:0.85rem; margin-top:20px;">
+                    No cards pinned yet.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let allFactions = {};
+        let activeFactionName = "";
+        let rulesDatabase = [];
+        let selectedId = null;
+        let pinnedIds = [];
+
+        window.onload = async function() {
+            await fetchFactionList();
+        };
+
+        async function fetchFactionList() {
+            try {
+                const response = await fetch('factions.json');
+                const data = await response.json();
+                
+                const dropdown = document.getElementById('factionDropdown');
+                dropdown.innerHTML = '<option value="" disabled selected>Select Kill Team</option>';
+
+                for (const item of data.factions) {
+                    const res = await fetch(item.path);
+                    const factionData = await res.json();
+                    
+                    if (factionData.factionName && factionData.rules) {
+                        allFactions[factionData.factionName] = factionData.rules;
+                        
+                        const opt = document.createElement('option');
+                        opt.value = factionData.factionName;
+                        opt.text = factionData.factionName;
+                        dropdown.appendChild(opt);
+                    }
+                }
+
+                const names = Object.keys(allFactions);
+                if (names.length > 0) {
+                    switchFaction(names[0]);
+                } else {
+                    renderEmptyState();
+                }
+            } catch (error) {
+                console.error("Error loading factions from GitHub:", error);
+                document.getElementById('mainContent').innerHTML = `
+                    <div class="empty-state">
+                        <h2>Failed to Load Factions</h2>
+                        <p>Make sure your 'factions.json' and json files are correctly structured and uploaded to GitHub.</p>
+                    </div>`;
+            }
+        }
+
+        function switchFaction(name) {
+            if (!allFactions[name]) return;
+            
+            activeFactionName = name;
+            rulesDatabase = allFactions[name];
+            pinnedIds = []; 
+            selectedId = rulesDatabase.length > 0 ? rulesDatabase[0].id : null;
+            
+            document.getElementById('factionDropdown').value = name;
+            renderNav();
+            renderMainContent();
+            renderPinned();
+        }
+
+        function renderEmptyState() {
+            document.getElementById('navList').innerHTML = '';
+            document.getElementById('pinnedList').innerHTML = '<div style="text-align:center; color:var(--text-dim); font-size:0.85rem; margin-top:20px;">No cards pinned yet.</div>';
+            document.getElementById('pinCount').innerText = '0 / 8';
+            document.getElementById('mainContent').innerHTML = `
+                <div class="empty-state">
+                    <h2>No Kill Teams Found</h2>
+                    <p style="margin-top: 10px;">Check your factions.json file configuration.</p>
+                </div>`;
+        }
+
+        function renderNav() {
+            const navList = document.getElementById('navList');
+            navList.innerHTML = '';
+
+            if (rulesDatabase.length === 0) return;
+
+            const categories = [...new Set(rulesDatabase.map(item => item.category))];
+
+            categories.forEach(cat => {
+                const catHeader = document.createElement('div');
+                catHeader.className = 'category-title';
+                catHeader.innerText = cat;
+                navList.appendChild(catHeader);
+
+                const items = rulesDatabase.filter(item => item.category === cat);
+                items.forEach(item => {
+                    const navItem = document.createElement('div');
+                    navItem.className = `nav-item ${item.id === selectedId ? 'active' : ''}`;
+                    navItem.setAttribute('data-title', item.title.toLowerCase());
+                    navItem.innerHTML = `<span>${item.title}</span>`;
+                    navItem.onclick = () => selectRecord(item.id);
+                    navList.appendChild(navItem);
+                });
+            });
+        }
+
+        function filterNav() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const items = document.querySelectorAll('.nav-item');
+            items.forEach(item => {
+                const title = item.getAttribute('data-title');
+                if (title.includes(query)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function selectRecord(id) {
+            selectedId = id;
+            renderNav();
+            renderMainContent();
+        }
+
+        function renderMainContent() {
+            const main = document.getElementById('mainContent');
+            if (rulesDatabase.length === 0 || !selectedId) return;
+
+            const data = rulesDatabase.find(i => i.id === selectedId);
+            if (!data) return;
+
+            const isPinned = pinnedIds.includes(data.id);
+            const canPin = pinnedIds.length < 8;
+
+            let statsHtml = '';
+            if (data.stats) {
+                statsHtml = `
+                    <div class="stats-grid">
+                        <div class="stat-box"><div class="label">APL</div><div class="value">${data.stats.APL || '-'}</div></div>
+                        <div class="stat-box"><div class="label">MOVE</div><div class="value">${data.stats.Move || '-'}</div></div>
+                        <div class="stat-box"><div class="label">SAVE</div><div class="value">${data.stats.Save || '-'}</div></div>
+                        <div class="stat-box"><div class="label">WOUNDS</div><div class="value">${data.stats.Wounds || '-'}</div></div>
+                    </div>
+                `;
+            }
+
+            let weaponsHtml = '';
+            if (data.weapons && data.weapons.length > 0) {
+                weaponsHtml = `
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Weapon</th>
+                                <th>Atk</th>
+                                <th>Hit</th>
+                                <th>Dmg</th>
+                                <th>Special Rules</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${data.weapons.map(w => `
+                                <tr>
+                                    <td><b>${w.name}</b></td>
+                                    <td>${w.atk || '-'}</td>
+                                    <td>${w.hit || '-'}</td>
+                                    <td>${w.dmg || '-'}</td>
+                                    <td>${w.rules || '-'}</td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                `;
+            }
+
+            let rulesHtml = data.rules ? data.rules.map(r => `<p class="rule-text">${r}</p>`).join('') : '';
+            let keywordsHtml = data.keywords ? `<div class="keywords">${data.keywords}</div>` : '';
+
+            main.innerHTML = `
+                <div class="card-detail">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <h2>${data.title}</h2>
+                            <div class="card-subtitle">${data.subtitle || ''}</div>
+                        </div>
+                        <button class="pin-btn" onclick="togglePin('${data.id}')" ${!isPinned && !canPin ? 'disabled' : ''}>
+                            ${isPinned ? '📌 Unpin Record' : '📌 Pin to Quick Ref'}
+                        </button>
+                    </div>
+                    ${statsHtml}
+                    ${weaponsHtml}
+                    ${rulesHtml}
+                    ${keywordsHtml}
+                </div>
+            `;
+        }
+
+        function togglePin(id) {
+            const index = pinnedIds.indexOf(id);
+            if (index > -1) {
+                pinnedIds.splice(index, 1);
+            } else {
+                if (pinnedIds.length < 8) {
+                    pinnedIds.push(id);
+                }
+            }
+            renderMainContent();
+            renderPinned();
+        }
+
+        function renderPinned() {
+            const list = document.getElementById('pinnedList');
+            const count = document.getElementById('pinCount');
+            count.innerText = `${pinnedIds.length} / 8`;
+
+            if (pinnedIds.length === 0) {
+                list.innerHTML = `
+                    <div style="text-align:center; color:var(--text-dim); font-size:0.85rem; margin-top:20px;">
+                        No cards pinned yet.
+                    </div>
+                `;
+                return;
+            }
+
+            list.innerHTML = '';
+            pinnedIds.forEach(id => {
+                const item = rulesDatabase.find(r => r.id === id);
+                if (!item) return;
+
+                const card = document.createElement('div');
+                card.className = 'pinned-card';
+
+                let summary = '';
+                if (item.stats) {
+                    summary += `<b>W:</b> ${item.stats.Wounds || '-'} | <b>Sv:</b> ${item.stats.Save || '-'} | <b>APL:</b> ${item.stats.APL || '-'}<br>`;
+                }
+                if (item.rules && item.rules.length > 0) {
+                    let plainText = item.rules[0].replace(/<[^>]+>/g, '');
+                    summary += plainText.substring(0, 90) + '...';
+                }
+
+                card.innerHTML = `
+                    <h4>${item.title}</h4>
+                    <button class="unpin-btn" onclick="togglePin('${item.id}')">&times;</button>
+                    <div class="mini-body">${summary}</div>
+                `;
+                list.appendChild(card);
+            });
+        }
+    </script>
+</body>
+</html>
