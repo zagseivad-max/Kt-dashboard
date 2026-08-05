@@ -1,1 +1,641 @@
+{
+  "factionName": "Exaction Squad",
+  "rules": [
+    {
+      "id": "op_proctor_exactant",
+      "category": "Operatives",
+      "title": "Arbites Proctor-Exactant",
+      "subtitle": "Leader Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "6\"",
+        "Save": "4+",
+        "Wounds": "9"
+      },
+      "weapons": [
+        {
+          "name": "Combat shotgun (close range)",
+          "atk": "4",
+          "hit": "2+",
+          "dmg": "4/4",
+          "rules": "Range 6\""
+        },
+        {
+          "name": "Combat shotgun (long range)",
+          "atk": "4",
+          "hit": "4+",
+          "dmg": "2/2",
+          "rules": "-"
+        },
+        {
+          "name": "Shotpistol",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/3",
+          "rules": "Range 8\""
+        },
+        {
+          "name": "Dominator maul & assault shield",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "4/4",
+          "rules": "Lethal 5+, Shock, Repress"
+        },
+        {
+          "name": "Repression baton",
+          "atk": "3",
+          "hit": "3+",
+          "dmg": "2/3",
+          "rules": "-"
+        }
+      ],
+      "rules": [
+        "<b>Assault Shield:</b> If this operative has a dominator maul & assault shield, it has a 3+ Save stat.[span_0](start_span)[span_0](end_span)",
+        "<b>Nuncio-aquila:</b> Whenever an enemy operative is within 3\" of your Nuncio-aquila marker (or this operative if your Nuncio-aquila marker isn't in the killzone), your opponent must spend 1 additional AP for that enemy operative to perform the Pick Up Marker and mission actions.[span_1](start_span)[span_1](end_span) Whenever determining control of a marker, treat the total APL stat of enemy operatives that contest it as 1 lower if at least one of those enemy operatives is within 3\" of your Nuncio-aquila marker (or this operative if your Nuncio-aquila marker isn't in the killzone).[span_2](start_span)[span_2](end_span) Note this isn't a change to the APL stat, so any changes are cumulative with this.[span_3](start_span)[span_3](end_span)",
+        "<b>DEPLOY NUNCIO-AQUILA (0AP):</b> If your Nuncio-aquila marker isn't in the killzone, place it within 6\" horizontally of this operative; otherwise, move your Nuncio-aquila marker up to 6\" horizontally.[span_4](start_span)[span_4](end_span) If this operative is removed from the killzone, remove your Nuncio-aquila marker from the killzone.[span_5](start_span)[span_5](end_span) This operative cannot perform this action while within control range of an enemy operative.[span_6](start_span)[span_6](end_span)"
+      ],
+      "keywords": "EXACTION SQUAD, IMPERIUM, ADEPTUS ARBITES, LEADER, PROCTOR-EXACTANT[span_7](start_span)[span_7](end_span)"
+    },
+    {
+      "id": "op_chirurgant",
+      "category": "Operatives",
+      "title": "Arbites Chirurgant",
+      "subtitle": "Medic Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "6\"",
+        "Save": "4+",
+        "Wounds": "8"
+      },
+      "weapons": [
+        {
+          "name": "Combat shotgun (close range)",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "4/4",
+          "rules": "Range 6\""
+        },
+        {
+          "name": "Combat shotgun (long range)",
+          "atk": "4",
+          "hit": "5+",
+          "dmg": "2/2",
+          "rules": "-"
+        },
+        {
+          "name": "Repression baton",
+          "atk": "3",
+          "hit": "4+",
+          "dmg": "2/3",
+          "rules": "-"
+        }
+      ],
+      "rules": [
+        "<b>Medic!:</b> The first time during each turning point that another friendly EXACTION SQUAD operative would be incapacitated while visible to and within 3\" of this operative, you can use this rule, providing neither this nor that operative is within control range of an enemy operative.[span_8](start_span)[span_8](end_span) If you do, that friendly operative isn't incapacitated, has 1 wound remaining and cannot be incapacitated for the remainder of the action.[span_9](start_span)[span_9](end_span) After that action, that friendly operative can then immediately perform a free Dash action, but must end that move within this operative's control range.[span_10](start_span)[span_10](end_span) Subtract 1 from this and that operative's APL stats until the end of their next activations respectively, and if this rule was used during that friendly operative's activation, that activation ends.[span_11](start_span)[span_11](end_span) You cannot use this rule if this operative is incapacitated, or if it's a Shoot action and this operative would be a primary or secondary target.[span_12](start_span)[span_12](end_span)",
+        "<b>MEDIKIT (1AP):</b> Select one friendly EXACTION SQUAD operative within this operative's control range to regain up to 2D3 lost wounds.[span_13](start_span)[span_13](end_span) It cannot be an operative that the Medic! rule was used on during this turning point.[span_14](start_span)[span_14](end_span) This operative cannot perform this action while within control range of an enemy operative.[span_15](start_span)[span_15](end_span)"
+      ],
+      "keywords": "EXACTION SQUAD, IMPERIUM, ADEPTUS ARBITES, MEDIC, CHIRURGANT[span_16](start_span)[span_16](end_span)"
+    },
+    {
+      "id": "op_leashmaster",
+      "category": "Operatives",
+      "title": "Arbites Leashmaster",
+      "subtitle": "Specialist Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "6\"",
+        "Save": "4+",
+        "Wounds": "8"
+      },
+      "weapons": [
+        {
+          "name": "Combat shotgun (close range)",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "4/4",
+          "rules": "Range 6\""
+        },
+        {
+          "name": "Combat shotgun (long range)",
+          "atk": "4",
+          "hit": "5+",
+          "dmg": "2/2",
+          "rules": "-"
+        },
+        {
+          "name": "Shotpistol",
+          "atk": "4",
+          "hit": "4+",
+          "dmg": "3/3",
+          "rules": "Range 8\""
+        },
+        {
+          "name": "Repression baton",
+          "atk": "3",
+          "hit": "4+",
+          "dmg": "2/3",
+          "rules": "-"
+        }
+      ],
+      "rules": [
+        "<b>Handler:</b> Whenever this operative is activated, you can activate a ready friendly EXACTION SQUAD R-VR CYBER-MASTIFF operative at the same time.[span_17](start_span)[span_17](end_span) Complete their activations action by action in any order.[span_18](start_span)[span_18](end_span)",
+        "<b>Attack Pattern:</b> STRATEGIC GAMBIT in the first turning point.[span_19](start_span)[span_19](end_span) Select one of the following attack patterns for a friendly EXACTION SQUAD R-VR CYBER-MASTIFF operative to have for the battle: Aggressive (Its melee weapons have the Relentless weapon rule), Swift (Add 2\" to its Move stat), or Defensive (Improve its Save stat by 1).[span_20](start_span)[span_20](end_span)",
+        "<b>R-VR COMMAND (0AP):</b> Select one friendly EXACTION SQUAD R-VR CYBER-MASTIFF operative and change its attack pattern.[span_21](start_span)[span_21](end_span)"
+      ],
+      "keywords": "EXACTION SQUADS, IMPERIUM, ADEPTUS ARBITES, LEASHMASTER[span_22](start_span)[span_22](end_span)"
+    },
+    {
+      "id": "op_cyber_mastiff",
+      "category": "Operatives",
+      "title": "R-VR Cyber-Mastiff",
+      "subtitle": "Beast Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "6\"",
+        "Save": "4+",
+        "Wounds": "8"
+      },
+      "weapons": [
+        {
+          "name": "Mechanical bite",
+          "atk": "4",
+          "hit": "4+",
+          "dmg": "3/5",
+          "rules": "Lethal 5+"
+        }
+      ],
+      "rules": [
+        "<b>Beast:</b> This operative cannot perform any actions other than Apprehend, Charge, Dash, Fall Back, Fight, Guard, Reposition, Pick Up Marker and Place Marker.[span_23](start_span)[span_23](end_span) It cannot use any weapons that aren't on its datacard.[span_24](start_span)[span_24](end_span)",
+        "<b>APPREHEND (0AP):</b> Select one enemy operative within this operative's control range.[span_25](start_span)[span_25](end_span) Until that enemy operative is no longer within this operative's control range, or until this operative performs this action again (whichever comes first), worsen the Hit stat of that enemy operative's weapons by 1 (this isn't cumulative with being injured); in addition, that enemy operative cannot perform the Fall Back action.[span_26](start_span)[span_26](end_span) This operative cannot perform this action unless an enemy operative is within its control range.[span_27](start_span)[span_27](end_span)"
+      ],
+      "keywords": "EXACTION SQUAD, IMPERIUM, ADEPTUS ARBITES, R-VR CYBER-MASTIFF[span_28](start_span)[span_28](end_span)"
+    },
+    {
+      "id": "op_castigator",
+      "category": "Operatives",
+      "title": "Arbites Castigator",
+      "subtitle": "Specialist Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "6\"",
+        "Save": "4+",
+        "Wounds": "8"
+      },
+      "weapons": [
+        {
+          "name": "Combat shotgun (close range)",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "4/4",
+          "rules": "Range 6\""
+        },
+        {
+          "name": "Combat shotgun (long range)",
+          "atk": "4",
+          "hit": "5+",
+          "dmg": "2/2",
+          "rules": "-"
+        },
+        {
+          "name": "Excruciator maul",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "5/5",
+          "rules": "Rending, Shock"
+        }
+      ],
+      "rules": [
+        "<b>Engendered Focus:</b> You can ignore any changes to this operative's stats (including its weapons' stats, but excluding its Save stat).[span_29](start_span)[span_29](end_span)",
+        "<b>Zealous Dedication:</b> Whenever an attack dice inflicts damage of 3 or more on this operative, roll one D6: on a 5+, subtract 1 from that inflicted damage.[span_30](start_span)[span_30](end_span)",
+        "<b>Castigator's Arrest:</b> Whenever an enemy operative is within control range of this operative, if no other enemy operatives are within this operative's control range, that enemy operative cannot perform the Fall Back action.[span_31](start_span)[span_31](end_span)"
+      ],
+      "keywords": "EXACTION SQUAD, IMPERIUM, ADEPTUS ARBITES, CASTIGATOR[span_32](start_span)[span_32](end_span)"
+    },
+    {
+      "id": "op_gunner",
+      "category": "Operatives",
+      "title": "Arbites Gunner",
+      "subtitle": "Specialist Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "6\"",
+        "Save": "4+",
+        "Wounds": "8"
+      },
+      "weapons": [
+        {
+          "name": "Grenade launcher",
+          "atk": "4",
+          "hit": "4+",
+          "dmg": "4/6",
+          "rules": "Piercing 1"
+        },
+        {
+          "name": "Heavy stubber (focused)",
+          "atk": "5",
+          "hit": "4+",
+          "dmg": "4/5",
+          "rules": "Heavy (Dash Only)"
+        },
+        {
+          "name": "Heavy stubber (sweeping)",
+          "atk": "4",
+          "hit": "4+",
+          "dmg": "4/5",
+          "rules": "Heavy (Dash Only), Torrent 1\""
+        },
+        {
+          "name": "Webber",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "4/5",
+          "rules": "Range 12\", Severe, Stun"
+        },
+        {
+          "name": "Repression baton",
+          "atk": "3",
+          "hit": "4+",
+          "dmg": "2/3",
+          "rules": "-"
+        }
+      ],
+      "rules": [],
+      "keywords": "EXACTION SQUAD, IMPERIUM, ADEPTUS ARBITES, GUNNER[span_33](start_span)[span_33](end_span)"
+    },
+    {
+      "id": "op_malocator",
+      "category": "Operatives",
+      "title": "Arbites Malocator",
+      "subtitle": "Specialist Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "6\"",
+        "Save": "4+",
+        "Wounds": "8"
+      },
+      "weapons": [
+        {
+          "name": "Combat shotgun (close range)",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "4/4",
+          "rules": "Range 6\""
+        },
+        {
+          "name": "Combat shotgun (long range)",
+          "atk": "4",
+          "hit": "5+",
+          "dmg": "2/2",
+          "rules": "-"
+        },
+        {
+          "name": "Repression baton",
+          "atk": "3",
+          "hit": "4+",
+          "dmg": "2/3",
+          "rules": "-"
+        }
+      ],
+      "rules": [
+        "<b>Acute Focus:</b> Once during each of this operative's activations, it can perform the Pick Up Marker, Place Marker, Veriscant or a mission action for 1 less AP.[span_34](start_span)[span_34](end_span)",
+        "<b>VERISCANT (1AP):</b> Select one enemy operative visible to this operative.[span_35](start_span)[span_35](end_span) Until the start of this operative's next activation, until it's incapacitated or until it performs this action again (whichever comes first), whenever a friendly EXACTION SQUAD operative is shooting against, fighting against or retaliating against that enemy operative, that friendly operative's weapons have the Severe weapon rule; if the weapon already has that weapon rule, it also has the Lethal 5+ weapon rule.[span_36](start_span)[span_36](end_span) This operative cannot perform this action while within control range of an enemy operative.[span_37](start_span)[span_37](end_span)"
+      ],
+      "keywords": "EXACTION SQUAD, IMPERIUM, ADEPTUS ARBITES, MALOCATOR[span_38](start_span)[span_38](end_span)"
+    },
+    {
+      "id": "op_marksman",
+      "category": "Operatives",
+      "title": "Arbites Marksman",
+      "subtitle": "Sniper Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "6\"",
+        "Save": "4+",
+        "Wounds": "8"
+      },
+      "weapons": [
+        {
+          "name": "Executioner shotgun (concealed)",
+          "atk": "4",
+          "hit": "2+",
+          "dmg": "4/0",
+          "rules": "Devastating 4, Heavy, Silent, Concealed Position*"
+        },
+        {
+          "name": "Executioner shotgun (mobile)",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "4/4",
+          "rules": "-"
+        },
+        {
+          "name": "Executioner shotgun (stationary)",
+          "atk": "4",
+          "hit": "2+",
+          "dmg": "4/0",
+          "rules": "Devastating 4, Heavy"
+        },
+        {
+          "name": "Repression baton",
+          "atk": "3",
+          "hit": "4+",
+          "dmg": "2/3",
+          "rules": "-"
+        }
+      ],
+      "rules": [
+        "<b>*Concealed Position:</b> This operative can only use this weapon the first time it's performing the Shoot action during the battle.[span_39](start_span)[span_39](end_span)",
+        "<b>OPTICS (1AP):</b> Until the start of this operative's next activation: The concealed and stationary profiles of its executioner shotgun have the Lethal 5+ weapon rule.[span_40](start_span)[span_40](end_span) Whenever it's shooting with its executioner shotgun, enemy operatives cannot be obscured.[span_41](start_span)[span_41](end_span) This operative cannot perform this action while within control range of an enemy operative.[span_42](start_span)[span_42](end_span)"
+      ],
+      "keywords": "EXACTION SQUAD, IMPERIUM, ADEPTUS ARBITES, MARKSMAN[span_43](start_span)[span_43](end_span)"
+    },
+    {
+      "id": "op_revelatum",
+      "category": "Operatives",
+      "title": "Arbites Revelatum",
+      "subtitle": "Specialist Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "6\"",
+        "Save": "4+",
+        "Wounds": "8"
+      },
+      "weapons": [
+        {
+          "name": "Scoped shotpistol (short range)",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/3",
+          "rules": "Range 8\", Lethal 5+"
+        },
+        {
+          "name": "Scoped shotpistol (long range)",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/3",
+          "rules": "-"
+        },
+        {
+          "name": "Repression baton",
+          "atk": "3",
+          "hit": "4+",
+          "dmg": "2/3",
+          "rules": "-"
+        }
+      ],
+      "rules": [
+        "<b>First in the Field:</b> STRATEGIC GAMBIT in the first turning point.[span_44](start_span)[span_44](end_span) If this operative is wholly within your drop zone, it can immediately perform a free Reposition action.[span_45](start_span)[span_45](end_span)",
+        "<b>SPOT (1AP):</b> SUPPORT.[span_46](start_span)[span_46](end_span) Select one enemy operative visible to this operative.[span_47](start_span)[span_47](end_span) Until the end of the turning point, whenever a friendly EXACTION SQUAD operative within 3\" of this operative is shooting that enemy operative, you can use this effect.[span_48](start_span)[span_48](end_span) If you do: That friendly operative's ranged weapons have the Seek Light weapon rule, and that enemy operative cannot be obscured.[span_49](start_span)[span_49](end_span) This operative cannot perform this action while within control range of an enemy operative.[span_50](start_span)[span_50](end_span)"
+      ],
+      "keywords": "EXACTION SQUAD, IMPERIUM, ADEPTUS ARBITES, REVELATUM[span_51](start_span)[span_51](end_span)"
+    },
+    {
+      "id": "op_subductor",
+      "category": "Operatives",
+      "title": "Arbites Subductor",
+      "subtitle": "Frontline Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "6\"",
+        "Save": "3+",
+        "Wounds": "8"
+      },
+      "weapons": [
+        {
+          "name": "Shotpistol",
+          "atk": "4",
+          "hit": "4+",
+          "dmg": "3/3",
+          "rules": "Range 8\""
+        },
+        {
+          "name": "Shock maul & assault shield",
+          "atk": "4",
+          "hit": "4+",
+          "dmg": "4/4",
+          "rules": "Shock, Repress"
+        }
+      ],
+      "rules": [
+        "<b>Stubborn Subjugator:</b> You can ignore any changes to the Hit stat of this operative's melee weapons.[span_52](start_span)[span_52](end_span)"
+      ],
+      "keywords": "EXACTION SQUAD, IMPERIUM, ADEPTUS ARBITES, SUBDUCTOR[span_53](start_span)[span_53](end_span)"
+    },
+    {
+      "id": "op_vigilant",
+      "category": "Operatives",
+      "title": "Arbites Vigilant",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "6\"",
+        "Save": "4+",
+        "Wounds": "8"
+      },
+      "weapons": [
+        {
+          "name": "Combat shotgun (close range)",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "4/4",
+          "rules": "Range 6\""
+        },
+        {
+          "name": "Combat shotgun (long range)",
+          "atk": "4",
+          "hit": "5+",
+          "dmg": "2/2",
+          "rules": "-"
+        },
+        {
+          "name": "Repression baton",
+          "atk": "3",
+          "hit": "4+",
+          "dmg": "2/3",
+          "rules": "-"
+        }
+      ],
+      "rules": [
+        "<b>Close Quarters Vigilance:</b> This operative can perform the Shoot action (excluding Guard) while within control range of an enemy operative, but only if it hasn't performed the Charge action during the activation, or if it's a counteraction.[span_54](start_span)[span_54](end_span) Note this operative isn't restricted from performing the Charge action after performing the Shoot action.[span_55](start_span)[span_55](end_span)"
+      ],
+      "keywords": "EXACTION SQUAD, IMPERIUM, ADEPTUS ARBITES, VIGILANT[span_56](start_span)[span_56](end_span)"
+    },
+    {
+      "id": "op_vox_signifier",
+      "category": "Operatives",
+      "title": "Arbites Vox-Signifier",
+      "subtitle": "Comms Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "6\"",
+        "Save": "4+",
+        "Wounds": "8"
+      },
+      "weapons": [
+        {
+          "name": "Combat shotgun (close range)",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "4/4",
+          "rules": "Range 6\""
+        },
+        {
+          "name": "Combat shotgun (long range)",
+          "atk": "4",
+          "hit": "5+",
+          "dmg": "2/2",
+          "rules": "-"
+        },
+        {
+          "name": "Repression baton",
+          "atk": "3",
+          "hit": "4+",
+          "dmg": "2/3",
+          "rules": "-"
+        }
+      ],
+      "rules": [
+        "<b>SIGNAL (1AP):</b> SUPPORT.[span_57](start_span)[span_57](end_span) Select one other friendly EXACTION SQUAD operative visible to this operative.[span_58](start_span)[span_58](end_span) Until the end of that operative's next activation, add 1 to its APL stat.[span_59](start_span)[span_59](end_span) This operative cannot perform this action while within control range of an enemy operative.[span_60](start_span)[span_60](end_span)"
+      ],
+      "keywords": "EXACTION SQUAD, IMPERIUM, ADEPTUS ARBITES, VOX-SIGNIFIER[span_61](start_span)[span_61](end_span)"
+    },
+    {
+      "id": "fac_ruthless_efficiency",
+      "category": "Faction Rules",
+      "title": "Ruthless Efficiency",
+      "subtitle": "Faction Rule",
+      "rules": [
+        "Whenever a friendly EXACTION SQUAD operative is shooting (excluding with frag or krak grenades) and you're selecting a valid target, you can use this rule.[span_62](start_span)[span_62](end_span) If you do, having other friendly EXACTION SQUAD operatives within an enemy operative's control range doesn't prevent that enemy operative from being selected.[span_63](start_span)[span_63](end_span)"
+      ]
+    },
+    {
+      "id": "fac_marked_for_justice",
+      "category": "Faction Rules",
+      "title": "Marked for Justice",
+      "subtitle": "Faction Rule",
+      "rules": [
+        "STRATEGIC GAMBIT.[span_64](start_span)[span_64](end_span) Select one enemy operative to be your mark for the turning point.[span_65](start_span)[span_65](end_span) Whenever a friendly EXACTION SQUAD operative is shooting against, fighting against or retaliating against your mark, that friendly operative's weapons have the Punishing weapon rule.[span_66](start_span)[span_66](end_span) Whenever your mark is incapacitated, you can select a new enemy operative to be your mark for the turning point (and can continue to do so during this turning point).[span_67](start_span)[span_67](end_span)"
+      ]
+    },
+    {
+      "id": "fac_repress",
+      "category": "Faction Rules",
+      "title": "Repress",
+      "subtitle": "Faction Rule",
+      "rules": [
+        "Some weapons in this team's rules have the Repress weapon rule below.[span_68](start_span)[span_68](end_span) *Repress: Whenever this operative is using this weapon: Each of your blocks can be allocated to block two unresolved successes (instead of one).[span_69](start_span)[span_69](end_span) If this operative is retaliating, you resolve the first attack dice (i.e. defender instead of attacker).[span_70](start_span)[span_70](end_span)"
+      ]
+    },
+    {
+      "id": "ploy_guilt_reveals_itself",
+      "category": "Strategy Ploys",
+      "title": "Guilt Reveals Itself",
+      "subtitle": "Strategy Ploy",
+      "rules": [
+        "Whenever you're selecting a valid target for a friendly EXACTION SQUAD operative, enemy operatives within 4\" of it cannot be in cover (instead of 2\").[span_71](start_span)[span_71](end_span) While this can allow such operatives to be targeted (assuming they're visible), it doesn't remove their cover save (if any), unless the friendly EXACTION SQUAD operative is within 2\" as normal.[span_72](start_span)[span_72](end_span)"
+      ]
+    },
+    {
+      "id": "ploy_inviolate_jurisdiction",
+      "category": "Strategy Ploys",
+      "title": "Inviolate Jurisdiction",
+      "subtitle": "Strategy Ploy",
+      "rules": [
+        "Whenever an operative is shooting a friendly EXACTION SQUAD operative that's within 2\" of an objective marker or an enemy operative, you can re-roll one of your defence dice.[span_73](start_span)[span_73](end_span)"
+      ]
+    },
+    {
+      "id": "ploy_dispense_justice",
+      "category": "Strategy Ploys",
+      "title": "Dispense Justice",
+      "subtitle": "Strategy Ploy",
+      "rules": [
+        "Whenever a friendly EXACTION SQUAD operative is fighting or retaliating, if it hasn't moved more than its Move stat during the activation, or if it's a counteraction, its melee weapons have the Ceaseless weapon rule.[span_74](start_span)[span_74](end_span)"
+      ]
+    },
+    {
+      "id": "ploy_terminal_decree",
+      "category": "Strategy Ploys",
+      "title": "Terminal Decree",
+      "subtitle": "Strategy Ploy",
+      "rules": [
+        "Whenever a friendly EXACTION SQUAD operative is shooting an enemy operative within 6\" of it, or whenever a friendly EXACTION SQUAD GUNNER operative is shooting, that friendly operative's ranged weapons have the Balanced weapon rule.[span_75](start_span)[span_75](end_span)"
+      ]
+    },
+    {
+      "id": "ploy_long_arm",
+      "category": "Firefight Ploys",
+      "title": "Long Arm of the Emperor's Law",
+      "subtitle": "Firefight Ploy",
+      "rules": [
+        "Use this firefight ploy when a friendly EXACTION SQUAD operative is performing the Shoot action and you select a weapon with the Range x weapon rule (excluding frag or krak grenade).[span_76](start_span)[span_76](end_span) Until the end of that action, add 3\" to x.[span_77](start_span)[span_77](end_span)"
+      ]
+    },
+    {
+      "id": "ploy_exact_punishment",
+      "category": "Firefight Ploys",
+      "title": "Exact Punishment",
+      "subtitle": "Firefight Ploy",
+      "rules": [
+        "Use this firefight ploy after an enemy operative shoots against or fights against a friendly EXACTION SQUAD operative within 6\" of it, and that friendly operative isn't incapacitated as a result.[span_78](start_span)[span_78](end_span) That friendly operative can immediately perform either a free Shoot or a free Fight action, but you cannot select any other enemy operative as a valid target or to fight against during that action (note that secondary targets from the Blast weapon rule can still be targeted).[span_79](start_span)[span_79](end_span)"
+      ]
+    },
+    {
+      "id": "ploy_brutal_backup",
+      "category": "Firefight Ploys",
+      "title": "Brutal Backup",
+      "subtitle": "Firefight Ploy",
+      "rules": [
+        "Use this firefight ploy during a friendly EXACTION SQUAD operative's activation, before or after it performs an action.[span_80](start_span)[span_80](end_span) Select one enemy operative within its control range.[span_81](start_span)[span_81](end_span) One other friendly EXACTION SQUAD operative can immediately perform a free Fight action, but you cannot select any other enemy operative to fight against during that action.[span_82](start_span)[span_82](end_span)"
+      ]
+    },
+    {
+      "id": "ploy_execution_order",
+      "category": "Firefight Ploys",
+      "title": "Execution Order",
+      "subtitle": "Firefight Ploy",
+      "rules": [
+        "Use this firefight ploy when an enemy operative performs a mission action (excluding Operate Hatch).[span_83](start_span)[span_83](end_span) Alternatively, use it at the end of the Firefight phase and select one enemy operative that controls an objective marker.[span_84](start_span)[span_84](end_span)",
+        "In either case, the next time your opponent would activate that enemy operative, you can interrupt that activation and activate a ready friendly EXACTION SQUAD operative.[span_85](start_span)[span_85](end_span) If you do, during that activation, that friendly operative must fight against or shoot against that enemy operative, and cannot do so against any other enemy operatives until it does (if this isn't possible, that friendly operative's activation is cancelled).[span_86](start_span)[span_86](end_span)",
+        "After completing that friendly operative's activation, continue that enemy operative's activation (if possible).[span_87](start_span)[span_87](end_span) You cannot use this ploy again until that enemy operative is activated or incapacitated.[span_88](start_span)[span_88](end_span)"
+      ]
+    },
+    {
+      "id": "eq_reinforced_visor",
+      "category": "Faction Equipment",
+      "title": "Reinforced Mirror-Visor",
+      "subtitle": "Equipment",
+      "rules": [
+        "You can ignore any changes to the APL stats of friendly EXACTION SQUAD operatives, and they aren't affected by enemy operatives' Shock weapon rule.[span_89](start_span)[span_89](end_span)"
+      ]
+    },
+    {
+      "id": "eq_manacles",
+      "category": "Faction Equipment",
+      "title": "Manacles",
+      "subtitle": "Equipment",
+      "rules": [
+        "Whenever an enemy operative would perform the Fall Back action while within control range of a friendly EXACTION SQUAD operative, if no other enemy operatives are within that friendly operative's control range, you can use this rule.[span_90](start_span)[span_90](end_span) If you do, roll two D6, or one D6 if that enemy operative has a higher Wounds stat than that friendly operative.[span_91](start_span)[span_91](end_span) If any result is a 4+, that enemy operative cannot perform that action during that activation/counteraction (no AP are spent on it).[span_92](start_span)[span_92](end_span)"
+      ]
+    },
+    {
+      "id": "eq_strobing_lumen",
+      "category": "Faction Equipment",
+      "title": "Strobing Phosphor-Lumen",
+      "subtitle": "Equipment",
+      "rules": [
+        "Whenever an enemy operative is shooting against, fighting against or retaliating against a friendly EXACTION SQUAD operative within 2\" of it, your opponent cannot re-roll their attack dice results of 1.[span_93](start_span)[span_93](end_span)"
+      ]
+    },
+    {
+      "id": "eq_special_issue_shells",
+      "category": "Faction Equipment",
+      "title": "Special Issue Shells",
+      "subtitle": "Equipment",
+      "rules": [
+        "Once per turning point, when a friendly EXACTION SQUAD operative is performing the Shoot action and you select a combat shotgun, executioner shotgun, scoped shotpistol or shotpistol, you can use this rule.[span_94](start_span)[span_94](end_span) If you do, select one of the following weapon rules for that weapon to have until the end of that action: Saturate; Piercing 1, but only if the target has a Save stat of 3+ or better; Torrent 1\", but you cannot select more than one secondary target.[span_95](start_span)[span_95](end_span)"
+      ]
+    }
+  ]
+}
 
