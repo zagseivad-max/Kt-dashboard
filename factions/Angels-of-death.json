@@ -1,0 +1,425 @@
+{
+  "factionName": "Angels of Death",
+  "rules": [
+    {
+      "id": "op_captain",
+      "category": "Operatives",
+      "title": "Space Marine Captain",
+      "subtitle": "Leader Operative",
+      "stats": { "APL": "3", "Move": "6\"", "Save": "3+", "Wounds": "15" },
+      "weapons": [
+        { "name": "Plasma pistol (standard)", "atk": "4", "hit": "3+", "dmg": "3/5", "rules": "Range 8\", Piercing 1" },
+        { "name": "Plasma pistol (supercharge)", "atk": "4", "hit": "3+", "dmg": "4/5", "rules": "Range 8\", Hot, Lethal 5+, Piercing 1" },
+        { "name": "Power fist", "atk": "5", "hit": "3+", "dmg": "5/7", "rules": "Brutal" }
+      ],
+      "rules": [
+        "<b>Heroic Leader:</b> Once per turning point, you can use a firefight ploy for 0CP if this is the specified ANGEL OF DEATH operative (excluding Command Re-roll), or the Adjust Doctrine firefight ploy for 0CP if this operative is in the killzone and isn't within control range of enemy operatives.",
+        "<b>Iron Halo:</b> Once per battle, when an attack dice inflicts Normal Dmg on this operative, you can ignore that inflicted damage."
+      ],
+      "keywords": "ANGEL OF DEATH, IMPERIUM, ADEPTUS ASTARTES, LEADER, SPACE MARINE CAPTAIN"
+    },
+    {
+      "id": "op_assault_sgt",
+      "category": "Operatives",
+      "title": "Assault Intercessor Sergeant",
+      "subtitle": "Leader Operative",
+      "stats": { "APL": "3", "Move": "6\"", "Save": "3+", "Wounds": "15" },
+      "weapons": [
+        { "name": "Hand flamer", "atk": "4", "hit": "2+", "dmg": "3/3", "rules": "Range 6\", Saturate, Torrent 1\"" },
+        { "name": "Heavy bolt pistol", "atk": "4", "hit": "3+", "dmg": "3/4", "rules": "Range 8\", Piercing Crits 1" },
+        { "name": "Plasma pistol (standard)", "atk": "4", "hit": "3+", "dmg": "3/5", "rules": "Range 8\", Piercing 1" },
+        { "name": "Plasma pistol (supercharge)", "atk": "4", "hit": "3+", "dmg": "4/5", "rules": "Range 8\", Hot, Lethal 5+, Piercing 1" },
+        { "name": "Chainsword", "atk": "5", "hit": "3+", "dmg": "4/5", "rules": "-" },
+        { "name": "Power fist", "atk": "5", "hit": "4+", "dmg": "5/7", "rules": "Brutal" },
+        { "name": "Power weapon", "atk": "5", "hit": "3+", "dmg": "4/6", "rules": "Lethal 5+" },
+        { "name": "Thunder hammer", "atk": "5", "hit": "4+", "dmg": "5/6", "rules": "Shock, Stun" }
+      ],
+      "rules": [
+        "<b>Doctrine Warfare:</b> You can do each of the following once per battle: <br>• Whenever you would use the Combat Doctrine strategy ploy and then select Assault, if this operative is in the killzone, it costs you 0CP. <br>• Whenever you would use the Combat Doctrine strategy ploy and then select Tactical, if this operative is in the killzone, it costs you 0CP.",
+        "<b>Chapter Veteran:</b> At the end of the Select Operatives step, if this operative is selected for deployment, select one additional CHAPTER TACTIC for it to have for the battle."
+      ],
+      "keywords": "ANGEL OF DEATH, IMPERIUM, ADEPTUS ASTARTES, LEADER, ASSAULT INTERCESSOR, SERGEANT"
+    },
+    {
+      "id": "op_intercessor_sgt",
+      "category": "Operatives",
+      "title": "Intercessor Sergeant",
+      "subtitle": "Leader Operative",
+      "stats": { "APL": "3", "Move": "6\"", "Save": "3+", "Wounds": "15" },
+      "weapons": [
+        { "name": "Auto bolt rifle", "atk": "4", "hit": "3+", "dmg": "3/4", "rules": "Torrent 1\"" },
+        { "name": "Bolt rifle", "atk": "4", "hit": "3+", "dmg": "3/4", "rules": "Piercing Crits 1" },
+        { "name": "Stalker bolt rifle (heavy)", "atk": "4", "hit": "3+", "dmg": "3/5", "rules": "Heavy (Dash only), Lethal 5+, Piercing Crits 1" },
+        { "name": "Stalker bolt rifle (mobile)", "atk": "4", "hit": "3+", "dmg": "3/4", "rules": "-" },
+        { "name": "Chainsword", "atk": "4", "hit": "3+", "dmg": "4/5", "rules": "-" },
+        { "name": "Fists", "atk": "4", "hit": "3+", "dmg": "3/4", "rules": "-" },
+        { "name": "Power fist", "atk": "4", "hit": "4+", "dmg": "5/7", "rules": "Brutal" },
+        { "name": "Power weapon", "atk": "4", "hit": "3+", "dmg": "4/6", "rules": "Lethal 5+" },
+        { "name": "Thunder hammer", "atk": "4", "hit": "4+", "dmg": "5/6", "rules": "Shock, Stun" }
+      ],
+      "rules": [
+        "<b>Doctrine Warfare:</b> You can do each of the following once per battle: <br>• Whenever you would use the Combat Doctrine strategy ploy and then select Devastator, if this operative is in the killzone, it costs you 0CP. <br>• Whenever you would use the Combat Doctrine strategy ploy and then select Tactical, if this operative is in the killzone, it costs you 0CP.",
+        "<b>Chapter Veteran:</b> At the end of the Select Operatives step, if this operative is selected for deployment, select one additional CHAPTER TACTIC for it to have for the battle."
+      ],
+      "keywords": "ANGEL OF DEATH, IMPERIUM, ADEPTUS ASTARTES, LEADER, INTERCESSOR, SERGEANT"
+    },
+    {
+      "id": "op_assault_grenadier",
+      "category": "Operatives",
+      "title": "Assault Intercessor Grenadier",
+      "subtitle": "Operative",
+      "stats": { "APL": "3", "Move": "6\"", "Save": "3+", "Wounds": "14" },
+      "weapons": [
+        { "name": "Heavy bolt pistol", "atk": "4", "hit": "3+", "dmg": "3/4", "rules": "Range 8\", Piercing Crits 1" },
+        { "name": "Chainsword", "atk": "5", "hit": "3+", "dmg": "4/5", "rules": "-" }
+      ],
+      "rules": [
+        "<b>Grenadier:</b> This operative can use frag and krak grenades (see universal equipment). Doing so doesn't count towards any limited uses you have. Whenever it's doing so, improve the Hit stat of that weapon by 1."
+      ],
+      "keywords": "ANGEL OF DEATH, IMPERIUM, ADEPTUS ASTARTES, ASSAULT INTERCESSOR, GRENADIER"
+    },
+    {
+      "id": "op_assault_warrior",
+      "category": "Operatives",
+      "title": "Assault Intercessor Warrior",
+      "subtitle": "Operative",
+      "stats": { "APL": "3", "Move": "6\"", "Save": "3+", "Wounds": "14" },
+      "weapons": [
+        { "name": "Heavy bolt pistol", "atk": "4", "hit": "3+", "dmg": "3/4", "rules": "Range 8\", Piercing Crits 1" },
+        { "name": "Chainsword", "atk": "5", "hit": "3+", "dmg": "4/5", "rules": "-" }
+      ],
+      "rules": [],
+      "keywords": "ANGEL OF DEATH, IMPERIUM, ADEPTUS ASTARTES, ASSAULT INTERCESSOR, WARRIOR"
+    },
+    {
+      "id": "op_heavy_gunner",
+      "category": "Operatives",
+      "title": "Heavy Intercessor Gunner",
+      "subtitle": "Operative",
+      "stats": { "APL": "3", "Move": "5\"", "Save": "3+", "Wounds": "18" },
+      "weapons": [
+        { "name": "Heavy bolter (focused)", "atk": "5", "hit": "3+", "dmg": "4/5", "rules": "Piercing Crits 1" },
+        { "name": "Heavy bolter (sweeping)", "atk": "4", "hit": "3+", "dmg": "4/5", "rules": "Piercing Crits 1, Torrent 1\"" },
+        { "name": "Fists", "atk": "4", "hit": "3+", "dmg": "3/4", "rules": "-" }
+      ],
+      "rules": [],
+      "keywords": "ANGEL OF DEATH, IMPERIUM, ADEPTUS ASTARTES, HEAVY INTERCESSOR, GUNNER"
+    },
+    {
+      "id": "op_intercessor_gunner",
+      "category": "Operatives",
+      "title": "Intercessor Gunner",
+      "subtitle": "Operative",
+      "stats": { "APL": "3", "Move": "6\"", "Save": "3+", "Wounds": "14" },
+      "weapons": [
+        { "name": "Auto bolt rifle", "atk": "4", "hit": "3+", "dmg": "3/4", "rules": "Torrent 1\"" },
+        { "name": "Auxiliary grenade launcher (frag)", "atk": "4", "hit": "3+", "dmg": "2/4", "rules": "Blast 2\"" },
+        { "name": "Auxiliary grenade launcher (krak)", "atk": "4", "hit": "3+", "dmg": "4/5", "rules": "Piercing 1" },
+        { "name": "Bolt rifle", "atk": "4", "hit": "3+", "dmg": "3/4", "rules": "Piercing Crits 1" },
+        { "name": "Stalker bolt rifle (heavy)", "atk": "4", "hit": "3+", "dmg": "3/5", "rules": "Heavy (Dash only), Lethal 5+, Piercing Crits 1" },
+        { "name": "Stalker bolt rifle (mobile)", "atk": "4", "hit": "3+", "dmg": "3/4", "rules": "-" },
+        { "name": "Fists", "atk": "4", "hit": "3+", "dmg": "3/4", "rules": "-" }
+      ],
+      "rules": [],
+      "keywords": "ANGEL OF DEATH, IMPERIUM, ADEPTUS ASTARTES, INTERCESSOR, GUNNER"
+    },
+    {
+      "id": "op_intercessor_warrior",
+      "category": "Operatives",
+      "title": "Intercessor Warrior",
+      "subtitle": "Operative",
+      "stats": { "APL": "3", "Move": "6\"", "Save": "3+", "Wounds": "14" },
+      "weapons": [
+        { "name": "Auto bolt rifle", "atk": "4", "hit": "3+", "dmg": "3/4", "rules": "Torrent 1\"" },
+        { "name": "Bolt rifle", "atk": "4", "hit": "3+", "dmg": "3/4", "rules": "Piercing Crits 1" },
+        { "name": "Stalker bolt rifle (heavy)", "atk": "4", "hit": "3+", "dmg": "3/5", "rules": "Heavy (Dash only), Lethal 5+, Piercing Crits 1" },
+        { "name": "Stalker bolt rifle (mobile)", "atk": "4", "hit": "3+", "dmg": "3/4", "rules": "-" },
+        { "name": "Fists", "atk": "4", "hit": "3+", "dmg": "3/4", "rules": "-" }
+      ],
+      "rules": [],
+      "keywords": "ANGEL OF DEATH, IMPERIUM, ADEPTUS ASTARTES, INTERCESSOR, WARRIOR"
+    },
+    {
+      "id": "op_eliminator",
+      "category": "Operatives",
+      "title": "Eliminator Sniper",
+      "subtitle": "Operative",
+      "stats": { "APL": "3", "Move": "7\"", "Save": "3+", "Wounds": "12" },
+      "weapons": [
+        { "name": "Bolt pistol", "atk": "4", "hit": "3+", "dmg": "3/4", "rules": "Range 8\"" },
+        { "name": "Bolt sniper rifle (executioner)", "atk": "4", "hit": "2+", "dmg": "3/4", "rules": "Heavy (Dash only), Saturate, Seek Light, Silent" },
+        { "name": "Bolt sniper rifle (hyperfrag)", "atk": "4", "hit": "2+", "dmg": "2/4", "rules": "Blast 1\", Heavy (Dash only), Silent" },
+        { "name": "Bolt sniper rifle (mortis)", "atk": "4", "hit": "2+", "dmg": "3/3", "rules": "Devastating 3, Heavy (Dash only), Piercing 1, Silent" },
+        { "name": "Fists", "atk": "4", "hit": "3+", "dmg": "3/4", "rules": "-" }
+      ],
+      "rules": [
+        "<b>Camo Cloak:</b> Whenever an operative is shooting this operative, ignore the Saturate weapon rule. This operative has the Stealthy CHAPTER TACTIC. If you selected that CHAPTER TACTIC, you can do both of its options.",
+        "<b>Optics (1AP):</b> Until the start of this operative's next activation, whenever it's shooting, enemy operatives cannot be obscured. This operative cannot perform this action while within control range of an enemy operative."
+      ],
+      "keywords": "ANGEL OF DEATH, IMPERIUM, ADEPTUS ASTARTES, ELIMINATOR, SNIPER"
+    },
+    {
+      "id": "fac_chapter_tactics",
+      "category": "Faction Rules",
+      "title": "Chapter Tactics",
+      "subtitle": "Faction Rule",
+      "rules": [
+        "When selecting your kill team, select a primary and secondary CHAPTER TACTIC for friendly ANGEL OF DEATH operatives to gain for the battle.",
+        "<b>1. AGGRESSIVE:</b> This operative's melee weapons have the Rending weapon rule.",
+        "<b>2. DUELLER:</b> Whenever this operative is fighting or retaliating, each of your normal successes can block one unresolved critical success (unless the enemy operative's weapon has the Brutal weapon rule).",
+        "<b>3. RESOLUTE:</b> You can ignore any changes to this operative's APL stat.",
+        "<b>4. STEALTHY:</b> Whenever an operative is shooting this operative, if you can retain any cover saves, you can retain one additional cover save, or you can retain one cover save as a critical success instead.",
+        "<b>5. MOBILE:</b> This operative can perform the Fall Back action for 1 less AP. This operative can perform the Charge action while within control range of an enemy operative, and can leave that operative's control range to do so.",
+        "<b>6. HARDY:</b> Whenever an operative is shooting this operative, defence dice results of 5+ are critical successes.",
+        "<b>7. SHARPSHOOTER:</b> Whenever this operative is shooting during an activation in which it hasn't performed the Charge, Fall Back or Reposition action, its bolt weapons have the Severe weapon rule.",
+        "<b>8. SIEGE SPECIALIST:</b> This operative's ranged weapons have the Saturate weapon rule."
+      ],
+      "keywords": "ANGEL OF DEATH FACTION RULE"
+    },
+    {
+      "id": "fac_astartes",
+      "category": "Faction Rules",
+      "title": "Astartes",
+      "subtitle": "Faction Rule",
+      "rules": [
+        "During each friendly ANGEL OF DEATH operative's activation, it can perform either two Shoot actions or two Fight actions. If it's two Shoot actions, a bolt weapon must be selected for at least one of them, and if it's a bolt sniper rifle or heavy bolter, 1 additional AP must be spent for the second action if both actions are using that weapon.",
+        "Each friendly ANGEL OF DEATH operative can counteract regardless of its order."
+      ],
+      "keywords": "ANGEL OF DEATH FACTION RULE"
+    },
+    {
+      "id": "ploy_combat_doctrine",
+      "category": "Strategy Ploys",
+      "title": "Combat Doctrine",
+      "subtitle": "Strategy Ploy",
+      "rules": [
+        "Select one COMBAT DOCTRINE from those presented below. Whenever a friendly ANGEL OF DEATH operative is X, its weapons have the Balanced weapon rule. X is the COMBAT DOCTRINE you selected.",
+        "• <b>Devastator Doctrine:</b> Shooting an operative more than 6\" from it.",
+        "• <b>Tactical Doctrine:</b> Shooting an operative within 6\" of it.",
+        "• <b>Assault Doctrine:</b> Fighting or retaliating."
+      ],
+      "keywords": "ANGEL OF DEATH STRATEGY PLOY"
+    },
+    {
+      "id": "ploy_know_no_fear",
+      "category": "Strategy Ploys",
+      "title": "And They Shall Know No Fear",
+      "subtitle": "Strategy Ploy",
+      "rules": [
+        "You can ignore any changes to the stats of friendly ANGEL OF DEATH operatives from being injured (including their weapons' stats)."
+      ],
+      "keywords": "ANGEL OF DEATH STRATEGY PLOY"
+    },
+    {
+      "id": "ploy_adaptive_tactics",
+      "category": "Strategy Ploys",
+      "title": "Adaptive Tactics",
+      "subtitle": "Strategy Ploy",
+      "rules": [
+        "Change your secondary CHAPTER TACTIC. Note this ploy only lasts until the end of the turning point, at which point your original secondary CHAPTER TACTIC returns."
+      ],
+      "keywords": "ANGEL OF DEATH STRATEGY PLOY"
+    },
+    {
+      "id": "ploy_indomitus",
+      "category": "Strategy Ploys",
+      "title": "Indomitus",
+      "subtitle": "Strategy Ploy",
+      "rules": [
+        "Whenever an operative is shooting a friendly ANGEL OF DEATH operative, if you roll two or more fails, you can discard one of them to retain another as a normal success instead."
+      ],
+      "keywords": "ANGEL OF DEATH STRATEGY PLOY"
+    },
+    {
+      "id": "ploy_adjust_doctrine",
+      "category": "Firefight Ploys",
+      "title": "Adjust Doctrine",
+      "subtitle": "Firefight Ploy",
+      "rules": [
+        "Use this firefight ploy during a friendly ANGEL OF DEATH operative's activation, before or after it performs an action. If you've used the Combat Doctrine strategy ploy during this turning point, change the COMBAT DOCTRINE you selected."
+      ],
+      "keywords": "ANGEL OF DEATH FIREFIGHT PLOY"
+    },
+    {
+      "id": "ploy_transhuman",
+      "category": "Firefight Ploys",
+      "title": "Transhuman Physiology",
+      "subtitle": "Firefight Ploy",
+      "rules": [
+        "Use this firefight ploy when an operative is shooting a friendly ANGEL OF DEATH operative, in the Roll Defence Dice step. You can retain one of your normal successes as a critical success instead."
+      ],
+      "keywords": "ANGEL OF DEATH FIREFIGHT PLOY"
+    },
+    {
+      "id": "ploy_shock_assault",
+      "category": "Firefight Ploys",
+      "title": "Shock Assault",
+      "subtitle": "Firefight Ploy",
+      "rules": [
+        "Use this firefight ploy when a friendly ANGEL OF DEATH operative is performing the Fight action during an activation in which it performed the Charge action, at the start of the Resolve Attack Dice step. Until the end of that action:",
+        "• Its melee weapon has the Shock weapon rule.",
+        "• The first time you strike during that sequence, inflict 1 additional damage (to a maximum of 7)."
+      ],
+      "keywords": "ANGEL OF DEATH FIREFIGHT PLOY"
+    },
+    {
+      "id": "ploy_wrath_vengeance",
+      "category": "Firefight Ploys",
+      "title": "Wrath of Vengeance",
+      "subtitle": "Firefight Ploy",
+      "rules": [
+        "Use this firefight ploy when a friendly ANGEL OF DEATH operative is counteracting. It can perform an additional 1AP action for free during that counteraction, but both actions must be different."
+      ],
+      "keywords": "ANGEL OF DEATH FIREFIGHT PLOY"
+    },
+    {
+      "id": "eq_purity_seals",
+      "category": "Faction Equipment",
+      "title": "Purity Seals",
+      "subtitle": "Equipment",
+      "rules": [
+        "Once per turning point, when a friendly ANGEL OF DEATH operative is shooting, fighting or retaliating, if you roll two or more fails, you can discard one of them to retain another as a normal success instead."
+      ],
+      "keywords": "ANGEL OF DEATH FACTION EQUIPMENT"
+    },
+    {
+      "id": "eq_chapter_reliquaries",
+      "category": "Faction Equipment",
+      "title": "Chapter Reliquaries",
+      "subtitle": "Equipment",
+      "rules": [
+        "You can use the Wrath of Vengeance firefight ploy for 0CP if the specified friendly operative has an Engage order."
+      ],
+      "keywords": "ANGEL OF DEATH FACTION EQUIPMENT"
+    },
+    {
+      "id": "eq_tilting_shields",
+      "category": "Faction Equipment",
+      "title": "Tilting Shields",
+      "subtitle": "Equipment",
+      "rules": [
+        "Once per turning point, when a friendly ANGEL OF DEATH operative is fighting or retaliating, after your opponent rolls their attack dice, but before re-rolls, you can use this rule. If you do, your opponent cannot retain attack dice results of less than 6 as critical successes during that sequence (e.g. as a result of the Lethal, Rending or Severe weapon rules)."
+      ],
+      "keywords": "ANGEL OF DEATH FACTION EQUIPMENT"
+    },
+    {
+      "id": "eq_auspex",
+      "category": "Faction Equipment",
+      "title": "Auspex",
+      "subtitle": "Equipment",
+      "rules": [
+        "Once per turning point, when a friendly ANGEL OF DEATH operative performs the Shoot action and you're selecting a valid target, you can use this rule. If you do, until the end of the activation/counteraction, enemy operatives within 8\" of that friendly operative cannot be obscured."
+      ],
+      "keywords": "ANGEL OF DEATH FACTION EQUIPMENT"
+    },
+    {
+      "id": "eq_ammo_cache",
+      "category": "Universal Equipment",
+      "title": "Ammo Cache (1x)",
+      "subtitle": "Equipment",
+      "rules": [
+        "Before the battle, you can set up one of your Ammo Cache markers wholly within your territory. Friendly operatives can perform the following mission action:",
+        "<b>AMMO RESUPPLY (0AP):</b> One of your Ammo Cache markers the active operative controls is used during this turning point. Until the start of the next turning point, whenever this operative is shooting with a weapon from its datacard, you can re-roll one of your attack dice."
+      ],
+      "keywords": "UNIVERSAL EQUIPMENT"
+    },
+    {
+      "id": "eq_razor_wire",
+      "category": "Universal Equipment",
+      "title": "Razor Wire (1x)",
+      "subtitle": "Equipment",
+      "rules": [
+        "Razor wire is Exposed and Obstructing terrain. Before the battle, you can set it up wholly within your territory, on the killzone floor and more than 2\" from other equipment terrain features, access points and Accessible terrain.",
+        "<b>Obstructing:</b> Whenever an operative would cross over this terrain feature within 1\" of it, treat the distance as an additional 1\"."
+      ],
+      "keywords": "UNIVERSAL EQUIPMENT"
+    },
+    {
+      "id": "eq_comms_device",
+      "category": "Universal Equipment",
+      "title": "Comms Device (1x)",
+      "subtitle": "Equipment",
+      "rules": [
+        "Before the battle, you can set up one of your Comms Device markers wholly within your territory. While a friendly operative controls this marker, add 3\" to the distance requirements of its SUPPORT rules that refer to friendly operatives."
+      ],
+      "keywords": "UNIVERSAL EQUIPMENT"
+    },
+    {
+      "id": "eq_mines",
+      "category": "Universal Equipment",
+      "title": "Mines (1x)",
+      "subtitle": "Equipment",
+      "rules": [
+        "Before the battle, you can set up one of your Mines markers wholly within your territory and more than 2\" from other markers, access points and Accessible terrain. The first time that marker is within an operative's control range, remove that marker and inflict D3+3 damage on that operative."
+      ],
+      "keywords": "UNIVERSAL EQUIPMENT"
+    },
+    {
+      "id": "eq_light_barricades",
+      "category": "Universal Equipment",
+      "title": "Light Barricades (2x)",
+      "subtitle": "Equipment",
+      "rules": [
+        "Light barricades are Light terrain, except the feet, which are Insignificant and Exposed. Before the battle, you can set up any of them wholly within your territory, on the killzone floor and more than 2\" from other equipment terrain."
+      ],
+      "keywords": "UNIVERSAL EQUIPMENT"
+    },
+    {
+      "id": "eq_heavy_barricade",
+      "category": "Universal Equipment",
+      "title": "Heavy Barricade (1x)",
+      "subtitle": "Equipment",
+      "rules": [
+        "A heavy barricade is Heavy terrain. Before the battle, you can set it up wholly within 4\" of your drop zone, on the killzone floor and more than 2\" from other equipment terrain features, access points and Accessible terrain."
+      ],
+      "keywords": "UNIVERSAL EQUIPMENT"
+    },
+    {
+      "id": "eq_ladders",
+      "category": "Universal Equipment",
+      "title": "Ladders (2x)",
+      "subtitle": "Equipment",
+      "rules": [
+        "Ladders are Exposed terrain. Set up wholly within territory, upright against terrain at least 2\" tall. An operative can move through ladders as if they aren't there (but cannot finish on them), or climb them. Once per action, whenever an operative is climbing this terrain feature, treat the vertical distance as 1\"."
+      ],
+      "keywords": "UNIVERSAL EQUIPMENT"
+    },
+    {
+      "id": "eq_portable_barricade",
+      "category": "Universal Equipment",
+      "title": "Portable Barricade (1x)",
+      "subtitle": "Equipment",
+      "rules": [
+        "Light, Protective and Portable terrain. Protective: While an operative is in cover from this terrain feature, improve its Save stat by 1 (to max 2+).",
+        "Portable: Only provides cover while an operative is connected to it and if the shield is intervening. Operatives connected to the inside can perform <b>MOVE WITH BARRICADE (1AP)</b>: Move no more than Move stat minus 2\". Before move, remove barricade. After move, set it up connected again."
+      ],
+      "keywords": "UNIVERSAL EQUIPMENT"
+    },
+    {
+      "id": "eq_utility_grenades",
+      "category": "Universal Equipment",
+      "title": "Utility Grenades",
+      "subtitle": "Equipment",
+      "rules": [
+        "Select two utility grenades (2 smoke, 2 stun, or 1 of each).",
+        "<b>STUN GRENADE (1AP):</b> Select one enemy operative visible and within 6\". That operative and each other within 1\" takes a stun test (Roll D6: on 3+, subtract 1 from APL stat until end of next activation).",
+        "<b>SMOKE GRENADE (1AP):</b> Place marker within 6\". Creates area of smoke 1\" horizontally and unlimited height vertically. Operatives wholly within are obscured to operatives more than 2\" from it, and vice versa. Ignore Piercing weapon rule when shooting into smoke unless within 2\"."
+      ],
+      "keywords": "UNIVERSAL EQUIPMENT"
+    },
+    {
+      "id": "eq_explosive_grenades",
+      "category": "Universal Equipment",
+      "title": "Explosive Grenades",
+      "subtitle": "Equipment",
+      "weapons": [
+        { "name": "Frag grenade", "atk": "4", "hit": "4+", "dmg": "2/4", "rules": "Range 6\", Blast 2\", Saturate" },
+        { "name": "Krak grenade", "atk": "4", "hit": "4+", "dmg": "4/5", "rules": "Range 6\", Piercing 1, Saturate" }
+      ],
+      "rules": [
+        "Select two explosive grenades (2 frag, 2 krak, or 1 of each). Each selection is a ranged weapon your operatives can use, but your kill team can only use that weapon a total number of times during the battle equal to your selection."
+      ],
+      "keywords": "UNIVERSAL EQUIPMENT"
+    }
+  ]
+}
