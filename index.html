@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0">
+ <title>Kill Team Landscape Dashboard</title>
+ <style>
+ :root {
+ --bg-dark: #121316;
+ --panel-bg: #1c1e24;
+ --card-bg: #252830;
+ --accent-orange: #d9531e;
+ --accent-gold: #f39c12;
+ --text-light: #eceef1;
+ --text-dim: #9aa0ac;
+ --border-color: #333742;
+ --pinned-bg: #1e222d;
+ --header-height: 44px;
+ }
+
+ html {
+ font-size: 100%;
+ transition: font-size 0.2s ease;
+ }
+
+ * {
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
+ user-select: none;
+ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+ -webkit-tap-highlight-color: transparent;
+ }
+
+ body {
+ background-color: var(--bg-dark);
+ color: var(--text-light);
+ min-height: 100vh;
+ width: 100vw;
+ overflow-x: hidden;
+ display: flex;
+ flex-direction: column;
+ }
+
+ /* Compact Header */
+ header {
+ background-color: var(--panel-bg);
+ border-bottom: 2px solid var(--accent-orange);
+ padding: 0 15px;
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ height: var(--header-height);
+ flex-shrink: 0;
+ position: sticky;
+ top: 0;
+ z-index: 50;
+ }
+
+ header h1 {
+ font-size: 1.1rem;
+ letter-spacing: 0.5px;
+ text-transform: uppercase;
+ color: var(--accent-orange);
+ display: flex;
+ align-items: center;
+ gap: 8px;
+ white-space: nowrap;
+ }
+
+ .header-actions {
+ display: flex;
+ align-items: center;
+ gap: 8px;
+ }
+
+ .btn {
+ background-color: var(--border-color);
+ color: #fff;
+ border: 1px solid #555;
+ padding: 6px 10px;
+ border-radius: 6px;
+ font-size: 0.8rem;
+ cursor: pointer;
+ transition: background 0.2s;
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+ gap: 5px;
+ height: 32px;
+ text-decoration: none;
+ }
+
+ .btn-icon {
+ font-weight: bold;
+ padding: 6px 12px;
+ }
+
+ .btn:active, .btn:hover { background-color: #444; }
+ .btn-primary { background-color: var(--accent-orange); border-color: var(--accent-orange); }
+ .btn-primary:active, .btn-primary:hover { background-color: #b84315; }
+
+ /* Dropdown styling to match buttons */
+ .faction-select {
+ background-color: var(--bg-dark);
+ color: var(--accent-gold);
+ border: 1px solid var(--accent-gold);
+ outline: none;
+ max-width: 180px;
+ padding: 0 10px;
+ border-radius: 6px;
+ font-size: 0.8rem;
+ height: 32px;
+ cursor: pointer;
+ }
+
+ .faction-select option {
+ background-color: var(--panel-bg);
+ color: var(--text-light);
+ }
+
+ /* Dashboard Layout */
+ .dashboard {
+ display: flex;
+ height: calc(100vh - var(--header-height));
+ width: 100vw;
+ overflow: hidden;
+ position: relative;
+ }
+
+ /* LEFT COLUMN */
+ .sidebar-left {
+ width: 16.25rem;
+ background-color: var(--panel-bg);
+ border-right: 1px solid var(--border-color);
+ display: flex;
+ flex-direction: column;
+ flex-shrink: 0;
+ height: 100%;
+ }
+
+ .search-box {
+ padding: 0.5rem 0.75rem;
+ border-bottom: 1px solid var(--border-color);
+ flex-shrink: 0;
+ }
+
+ .search-box input {
+ width: 100%;
+ padding: 0.5rem;
+ border-radius: 6px;
+ border: 1px solid var(--border-color);
+ background: var(--bg-dark);
+ color: #fff;
+ font-size: 0.9rem;
+ }
+
+ .nav-list {
+ flex: 1;
+ overflow-y: auto;
+ padding: 0.5rem;
+ }
+
+ .category-title {
+ font-size: 0.75rem;
+ text-transform: uppercase;
+ color: var(--accent-gold);
+ font-weight: bold;
+ margin: 0.6rem 0.4rem 0.25rem 0.4rem;
+ letter-spacing: 0.5px;
+ }
+
+ .nav-item {
+ padding: 0.6rem;
+ border-radius: 6px;
+ margin-bottom: 2px;
+ background-color: transparent;
+ color: var(--text-dim);
+ font-size: 0.9rem;
+ cursor: pointer;
+ transition: all 0.2s;
+ min-height: 2.5rem; 
+ display: flex;
+ align-items: center;
+ }
+
+ .nav-item:active, .nav-item.active {
+ background-color: var(--accent-orange);
+ color: #fff;
+ font-weight: bold;
+ }
+
+ /* MIDDLE COLUMN */
+ .main-content {
+ flex: 1;
+ padding: 1rem;
+ overflow-y: auto;
+ background-color: var(--bg-dark);
+ display: flex;
+ flex-direction: column;
+ min-width: 0; 
+ height: 100%;
+ }
+
+ .card-detail {
+ background-color: var(--card-bg);
+ border: 1px solid var(--border-color);
+ border-radius: 8px;
+ padding: 1rem;
+ box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+ margin-bottom: 2rem;
+ }
+
+ .card-header {
+ display: flex;
+ justify-content: space-between;
+ align-items: flex-start;
+ border-bottom: 2px solid var(--accent-orange);
+ padding-bottom: 0.5rem;
+ margin-bottom: 0.75rem;
+ flex-wrap: wrap;
+ gap: 10px;
+ }
+
+ .card-title h2 { font-size: 1.3rem; color: #fff; }
+ .card-subtitle { font-size: 0.8rem; color: var(--accent-gold); text-transform: uppercase; margin-top: 2px; }
+
+ .stats-grid {
+ display: grid;
+ grid-template-columns: repeat(4, 1fr);
+ gap: 0.5rem;
+ margin-bottom: 0.75rem;
+ background: var(--panel-bg);
+ padding: 0.5rem;
+ border-radius: 6px;
+ text-align: center;
+ }
+
+ .stat-box .label { font-size: 0.65rem; color: var(--text-dim); text-transform: uppercase; }
+ .stat-box .value { font-size: 1.1rem; font-weight: bold; color: var(--accent-gold); }
+
+ .table-container {
+ width: 100%;
+ overflow-x: auto;
+ margin: 0.6rem 0;
+ -webkit-overflow-scrolling: touch;
+ }
+
+ table {
+ width: 100%;
+ border-collapse: collapse;
+ font-size: 0.85rem;
+ min-width: 28rem;
+ }
+
+ th, td { padding: 0.5rem; text-align: left; border-bottom: 1px solid var(--border-color); }
+ th { background-color: var(--panel-bg); color: var(--accent-gold); text-transform: uppercase; font-size: 0.7rem; }
+ 
+ .rule-text { font-size: 0.9rem; line-height: 1.4; color: var(--text-light); margin-bottom: 0.6rem; }
+ .keywords { margin-top: 0.6rem; font-size: 0.7rem; color: var(--text-dim); border-top: 1px dashed var(--border-color); padding-top: 0.5rem; text-transform: uppercase; }
+
+ /* RIGHT COLUMN */
+ .sidebar-right {
+ width: 17.5rem;
+ background-color: var(--pinned-bg);
+ border-left: 1px solid var(--border-color);
+ display: flex;
+ flex-direction: column;
+ flex-shrink: 0;
+ padding: 0.6rem;
+ height: 100%;
+ overflow: hidden;
+ transition: transform 0.3s ease;
+ }
+
+ .pinned-header {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding-bottom: 0.5rem;
+ border-bottom: 1px solid var(--border-color);
+ margin-bottom: 0.2rem;
+ flex-shrink: 0;
+ }
+
+ .pinned-header h3 { font-size: 0.85rem; text-transform: uppercase; color: var(--accent-gold); }
+ .pinned-count { font-size: 0.75rem; background-color: var(--panel-bg); padding: 2px 8px; border-radius: 10px; }
+ .close-drawer-btn { display: none; background: none; border: none; color: #fff; font-size: 1.2rem; cursor: pointer; }
+
+ .pinned-list {
+ flex: 1;
+ overflow-y: auto;
+ display: flex;
+ flex-direction: column;
+ gap: 0.5rem;
+ padding-bottom: 2rem;
+ }
+ 
+ .pinned-category-divider {
+ font-size: 0.65rem;
+ color: var(--accent-gold);
+ text-transform: uppercase;
+ border-bottom: 1px solid var(--border-color);
+ padding-bottom: 2px;
+ margin-top: 6px;
+ margin-bottom: 2px;
+ letter-spacing: 0.5px;
+ }
+
+ .pinned-card {
+ background-color: var(--card-bg);
+ border: 1px solid var(--border-color);
+ border-left: 4px solid var(--accent-orange);
+ border-radius: 6px;
+ padding: 0.5rem;
+ position: relative;
+ cursor: pointer;
+ transition: transform 0.1s, border-color 0.2s;
+ }
+
+ .pinned-card:active { transform: scale(0.98); }
+ .pinned-card h4 { font-size: 0.85rem; color: #fff; margin-bottom: 4px; padding-right: 25px; }
+ .pinned-card .unpin-btn { position: absolute; top: 5px; right: 5px; background: none; border: none; color: var(--text-dim); font-size: 1.2rem; cursor: pointer; width: 30px; height: 30px; }
+ .pinned-card .mini-body { font-size: 0.75rem; color: var(--text-dim); line-height: 1.3; }
+
+ /* MODAL POPUP FOR PINNED CARDS */
+ .modal-overlay {
+ display: none;
+ position: fixed;
+ top: 0; left: 0; right: 0; bottom: 0;
+ background: rgba(0, 0, 0, 0.75);
+ z-index: 100;
+ justify-content: center;
+ align-items: center;
+ padding: 1rem;
+ backdrop-filter: blur(3px);
+ }
+
+ .modal-overlay.open {
+ display: flex;
+ }
+
+ .modal-card {
+ background-color: var(--card-bg);
+ border: 2px solid var(--accent-orange);
+ border-radius: 10px;
+ padding: 1.25rem;
+ max-width: 37.5rem;
+ width: 100%;
+ max-height: 90vh;
+ overflow-y: auto;
+ position: relative;
+ box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+ }
+
+ .modal-close-btn {
+ position: absolute;
+ top: 0.5rem;
+ right: 1rem;
+ background: none;
+ border: none;
+ color: var(--text-light);
+ font-size: 1.8rem;
+ cursor: pointer;
+ z-index: 2;
+ }
+
+ .overlay {
+ display: none;
+ position: absolute;
+ top: 0; left: 0; right: 0; bottom: 0;
+ background: rgba(0,0,0,0.5);
+ z-index: 9;
+ }
+
+ .empty-state { text-align: center; padding: 2rem 1rem; color: var(--text-dim); }
+
+ /* RESPONSIVE BREAKPOINTS */
+ @media (max-width: 950px) {
+ .sidebar-right {
+ position: fixed;
+ top: var(--header-height);
+ right: 0;
+ bottom: 0;
+ z-index: 10;
+ transform: translateX(100%);
+ box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+ }
+ .sidebar-right.open { transform: translateX(0); }
+ .close-drawer-btn { display: block; }
+ .overlay.open { display: block; }
+ #togglePinsBtn { display: flex !important; }
+ }
+
+ @media (min-width: 951px) {
+ #togglePinsBtn { display: none !important; }
+ }
+ </style>
+</head>
+<body>
+
+ <header>
+ <h1><span>⚔️</span> KT Dashboard</h1>
+ <div class="header-actions">
+ <!-- SCALING CONTROLS -->
+ <div style="display:flex; gap:2px; margin-right: 5px;">
+ <button class="btn btn-icon" onclick="adjustZoom(-10)" title="Make Text Smaller">Scale -</button>
+ <button class="btn btn-icon" onclick="adjustZoom(10)" title="Make Text Larger">Scale +</button>
+ </div>
+
+ <!-- GITHUB REPOSITORY FACTION DROPDOWN -->
+ <select id="factionDropdown" class="faction-select" onchange="switchFaction(this.value)">
+ <option value="" disabled selected>Loading Factions...</option>
+ </select>
+
+ <button class="btn btn-primary" id="togglePinsBtn" style="display:none;" onclick="toggleDrawer()">
+ 📌 Pins (<span id="btnPinCount">0</span>)
+ </button>
+ </div>
+ </header>
+
+ <div class="dashboard">
+ <div class="overlay" id="drawerOverlay" onclick="toggleDrawer()"></div>
+
+ <!-- Left Nav -->
+ <div class="sidebar-left">
+ <div class="search-box">
+ <input type="text" id="searchInput" placeholder="Search rules..." onkeyup="filterNav()">
+ </div>
+ <div class="nav-list" id="navList"></div>
+ </div>
+
+ <!-- Main Content -->
+ <div class="main-content" id="mainContent">
+ <div class="empty-state">
+ <h2>Loading Factions from Repository...</h2>
+ </div>
+ </div>
+
+ <!-- Right Sidebar / Mobile Drawer -->
+ <div class="sidebar-right" id="rightSidebar">
+ <div class="pinned-header">
+ <h3>Quick Reference</h3>
+ <div style="display: flex; align-items: center; gap: 10px;">
+ <span class="pinned-count" id="pinCount">0 / 8</span>
+ <button class="close-drawer-btn" onclick="toggleDrawer()">&times;</button>
+ </div>
+ </div>
+ <div class="pinned-list" id="pinnedList">
+ <div style="text-align:center; color:var(--text-dim); font-size:0.85rem; margin-top:20px;">
+ No cards pinned yet.
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <!-- FULL RECORD MODAL POPUP -->
+ <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+ <div class="modal-card" onclick="event.stopPropagation()">
+ <button class="modal-close-btn" onclick="closeModal()">&times;</button>
+ <div id="modalCardBody"></div>
+ </div>
+ </div>
+
+ <script>
+ // REPOSITORY & DATA VARIABLES
+ let allFactions = {};
+ let activeFactionName = "";
+ 
+ let rulesDatabase = [];
+ let selectedId = null;
+ let pinnedIds = [];
+ 
+ // ZOOM SCALING
+ let currentZoom = 100;
+ function adjustZoom(amount) {
+ currentZoom += amount;
+ if (currentZoom < 50) currentZoom = 50; 
+ if (currentZoom > 140) currentZoom = 140;
+ document.documentElement.style.fontSize = currentZoom + '%';
+ }
+
+ function toggleDrawer() {
+ document.getElementById('rightSidebar').classList.toggle('open');
+ document.getElementById('drawerOverlay').classList.toggle('open');
+ }
+
+ // --- FETCH FACTIONS FROM GITHUB REPOSITORY ON LOAD ---
+ window.onload = async function() {
+ await fetchFactionList();
+ };
+
+ async function fetchFactionList() {
+ try {
+ const response = await fetch('factions.json');
+ const data = await response.json();
+ 
+ const dropdown = document.getElementById('factionDropdown');
+ dropdown.innerHTML = '<option value="" disabled selected>Select Kill Team</option>';
+
+ for (const item of data.factions) {
+ const res = await fetch(item.path);
+ const factionData = await res.json();
+ 
+ if (factionData.factionName && factionData.rules) {
+ allFactions[factionData.factionName] = factionData.rules;
+ 
+ const opt = document.createElement('option');
+ opt.value = factionData.factionName;
+ opt.text = factionData.factionName;
+ dropdown.appendChild(opt);
+ }
+ }
+
+ const names = Object.keys(allFactions);
+ if (names.length > 0) {
+ switchFaction(names[0]);
+ } else {
+ renderEmptyState();
+ }
+ } catch (error) {
+ console.error("Error loading factions from repository:", error);
+ document.getElementById('mainContent').innerHTML = `
+ <div class="empty-state">
+ <h2>Failed to Load Factions</h2>
+ <p>Make sure your 'factions.json' and subfolder files are correctly configured and uploaded to GitHub.</p>
+ </div>`;
+ }
+ }
+
+ function switchFaction(name) {
+ if (!allFactions[name]) return;
+ 
+ activeFactionName = name;
+ rulesDatabase = allFactions[name];
+ pinnedIds = []; // clear pins for new faction
+ selectedId = rulesDatabase.length > 0 ? rulesDatabase[0].id : null;
+ 
+ document.getElementById('factionDropdown').value = name;
+ renderNav();
+ renderMainContent();
+ renderPinned();
+ 
+ document.getElementById('rightSidebar').classList.remove('open');
+ document.getElementById('drawerOverlay').classList.remove('open');
+ }
+
+ function renderEmptyState() {
+ document.getElementById('navList').innerHTML = '';
+ document.getElementById('pinnedList').innerHTML = '<div style="text-align:center; color:var(--text-dim); font-size:0.85rem; margin-top:20px;">No cards pinned yet.</div>';
+ document.getElementById('pinCount').innerText = '0 / 8';
+ document.getElementById('btnPinCount').innerText = '0';
+ document.getElementById('mainContent').innerHTML = `
+ <div class="empty-state">
+ <h2>No Kill Teams Found</h2>
+ <p style="margin-top: 10px;">Check your factions.json configuration on GitHub.</p>
+ </div>`;
+ }
+
+ // --- RENDERING FUNCTIONS ---
+ function renderNav() {
+ const navList = document.getElementById('navList');
+ navList.innerHTML = '';
+ if (rulesDatabase.length === 0) return;
+
+ const categories = [...new Set(rulesDatabase.map(item => item.category))];
+
+ categories.forEach(cat => {
+ const catHeader = document.createElement('div');
+ catHeader.className = 'category-title';
+ catHeader.innerText = cat;
+ navList.appendChild(catHeader);
+
+ const items = rulesDatabase.filter(item => item.category === cat);
+ items.forEach(item => {
+ const navItem = document.createElement('div');
+ navItem.className = `nav-item ${item.id === selectedId ? 'active' : ''}`;
+ navItem.setAttribute('data-title', item.title.toLowerCase());
+ navItem.innerHTML = `<span>${item.title}</span>`;
+ navItem.onclick = () => selectRecord(item.id);
+ navList.appendChild(navItem);
+ });
+ });
+ }
+
+ function filterNav() {
+ const query = document.getElementById('searchInput').value.toLowerCase();
+ const items = document.querySelectorAll('.nav-item');
+ items.forEach(item => {
+ const title = item.getAttribute('data-title');
+ item.style.display = title.includes(query) ? 'flex' : 'none';
+ });
+ }
+
+ function selectRecord(id) {
+ selectedId = id;
+ renderNav();
+ renderMainContent();
+ document.getElementById('rightSidebar').classList.remove('open');
+ document.getElementById('drawerOverlay').classList.remove('open');
+ }
+
+ function renderMainContent() {
+ const main = document.getElementById('mainContent');
+ if (rulesDatabase.length === 0 || !selectedId) {
+ renderEmptyState();
+ return;
+ }
+
+ const data = rulesDatabase.find(i => i.id === selectedId);
+ if (!data) return;
+
+ const isPinned = pinnedIds.includes(data.id);
+ const canPin = pinnedIds.length < 8;
+
+ let statsHtml = '';
+ if (data.stats) {
+ statsHtml = `
+ <div class="stats-grid">
+ <div class="stat-box"><div class="label">APL</div><div class="value">${data.stats.APL || '-'}</div></div>
+ <div class="stat-box"><div class="label">MOVE</div><div class="value">${data.stats.Move || '-'}</div></div>
+ <div class="stat-box"><div class="label">SAVE</div><div class="value">${data.stats.Save || '-'}</div></div>
+ <div class="stat-box"><div class="label">WOUNDS</div><div class="value">${data.stats.Wounds || '-'}</div></div>
+ </div>
+ `;
+ }
+
+ let weaponsHtml = '';
+ if (data.weapons && data.weapons.length > 0) {
+ weaponsHtml = `
+ <div class="table-container">
+ <table>
+ <thead>
+ <tr>
+ <th>Weapon</th>
+ <th>Atk</th>
+ <th>Hit</th>
+ <th>Dmg</th>
+ <th>Special Rules</th>
+ </tr>
+ </thead>
+ <tbody>
+ ${data.weapons.map(w => `
+ <tr>
+ <td><b>${w.name}</b></td>
+ <td>${w.atk || '-'}</td>
+ <td>${w.hit || '-'}</td>
+ <td>${w.dmg || '-'}</td>
+ <td>${w.rules || '-'}</td>
+ </tr>
+ `).join('')}
+ </tbody>
+ </table>
+ </div>
+ `;
+ }
+
+ let rulesHtml = data.rules ? data.rules.map(r => `<p class="rule-text">${r}</p>`).join('') : '';
+ let keywordsHtml = data.keywords ? `<div class="keywords">${data.keywords}</div>` : '';
+
+ main.innerHTML = `
+ <div class="card-detail">
+ <div class="card-header">
+ <div class="card-title">
+ <h2>${data.title}</h2>
+ <div class="card-subtitle">${data.subtitle || ''}</div>
+ </div>
+ <button class="btn ${isPinned ? '' : 'btn-primary'}" onclick="togglePin('${data.id}')" ${!isPinned && !canPin ? 'disabled' : ''}>
+ ${isPinned ? '📌 Unpin' : '📌 Pin Card'}
+ </button>
+ </div>
+ ${statsHtml}
+ ${weaponsHtml}
+ ${rulesHtml}
+ ${keywordsHtml}
+ </div>
+ `;
+ }
+
+ function togglePin(id) {
+ const index = pinnedIds.indexOf(id);
+ if (index > -1) {
+ pinnedIds.splice(index, 1);
+ } else {
+ if (pinnedIds.length < 8) pinnedIds.push(id);
+ }
+ renderMainContent();
+ renderPinned();
+ }
+
+ function renderPinned() {
+ const list = document.getElementById('pinnedList');
+ document.getElementById('pinCount').innerText = `${pinnedIds.length} / 8`;
+ document.getElementById('btnPinCount').innerText = pinnedIds.length;
+
+ if (pinnedIds.length === 0) {
+ list.innerHTML = `<div style="text-align:center; color:var(--text-dim); font-size:0.85rem; margin-top:20px;">No cards pinned yet.</div>`;
+ return;
+ }
+
+ list.innerHTML = '';
+ 
+ const pinnedItems = pinnedIds.map(id => rulesDatabase.find(r => r.id === id)).filter(Boolean);
+ const categories = [...new Set(pinnedItems.map(item => item.category))];
+ 
+ categories.forEach(cat => {
+ const divider = document.createElement('div');
+ divider.className = 'pinned-category-divider';
+ divider.innerText = cat;
+ list.appendChild(divider);
+ 
+ const catItems = pinnedItems.filter(item => item.category === cat);
+ catItems.forEach(item => {
+ const card = document.createElement('div');
+ card.className = 'pinned-card';
+ card.onclick = () => openModal(item.id);
+
+ let summary = '';
+ if (item.stats) {
+ summary += `<b>W:</b> ${item.stats.Wounds || '-'} | <b>Sv:</b> ${item.stats.Save || '-'} | <b>APL:</b> ${item.stats.APL || '-'}<br>`;
+ }
+ if (item.rules && item.rules.length > 0) {
+ let plainText = item.rules[0].replace(/<[^>]+>/g, '');
+ summary += plainText.substring(0, 65) + '...';
+ }
+
+ card.innerHTML = `
+ <h4>${item.title}</h4>
+ <button class="unpin-btn" onclick="event.stopPropagation(); togglePin('${item.id}')">&times;</button>
+ <div class="mini-body">${summary}</div>
+ `;
+ list.appendChild(card);
+ });
+ });
+ }
+
+ function openModal(id) {
+ const data = rulesDatabase.find(i => i.id === id);
+ if (!data) return;
+
+ const modalBody = document.getElementById('modalCardBody');
+
+ let statsHtml = '';
+ if (data.stats) {
+ statsHtml = `
+ <div class="stats-grid">
+ <div class="stat-box"><div class="label">APL</div><div class="value">${data.stats.APL || '-'}</div></div>
+ <div class="stat-box"><div class="label">MOVE</div><div class="value">${data.stats.Move || '-'}</div></div>
+ <div class="stat-box"><div class="label">SAVE</div><div class="value">${data.stats.Save || '-'}</div></div>
+ <div class="stat-box"><div class="label">WOUNDS</div><div class="value">${data.stats.Wounds || '-'}</div></div>
+ </div>
+ `;
+ }
+
+ let weaponsHtml = '';
+ if (data.weapons && data.weapons.length > 0) {
+ weaponsHtml = `
+ <div class="table-container">
+ <table>
+ <thead>
+ <tr>
+ <th>Weapon</th>
+ <th>Atk</th>
+ <th>Hit</th>
+ <th>Dmg</th>
+ <th>Special Rules</th>
+ </tr>
+ </thead>
+ <tbody>
+ ${data.weapons.map(w => `
+ <tr>
+ <td><b>${w.name}</b></td>
+ <td>${w.atk || '-'}</td>
+ <td>${w.hit || '-'}</td>
+ <td>${w.dmg || '-'}</td>
+ <td>${w.rules || '-'}</td>
+ </tr>
+ `).join('')}
+ </tbody>
+ </table>
+ </div>
+ `;
+ }
+
+ let rulesHtml = data.rules ? data.rules.map(r => `<p class="rule-text">${r}</p>`).join('') : '';
+ let keywordsHtml = data.keywords ? `<div class="keywords">${data.keywords}</div>` : '';
+
+ modalBody.innerHTML = `
+ <div class="card-header" style="margin-top: 5px;">
+ <div class="card-title">
+ <h2>${data.title}</h2>
+ <div class="card-subtitle">${data.subtitle || ''}</div>
+ </div>
+ </div>
+ ${statsHtml}
+ ${weaponsHtml}
+ ${rulesHtml}
+ ${keywordsHtml}
+ `;
+
+ document.getElementById('modalOverlay').classList.add('open');
+ }
+
+ function closeModal(e) {
+ if (e && e.target !== document.getElementById('modalOverlay') && !e.target.classList.contains('modal-close-btn')) {
+ return;
+ }
+ document.getElementById('modalOverlay').classList.remove('open');
+ }
+ </script>
+</body>
+</html>
