@@ -1,0 +1,7 @@
+{
+  "factions": [
+    { "name": "Exaction Squad", "path": "factions/exaction-squad.json" },
+    { "name": "Angels of Death", "path": "factions/angels-of-death.json" }
+  ]
+}
+
