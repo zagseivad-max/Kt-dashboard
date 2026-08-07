@@ -3,7 +3,8 @@
     { "name": "Angels of Death", "path": "factions/angels-of-death.json" }, 
     { "name": "Tempestus Aquilons", "path": "factions/tempestus-aquilons.json" }, 
     { "name": "Kasrkin", "path": "factions/kasrkin.json" }, 
-    { "name": "Celestian Insidiants", "path": "factions/celestian-insidiants.json" } 
+    { "name": "Celestian Insidiants", "path": "factions/celestian-insidiants.json" }, 
+    { "name": "Plague Marines", "path": "factions/plague-marines.json" } 
   ]
 }
 
