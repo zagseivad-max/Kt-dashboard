@@ -19,7 +19,7 @@
  }
 
  html {
- font-size: 100%;
+ font-size: 75%; /* Default changed to zoomed out view */
  transition: font-size 0.2s ease;
  }
 
@@ -471,8 +471,8 @@
  let selectedId = null;
  let pinnedIds = [];
  
- // ZOOM SCALING
- let currentZoom = 100;
+ // ZOOM SCALING (Default set to 75% for zoomed-out view)
+ let currentZoom = 75;
  function adjustZoom(amount) {
  currentZoom += amount;
  if (currentZoom < 50) currentZoom = 50; 
@@ -499,7 +499,9 @@
  dropdown.innerHTML = '<option value="" disabled selected>Select Kill Team</option>';
 
  for (const item of data.factions) {
+ try {
  const res = await fetch(item.path);
+ if (!res.ok) continue; // Skip broken or missing JSON files safely
  const factionData = await res.json();
  
  if (factionData.factionName && factionData.rules) {
@@ -509,6 +511,9 @@
  opt.value = factionData.factionName;
  opt.text = factionData.factionName;
  dropdown.appendChild(opt);
+ }
+ } catch (err) {
+ console.warn("Failed to load faction file:", item.path, err);
  }
  }
 
@@ -669,7 +674,7 @@
  ${isPinned ? '📌 Unpin' : '📌 Pin Card'}
  </button>
  </div>
- ${statsHtml}
+ ${statsStatsHtml = statsHtml}
  ${weaponsHtml}
  ${rulesHtml}
  ${keywordsHtml}
