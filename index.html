@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Updated Viewport: Disables native double-tap-to-zoom and pinch-to-zoom in favor of the app's internal scaling tools -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Kill Team Landscape Dashboard</title>
@@ -18,7 +17,6 @@
             --pinned-bg: #1e222d;
             --header-height: 44px;
             
-            /* Dynamic Tracker Width Variable */
             --tracker-width: 230px;
         }
 
@@ -330,7 +328,7 @@
 
         /* SCORE TRACKER OVERLAY */
         .score-tracker {
-            position: relative; /* Integrates smoothly into the flex layout */
+            position: relative; 
             flex-shrink: 0;
             height: 100%; 
             width: var(--tracker-width); 
@@ -338,14 +336,13 @@
             border-left: 2px solid var(--border-color);
             display: flex;
             flex-direction: column;
-            transition: margin-right 0.3s ease, width 0.3s ease; /* Transitions the margin out instead of a transform */
+            transition: margin-right 0.3s ease, width 0.3s ease; 
             box-shadow: -5px 0 15px rgba(0,0,0,0.5);
             z-index: 90; 
             margin-right: 0; 
         }
 
         .score-tracker.collapsed {
-            /* Pushes the tracker completely outside the right bound of the screen, pulling the pinned cards back with it */
             margin-right: calc(-1 * var(--tracker-width));
         }
 
@@ -453,7 +450,7 @@
             display: flex;
             flex-direction: column;
             gap: 6px;
-            min-width: 110px; /* Narrowed to allow a more compact footprint */
+            min-width: 110px; 
         }
 
         .player-title {
@@ -491,14 +488,14 @@
             border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 4px;
             color: var(--text-dim);
-            font-size: 1rem; /* Scaled down */
+            font-size: 1rem; 
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 28px; /* Narrowed height */
-            min-width: 24px; /* Narrowed width */
-            touch-action: manipulation; /* Prevents double-tap zooming on buttons completely */
+            min-height: 28px; 
+            min-width: 24px; 
+            touch-action: manipulation; 
         }
 
         .btn-inc:active {
@@ -574,8 +571,8 @@
 
         .empty-state { text-align: center; padding: 2rem 1rem; color: var(--text-dim); }
 
-        /* RESPONSIVE BREAKPOINTS */
-        @media (max-width: 950px) {
+        /* RESPONSIVE BREAKPOINTS (Optimized for small phone screens vs tablets/PCs) */
+        @media (max-width: 768px) {
             .sidebar-right {
                 position: fixed;
                 top: var(--header-height);
@@ -590,7 +587,6 @@
             .overlay.open { display: block; }
             #togglePinsBtn { display: flex !important; }
             
-            /* Fallback to overlap functionality for phones where sharing screen space isn't viable */
             .score-tracker {
                 position: fixed;
                 top: var(--header-height);
@@ -603,7 +599,7 @@
             }
         }
 
-        @media (min-width: 951px) {
+        @media (min-width: 769px) {
             #togglePinsBtn { display: none !important; }
         }
     </style>
@@ -739,7 +735,7 @@
         let turnValue = 1;
         let playerCount = 2; // Defaults to 2
         const playerState = {};
-        const BASE_COLUMN_WIDTH = 125; // Adjusted down for narrower buttons, keeping UI tight
+        const BASE_COLUMN_WIDTH = 125; 
         const TRACKER_PADDING = 20;
 
         const trackerFields = [
