@@ -132,7 +132,7 @@
 
         /* LEFT COLUMN */
         .sidebar-left {
-            width: 16.25rem;
+            width: 18.5rem; /* Slightly widened to accommodate the new track header nicely */
             background-color: var(--panel-bg);
             border-right: 1px solid var(--border-color);
             display: flex;
@@ -164,17 +164,32 @@
             padding-bottom: 3rem; 
         }
 
+        .category-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0.6rem 0.4rem 0.25rem 0.4rem;
+            padding-right: 4px;
+        }
+
         .category-title {
             font-size: 0.75rem;
             text-transform: uppercase;
             color: var(--accent-gold);
             font-weight: bold;
-            margin: 0.6rem 0.4rem 0.25rem 0.4rem;
+            letter-spacing: 0.5px;
+        }
+
+        .category-track-header {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            font-weight: bold;
             letter-spacing: 0.5px;
         }
 
         .nav-item {
-            padding: 0.6rem;
+            padding: 0.5rem 0.6rem;
             border-radius: 6px;
             margin-bottom: 2px;
             background-color: transparent;
@@ -184,7 +199,25 @@
             transition: all 0.2s;
             min-height: 2.5rem; 
             display: flex;
+            justify-content: space-between;
             align-items: center;
+        }
+
+        .nav-item-content {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .nav-item-actions {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            flex-shrink: 0;
+            margin-left: 4px;
         }
 
         .nav-item:active, .nav-item.active {
@@ -192,6 +225,101 @@
             color: #fff;
             font-weight: bold;
         }
+
+        .nav-item.active .track-add-btn {
+            border-color: #fff;
+            color: #fff;
+        }
+
+        .track-add-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: var(--accent-gold);
+            border-radius: 4px;
+            width: 22px;
+            height: 22px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            touch-action: manipulation;
+        }
+
+        .track-add-btn:active {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* TRACKER SUB-ROW STYLING */
+        .nav-tracker-subrow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.3);
+            border-left: 3px solid var(--accent-gold);
+            border-radius: 4px;
+            padding: 4px 6px;
+            margin: 2px 0 4px 10px;
+            font-size: 0.8rem;
+        }
+
+        .subrow-title {
+            color: var(--text-light);
+            font-weight: 500;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 95px;
+        }
+
+        .subrow-controls {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .subrow-btn {
+            background: var(--border-color);
+            border: none;
+            color: #fff;
+            width: 18px;
+            height: 18px;
+            border-radius: 3px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            touch-action: manipulation;
+        }
+
+        .subrow-btn:active { background: #555; }
+
+        .subrow-val {
+            color: var(--accent-orange);
+            font-weight: bold;
+            min-width: 18px;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        .subrow-val.incapacitated {
+            color: #ff4d4d;
+            font-size: 0.65rem;
+            text-transform: uppercase;
+        }
+
+        .subrow-del {
+            background: transparent;
+            border: none;
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            cursor: pointer;
+            padding: 0 2px;
+        }
+        .subrow-del:hover { color: #ff4d4d; }
 
         /* MIDDLE COLUMN */
         .main-content {
@@ -571,7 +699,7 @@
 
         .empty-state { text-align: center; padding: 2rem 1rem; color: var(--text-dim); }
 
-        /* RESPONSIVE BREAKPOINTS (Optimized for small phone screens vs tablets/PCs) */
+        /* RESPONSIVE BREAKPOINTS */
         @media (max-width: 768px) {
             .sidebar-right {
                 position: fixed;
@@ -708,6 +836,10 @@
         let selectedId = null;
         let pinnedIds = [];
         
+        // ROSTER / WOUND TRACKING STORAGE
+        let rosterTrackers = []; // Stores objects like { id: uniqueKey, sourceId: originalCardId, title: 'Name #1', currentWounds: 12, maxWounds: 12 }
+        let trackerCounter = 1;
+
         // HARDCODED UNIVERSAL EQUIPMENT
         const universalEquipment = [
             { id: 'eq_ammo_cache', category: 'Universal Equipment', title: 'Ammo Cache (1x)', subtitle: 'Equipment', rules: ['Before the battle, you can set up one of your Ammo Cache markers wholly within your territory. Friendly operatives can perform the following mission action:', '<b>AMMO RESUPPLY (0AP):</b> One of your Ammo Cache markers the active operative controls is used during this turning point. Until the start of the next turning point, whenever this operative is shooting with a weapon from its datacard, you can re-roll one of your attack dice.'] },
@@ -764,6 +896,50 @@
             updateButtonVisibility();
             await fetchFactionList();
         };
+
+        // --- WOUND TRACKER FUNCTIONS ---
+        function addWoundTracker(event, recordId) {
+            event.stopPropagation(); // prevent clicking the nav-item from switching view
+            const record = getRecordById(recordId);
+            if (!record) return;
+
+            // Determine default wounds value from stats, fallback to 10 if none exists
+            let defaultWounds = 10;
+            if (record.stats && record.stats.Wounds) {
+                const parsed = parseInt(record.stats.Wounds, 10);
+                if (!isNaN(parsed)) defaultWounds = parsed;
+            }
+
+            // Count how many trackers already exist for this specific record to assign sequential unique numbering
+            const existingCount = rosterTrackers.filter(t => t.sourceId === recordId).length;
+            const uniqueIndex = existingCount + 1;
+
+            const newTracker = {
+                id: 'track_' + Date.now() + '_' + Math.random().toString(36.substr(2, 5)),
+                sourceId: recordId,
+                title: `${record.title} #${uniqueIndex}`,
+                currentWounds: defaultWounds
+            };
+
+            rosterTrackers.push(newTracker);
+            renderNav();
+        }
+
+        function updateTrackerWounds(event, trackerId, change) {
+            event.stopPropagation();
+            const tracker = rosterTrackers.find(t => t.id === trackerId);
+            if (!tracker) return;
+
+            tracker.currentWounds += change;
+            if (tracker.currentWounds < 0) tracker.currentWounds = 0;
+            renderNav();
+        }
+
+        function removeWoundTracker(event, trackerId) {
+            event.stopPropagation();
+            rosterTrackers = rosterTrackers.filter(t => t.id !== trackerId);
+            renderNav();
+        }
 
         // --- MATCH TRACKER FUNCTIONS ---
         function initPlayers(count) {
@@ -920,6 +1096,7 @@
             activeFactionName = name;
             rulesDatabase = allFactions[name];
             pinnedIds = []; // clear pins for new faction
+            rosterTrackers = []; // clear roster trackers when switching factions
             selectedId = rulesDatabase.length > 0 ? rulesDatabase[0].id : null;
             
             document.getElementById('factionDropdown').value = name;
@@ -951,35 +1128,97 @@
             const categories = [...new Set(rulesDatabase.map(item => item.category))];
 
             categories.forEach(cat => {
-                const catHeader = document.createElement('div');
-                catHeader.className = 'category-title';
-                catHeader.innerText = cat;
-                navList.appendChild(catHeader);
+                const catHeaderRow = document.createElement('div');
+                catHeaderRow.className = 'category-header-row';
+                catHeaderRow.innerHTML = `
+                    <span class="category-title">${cat}</span>
+                    <span class="category-track-header">Track</span>
+                `;
+                navList.appendChild(catHeaderRow);
 
                 const items = rulesDatabase.filter(item => item.category === cat);
                 items.forEach(item => {
                     const navItem = document.createElement('div');
                     navItem.className = `nav-item ${item.id === selectedId ? 'active' : ''}`;
                     navItem.setAttribute('data-title', item.title.toLowerCase());
-                    navItem.innerHTML = `<span>${item.title}</span>`;
+                    
+                    navItem.innerHTML = `
+                        <div class="nav-item-content"><span>${item.title}</span></div>
+                        <div class="nav-item-actions">
+                            <button class="track-add-btn" onclick="addWoundTracker(event, '${item.id}')" title="Track Wounds">+</button>
+                        </div>
+                    `;
                     navItem.onclick = () => selectRecord(item.id);
                     navList.appendChild(navItem);
+
+                    // Render any active tracking sub-rows directly beneath this record
+                    const activeTrackers = rosterTrackers.filter(t => t.sourceId === item.id);
+                    activeTrackers.forEach(track => {
+                        const subRow = document.createElement('div');
+                        subRow.className = 'nav-tracker-subrow';
+                        
+                        const woundsDisplay = track.currentWounds === 0 
+                            ? `<span class="subrow-val incapacitated">Incapacitated</span>` 
+                            : `<span class="subrow-val">${track.currentWounds}</span>`;
+
+                        subRow.innerHTML = `
+                            <span class="subrow-title" title="${track.title}">${track.title}</span>
+                            <div class="subrow-controls">
+                                <button class="subrow-btn" onclick="updateTrackerWounds(event, '${track.id}', -1)">-</button>
+                                ${woundsDisplay}
+                                <button class="subrow-btn" onclick="updateTrackerWounds(event, '${track.id}', 1)">+</button>
+                                <button class="subrow-del" onclick="removeWoundTracker(event, '${track.id}')" title="Remove">&times;</button>
+                            </div>
+                        `;
+                        navList.appendChild(subRow);
+                    });
                 });
             });
 
             // Always Append Universal Equipment
-            const ueHeader = document.createElement('div');
-            ueHeader.className = 'category-title';
-            ueHeader.innerText = 'Universal Equipment';
-            navList.appendChild(ueHeader);
+            const ueHeaderRow = document.createElement('div');
+            ueHeaderRow.className = 'category-header-row';
+            ueHeaderRow.innerHTML = `
+                <span class="category-title">Universal Equipment</span>
+                <span class="category-track-header">Track</span>
+            `;
+            navList.appendChild(ueHeaderRow);
 
             universalEquipment.forEach(item => {
                 const navItem = document.createElement('div');
                 navItem.className = `nav-item ${item.id === selectedId ? 'active' : ''}`;
                 navItem.setAttribute('data-title', item.title.toLowerCase());
-                navItem.innerHTML = `<span>${item.title}</span>`;
+                
+                navItem.innerHTML = `
+                    <div class="nav-item-content"><span>${item.title}</span></div>
+                    <div class="nav-item-actions">
+                        <button class="track-add-btn" onclick="addWoundTracker(event, '${item.id}')" title="Track Wounds">+</button>
+                    </div>
+                `;
                 navItem.onclick = () => selectRecord(item.id);
                 navList.appendChild(navItem);
+
+                // Render any active tracking sub-rows for universal equipment as well
+                const activeTrackers = rosterTrackers.filter(t => t.sourceId === item.id);
+                activeTrackers.forEach(track => {
+                    const subRow = document.createElement('div');
+                    subRow.className = 'nav-tracker-subrow';
+                    
+                    const woundsDisplay = track.currentWounds === 0 
+                        ? `<span class="subrow-val incapacitated">Incapacitated</span>` 
+                        : `<span class="subrow-val">${track.currentWounds}</span>`;
+
+                    subRow.innerHTML = `
+                        <span class="subrow-title" title="${track.title}">${track.title}</span>
+                        <div class="subrow-controls">
+                            <button class="subrow-btn" onclick="updateTrackerWounds(event, '${track.id}', -1)">-</button>
+                            ${woundsDisplay}
+                            <button class="subrow-btn" onclick="updateTrackerWounds(event, '${track.id}', 1)">+</button>
+                            <button class="subrow-del" onclick="removeWoundTracker(event, '${track.id}')" title="Remove">&times;</button>
+                        </div>
+                    `;
+                    navList.appendChild(subRow);
+                });
             });
         }
 
@@ -988,7 +1227,7 @@
             const items = document.querySelectorAll('.nav-item');
             items.forEach(item => {
                 const title = item.getAttribute('data-title');
-                item.style.display = title.includes(query) ? 'flex' : 'none';
+                item.style.display = title && title.includes(query) ? 'flex' : 'none';
             });
         }
 
@@ -1144,7 +1383,7 @@
             if (data.stats) {
                 statsHtml = `
                 <div class="stats-grid">
-                    <div class="stat-box"><div class="label">APL</div><div class="value">${data.stats.APL || '-'}</div></div>
+                    <div class="stat-box"><div class="label">APL</div><div class="value">${data.stats.Wounds || '-'}</div></div>
                     <div class="stat-box"><div class="label">MOVE</div><div class="value">${data.stats.Move || '-'}</div></div>
                     <div class="stat-box"><div class="label">SAVE</div><div class="value">${data.stats.Save || '-'}</div></div>
                     <div class="stat-box"><div class="label">WOUNDS</div><div class="value">${data.stats.Wounds || '-'}</div></div>
@@ -1210,3 +1449,4 @@
     </script>
 </body>
 </html>
+
