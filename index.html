@@ -340,7 +340,7 @@
             flex-direction: column;
             transition: transform 0.3s ease, width 0.3s ease;
             box-shadow: -5px 0 15px rgba(0,0,0,0.5);
-            z-index: 90; /* Sit just below modals */
+            z-index: 90; 
         }
 
         .score-tracker.collapsed {
@@ -377,7 +377,7 @@
 
         .tracker-header {
             text-align: center;
-            font-size: 0.85rem;
+            font-size: 1.275rem; /* Increased 50% */
             color: var(--accent-gold);
             text-transform: uppercase;
             font-weight: bold;
@@ -400,13 +400,13 @@
             color: var(--accent-gold);
             border-radius: 4px;
             cursor: pointer;
-            width: 22px;
-            height: 22px;
+            width: 33px; /* Increased 50% */
+            height: 33px; /* Increased 50% */
             font-weight: bold;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1rem;
+            font-size: 1.5rem; /* Increased 50% */
         }
 
         .player-action-btn:active {
@@ -433,7 +433,7 @@
         }
 
         .field-label {
-            font-size: 0.7rem;
+            font-size: 1.05rem; /* Increased 50% */
             color: #fff; 
             font-weight: bold;
             text-transform: uppercase;
@@ -449,12 +449,12 @@
             display: flex;
             flex-direction: column;
             gap: 6px;
-            min-width: 100px;
+            min-width: 150px; /* Increased to fit larger text */
         }
 
         .player-title {
             text-align: center;
-            font-size: 0.8rem;
+            font-size: 1.2rem; /* Increased 50% */
             color: var(--accent-gold);
             font-weight: bold;
             text-transform: uppercase;
@@ -487,13 +487,13 @@
             border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 4px;
             color: var(--text-dim);
-            font-size: 0.75rem;
+            font-size: 1.125rem; /* Increased 50% */
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 26px; 
-            min-width: 28px;
+            min-height: 39px; /* Increased 50% */
+            min-width: 42px; /* Increased 50% */
         }
 
         .btn-inc:active {
@@ -502,16 +502,16 @@
         }
 
         .counter-val {
-            font-size: 1.2rem;
+            font-size: 1.8rem; /* Increased 50% */
             font-weight: bold;
             color: var(--accent-orange);
             line-height: 1;
-            min-width: 20px;
+            min-width: 30px; /* Increased 50% */
             text-align: center;
         }
 
         .turn-val {
-            font-size: 1.5rem;
+            font-size: 2.25rem; /* Increased 50% */
         }
 
         .tracker-content::-webkit-scrollbar { width: 4px; }
@@ -722,7 +722,7 @@
         let turnValue = 1;
         let playerCount = 2; // Defaults to 2
         const playerState = {};
-        const BASE_COLUMN_WIDTH = 110; 
+        const BASE_COLUMN_WIDTH = 165; // Increased by 50% to accommodate larger text
         const TRACKER_PADDING = 20;
 
         const trackerFields = [
