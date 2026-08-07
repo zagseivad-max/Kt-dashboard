@@ -43,8 +43,8 @@
         }
       ],
       "rules": [
-        "<b>Holy Example:</b> Once per turning point, if this operative is INSPIRING, you can use a firefight ploy for 0CP if this is the specified CELESTIAN INSIDIANT operative (including Command Re-roll if the attack or defence dice was rolled for this operative)[span_0](start_span)[span_0](end_span).",
-        "<b>SPIRITUAL MENTOR (1AP):</b> SUPPORT[span_1](start_span)[span_1](end_span). Select one friendly CELESTIAN INSIDIANT operative visible to and within 6\" of this operative[span_2](start_span)[span_2](end_span). That operative becomes INSPIRING[span_3](start_span)[span_3](end_span). This operative cannot perform this action while within control range of an enemy operative, or more than once per turning point[span_4](start_span)[span_4](end_span)."
+        "Holy Example: Once per turning point, if this operative is INSPIRING, you can use a firefight ploy for 0CP if this is the specified CELESTIAN INSIDIANT operative (including Command Re-roll if the attack or defence dice was rolled for this operative)[span_0](start_span)[span_0](end_span).",
+        "SPIRITUAL MENTOR (1AP): SUPPORT[span_1](start_span)[span_1](end_span). Select one friendly CELESTIAN INSIDIANT operative visible to and within 6\" of this operative[span_2](start_span)[span_2](end_span). That operative becomes INSPIRING[span_3](start_span)[span_3](end_span). This operative cannot perform this action while within control range of an enemy operative, or more than once per turning point[span_4](start_span)[span_4](end_span)."
       ],
       "keywords": "CELESTIAN INSIDIANT, IMPERIUM, ADEPTA SORORITAS, LEADER, SUPERIOR[span_5](start_span)[span_5](end_span)"
     },
@@ -76,8 +76,8 @@
         }
       ],
       "rules": [
-        "<b>*Shield:</b> Whenever this operative is fighting or retaliating with this weapon profile, each of your blocks can be allocated to block two unresolved successes (instead of one)[span_6](start_span)[span_6](end_span).",
-        "<b>Holy Defender:</b> Once per turning point, when a friendly CELESTIAN INSIDIANT operative visible to and within 2\" of this operative is selected as the valid target of a Shoot action or to fight against during the Fight action, you can use this rule[span_7](start_span)[span_7](end_span). If you do, this operative becomes the valid target or is fought against (as appropriate) instead (even if it wouldn't normally be valid for this)[span_8](start_span)[span_8](end_span). If it's the Fight action, treat this operative as being within the fighting operative's control range for the duration of that action[span_9](start_span)[span_9](end_span). If it's the Shoot action, this operative is only in cover or obscured if the original target was[span_10](start_span)[span_10](end_span). This rule has no effect if it's the Shoot action and the ranged weapon has the Blast or Torrent weapon rule[span_11](start_span)[span_11](end_span)."
+        "*Shield: Whenever this operative is fighting or retaliating with this weapon profile, each of your blocks can be allocated to block two unresolved successes (instead of one)[span_6](start_span)[span_6](end_span).",
+        "Holy Defender: Once per turning point, when a friendly CELESTIAN INSIDIANT operative visible to and within 2\" of this operative is selected as the valid target of a Shoot action or to fight against during the Fight action, you can use this rule[span_7](start_span)[span_7](end_span). If you do, this operative becomes the valid target or is fought against (as appropriate) instead (even if it wouldn't normally be valid for this)[span_8](start_span)[span_8](end_span). If it's the Fight action, treat this operative as being within the fighting operative's control range for the duration of that action[span_9](start_span)[span_9](end_span). If it's the Shoot action, this operative is only in cover or obscured if the original target was[span_10](start_span)[span_10](end_span). This rule has no effect if it's the Shoot action and the ranged weapon has the Blast or Torrent weapon rule[span_11](start_span)[span_11](end_span)."
       ],
       "keywords": "CELESTIAN INSIDIANT, IMPERIUM, ADEPTA SORORITAS, ABJUROR[span_12](start_span)[span_12](end_span)"
     },
@@ -102,9 +102,9 @@
         }
       ],
       "rules": [
-        "<b>Virge of Admonition Icon Bearer:</b> Whenever determining control of a marker, treat this operative's APL stat as 1 higher[span_13](start_span)[span_13](end_span). Note this isn't a change to its APL stat, so any changes are cumulative with this[span_14](start_span)[span_14](end_span).",
-        "<b>Null Field:</b> This operative starts the battle with a null range of 1\[span_15](start_span)"[span_15](end_span). Whenever an enemy operative is within null range of this operative, subtract 2\" from the Move stat of that enemy operative and worsen the Hit stat of its weapons by 1 (this isn't cumulative with being injured)[span_16](start_span)[span_16](end_span).",
-        "<b>NULLIFYING RITUAL (1AP):</b> Add 1 to this operative's null range (to a maximum of 5\")[span_17](start_span)[span_17](end_span). Nullification tokens in the marker/token guide are numbered, so use the numbered token equal to this operative's null range[span_18](start_span)[span_18](end_span). This operative cannot perform this action while within control range of an enemy operative, or more than once per turning point[span_19](start_span)[span_19](end_span)."
+        "Virge of Admonition Icon Bearer: Whenever determining control of a marker, treat this operative's APL stat as 1 higher[span_13](start_span)[span_13](end_span). Note this isn't a change to its APL stat, so any changes are cumulative with this[span_14](start_span)[span_14](end_span).",
+        "Null Field: This operative starts the battle with a null range of 1\[span_15](start_span)"[span_15](end_span). Whenever an enemy operative is within null range of this operative, subtract 2\" from the Move stat of that enemy operative and worsen the Hit stat of its weapons by 1 (this isn't cumulative with being injured)[span_16](start_span)[span_16](end_span).",
+        "NULLIFYING RITUAL (1AP): Add 1 to this operative's null range (to a maximum of 5\")[span_17](start_span)[span_17](end_span). Nullification tokens in the marker/token guide are numbered, so use the numbered token equal to this operative's null range[span_18](start_span)[span_18](end_span). This operative cannot perform this action while within control range of an enemy operative, or more than once per turning point[span_19](start_span)[span_19](end_span)."
       ],
       "keywords": "CELESTIAN INSIDIANT, IMPERIUM, ADEPTA SORORITAS, CENSOR[span_20](start_span)[span_20](end_span)"
     },
@@ -143,7 +143,7 @@
         }
       ],
       "rules": [
-        "<b>Inspirational Pyre:</b> Once per turning point, when this operative inflicts damage on an enemy operative with either profile of its hand flamer but doesn't incapacitate it, you can use this rule[span_21](start_span)[span_21](end_span). If you do, you can select one friendly CELESTIAN INSIDIANT operative within 6\" of this operative to become INSPIRING[span_22](start_span)[span_22](end_span). Note that Torrent 0\" means you cannot select secondary targets, but this weapon still has the Torrent weapon rule for all other rules purposes, e.g. the Condensed Stronghold rule (see Killzone: Volkus, Kill Team Core Book)[span_23](start_span)[span_23](end_span)."
+        "Inspirational Pyre: Once per turning point, when this operative inflicts damage on an enemy operative with either profile of its hand flamer but doesn't incapacitate it, you can use this rule[span_21](start_span)[span_21](end_span). If you do, you can select one friendly CELESTIAN INSIDIANT operative within 6\" of this operative to become INSPIRING[span_22](start_span)[span_22](end_span). Note that Torrent 0\" means you cannot select secondary targets, but this weapon still has the Torrent weapon rule for all other rules purposes, e.g. the Condensed Stronghold rule (see Killzone: Volkus, Kill Team Core Book)[span_23](start_span)[span_23](end_span)."
       ],
       "keywords": "CELESTIAN INSIDIANT, IMPERIUM, ADEPTA SORORITAS, CREMATOR[span_24](start_span)[span_24](end_span)"
     },
@@ -175,8 +175,8 @@
         }
       ],
       "rules": [
-        "<b>Accusing Exorcist:</b> Whenever this operative is INSPIRING, the Suspect & Eliminate strategy ploy costs you 0CP if the enemy operative or marker you select is visible to or within 6\" of this operative[span_25](start_span)[span_25](end_span).",
-        "<b>SPEAK OF HER DEEDS (1AP):</b> SUPPORT[span_26](start_span)[span_26](end_span). Select an INSPIRING friendly CELESTIAN INSIDIANT operative visible to and within 6\" of this operative[span_27](start_span)[span_27](end_span). That operative is no longer INSPIRING[span_28](start_span)[span_28](end_span). Then, select another friendly CELESTIAN INSIDIANT operative visible to and within 6\" of this operative[span_29](start_span)[span_29](end_span). Resolve one BENEDICTION from the Martyrdom faction rule on that operative (excluding Exigence)[span_30](start_span)[span_30](end_span). This operative cannot perform this action while within control range of an enemy operative[span_31](start_span)[span_31](end_span)."
+        "Accusing Exorcist: Whenever this operative is INSPIRING, the Suspect & Eliminate strategy ploy costs you 0CP if the enemy operative or marker you select is visible to or within 6\" of this operative[span_25](start_span)[span_25](end_span).",
+        "SPEAK OF HER DEEDS (1AP): SUPPORT[span_26](start_span)[span_26](end_span). Select an INSPIRING friendly CELESTIAN INSIDIANT operative visible to and within 6\" of this operative[span_27](start_span)[span_27](end_span). That operative is no longer INSPIRING[span_28](start_span)[span_28](end_span). Then, select another friendly CELESTIAN INSIDIANT operative visible to and within 6\" of this operative[span_29](start_span)[span_29](end_span). Resolve one BENEDICTION from the Martyrdom faction rule on that operative (excluding Exigence)[span_30](start_span)[span_30](end_span). This operative cannot perform this action while within control range of an enemy operative[span_31](start_span)[span_31](end_span)."
       ],
       "keywords": "CELESTIAN INSIDIANT, IMPERIUM, ADEPTA SORORITAS, DENUNCIA[span_32](start_span)[span_32](end_span)"
     },
@@ -201,8 +201,8 @@
         }
       ],
       "rules": [
-        "<b>Zealous Ultimatum:</b> Once per battle STRATEGIC GAMBIT[span_33](start_span)[span_33](end_span). Select one enemy operative within 8\" of this operative and issue an ultimatum to it[span_34](start_span)[span_34](end_span). Your opponent must accept or decline that ultimatum (if it's a non-player operative, roll one D6: on a 4+, the ultimatum is accepted, otherwise it's declined)[span_35](start_span)[span_35](end_span). If the ultimatum is accepted, whenever this operative is fighting against or retaliating against that enemy operative, add 1 to the Atk stat of this operative's blessed broadsword[span_36](start_span)[span_36](end_span). The first time this operative incapacitates that enemy operative while fighting or retaliating during the battle, add 1 to the Atk stat of this operative's blessed broadsword until the end of the battle[span_37](start_span)[span_37](end_span). In either case, this is to a maximum of 5[span_38](start_span)[span_38](end_span). If the ultimatum is declined, whenever that enemy operative is fighting against or retaliating against a friendly CELESTIAN INSIDIANT operative, subtract 1 from the Atk stat of that enemy operative's weapons[span_39](start_span)[span_39](end_span).",
-        "<b>Bladed Stance:</b> Whenever this operative is fighting or retaliating, you can resolve one of your successes before the normal order[span_40](start_span)[span_40](end_span). If you do, that success must be used to block[span_41](start_span)[span_41](end_span)."
+        "Zealous Ultimatum: Once per battle STRATEGIC GAMBIT[span_33](start_span)[span_33](end_span). Select one enemy operative within 8\" of this operative and issue an ultimatum to it[span_34](start_span)[span_34](end_span). Your opponent must accept or decline that ultimatum (if it's a non-player operative, roll one D6: on a 4+, the ultimatum is accepted, otherwise it's declined)[span_35](start_span)[span_35](end_span). If the ultimatum is accepted, whenever this operative is fighting against or retaliating against that enemy operative, add 1 to the Atk stat of this operative's blessed broadsword[span_36](start_span)[span_36](end_span). The first time this operative incapacitates that enemy operative while fighting or retaliating during the battle, add 1 to the Atk stat of this operative's blessed broadsword until the end of the battle[span_37](start_span)[span_37](end_span). In either case, this is to a maximum of 5[span_38](start_span)[span_38](end_span). If the ultimatum is declined, whenever that enemy operative is fighting against or retaliating against a friendly CELESTIAN INSIDIANT operative, subtract 1 from the Atk stat of that enemy operative's weapons[span_39](start_span)[span_39](end_span).",
+        "Bladed Stance: Whenever this operative is fighting or retaliating, you can resolve one of your successes before the normal order[span_40](start_span)[span_40](end_span). If you do, that success must be used to block[span_41](start_span)[span_41](end_span)."
       ],
       "keywords": "CELESTIAN INSIDIANT, IMPERIUM, ADEPTA SORORITAS, MORTISANCTUS[span_42](start_span)[span_42](end_span)"
     },
@@ -241,8 +241,8 @@
         }
       ],
       "rules": [
-        "<b>Simulacrum Nullificatus Icon Bearer:</b> Whenever determining control of a marker, treat the total APL stat of enemy operatives that contest it as 1 lower if at least one of those enemy operatives is within 3\" of this operative[span_43](start_span)[span_43](end_span). Note this isn't a change to the APL stat, so any changes are cumulative with this[span_44](start_span)[span_44](end_span).",
-        "<b>Devotion:</b> At the end of each of this operative's activations, if it's INSPIRING and it controls an objective marker or one of your mission markers, one friendly CELESTIAN INSIDIANT operative this operative is visible to and within 6\" of becomes INSPIRING[span_45](start_span)[span_45](end_span)."
+        "Simulacrum Nullificatus Icon Bearer: Whenever determining control of a marker, treat the total APL stat of enemy operatives that contest it as 1 lower if at least one of those enemy operatives is within 3\" of this operative[span_43](start_span)[span_43](end_span). Note this isn't a change to the APL stat, so any changes are cumulative with this[span_44](start_span)[span_44](end_span).",
+        "Devotion: At the end of each of this operative's activations, if it's INSPIRING and it controls an objective marker or one of your mission markers, one friendly CELESTIAN INSIDIANT operative this operative is visible to and within 6\" of becomes INSPIRING[span_45](start_span)[span_45](end_span)."
       ],
       "keywords": "CELESTIAN INSIDIANT, IMPERIUM, ADEPTA SORORITAS, RELIQUARIUS[span_46](start_span)[span_46](end_span)"
     },
@@ -281,7 +281,7 @@
         }
       ],
       "rules": [
-        "<b>Inspired Strikes:</b> Whenever this operative is INSPIRING, add 1 to the Critical Dmg stat of weapons on its datacard[span_47](start_span)[span_47](end_span)."
+        "Inspired Strikes: Whenever this operative is INSPIRING, add 1 to the Critical Dmg stat of weapons on its datacard[span_47](start_span)[span_47](end_span)."
       ],
       "keywords": "CELESTIAN INSIDIANT, IMPERIUM, ADEPTA SORORITAS, WARRIOR[span_48](start_span)[span_48](end_span)"
     },
