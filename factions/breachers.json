@@ -1,0 +1,328 @@
+{
+  "factionName": "Imperial Navy Breachers",
+  "rules": [
+    {
+      "id": "op_sgt_at_arms",
+      "category": "Operatives",
+      "title": "Navis Sergeant-At-Arms",
+      "subtitle": "Leader Operative",
+      "stats": { "APL": "2", "Move": "6\"", "Save": "4+", "Wounds": "8" },
+      "weapons": [
+        { "name": "Bolt pistol", "atk": "4", "hit": "4+", "dmg": "3/4", "rules": "Range 8\"" },
+        { "name": "Heirloom autopistol", "atk": "4", "hit": "3+", "dmg": "2/4", "rules": "Range 8\", Lethal 5+" },
+        { "name": "Navis shotgun (close range)", "atk": "4", "hit": "3+", "dmg": "3/3", "rules": "Range 6\"" },
+        { "name": "Navis shotgun (long range)", "atk": "4", "hit": "5+", "dmg": "1/2", "rules": "-" },
+        { "name": "Chainsword", "atk": "4", "hit": "3+", "dmg": "4/5", "rules": "-" },
+        { "name": "Navis hatchet", "atk": "3", "hit": "4+", "dmg": "3/4", "rules": "-" },
+        { "name": "Power weapon", "atk": "4", "hit": "3+", "dmg": "4/6", "rules": "Lethal 5+" }
+      ],
+      "rules": [
+        "<b>Command Breach:</b> Whenever you would use the Attack Order or Defence Order strategy ploy, if this operative is in the killzone, it costs you 0CP. Once during each of this operative's activations, before or after it performs an action, if your Attack Order or Defence Order marker is in the killzone (see relevant strategy ploy), you can either:<br>• Remove that marker and place it again.<br>• Change the selected ploy to the other (e.g. your Attack Order becomes a Defence Order).<br>You cannot do both, and you don't need to spend any CP to change the ploy."
+      ],
+      "keywords": "IMPERIAL NAVY BREACHERS, IMPERIUM, LEADER, SERGEANT-AT-ARMS"
+    },
+    {
+      "id": "op_armsman",
+      "category": "Operatives",
+      "title": "Navis Armsman",
+      "subtitle": "Operative",
+      "stats": { "APL": "2", "Move": "6\"", "Save": "4+", "Wounds": "7" },
+      "weapons": [
+        { "name": "Navis shotgun (close range)", "atk": "4", "hit": "3+", "dmg": "3/3", "rules": "Range 6\"" },
+        { "name": "Navis shotgun (long range)", "atk": "4", "hit": "5+", "dmg": "1/2", "rules": "-" },
+        { "name": "Navis hatchet", "atk": "3", "hit": "4+", "dmg": "3/4", "rules": "-" }
+      ],
+      "rules": [
+        "<b>Group Activation:</b> Whenever this operative is expended, you must then activate one other ready friendly IMPERIAL NAVY BREACHER ARMSMAN operative (if able) before your opponent activates. When that other operative is expended, your opponent then activates as normal (in other words, you cannot activate more than two operatives in succession with this rule). Ignore this rule when you are using the Breach and Clear faction rule."
+      ],
+      "keywords": "IMPERIAL NAVY BREACHER, IMPERIUM, ARMSMAN"
+    },
+    {
+      "id": "op_axejack",
+      "category": "Operatives",
+      "title": "Navis Axejack",
+      "subtitle": "Operative",
+      "stats": { "APL": "2", "Move": "6\"", "Save": "4+", "Wounds": "7" },
+      "weapons": [
+        { "name": "Autopistol", "atk": "4", "hit": "4+", "dmg": "2/3", "rules": "Range 8\"" },
+        { "name": "Power weapon", "atk": "4", "hit": "3+", "dmg": "4/6", "rules": "Lethal 5+" }
+      ],
+      "rules": [
+        "<b>Emboldened:</b> Whenever an attack dice inflicts damage of 3 or more on this operative during a turning point in which it performed the Charge action, roll one D6: on a 5+, subtract 1 from that inflicted damage."
+      ],
+      "keywords": "IMPERIAL NAVY BREACHERS, IMPERIUM, AXEJACK"
+    },
+    {
+      "id": "op_cat_unit",
+      "category": "Operatives",
+      "title": "Navis C.A.T. Unit",
+      "subtitle": "Operative",
+      "stats": { "APL": "2", "Move": "8\"", "Save": "5+", "Wounds": "5" },
+      "weapons": [],
+      "rules": [
+        "<b>Machine:</b><br>• This operative cannot be activated or perform actions if it's within control range of an enemy operative, or if a friendly IMPERIAL NAVY BREACHER SURVEYOR operative has been incapacitated. The turning point can end even if this operative is still ready.<br>• This operative cannot perform any actions other than Charge, Dash, Fall Back, Reposition and Spot.<br>• It cannot retaliate, assist in a fight, climb or jump.<br>• Whenever determining control of a marker, treat this operative's APL stat as 1 lower. Note this isn't a change to its APL stat, so any changes are cumulative with this.<br>• Whenever this operative has a Conceal order and is in cover, it cannot be selected as a valid target, taking precedence over all other rules (e.g. Seek, Vantage terrain) except being within 2\".<br>• Whenever determining what's visible to this operative, draw the line from any part of the miniature.",
+        "<b>Expendable:</b> This operative is ignored for your opponent's kill/elimination op (when it's incapacitated, and when determining your starting number of operatives). It's also ignored for victory conditions and scoring VPs if either require operatives to 'escape', 'survive' or be incapacitated by enemy operatives.",
+        "<b>SPOT (1AP):</b> Select one enemy operative visible to this operative. Until the end of the turning point, until that enemy operative is no longer visible to this operative or until this operative performs this action again (whichever comes first), whenever a friendly IMPERIAL NAVY BREACHER operative is shooting that enemy operative, you can use this effect. If you do: That friendly operative's ranged weapons have the Seek Light weapon rule, and that enemy operative cannot be obscured. This operative cannot perform this action while within control range of an enemy operative."
+      ],
+      "keywords": "IMPERIAL NAVY BREACHERS, IMPERIUM, C.A.T. UNIT"
+    },
+    {
+      "id": "op_endurant",
+      "category": "Operatives",
+      "title": "Navis Endurant",
+      "subtitle": "Operative",
+      "stats": { "APL": "2", "Move": "4\"", "Save": "2+", "Wounds": "10" },
+      "weapons": [
+        { "name": "Navis heavy shotgun (close range)", "atk": "4", "hit": "3+", "dmg": "3/3", "rules": "Range 6\", Relentless" },
+        { "name": "Navis heavy shotgun (long range)", "atk": "4", "hit": "5+", "dmg": "1/2", "rules": "Relentless" },
+        { "name": "Shield bash", "atk": "3", "hit": "4+", "dmg": "1/2", "rules": "Brutal, Shield" }
+      ],
+      "rules": [
+        "<b>Breachwall:</b> Whenever your opponent is selecting a valid target, they cannot select another friendly IMPERIAL NAVY BREACHER operative whose base is touching this operative's if this operative has an Engage order and is intervening. This rule has no effect if more than one other friendly operative's base is touching this operative's.",
+        "<b>Shield:</b> Whenever this operative is fighting or retaliating with this weapon, each of your blocks can be allocated to block two unresolved successes (instead of one).",
+        "<b>Disengage:</b> This operative can perform the Fall Back action for 1 less AP."
+      ],
+      "keywords": "IMPERIAL NAVY BREACHERS, IMPERIUM, ENDURANT"
+    },
+    {
+      "id": "op_gheistskull",
+      "category": "Operatives",
+      "title": "Navis Gheistskull",
+      "subtitle": "Operative",
+      "stats": { "APL": "2", "Move": "8\"", "Save": "5+", "Wounds": "5" },
+      "weapons": [],
+      "rules": [
+        "<b>Machine:</b><br>• This operative cannot perform any actions other than Boost, Charge, Dash, Fall Back and Reposition.<br>• It cannot retaliate or assist in a fight.<br>• Whenever determining control of a marker, treat this operative's APL stat as 1 lower. Note this isn't a change to its APL stat, so any changes are cumulative with this.<br>• Whenever this operative has a Conceal order and is in cover, it cannot be selected as a valid target, taking precedence over all other rules (e.g. Seek, Vantage terrain) except being within 2\".",
+        "<b>Expendable:</b> This operative is ignored for your opponent's kill/elimination op (when it's incapacitated, and when determining your starting number of operatives). It's also ignored for victory conditions and scoring VPs if either require operatives to 'escape', 'survive' or be incapacitated by enemy operatives.",
+        "<b>BOOST (1AP):</b> Until the end of the activation, add 6\" to this operative's Move stat. This operative cannot perform this action more than once per battle, and cannot perform it during the first turning point."
+      ],
+      "keywords": "IMPERIAL NAVY BREACHERS, IMPERIUM, GHEISTSKULL"
+    },
+    {
+      "id": "op_grenadier",
+      "category": "Operatives",
+      "title": "Navis Grenadier",
+      "subtitle": "Operative",
+      "stats": { "APL": "2", "Move": "6\"", "Save": "4+", "Wounds": "7" },
+      "weapons": [
+        { "name": "Demolition charge", "atk": "4", "hit": "3+", "dmg": "4/6", "rules": "Range 3\", Blast 2\", Heavy (Reposition only), Limited 1, Piercing 1, Saturate" },
+        { "name": "Navis shotgun (close range)", "atk": "4", "hit": "3+", "dmg": "3/3", "rules": "Range 6\"" },
+        { "name": "Navis shotgun (long range)", "atk": "4", "hit": "5+", "dmg": "1/2", "rules": "-" },
+        { "name": "Navis hatchet", "atk": "3", "hit": "4+", "dmg": "3/4", "rules": "-" }
+      ],
+      "rules": [
+        "<b>Grenadier:</b> This operative can use frag, krak and stun grenades (see universal equipment). Doing so doesn't count towards any limited uses you have (i.e. if you also select those grenades from equipment for other operatives). Whenever this operative is using a frag or krak grenade, improve the Hit stat of that weapon by 1."
+      ],
+      "keywords": "IMPERIAL NAVY BREACHERS, IMPERIUM, GRENADIER"
+    },
+    {
+      "id": "op_gunner",
+      "category": "Operatives",
+      "title": "Navis Gunner",
+      "subtitle": "Operative",
+      "stats": { "APL": "2", "Move": "6\"", "Save": "4+", "Wounds": "8" },
+      "weapons": [
+        { "name": "Meltagun", "atk": "4", "hit": "4+", "dmg": "6/3", "rules": "Range 6\", Devastating 4, Piercing 2" },
+        { "name": "Navis las-volley (focused)", "atk": "5", "hit": "4+", "dmg": "4/5", "rules": "Heavy (Dash only), Rending" },
+        { "name": "Navis las-volley (sweeping)", "atk": "4", "hit": "4+", "dmg": "4/5", "rules": "Heavy (Dash only), Rending, Torrent 1\"" },
+        { "name": "Plasma gun (standard)", "atk": "4", "hit": "4+", "dmg": "4/6", "rules": "Piercing 1" },
+        { "name": "Plasma gun (supercharge)", "atk": "4", "hit": "4+", "dmg": "5/6", "rules": "Hot, Lethal 5+, Piercing 1" },
+        { "name": "Gun butt", "atk": "3", "hit": "4+", "dmg": "2/3", "rules": "-" }
+      ],
+      "rules": [],
+      "keywords": "IMPERIAL NAVY BREACHER, IMPERIUM, GUNNER"
+    },
+    {
+      "id": "op_hatchcutter",
+      "category": "Operatives",
+      "title": "Navis Hatchcutter",
+      "subtitle": "Operative",
+      "stats": { "APL": "2", "Move": "6\"", "Save": "4+", "Wounds": "7" },
+      "weapons": [
+        { "name": "Autopistol", "atk": "4", "hit": "4+", "dmg": "2/3", "rules": "Range 8\"" },
+        { "name": "Chainfist", "atk": "4", "hit": "4+", "dmg": "5/6", "rules": "Brutal, Rending" }
+      ],
+      "rules": [
+        "<b>WELD SHUT (1AP):</b> Select a closed hatchway (e.g. Killzone: Gallowdark) within this operative's control range. 1 additional AP must be spent for other operatives to perform the Operate Hatch action to open that hatchway. This effect ends when that hatchway is opened. Note this operative isn't affected by this effect. This operative cannot perform this action while within control range of an enemy operative, or if it isn't within 1\" of a closed hatchway.",
+        "<b>BREACH POINT (1AP):</b> Place one of your Breach markers within this operative's control range as close as possible to a terrain feature within control range of it. Whenever an operative is within 1\" of that marker, it treats parts of that terrain feature that are no more than 1\" thick as Accessible terrain. This operative cannot perform this action while within control range of an enemy operative, or if a terrain feature isn't within its control range."
+      ],
+      "keywords": "IMPERIAL NAVY BREACHER, IMPERIUM, HATCHCUTTER"
+    },
+    {
+      "id": "op_surveyor",
+      "category": "Operatives",
+      "title": "Navis Surveyor",
+      "subtitle": "Operative",
+      "stats": { "APL": "2", "Move": "6\"", "Save": "4+", "Wounds": "7" },
+      "weapons": [
+        { "name": "Navis shotgun (close range)", "atk": "4", "hit": "3+", "dmg": "3/3", "rules": "Range 6\"" },
+        { "name": "Navis shotgun (long range)", "atk": "4", "hit": "5+", "dmg": "1/2", "rules": "-" },
+        { "name": "Navis hatchet", "atk": "3", "hit": "4+", "dmg": "3/4", "rules": "-" }
+      ],
+      "rules": [
+        "<b>WAYFIND (1AP):</b> SUPPORT. Select one other friendly IMPERIAL NAVY BREACHER operative (excluding C.A.T. UNIT or GHEISTSKULL) visible to and within 6\" of this operative, or visible to and within 6\" of a friendly IMPERIAL NAVY BREACHER C.A.T. UNIT operative. Until the end of that operative's next activation, add 1 to its APL stat. For the purposes of the Comms Device universal equipment, the operative the distance is being determined from must control that marker. This operative cannot perform this action while within control range of an enemy operative.",
+        "<b>REMOTE CONTROL (1AP):</b> Select one friendly IMPERIAL NAVY BREACHER C.A.T. UNIT operative. That operative can immediately perform one free action, but it cannot move more than 3\" during that action. This operative cannot perform this action while within control range of an enemy operative, or if a friendly IMPERIAL NAVY BREACHERS C.A.T. UNIT operative isn't in the killzone."
+      ],
+      "keywords": "IMPERIAL NAVY BREACHERS, IMPERIUM, SURVEYOR"
+    },
+    {
+      "id": "op_void_jammer",
+      "category": "Operatives",
+      "title": "Navis Void-Jammer",
+      "subtitle": "Operative",
+      "stats": { "APL": "2", "Move": "6\"", "Save": "4+", "Wounds": "7" },
+      "weapons": [
+        { "name": "Gheistskull detonator", "atk": "4", "hit": "3+", "dmg": "3/4", "rules": "Blast 1\", Lethal 5+, Limited 1, Silent, Stun, Detonate*" },
+        { "name": "Navis shotgun (close range)", "atk": "4", "hit": "3+", "dmg": "3/3", "rules": "Range 6\"" },
+        { "name": "Navis shotgun (long range)", "atk": "4", "hit": "5+", "dmg": "1/2", "rules": "-" },
+        { "name": "Navis hatchet", "atk": "3", "hit": "4+", "dmg": "3/4", "rules": "-" }
+      ],
+      "rules": [
+        "<b>*Detonate:</b> Don't select a valid target. Instead, a friendly IMPERIAL NAVY BREACHER GHEISTSKULL operative is always the primary target and cannot be in cover or obscured. If that operative isn't in the killzone, you cannot select this weapon.",
+        "<b>INTERFERENCE PULSE (1AP):</b> Select one enemy operative visible to and within 8\" of a friendly GHEISTSKULL operative. Roll one D6, adding 1 to the result if that enemy operative is a valid target for that friendly GHEISTSKULL operative: on a 3+, subtract 1 from that enemy operative's APL stat until the end of its next activation. This operative cannot perform this action while within control range of an enemy operative, or if a friendly GHEISTSKULL operative isn't in the killzone."
+      ],
+      "keywords": "IMPERIAL NAVY BREACHER, IMPERIUM, VOID-JAMMER"
+    },
+    {
+      "id": "fac_void_armour",
+      "category": "Faction Rules",
+      "title": "Void Armour",
+      "subtitle": "Faction Rule",
+      "rules": [
+        "Whenever an operative is shooting a friendly IMPERIAL NAVY BREACHER operative, if the ranged weapon in that sequence has the Blast or Torrent weapon rule (excluding weapons that have a sweeping profile), you can re-roll one of your defence dice, or up to two of your defence dice if that friendly operative is a GRENADIER.",
+        "Friendly IMPERIAL NAVY BREACHER operatives aren't affected by the x\" Devastating x weapon rule (i.e. Devastating with a distance) unless they are the target during that sequence."
+      ],
+      "keywords": "IMPERIAL NAVY BREACHER FACTION RULE"
+    },
+    {
+      "id": "fac_breach_and_clear",
+      "category": "Faction Rules",
+      "title": "Breach and Clear",
+      "subtitle": "Faction Rule",
+      "rules": [
+        "Once per turning point, when a ready friendly IMPERIAL NAVY BREACHER operative is activated, you can use this rule. If you do, select one other ready friendly IMPERIAL NAVY BREACHER operative visible to and within 3\" of that operative. When that first friendly operative is expended, you can activate that other friendly operative before your opponent activates. When that other operative is expended, your opponent then activates as normal."
+      ],
+      "keywords": "IMPERIAL NAVY BREACHER FACTION RULE"
+    },
+    {
+      "id": "ploy_attack_order",
+      "category": "Strategy Ploys",
+      "title": "Attack Order",
+      "subtitle": "Strategy Ploy",
+      "rules": [
+        "Place your Attack Order marker in the killzone. Whenever a friendly IMPERIAL NAVY BREACHER operative within 3\" of that marker is shooting, fighting or retaliating, its weapons have the Ceaseless weapon rule. In the Ready step of the next Strategy phase, remove that marker. You cannot use this ploy and the Defence Order strategy ploy in the same Strategy phase."
+      ],
+      "keywords": "IMPERIAL NAVY BREACHER STRATEGY PLOY"
+    },
+    {
+      "id": "ploy_defence_order",
+      "category": "Strategy Ploys",
+      "title": "Defence Order",
+      "subtitle": "Strategy Ploy",
+      "rules": [
+        "Place your Defence Order marker in the killzone. Whenever an operative is shooting a friendly IMPERIAL NAVY BREACHER operative that's within 3\" of that marker, you can re-roll any of your defence dice results of one result (e.g. results of 2). In the Ready step of the next Strategy phase, remove that marker. You cannot use this ploy and the Attack Order strategy ploy in the same Strategy phase."
+      ],
+      "keywords": "IMPERIAL NAVY BREACHER STRATEGY PLOY"
+    },
+    {
+      "id": "ploy_close_assault",
+      "category": "Strategy Ploys",
+      "title": "Close Assault",
+      "subtitle": "Strategy Ploy",
+      "rules": [
+        "Whenever a friendly IMPERIAL NAVY BREACHER operative is fighting or shooting an operative within 3\" of it, that friendly operative's weapons have the Punishing weapon rule."
+      ],
+      "keywords": "IMPERIAL NAVY BREACHER STRATEGY PLOY"
+    },
+    {
+      "id": "ploy_brace_counterattack",
+      "category": "Strategy Ploys",
+      "title": "Brace for Counterattack",
+      "subtitle": "Strategy Ploy",
+      "rules": [
+        "Whenever an operative is shooting against, fighting against or retaliating against a friendly IMPERIAL NAVY BREACHER operative that's within your territory or that hasn't performed the Charge, Fall Back or Reposition action during this turning point, Normal and Critical Dmg of 3 or more inflicts 1 less damage on that friendly operative."
+      ],
+      "keywords": "IMPERIAL NAVY BREACHER STRATEGY PLOY"
+    },
+    {
+      "id": "ploy_overwhelm_target",
+      "category": "Firefight Ploys",
+      "title": "Overwhelm Target",
+      "subtitle": "Firefight Ploy",
+      "rules": [
+        "Use this firefight ploy when you use the Breach and Clear faction rule. Select one of those friendly IMPERIAL NAVY BREACHER operatives. Until the end of that operative's activation, add 1 to its APL stat."
+      ],
+      "keywords": "IMPERIAL NAVY BREACHER FIREFIGHT PLOY"
+    },
+    {
+      "id": "ploy_blitz",
+      "category": "Firefight Ploys",
+      "title": "Blitz",
+      "subtitle": "Firefight Ploy",
+      "rules": [
+        "Use this firefight ploy when a friendly IMPERIAL NAVY BREACHER operative performs the Shoot or Fight action, and you select an enemy operative within 6\" of it as a valid target or to fight against. If it's the first friendly operative to perform either of those actions during this turning point, its weapons have the Accurate 1 weapon rule for that action. If it's the first friendly operative to be activated during this turning point, its weapons also have the Severe weapon rule for that action."
+      ],
+      "keywords": "IMPERIAL NAVY BREACHER FIREFIGHT PLOY"
+    },
+    {
+      "id": "ploy_lock_it_down",
+      "category": "Firefight Ploys",
+      "title": "Lock It Down",
+      "subtitle": "Firefight Ploy",
+      "rules": [
+        "Use this firefight ploy when a friendly IMPERIAL NAVY BREACHER operative is activated. Select one objective marker. Until the end of the battle or until you use this ploy again (whichever comes first), when determining control of that objective marker, treat that friendly operative's APL stat as 1 higher. Note this isn't a change to the APL stat, so any changes are cumulative with this."
+      ],
+      "keywords": "IMPERIAL NAVY BREACHER FIREFIGHT PLOY"
+    },
+    {
+      "id": "ploy_deck_hand",
+      "category": "Firefight Ploys",
+      "title": "Deck Hand",
+      "subtitle": "Firefight Ploy",
+      "rules": [
+        "Use this firefight ploy during a friendly IMPERIAL NAVY BREACHER operative's activation, before or after it performs an action if it has an APL stat of 1 or 2. That operative can move through one Accessible terrain feature without it counting as an additional 1\" and/or perform a free Operate Hatch action during its activation, and can do so during the Charge or Fall Back action. You cannot use this ploy if the access point has been welded shut (see HATCHCUTTER) unless it's a friendly HATCHCUTTER operative's activation."
+      ],
+      "keywords": "IMPERIAL NAVY BREACHER FIREFIGHT PLOY"
+    },
+    {
+      "id": "eq_rebreathers",
+      "category": "Equipment",
+      "title": "Rebreathers",
+      "subtitle": "Faction Equipment",
+      "rules": [
+        "You can ignore any changes to the APL stats of friendly IMPERIAL NAVY BREACHER operatives, and they aren't affected by enemy operatives' Shock weapon rule."
+      ],
+      "keywords": "IMPERIAL NAVY BREACHER FACTION EQUIPMENT"
+    },
+    {
+      "id": "eq_slugs",
+      "category": "Equipment",
+      "title": "Slugs",
+      "subtitle": "Faction Equipment",
+      "rules": [
+        "Up to three times per turning point, whenever a friendly IMPERIAL NAVY BREACHER operative is performing the Shoot action and you select a Navis shotgun (long range), you can use this rule. If you do, until the end of that action, improve the Hit stat of that weapon by 1 and add 1 to both of its Dmg stats."
+      ],
+      "keywords": "IMPERIAL NAVY BREACHER FACTION EQUIPMENT"
+    },
+    {
+      "id": "eq_combat_stimms",
+      "category": "Equipment",
+      "title": "Combat Stimms",
+      "subtitle": "Faction Equipment",
+      "rules": [
+        "You can ignore any changes to the Move stat of friendly IMPERIAL NAVY BREACHER operatives from being injured."
+      ],
+      "keywords": "IMPERIAL NAVY BREACHER FACTION EQUIPMENT"
+    },
+    {
+      "id": "eq_system_override_device",
+      "category": "Equipment",
+      "title": "System Override Device",
+      "subtitle": "Faction Equipment",
+      "rules": [
+        "Once per turning point, one friendly IMPERIAL NAVY BREACHER operative can perform the Operate Hatch action for 1 less AP."
+      ],
+      "keywords": "IMPERIAL NAVY BREACHER FACTION EQUIPMENT"
+    }
+  ]
+}
