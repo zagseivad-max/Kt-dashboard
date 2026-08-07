@@ -1,4 +1,3 @@
-
 {
   "factionName": "Kasrkin",
   "rules": [
@@ -72,7 +71,7 @@
         }
       ],
       "rules": [
-        "<b>TACTICAL COMMAND (0AP):</b> Select one friendly KASRKIN operative, then select one SKILL AT ARMS for that operative to have (instead of any it currently has) until the Ready step of the next Strategy phase[span_0](start_span)[span_0](end_span). This can be in addition to any SKILL AT ARMS it already has, but they cannot be the same[span_1](start_span)[span_1](end_span). Alternatively, instead of resolving the above effect, if your Clearance Sweep marker is in the killzone, you can remove it and place it again[span_2](start_span)[span_2](end_span). This operative cannot perform this action while within control range of an enemy operative[span_3](start_span)[span_3](end_span)."
+        "TACTICAL COMMAND (0AP): Select one friendly KASRKIN operative, then select one SKILL AT ARMS for that operative to have (instead of any it currently has) until the Ready step of the next Strategy phase[span_0](start_span)[span_0](end_span). This can be in addition to any SKILL AT ARMS it already has, but they cannot be the same[span_1](start_span)[span_1](end_span). Alternatively, instead of resolving the above effect, if your Clearance Sweep marker is in the killzone, you can remove it and place it again[span_2](start_span)[span_2](end_span). This operative cannot perform this action while within control range of an enemy operative[span_3](start_span)[span_3](end_span)."
       ],
       "keywords": "KASRKIN, IMPERIUM, ASTRA MILITARUM, LEADER, SERGEANT[span_4](start_span)[span_4](end_span)"
     },
@@ -104,8 +103,8 @@
         }
       ],
       "rules": [
-        "<b>Medic!:</b> The first time during each turning point that another friendly KASRKIN operative would be incapacitated while visible to and within 3\" of this operative, you can use this rule, providing neither this nor that operative is within control range of an enemy operative[span_5](start_span)[span_5](end_span). If you do, that friendly operative isn't incapacitated, has 1 wound remaining and cannot be incapacitated for the remainder of the action[span_6](start_span)[span_6](end_span). After that action, that friendly operative can then immediately perform a free Dash action, but must end that move within this operative's control range[span_7](start_span)[span_7](end_span). Subtract 1 from this and that operative's APL stats until the end of their next activations respectively, and if this rule was used during that friendly operative's activation, that activation ends[span_8](start_span)[span_8](end_span). You cannot use this rule if this operative is incapacitated, or if it's a Shoot action and this operative would be a primary or secondary target[span_9](start_span)[span_9](end_span).",
-        "<b>MEDIKIT (0AP):</b> Select one friendly KASRKIN operative within this operative's control range to regain up to 2D3 lost wounds[span_10](start_span)[span_10](end_span). It cannot be an operative that the Medic! rule was used on during this turning point[span_11](start_span)[span_11](end_span). This operative cannot perform this action while within control range of an enemy operative[span_12](start_span)[span_12](end_span)."
+        "Medic!: The first time during each turning point that another friendly KASRKIN operative would be incapacitated while visible to and within 3\" of this operative, you can use this rule, providing neither this nor that operative is within control range of an enemy operative[span_5](start_span)[span_5](end_span). If you do, that friendly operative isn't incapacitated, has 1 wound remaining and cannot be incapacitated for the remainder of the action[span_6](start_span)[span_6](end_span). After that action, that friendly operative can then immediately perform a free Dash action, but must end that move within this operative's control range[span_7](start_span)[span_7](end_span). Subtract 1 from this and that operative's APL stats until the end of their next activations respectively, and if this rule was used during that friendly operative's activation, that activation ends[span_8](start_span)[span_8](end_span). You cannot use this rule if this operative is incapacitated, or if it's a Shoot action and this operative would be a primary or secondary target[span_9](start_span)[span_9](end_span).",
+        "MEDIKIT (0AP): Select one friendly KASRKIN operative within this operative's control range to regain up to 2D3 lost wounds[span_10](start_span)[span_10](end_span). It cannot be an operative that the Medic! rule was used on during this turning point[span_11](start_span)[span_11](end_span). This operative cannot perform this action while within control range of an enemy operative[span_12](start_span)[span_12](end_span)."
       ],
       "keywords": "KASRKIN, IMPERIUM, ASTRA MILITARUM, MEDIC, COMBAT MEDIC[span_13](start_span)[span_13](end_span)"
     },
@@ -137,9 +136,9 @@
         }
       ],
       "rules": [
-        "<b>Melta Mine:</b> This operative is carrying your Melta Mine marker[span_14](start_span)[span_14](end_span). It can perform the Pick Up Marker action on that marker, and whenever it performs the Place Marker action on that marker, it can immediately perform a free Dash action[span_15](start_span)[span_15](end_span). That marker cannot be placed within an enemy operative's control range (if this operative is incapacitated while carrying that marker and that marker cannot be placed, it's removed with this operative)[span_16](start_span)[span_16](end_span).",
-        "<b>Proximity Mine:</b> The first time your Melta Mine marker is within another operative's control range, remove that marker and inflict 2D6+3 damage on that operative; if it isn't incapacitated, end its action (if any), even if that action's effects aren't fulfilled[span_17](start_span)[span_17](end_span). If it cannot be placed, move it the minimum amount to do so[span_18](start_span)[span_18](end_span). Note that this operative is ignored for these effects (i.e. it cannot set it off or take damage from that marker)[span_19](start_span)[span_19](end_span).",
-        "<b>Blast Padding:</b> Whenever an operative is shooting this operative with a weapon that has the Blast or Torrent weapon rule (excluding weapons that have a sweeping profile), you can re-roll one of your defence dice[span_20](start_span)[span_20](end_span). In addition, this operative isn't affected by the x\" Devastating x weapon rule (i.e. Devastating with a distance) unless they are the target during that sequence[span_21](start_span)[span_21](end_span)."
+        "Melta Mine: This operative is carrying your Melta Mine marker[span_14](start_span)[span_14](end_span). It can perform the Pick Up Marker action on that marker, and whenever it performs the Place Marker action on that marker, it can immediately perform a free Dash action[span_15](start_span)[span_15](end_span). That marker cannot be placed within an enemy operative's control range (if this operative is incapacitated while carrying that marker and that marker cannot be placed, it's removed with this operative)[span_16](start_span)[span_16](end_span).",
+        "Proximity Mine: The first time your Melta Mine marker is within another operative's control range, remove that marker and inflict 2D6+3 damage on that operative; if it isn't incapacitated, end its action (if any), even if that action's effects aren't fulfilled[span_17](start_span)[span_17](end_span). If it cannot be placed, move it the minimum amount to do so[span_18](start_span)[span_18](end_span). Note that this operative is ignored for these effects (i.e. it cannot set it off or take damage from that marker)[span_19](start_span)[span_19](end_span).",
+        "Blast Padding: Whenever an operative is shooting this operative with a weapon that has the Blast or Torrent weapon rule (excluding weapons that have a sweeping profile), you can re-roll one of your defence dice[span_20](start_span)[span_20](end_span). In addition, this operative isn't affected by the x\" Devastating x weapon rule (i.e. Devastating with a distance) unless they are the target during that sequence[span_21](start_span)[span_21](end_span)."
       ],
       "keywords": "KASRKIN, IMPERIUM, ASTRA MILITARUM, DEMO-TROOPER[span_22](start_span)[span_22](end_span)"
     },
@@ -250,8 +249,8 @@
         }
       ],
       "rules": [
-        "<b>Reconnoitre Killzone:</b> The Relocate strategy ploy costs you 0CP if this operative is the selected friendly KASRKIN operative[span_24](start_span)[span_24](end_span).",
-        "<b>AUSPEX SCAN (1AP):</b> Until the start of this operative's next activation or until it's incapacitated (whichever comes first), whenever an enemy operative is within 8\" of this operative, that enemy operative is being scanned[span_25](start_span)[span_25](end_span). Whenever a friendly KASRKIN operative is shooting an enemy operative that's being scanned, that enemy operative cannot be obscured[span_26](start_span)[span_26](end_span). This operative cannot perform this action while within control range of an enemy operative[span_27](start_span)[span_27](end_span)."
+        "Reconnoitre Killzone: The Relocate strategy ploy costs you 0CP if this operative is the selected friendly KASRKIN operative[span_24](start_span)[span_24](end_span).",
+        "AUSPEX SCAN (1AP): Until the start of this operative's next activation or until it's incapacitated (whichever comes first), whenever an enemy operative is within 8\" of this operative, that enemy operative is being scanned[span_25](start_span)[span_25](end_span). Whenever a friendly KASRKIN operative is shooting an enemy operative that's being scanned, that enemy operative cannot be obscured[span_26](start_span)[span_26](end_span). This operative cannot perform this action while within control range of an enemy operative[span_27](start_span)[span_27](end_span)."
       ],
       "keywords": "KASRKIN, IMPERIUM, ASTRA MILITARUM, RECON-TROOPER[span_28](start_span)[span_28](end_span)"
     },
@@ -297,8 +296,8 @@
         }
       ],
       "rules": [
-        "<b>Camo Cloak:</b> Whenever an operative is shooting this operative: Ignore the Saturate weapon rule[span_29](start_span)[span_29](end_span). If you can retain any cover saves, you can retain one additional cover save, or you can retain one cover save as a critical success instead[span_30](start_span)[span_30](end_span). This isn't cumulative with improved cover saves from Vantage terrain[span_31](start_span)[span_31](end_span).",
-        "<b>*Concealed Position:</b> This operative can only use this weapon the first time it's performing the Shoot action during the battle[span_32](start_span)[span_32](end_span)."
+        "Camo Cloak: Whenever an operative is shooting this operative: Ignore the Saturate weapon rule[span_29](start_span)[span_29](end_span). If you can retain any cover saves, you can retain one additional cover save, or you can retain one cover save as a critical success instead[span_30](start_span)[span_30](end_span). This isn't cumulative with improved cover saves from Vantage terrain[span_31](start_span)[span_31](end_span).",
+        "*Concealed Position: This operative can only use this weapon the first time it's performing the Shoot action during the battle[span_32](start_span)[span_32](end_span)."
       ],
       "keywords": "KASRKIN, IMPERIUM, ASTRA MILITARUM, SHARPSHOOTER[span_33](start_span)[span_33](end_span)"
     },
@@ -330,7 +329,7 @@
         }
       ],
       "rules": [
-        "<b>Adaptive Equipment:</b> You can do each of the following once per turning point: One friendly KASRKIN TROOPER operative can perform the Smoke Grenade action[span_34](start_span)[span_34](end_span). One friendly KASRKIN TROOPER operative can perform the Stun Grenade action[span_35](start_span)[span_35](end_span). The rules for these actions are found in universal equipment[span_36](start_span)[span_36](end_span). Performing these actions using this rule doesn't count towards their action limits (i.e. if you also select those grenades from equipment)[span_37](start_span)[span_37](end_span)."
+        "Adaptive Equipment: You can do each of the following once per turning point: One friendly KASRKIN TROOPER operative can perform the Smoke Grenade action[span_34](start_span)[span_34](end_span). One friendly KASRKIN TROOPER operative can perform the Stun Grenade action[span_35](start_span)[span_35](end_span). The rules for these actions are found in universal equipment[span_36](start_span)[span_36](end_span). Performing these actions using this rule doesn't count towards their action limits (i.e. if you also select those grenades from equipment)[span_37](start_span)[span_37](end_span)."
       ],
       "keywords": "KASRKIN, IMPERIUM, ASTRA MILITARUM, TROOPER[span_38](start_span)[span_38](end_span)"
     },
@@ -362,7 +361,7 @@
         }
       ],
       "rules": [
-        "<b>BATTLE COMMS (1AP):</b> Select one other friendly KASRKIN operative[span_39](start_span)[span_39](end_span). Until the end of that operative's next activation, add 1 to its APL stat (to a maximum of 3 after all APL stat changes have been totalled)[span_40](start_span)[span_40](end_span). This operative can perform this action twice during its activation, but cannot perform this action while within control range of an enemy operative[span_41](start_span)[span_41](end_span)."
+        "BATTLE COMMS (1AP): Select one other friendly KASRKIN operative[span_39](start_span)[span_39](end_span). Until the end of that operative's next activation, add 1 to its APL stat (to a maximum of 3 after all APL stat changes have been totalled)[span_40](start_span)[span_40](end_span). This operative can perform this action twice during its activation, but cannot perform this action while within control range of an enemy operative[span_41](start_span)[span_41](end_span)."
       ],
       "keywords": "KASRKIN, IMPERIUM, ASTRA MILITARUM, VOX-TROOPER[span_42](start_span)[span_42](end_span)"
     },
@@ -521,5 +520,3 @@
     }
   ]
 }
-
- 
