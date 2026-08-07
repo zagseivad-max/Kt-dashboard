@@ -132,7 +132,7 @@
 
         /* LEFT COLUMN */
         .sidebar-left {
-            width: 18.5rem; /* Slightly widened to accommodate the new track header nicely */
+            width: 18.5rem;
             background-color: var(--panel-bg);
             border-right: 1px solid var(--border-color);
             display: flex;
@@ -837,7 +837,7 @@
         let pinnedIds = [];
         
         // ROSTER / WOUND TRACKING STORAGE
-        let rosterTrackers = []; // Stores objects like { id: uniqueKey, sourceId: originalCardId, title: 'Name #1', currentWounds: 12, maxWounds: 12 }
+        let rosterTrackers = []; 
         let trackerCounter = 1;
 
         // HARDCODED UNIVERSAL EQUIPMENT
@@ -879,7 +879,6 @@
             { id: 'ap2', label: 'AP 2' }
         ];
 
-        // Helper to retrieve record across both arrays
         function getRecordById(id) {
             let record = rulesDatabase.find(i => i.id === id);
             if (!record) {
@@ -899,23 +898,21 @@
 
         // --- WOUND TRACKER FUNCTIONS ---
         function addWoundTracker(event, recordId) {
-            event.stopPropagation(); // prevent clicking the nav-item from switching view
+            event.stopPropagation(); 
             const record = getRecordById(recordId);
             if (!record) return;
 
-            // Determine default wounds value from stats, fallback to 10 if none exists
             let defaultWounds = 10;
             if (record.stats && record.stats.Wounds) {
                 const parsed = parseInt(record.stats.Wounds, 10);
                 if (!isNaN(parsed)) defaultWounds = parsed;
             }
 
-            // Count how many trackers already exist for this specific record to assign sequential unique numbering
             const existingCount = rosterTrackers.filter(t => t.sourceId === recordId).length;
             const uniqueIndex = existingCount + 1;
 
             const newTracker = {
-                id: 'track_' + Date.now() + '_' + Math.random().toString(36.substr(2, 5)),
+                id: 'track_' + Date.now() + '_' + Math.random().toString(36).substring(2, 7),
                 sourceId: recordId,
                 title: `${record.title} #${uniqueIndex}`,
                 currentWounds: defaultWounds
@@ -1050,6 +1047,7 @@
         async function fetchFactionList() {
             try {
                 const response = await fetch('factions.json');
+                if (!response.ok) throw new Error("Network response was not ok");
                 const data = await response.json();
                 
                 const dropdown = document.getElementById('factionDropdown');
@@ -1078,16 +1076,30 @@
                 if (names.length > 0) {
                     switchFaction(names[0]);
                 } else {
-                    renderEmptyState();
+                    loadLocalFallback();
                 }
             } catch (error) {
-                console.error("Error loading factions from repository:", error);
-                document.getElementById('mainContent').innerHTML = `
-                <div class="empty-state">
-                    <h2>Failed to Load Factions</h2>
-                    <p>Make sure your 'factions.json' and subfolder files are correctly configured and uploaded to GitHub.</p>
-                </div>`;
+                console.warn("CORS or network block detected. Loading local fallback sample data...", error);
+                loadLocalFallback();
             }
+        }
+
+        // Local fallback in case CORS blocks local file fetching
+        function loadLocalFallback() {
+            allFactions["Angels of Death (Sample)"] = [
+                { id: 'sample_captain', category: 'Operatives', title: 'Space Marine Captain', subtitle: 'Leader', stats: { APL: '3', Move: '6"', Save: '3+', Wounds: '12' }, rules: ['<b>Rites of Battle:</b> Once per turning point, when a friendly operative is activated within 6" of this operative, you can change one of its normal hits to a critical hit.'] },
+                { id: 'sample_intercessor', category: 'Operatives', title: 'Intercessor Warrior', subtitle: 'Operative', stats: { APL: '2', Move: '6"', Save: '3+', Wounds: '14' }, rules: ['<b>Bolter Discipline:</b> This operative can perform a shoot action even if it has performed a dash action during this activation.'] }
+            ];
+
+            const dropdown = document.getElementById('factionDropdown');
+            dropdown.innerHTML = '';
+            for (const name in allFactions) {
+                const opt = document.createElement('option');
+                opt.value = name;
+                opt.text = name;
+                dropdown.appendChild(opt);
+            }
+            switchFaction("Angels of Death (Sample)");
         }
 
         function switchFaction(name) {
@@ -1095,8 +1107,8 @@
             
             activeFactionName = name;
             rulesDatabase = allFactions[name];
-            pinnedIds = []; // clear pins for new faction
-            rosterTrackers = []; // clear roster trackers when switching factions
+            pinnedIds = []; 
+            rosterTrackers = []; 
             selectedId = rulesDatabase.length > 0 ? rulesDatabase[0].id : null;
             
             document.getElementById('factionDropdown').value = name;
@@ -1151,7 +1163,6 @@
                     navItem.onclick = () => selectRecord(item.id);
                     navList.appendChild(navItem);
 
-                    // Render any active tracking sub-rows directly beneath this record
                     const activeTrackers = rosterTrackers.filter(t => t.sourceId === item.id);
                     activeTrackers.forEach(track => {
                         const subRow = document.createElement('div');
@@ -1198,7 +1209,6 @@
                 navItem.onclick = () => selectRecord(item.id);
                 navList.appendChild(navItem);
 
-                // Render any active tracking sub-rows for universal equipment as well
                 const activeTrackers = rosterTrackers.filter(t => t.sourceId === item.id);
                 activeTrackers.forEach(track => {
                     const subRow = document.createElement('div');
@@ -1383,7 +1393,7 @@
             if (data.stats) {
                 statsHtml = `
                 <div class="stats-grid">
-                    <div class="stat-box"><div class="label">APL</div><div class="value">${data.stats.Wounds || '-'}</div></div>
+                    <div class="stat-box"><div class="label">APL</div><div class="value">${data.stats.APL || '-'}</div></div>
                     <div class="stat-box"><div class="label">MOVE</div><div class="value">${data.stats.Move || '-'}</div></div>
                     <div class="stat-box"><div class="label">SAVE</div><div class="value">${data.stats.Save || '-'}</div></div>
                     <div class="stat-box"><div class="label">WOUNDS</div><div class="value">${data.stats.Wounds || '-'}</div></div>
@@ -1449,4 +1459,3 @@
     </script>
 </body>
 </html>
-
