@@ -699,7 +699,7 @@
 
         .empty-state { text-align: center; padding: 2rem 1rem; color: var(--text-dim); }
 
-        /* RESPONSIVE BREAKPOINTS */
+        /* RESPONSIVE BREAKPOINTS (Optimized for small phone screens vs tablets/PCs) */
         @media (max-width: 768px) {
             .sidebar-right {
                 position: fixed;
@@ -837,8 +837,7 @@
         let pinnedIds = [];
         
         // ROSTER / WOUND TRACKING STORAGE
-        let rosterTrackers = []; 
-        let trackerCounter = 1;
+        let rosterTrackers = [];
 
         // HARDCODED UNIVERSAL EQUIPMENT
         const universalEquipment = [
@@ -879,6 +878,7 @@
             { id: 'ap2', label: 'AP 2' }
         ];
 
+        // Helper to retrieve record across both arrays
         function getRecordById(id) {
             let record = rulesDatabase.find(i => i.id === id);
             if (!record) {
@@ -1047,7 +1047,6 @@
         async function fetchFactionList() {
             try {
                 const response = await fetch('factions.json');
-                if (!response.ok) throw new Error("Network response was not ok");
                 const data = await response.json();
                 
                 const dropdown = document.getElementById('factionDropdown');
@@ -1076,30 +1075,16 @@
                 if (names.length > 0) {
                     switchFaction(names[0]);
                 } else {
-                    loadLocalFallback();
+                    renderEmptyState();
                 }
             } catch (error) {
-                console.warn("CORS or network block detected. Loading local fallback sample data...", error);
-                loadLocalFallback();
+                console.error("Error loading factions from repository:", error);
+                document.getElementById('mainContent').innerHTML = `
+                <div class="empty-state">
+                    <h2>Failed to Load Factions</h2>
+                    <p>Make sure your 'factions.json' and subfolder files are correctly configured and uploaded to GitHub.</p>
+                </div>`;
             }
-        }
-
-        // Local fallback in case CORS blocks local file fetching
-        function loadLocalFallback() {
-            allFactions["Angels of Death (Sample)"] = [
-                { id: 'sample_captain', category: 'Operatives', title: 'Space Marine Captain', subtitle: 'Leader', stats: { APL: '3', Move: '6"', Save: '3+', Wounds: '12' }, rules: ['<b>Rites of Battle:</b> Once per turning point, when a friendly operative is activated within 6" of this operative, you can change one of its normal hits to a critical hit.'] },
-                { id: 'sample_intercessor', category: 'Operatives', title: 'Intercessor Warrior', subtitle: 'Operative', stats: { APL: '2', Move: '6"', Save: '3+', Wounds: '14' }, rules: ['<b>Bolter Discipline:</b> This operative can perform a shoot action even if it has performed a dash action during this activation.'] }
-            ];
-
-            const dropdown = document.getElementById('factionDropdown');
-            dropdown.innerHTML = '';
-            for (const name in allFactions) {
-                const opt = document.createElement('option');
-                opt.value = name;
-                opt.text = name;
-                dropdown.appendChild(opt);
-            }
-            switchFaction("Angels of Death (Sample)");
         }
 
         function switchFaction(name) {
@@ -1107,8 +1092,8 @@
             
             activeFactionName = name;
             rulesDatabase = allFactions[name];
-            pinnedIds = []; 
-            rosterTrackers = []; 
+            pinnedIds = []; // clear pins for new faction
+            rosterTrackers = []; // clear roster trackers for new faction
             selectedId = rulesDatabase.length > 0 ? rulesDatabase[0].id : null;
             
             document.getElementById('factionDropdown').value = name;
@@ -1163,6 +1148,7 @@
                     navItem.onclick = () => selectRecord(item.id);
                     navList.appendChild(navItem);
 
+                    // Render any active tracking sub-rows directly beneath this record
                     const activeTrackers = rosterTrackers.filter(t => t.sourceId === item.id);
                     activeTrackers.forEach(track => {
                         const subRow = document.createElement('div');
