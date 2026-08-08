@@ -1127,9 +1127,12 @@
             categories.forEach(cat => {
                 const catHeaderRow = document.createElement('div');
                 catHeaderRow.className = 'category-header-row';
+                
+                const trackHeader = cat === 'Operatives' ? '<span class="category-track-header">Track</span>' : '';
+                
                 catHeaderRow.innerHTML = `
                     <span class="category-title">${cat}</span>
-                    <span class="category-track-header">Track</span>
+                    ${trackHeader}
                 `;
                 navList.appendChild(catHeaderRow);
 
@@ -1139,36 +1142,42 @@
                     navItem.className = `nav-item ${item.id === selectedId ? 'active' : ''}`;
                     navItem.setAttribute('data-title', item.title.toLowerCase());
                     
-                    navItem.innerHTML = `
-                        <div class="nav-item-content"><span>${item.title}</span></div>
+                    const trackAction = cat === 'Operatives' ? `
                         <div class="nav-item-actions">
                             <button class="track-add-btn" onclick="addWoundTracker(event, '${item.id}')" title="Track Wounds">+</button>
                         </div>
+                    ` : '';
+
+                    navItem.innerHTML = `
+                        <div class="nav-item-content"><span>${item.title}</span></div>
+                        ${trackAction}
                     `;
                     navItem.onclick = () => selectRecord(item.id);
                     navList.appendChild(navItem);
 
-                    // Render any active tracking sub-rows directly beneath this record
-                    const activeTrackers = rosterTrackers.filter(t => t.sourceId === item.id);
-                    activeTrackers.forEach(track => {
-                        const subRow = document.createElement('div');
-                        subRow.className = 'nav-tracker-subrow';
-                        
-                        const woundsDisplay = track.currentWounds === 0 
-                            ? `<span class="subrow-val incapacitated">Incapacitated</span>` 
-                            : `<span class="subrow-val">${track.currentWounds}</span>`;
+                    // Render any active tracking sub-rows directly beneath this record (Only for Operatives)
+                    if (cat === 'Operatives') {
+                        const activeTrackers = rosterTrackers.filter(t => t.sourceId === item.id);
+                        activeTrackers.forEach(track => {
+                            const subRow = document.createElement('div');
+                            subRow.className = 'nav-tracker-subrow';
+                            
+                            const woundsDisplay = track.currentWounds === 0 
+                                ? `<span class="subrow-val incapacitated">Incapacitated</span>` 
+                                : `<span class="subrow-val">${track.currentWounds}</span>`;
 
-                        subRow.innerHTML = `
-                            <span class="subrow-title" title="${track.title}">${track.title}</span>
-                            <div class="subrow-controls">
-                                <button class="subrow-btn" onclick="updateTrackerWounds(event, '${track.id}', -1)">-</button>
-                                ${woundsDisplay}
-                                <button class="subrow-btn" onclick="updateTrackerWounds(event, '${track.id}', 1)">+</button>
-                                <button class="subrow-del" onclick="removeWoundTracker(event, '${track.id}')" title="Remove">&times;</button>
-                            </div>
-                        `;
-                        navList.appendChild(subRow);
-                    });
+                            subRow.innerHTML = `
+                                <span class="subrow-title" title="${track.title}">${track.title}</span>
+                                <div class="subrow-controls">
+                                    <button class="subrow-btn" onclick="updateTrackerWounds(event, '${track.id}', -1)">-</button>
+                                    ${woundsDisplay}
+                                    <button class="subrow-btn" onclick="updateTrackerWounds(event, '${track.id}', 1)">+</button>
+                                    <button class="subrow-del" onclick="removeWoundTracker(event, '${track.id}')" title="Remove">&times;</button>
+                                </div>
+                            `;
+                            navList.appendChild(subRow);
+                        });
+                    }
                 });
             });
 
@@ -1177,7 +1186,6 @@
             ueHeaderRow.className = 'category-header-row';
             ueHeaderRow.innerHTML = `
                 <span class="category-title">Universal Equipment</span>
-                <span class="category-track-header">Track</span>
             `;
             navList.appendChild(ueHeaderRow);
 
@@ -1188,33 +1196,9 @@
                 
                 navItem.innerHTML = `
                     <div class="nav-item-content"><span>${item.title}</span></div>
-                    <div class="nav-item-actions">
-                        <button class="track-add-btn" onclick="addWoundTracker(event, '${item.id}')" title="Track Wounds">+</button>
-                    </div>
                 `;
                 navItem.onclick = () => selectRecord(item.id);
                 navList.appendChild(navItem);
-
-                const activeTrackers = rosterTrackers.filter(t => t.sourceId === item.id);
-                activeTrackers.forEach(track => {
-                    const subRow = document.createElement('div');
-                    subRow.className = 'nav-tracker-subrow';
-                    
-                    const woundsDisplay = track.currentWounds === 0 
-                        ? `<span class="subrow-val incapacitated">Incapacitated</span>` 
-                        : `<span class="subrow-val">${track.currentWounds}</span>`;
-
-                    subRow.innerHTML = `
-                        <span class="subrow-title" title="${track.title}">${track.title}</span>
-                        <div class="subrow-controls">
-                            <button class="subrow-btn" onclick="updateTrackerWounds(event, '${track.id}', -1)">-</button>
-                            ${woundsDisplay}
-                            <button class="subrow-btn" onclick="updateTrackerWounds(event, '${track.id}', 1)">+</button>
-                            <button class="subrow-del" onclick="removeWoundTracker(event, '${track.id}')" title="Remove">&times;</button>
-                        </div>
-                    `;
-                    navList.appendChild(subRow);
-                });
             });
         }
 
