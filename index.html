@@ -103,60 +103,13 @@
         .btn-primary { background-color: var(--accent-orange); border-color: var(--accent-orange); }
         .btn-primary:active, .btn-primary:hover { background-color: #b84315; }
 
-        /* FAKE AI ADVISOR WIDGET (TOP LEFT CORNER) */
-        .ai-advisor-widget {
-            display: flex;
-            align-items: center;
-            background-color: var(--bg-dark);
-            border: 1px solid var(--accent-cyan);
-            border-radius: 6px;
-            padding: 2px 6px;
-            gap: 6px;
-            max-width: 320px;
-            margin-right: 10px;
-        }
-
-        .ai-avatar {
-            font-size: 1rem;
-            animation: pulse-glow 2s infinite;
-        }
-
-        @keyframes pulse-glow {
-            0% { opacity: 0.6; }
-            50% { opacity: 1; transform: scale(1.1); }
-            100% { opacity: 0.6; }
-        }
-
-        .ai-input {
-            background: transparent;
-            border: none;
-            color: var(--text-light);
-            font-size: 0.75rem;
-            outline: none;
-            width: 140px;
-        }
-
-        .ai-input::placeholder {
-            color: var(--text-dim);
-        }
-
-        .ai-response {
-            font-size: 0.75rem;
-            color: var(--accent-cyan);
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            max-width: 130px;
-            font-style: italic;
-        }
-
         /* Dropdown styling */
         .faction-select {
             background-color: var(--bg-dark);
             color: var(--accent-gold);
             border: 1px solid var(--accent-gold);
             outline: none;
-            max-width: 150px;
+            max-width: 180px;
             padding: 0 10px;
             border-radius: 6px;
             font-size: 0.8rem;
@@ -822,13 +775,7 @@
 <body>
 
     <header>
-        <!-- FAKE AI ADVISOR WIDGET (UP IN THE LEFT CORNER) -->
-        <div class="ai-advisor-widget">
-            <span class="ai-avatar">🤖</span>
-            <input type="text" class="ai-input" placeholder="Ask AI Advisor..." onkeydown="handleAiInput(event)">
-            <span class="ai-response" id="aiResponseText">Roll crits for victory!</span>
-        </div>
-
+        <h1><span>⚔️</span> KT Dashboard</h1>
         <div class="header-actions">
             <!-- SCALING CONTROLS -->
             <div style="display:flex; gap:2px; margin-right: 5px;">
@@ -931,9 +878,6 @@
         
         // ROSTER / WOUND TRACKING STORAGE
         let rosterTrackers = [];
-
-        // FAKE AI ADVISOR TIMER REFERENCE
-        let aiTimeoutId = null;
 
         // FIXED CATEGORY: CRIT OPS
         const critOps = [
@@ -1132,27 +1076,6 @@
                 record = critOps.find(i => i.id === id);
             }
             return record;
-        }
-
-        // --- FAKE AI ADVISOR LOGIC ---
-        function handleAiInput(event) {
-            if (event.key === 'Enter') {
-                const responseEl = document.getElementById('aiResponseText');
-                
-                // Clear any existing 10-second follow-up timer
-                if (aiTimeoutId) {
-                    clearTimeout(aiTimeoutId);
-                }
-
-                // Set initial response
-                responseEl.innerText = "Roll crits for victory!";
-                event.target.value = ""; // clear input
-
-                // Schedule follow-up text after 10 seconds (10000 ms) if user doesn't respond
-                aiTimeoutId = setTimeout(() => {
-                    responseEl.innerText = "Roll crits for victory! Prepare to lose, fucker!";
-                }, 10000);
-            }
         }
 
         // --- INIT ---
