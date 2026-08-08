@@ -11,6 +11,7 @@
             --card-bg: #252830;
             --accent-orange: #d9531e;
             --accent-gold: #f39c12;
+            --accent-cyan: #00e5ff;
             --text-light: #eceef1;
             --text-dim: #9aa0ac;
             --border-color: #333742;
@@ -600,6 +601,45 @@
             border-radius: 6px;
             padding: 4px;
             gap: 2px;
+            transition: all 0.2s;
+        }
+
+        /* DOUBLE POINTS CSS OVERRIDES */
+        .counter-box.doubled {
+            border: 2px solid var(--accent-cyan) !important;
+            background-color: rgba(0, 229, 255, 0.05);
+        }
+
+        .field-label.clickable {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            transition: color 0.2s;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .field-label.clickable:hover {
+            color: var(--accent-cyan);
+        }
+
+        .dbl-badge {
+            background-color: var(--accent-cyan);
+            color: #000;
+            font-size: 0.65rem;
+            padding: 1px 4px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        /* TOTAL TILE CSS */
+        .total-box {
+            background-color: rgba(0,0,0,0.4);
+            border: 1px solid var(--border-color);
+            border-top: 2px solid var(--accent-orange);
+            margin-top: 4px;
+            margin-bottom: 4px;
         }
 
         .counter-controls {
@@ -869,10 +909,12 @@
         const BASE_COLUMN_WIDTH = 125; 
         const TRACKER_PADDING = 20;
 
+        // NEW: Tracker Array updated with 'canDouble' properties and the explicit 'total' field
         const trackerFields = [
-            { id: 'crit', label: 'Crit Op' },
-            { id: 'tac', label: 'Tac Op' },
-            { id: 'kill', label: 'Kill Op' },
+            { id: 'crit', label: 'Crit Op', canDouble: true },
+            { id: 'tac', label: 'Tac Op', canDouble: true },
+            { id: 'kill', label: 'Kill Op', canDouble: true },
+            { id: 'total', label: 'Total', isTotal: true },
             { id: 'cp', label: 'CP', isAccent: true },
             { id: 'ap1', label: 'AP 1' },
             { id: 'ap2', label: 'AP 2' }
@@ -942,7 +984,8 @@
         function initPlayers(count) {
             for (let i = 1; i <= count; i++) {
                 if (!playerState[i]) {
-                    playerState[i] = { crit: 0, tac: 0, kill: 0, cp: 0, ap1: 0, ap2: 0 };
+                    // Include doubledOp reference in the state
+                    playerState[i] = { crit: 0, tac: 0, kill: 0, cp: 0, ap1: 0, ap2: 0, doubledOp: null };
                 }
             }
         }
@@ -972,11 +1015,37 @@
             document.getElementById('val-turn').innerText = turnValue;
         }
 
+        function getPlayerTotal(playerNum) {
+            const p = playerState[playerNum];
+            let total = p.crit + p.tac + p.kill;
+            
+            // Apply double points modifier
+            if (p.doubledOp) {
+                total += p[p.doubledOp];
+            }
+            return total;
+        }
+
         function updatePlayerVal(playerNum, fieldId, change) {
             let newVal = playerState[playerNum][fieldId] + change;
             if (newVal < 0) newVal = 0;
             playerState[playerNum][fieldId] = newVal;
             document.getElementById(`val-p${playerNum}-${fieldId}`).innerText = newVal;
+            
+            // Dynamically recalculate total if a scoring field was updated
+            if (['crit', 'tac', 'kill'].includes(fieldId)) {
+                document.getElementById(`val-p${playerNum}-total`).innerText = getPlayerTotal(playerNum);
+            }
+        }
+
+        // Toggles which stat provides double points
+        function toggleDouble(playerNum, fieldId) {
+            if (playerState[playerNum].doubledOp === fieldId) {
+                playerState[playerNum].doubledOp = null; // deselect
+            } else {
+                playerState[playerNum].doubledOp = fieldId; // select
+            }
+            renderPlayers(); // visually updates classes/badges and re-calculates totals
         }
 
         function addPlayer() {
@@ -1021,16 +1090,38 @@
                     <div class="player-title">Player ${i}</div>`;
                 
                 trackerFields.forEach(field => {
-                    const borderColor = field.isAccent ? 'border-color: var(--accent-gold);' : '';
-                    colHtml += `
-                    <div class="counter-box" style="${borderColor}">
-                        <span class="field-label">${field.label}</span>
-                        <div class="counter-controls">
-                            <button class="btn-inc" onclick="updatePlayerVal(${i}, '${field.id}', -1)">◀</button>
-                            <span class="counter-val" id="val-p${i}-${field.id}">${playerState[i][field.id]}</span>
-                            <button class="btn-inc" onclick="updatePlayerVal(${i}, '${field.id}', 1)">▶</button>
-                        </div>
-                    </div>`;
+                    if (field.isTotal) {
+                        colHtml += `
+                        <div class="counter-box total-box">
+                            <span class="field-label">${field.label}</span>
+                            <div class="counter-val" id="val-p${i}-total" style="padding: 4px 0; font-size: 1.8rem; color: #fff;">
+                                ${getPlayerTotal(i)}
+                            </div>
+                        </div>`;
+                    } else {
+                        const isDoubled = field.canDouble && playerState[i].doubledOp === field.id;
+                        const doubledClass = isDoubled ? 'doubled' : '';
+                        const borderColor = field.isAccent && !isDoubled ? 'border-color: var(--accent-gold);' : '';
+                        
+                        let labelHtml = field.label;
+                        if (field.canDouble) {
+                            labelHtml = `<span class="field-label clickable" onclick="toggleDouble(${i}, '${field.id}')" title="Click to apply x2 Double Points multiplier">
+                                ${field.label} ${isDoubled ? '<span class="dbl-badge">x2</span>' : ''}
+                            </span>`;
+                        } else {
+                            labelHtml = `<span class="field-label">${field.label}</span>`;
+                        }
+
+                        colHtml += `
+                        <div class="counter-box ${doubledClass}" style="${borderColor}">
+                            ${labelHtml}
+                            <div class="counter-controls">
+                                <button class="btn-inc" onclick="updatePlayerVal(${i}, '${field.id}', -1)">◀</button>
+                                <span class="counter-val" id="val-p${i}-${field.id}">${playerState[i][field.id]}</span>
+                                <button class="btn-inc" onclick="updatePlayerVal(${i}, '${field.id}', 1)">▶</button>
+                            </div>
+                        </div>`;
+                    }
                 });
 
                 colHtml += `</div>`;
