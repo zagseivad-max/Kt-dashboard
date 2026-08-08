@@ -133,7 +133,7 @@
             color: var(--text-light);
             font-size: 0.75rem;
             outline: none;
-            width: 150px;
+            width: 140px;
         }
 
         .ai-input::placeholder {
@@ -146,7 +146,7 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            max-width: 120px;
+            max-width: 130px;
             font-style: italic;
         }
 
@@ -932,6 +932,9 @@
         // ROSTER / WOUND TRACKING STORAGE
         let rosterTrackers = [];
 
+        // FAKE AI ADVISOR TIMER REFERENCE
+        let aiTimeoutId = null;
+
         // FIXED CATEGORY: CRIT OPS
         const critOps = [
             { 
@@ -1135,8 +1138,20 @@
         function handleAiInput(event) {
             if (event.key === 'Enter') {
                 const responseEl = document.getElementById('aiResponseText');
+                
+                // Clear any existing 10-second follow-up timer
+                if (aiTimeoutId) {
+                    clearTimeout(aiTimeoutId);
+                }
+
+                // Set initial response
                 responseEl.innerText = "Roll crits for victory!";
                 event.target.value = ""; // clear input
+
+                // Schedule follow-up text after 10 seconds (10000 ms) if user doesn't respond
+                aiTimeoutId = setTimeout(() => {
+                    responseEl.innerText = "Roll crits for victory! Prepare to lose, fucker!";
+                }, 10000);
             }
         }
 
