@@ -103,13 +103,60 @@
         .btn-primary { background-color: var(--accent-orange); border-color: var(--accent-orange); }
         .btn-primary:active, .btn-primary:hover { background-color: #b84315; }
 
+        /* FAKE AI ADVISOR WIDGET (TOP LEFT CORNER) */
+        .ai-advisor-widget {
+            display: flex;
+            align-items: center;
+            background-color: var(--bg-dark);
+            border: 1px solid var(--accent-cyan);
+            border-radius: 6px;
+            padding: 2px 6px;
+            gap: 6px;
+            max-width: 320px;
+            margin-right: 10px;
+        }
+
+        .ai-avatar {
+            font-size: 1rem;
+            animation: pulse-glow 2s infinite;
+        }
+
+        @keyframes pulse-glow {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; transform: scale(1.1); }
+            100% { opacity: 0.6; }
+        }
+
+        .ai-input {
+            background: transparent;
+            border: none;
+            color: var(--text-light);
+            font-size: 0.75rem;
+            outline: none;
+            width: 150px;
+        }
+
+        .ai-input::placeholder {
+            color: var(--text-dim);
+        }
+
+        .ai-response {
+            font-size: 0.75rem;
+            color: var(--accent-cyan);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 120px;
+            font-style: italic;
+        }
+
         /* Dropdown styling */
         .faction-select {
             background-color: var(--bg-dark);
             color: var(--accent-gold);
             border: 1px solid var(--accent-gold);
             outline: none;
-            max-width: 180px;
+            max-width: 150px;
             padding: 0 10px;
             border-radius: 6px;
             font-size: 0.8rem;
@@ -775,7 +822,13 @@
 <body>
 
     <header>
-        <h1><span>⚔️</span> KT Dashboard</h1>
+        <!-- FAKE AI ADVISOR WIDGET (UP IN THE LEFT CORNER) -->
+        <div class="ai-advisor-widget">
+            <span class="ai-avatar">🤖</span>
+            <input type="text" class="ai-input" placeholder="Ask AI Advisor..." onkeydown="handleAiInput(event)">
+            <span class="ai-response" id="aiResponseText">Roll crits for victory!</span>
+        </div>
+
         <div class="header-actions">
             <!-- SCALING CONTROLS -->
             <div style="display:flex; gap:2px; margin-right: 5px;">
@@ -1076,6 +1129,15 @@
                 record = critOps.find(i => i.id === id);
             }
             return record;
+        }
+
+        // --- FAKE AI ADVISOR LOGIC ---
+        function handleAiInput(event) {
+            if (event.key === 'Enter') {
+                const responseEl = document.getElementById('aiResponseText');
+                responseEl.innerText = "Roll crits for victory!";
+                event.target.value = ""; // clear input
+            }
         }
 
         // --- INIT ---
