@@ -1066,14 +1066,14 @@
             { id: 'ap2', label: 'AP 2' }
         ];
 
-        // Helper to retrieve record across database, critOps, and universalEquipment arrays
+        // Helper to retrieve record across database, universalEquipment, and critOps arrays
         function getRecordById(id) {
             let record = rulesDatabase.find(i => i.id === id);
             if (!record) {
-                record = critOps.find(i => i.id === id);
+                record = universalEquipment.find(i => i.id === id);
             }
             if (!record) {
-                record = universalEquipment.find(i => i.id === id);
+                record = critOps.find(i => i.id === id);
             }
             return record;
         }
@@ -1480,13 +1480,13 @@
                 });
             });
 
-            // Append Crit Ops Category
-            const critOpsHeaderRow = document.createElement('div');
-            critOpsHeaderRow.className = 'category-header-row';
-            critOpsHeaderRow.innerHTML = `<span class="category-title">Crit Ops</span>`;
-            navList.appendChild(critOpsHeaderRow);
+            // Append Universal Equipment Category First
+            const ueHeaderRow = document.createElement('div');
+            ueHeaderRow.className = 'category-header-row';
+            ueHeaderRow.innerHTML = `<span class="category-title">Universal Equipment</span>`;
+            navList.appendChild(ueHeaderRow);
 
-            critOps.forEach(item => {
+            universalEquipment.forEach(item => {
                 const navItem = document.createElement('div');
                 navItem.className = `nav-item ${item.id === selectedId ? 'active' : ''}`;
                 navItem.setAttribute('data-title', item.title.toLowerCase());
@@ -1495,13 +1495,13 @@
                 navList.appendChild(navItem);
             });
 
-            // Append Universal Equipment Category
-            const ueHeaderRow = document.createElement('div');
-            ueHeaderRow.className = 'category-header-row';
-            ueHeaderRow.innerHTML = `<span class="category-title">Universal Equipment</span>`;
-            navList.appendChild(ueHeaderRow);
+            // Append Crit Ops Category Directly Below Universal Equipment
+            const critOpsHeaderRow = document.createElement('div');
+            critOpsHeaderRow.className = 'category-header-row';
+            critOpsHeaderRow.innerHTML = `<span class="category-title">Crit Ops</span>`;
+            navList.appendChild(critOpsHeaderRow);
 
-            universalEquipment.forEach(item => {
+            critOps.forEach(item => {
                 const navItem = document.createElement('div');
                 navItem.className = `nav-item ${item.id === selectedId ? 'active' : ''}`;
                 navItem.setAttribute('data-title', item.title.toLowerCase());
