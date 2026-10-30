@@ -5,7 +5,8 @@
     { "name": "Kasrkin", "path": "factions/kasrkin.json" }, 
     { "name": "Celestian Insidiants", "path": "factions/celestian-insidiants.json" }, 
     { "name": "Plague Marines", "path": "factions/plague-marines.json" },
-    { "name": "Imperial Navy Breachers", "path": "factions/breachers.json" } 
+    { "name": "Imperial Navy Breachers", "path": "factions/breachers.json" },
+    { "name": "Wrecka Krew", "path": "factions/Wrecka-Krew.json" } 
   ]
 }
 
