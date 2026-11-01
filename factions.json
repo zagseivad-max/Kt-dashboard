@@ -1,7 +1,7 @@
 {
   "factions": [
     { "name": "Angels of Death", "path": "factions/angels-of-death.json" }, 
-    { "name": "Wrecka Krew", "path": "factions/wrecka-krew.json" },
+    { "name": "Wrecka Krew", "path": "factions/wrecka.json" },
     { "name": "Tempestus Aquilons", "path": "factions/tempestus-aquilons.json" }, 
     { "name": "Kasrkin", "path": "factions/kasrkin.json" }, 
     { "name": "Celestian Insidiants", "path": "factions/celestian-insidiants.json" }, 
