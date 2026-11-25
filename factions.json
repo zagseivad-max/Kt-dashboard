@@ -35,6 +35,10 @@
     {
       "name": "Vespid Stingwings",
       "path": "factions/vespid_stingwings.json"
+    },
+    {
+      "name": "Nemesis Claw",
+      "path": "factions/nemesis_claw.json"
     }
   ]
 }

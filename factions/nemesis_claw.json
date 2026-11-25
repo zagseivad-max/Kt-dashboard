@@ -1,0 +1,553 @@
+{
+  "factionName": "Nemesis Claw",
+  "rules": [
+    {
+      "id": "fac_astartes",
+      "category": "Faction Rules",
+      "title": "Astartes",
+      "subtitle": "Faction Rule",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "During each friendly <b>NEMESIS CLAW</b> operative's activation, it can perform either two Shoot actions or two Fight actions. If it's two Shoot actions, a bolt pistol, boltgun or scoped bolt pistol must be selected for at least one of them.",
+        "Each friendly <b>NEMESIS CLAW</b> operative can counteract regardless of its order."
+      ],
+      "keywords": "NEMESIS CLAW"
+    },
+    {
+      "id": "fac_in_midnight_clad",
+      "category": "Faction Rules",
+      "title": "In Midnight Clad",
+      "subtitle": "Faction Rule",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Whenever an enemy operative is shooting a friendly <b>NEMESIS CLAW</b> operative, that friendly operative is obscured if both of the following are true:",
+        "It's more than 8\" from enemy operatives it's visible to.",
+        "It's within 1\" of Heavy terrain that's not lower than it, or any part of its base is underneath Vantage terrain."
+      ],
+      "keywords": "NEMESIS CLAW"
+    },
+    {
+      "id": "ploy_we_have_come_for_you",
+      "category": "Strategy Ploys",
+      "title": "We Have Come For You",
+      "subtitle": "Strategy Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Whenever a friendly <b>NEMESIS CLAW</b> operative is activated, if the first action it performs during that activation is the Charge action, when it ends its move during that action, you can inflict D3 damage on one enemy operative within its control range."
+      ],
+      "keywords": "NEMESIS CLAW"
+    },
+    {
+      "id": "ploy_the_black_hunt",
+      "category": "Strategy Ploys",
+      "title": "The Black Hunt",
+      "subtitle": "Strategy Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Whenever a friendly <b>NEMESIS CLAW</b> operative is shooting against, fighting against or retaliating against an enemy operative that was wounded at the start of the action, you can re-roll one of your attack dice."
+      ],
+      "keywords": "NEMESIS CLAW"
+    },
+    {
+      "id": "ploy_preysight",
+      "category": "Strategy Ploys",
+      "title": "Preysight",
+      "subtitle": "Strategy Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Whenever a friendly <b>NEMESIS CLAW</b> operative performs the Shoot action, you can use this rule. If you do, until the end of that action, that friendly operative's ranged weapons have the Range 6\" and Seek Light weapon rules."
+      ],
+      "keywords": "NEMESIS CLAW"
+    },
+    {
+      "id": "ploy_return_to_darkness",
+      "category": "Strategy Ploys",
+      "title": "Return To Darkness",
+      "subtitle": "Strategy Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "One friendly <b>NEMESIS CLAW</b> operative can immediately perform a free Fall Back or Reposition action, but it must end that move with Heavy terrain within its control range, or any part of its base underneath Vantage terrain. In addition, it cannot move more than 4\" during that action and it cannot end that move closer to enemy operatives (in a killzone that uses the close quarters rules, e.g. Killzone: Gallowdark, ignore Wall terrain when determining this)."
+      ],
+      "keywords": "NEMESIS CLAW"
+    },
+    {
+      "id": "ploy_vox_scream",
+      "category": "Firefight Ploys",
+      "title": "Vox Scream",
+      "subtitle": "Firefight Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Use this firefight ploy when your opponent would activate an enemy operative that's visible to a friendly <b>NEMESIS CLAW</b> operative. Roll one D6; if the result is higher than that enemy operative's APL stat, your opponent cannot activate it during this activation; if the result is less than or equal to that enemy operative's APL stat, this ploy isn't used, the CP spent on it is refunded and you cannot use this ploy again during this turning point. If there are no other enemy operatives eligible to be activated, this ploy has no effect. This ploy costs you 1 additional CP for each previous time you've used it during the battle (e.g. 1CP the first time you would use it, 2CP the second time, etc.)."
+      ],
+      "keywords": "NEMESIS CLAW"
+    },
+    {
+      "id": "ploy_death_to_the_false_emperor",
+      "category": "Firefight Ploys",
+      "title": "Death To The False Emperor",
+      "subtitle": "Firefight Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Use this firefight ploy after rolling your attack dice for a friendly <b>NEMESIS CLAW</b> operative, if it's shooting against, fighting against or retaliating against an enemy operative that has the IMPERIUM keyword. That friendly operative's weapons have the Ceaseless weapon rule until the end of that sequence; if that enemy operative also has the ADEPTUS ASTARTES keyword, that friendly operative's weapons have the Relentless weapon rule until the end of that sequence instead."
+      ],
+      "keywords": "NEMESIS CLAW, IMPERIUM, ADEPTUS ASTARTES"
+    },
+    {
+      "id": "ploy_proclivity_for_murder",
+      "category": "Firefight Ploys",
+      "title": "Proclivity For Murder",
+      "subtitle": "Firefight Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Use this firefight ploy after a friendly <b>NEMESIS CLAW</b> operative incapacitates an enemy operative within its control range. That friendly operative can immediately perform a free Charge or Dash action (for the former, it cannot move more than 3\"), even if it's performed an action that prevents it from performing those actions."
+      ],
+      "keywords": "NEMESIS CLAW"
+    },
+    {
+      "id": "ploy_dirty_fighter",
+      "category": "Firefight Ploys",
+      "title": "Dirty Fighter",
+      "subtitle": "Firefight Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Use this firefight ploy when a friendly <b>NEMESIS CLAW</b> operative is retaliating, at the start of the Resolve Attack Dice step. You can resolve one of your successes before the normal order. If you do, you cannot resolve any other successes during that sequence."
+      ],
+      "keywords": "NEMESIS CLAW"
+    },
+    {
+      "id": "eq_flayed_skin",
+      "category": "Faction Equipment",
+      "title": "Flayed Skin",
+      "subtitle": "Equipment",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Whenever an enemy operative is shooting against, fighting against or retaliating against a friendly <b>NEMESIS CLAW</b> operative within 2\" of it, your opponent cannot re-roll their attack dice results of 1."
+      ],
+      "keywords": "NEMESIS CLAW"
+    },
+    {
+      "id": "eq_chain_snare",
+      "category": "Faction Equipment",
+      "title": "Chain Snare",
+      "subtitle": "Equipment",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Whenever an enemy operative would perform the Fall Back action while within control range of a friendly <b>NEMESIS CLAW</b> operative, if no other enemy operatives are within that friendly operative's control range, you can use this rule. If you do, roll two D6, or one D6 if that enemy operative has a higher Wounds stat than that friendly operative. If any result is a 4+, that enemy operative cannot perform that action during that activation/counteraction (no AP are spent on it), and you cannot use this rule again during this turning point."
+      ],
+      "keywords": "NEMESIS CLAW"
+    },
+    {
+      "id": "eq_grisly_trophy",
+      "category": "Faction Equipment",
+      "title": "Grisly Trophy",
+      "subtitle": "Equipment",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Once per battle, when a friendly <b>NEMESIS CLAW</b> operative incapacitates an enemy operative within 2\" of it, you can use this rule. If you do, that friendly operative gains one of your Grisly Trophy tokens (if it doesn't already have one). Whenever a friendly <b>NEMESIS CLAW</b> operative that has one of your Grisly Trophy tokens is visible to and within 2\" of an enemy operative, subtract 1 from the Atk stat of that enemy operative's weapons."
+      ],
+      "keywords": "NEMESIS CLAW"
+    },
+    {
+      "id": "eq_comms_jammers",
+      "category": "Faction Equipment",
+      "title": "Comms Jammers",
+      "subtitle": "Equipment",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Whenever an enemy operative is within 3\" of a friendly <b>NEMESIS CLAW</b> operative, that enemy operative's APL stat cannot be added to. Note that this doesn't affect APL stats that have already been changed."
+      ],
+      "keywords": "NEMESIS CLAW"
+    },
+    {
+      "id": "op_night_lord_visionary",
+      "category": "Operatives",
+      "title": "Night Lord Visionary",
+      "subtitle": "Leader Operative",
+      "stats": {
+        "APL": "3",
+        "Move": "6\"",
+        "Save": "3+",
+        "Wounds": "15"
+      },
+      "weapons": [
+        {
+          "name": "Bolt pistol",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Range 8\""
+        },
+        {
+          "name": "Plasma pistol (standard)",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/5",
+          "rules": "Range 8\", Piercing 1"
+        },
+        {
+          "name": "Plasma pistol (supercharge)",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "4/5",
+          "rules": "Range 8\", Hot, Lethal 5+, Piercing 1"
+        },
+        {
+          "name": "Nostraman chainblade",
+          "atk": "5",
+          "hit": "3+",
+          "dmg": "4/5",
+          "rules": "Rending"
+        },
+        {
+          "name": "Power fist",
+          "atk": "5",
+          "hit": "4+",
+          "dmg": "5/7",
+          "rules": "Brutal"
+        },
+        {
+          "name": "Power maul",
+          "atk": "5",
+          "hit": "3+",
+          "dmg": "4/6",
+          "rules": "Shock"
+        },
+        {
+          "name": "Power weapon",
+          "atk": "5",
+          "hit": "3+",
+          "dmg": "4/6",
+          "rules": "Lethal 5+"
+        }
+      ],
+      "rules": [
+        "<b>Prescience:</b> PSYCHIC. In the Ready step of each Strategy phase, you gain D3 Prescience points. At the end of each turning point, discard your Prescience points. You can spend your Prescience points in the Firefight phase as follows (you cannot use each of the following rules more than once per turning point):",
+        "• Foreboding: PSYCHIC. Whenever it's your turn to activate a friendly operative, you can spend 1 of your Prescience points to skip that activation.",
+        "• Portent: PSYCHIC. Whenever an attack dice inflicts Normal Dmg on this operative, you can spend 1 of your Prescience points to ignore that inflicted damage.",
+        "You cannot gain or spend your Prescience points if this operative is incapacitated.",
+        "<b>Premonition (1 AP):</b> PSYCHIC. Spend 1 of your Prescience points to gain 1CP. This operative cannot perform this action while within control range of an enemy operative, or more than once per turning point."
+      ],
+      "keywords": "NEMESIS CLAW, CHAOS, HERETIC ASTARTES, PSYKER, LEADER, VISIONARY"
+    },
+    {
+      "id": "op_night_lord_fearmonger",
+      "category": "Operatives",
+      "title": "Night Lord Fearmonger",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "3",
+        "Move": "6\"",
+        "Save": "3+",
+        "Wounds": "14"
+      },
+      "weapons": [
+        {
+          "name": "Scoped bolt pistol (short range)",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Range 8\", Lethal 5+"
+        },
+        {
+          "name": "Scoped bolt pistol (long range)",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": ""
+        },
+        {
+          "name": "Terrorchem vial",
+          "atk": "5",
+          "hit": "3+",
+          "dmg": "2/0",
+          "rules": "Range 6\", Blast 2\", Devastating 3, Limited 1, Saturate, Terrorchem*"
+        },
+        {
+          "name": "Tainted blade",
+          "atk": "5",
+          "hit": "3+",
+          "dmg": "3/5",
+          "rules": "Terrorchem*"
+        }
+      ],
+      "rules": [
+        "<b>*Terrorchem:</b> In the Resolve Attack Dice step, if you inflict damage with any critical successes (including as a result of the Devastating weapon rule), the operative this weapon is being used against gains one of your Terrorchem tokens (if it doesn't already have one).",
+        "<b>Terrorchem Poison:</b> Whenever an operative that has one of your Terrorchem tokens is activated, inflict D3 damage on it.",
+        "<b>Poison Objective (1 AP):</b> Select one objective marker this operative controls to gain one of your Terrorchem tokens. It cannot be an objective marker within control range of an enemy operative, or one that already has one of your Terrorchem tokens. The first time an enemy operative that doesn't have one of your Terrorchem tokens contests that objective marker, that operative gains that Terrorchem token, then inflict 2D3 damage on it (if it's during an action, at the end of that action). This operative cannot perform this action while within control range of an enemy operative."
+      ],
+      "keywords": "NEMESIS CLAW, CHAOS, HERETIC ASTARTES, FEARMONGER"
+    },
+    {
+      "id": "op_night_lord_gunner",
+      "category": "Operatives",
+      "title": "Night Lord Gunner",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "3",
+        "Move": "6\"",
+        "Save": "3+",
+        "Wounds": "14"
+      },
+      "weapons": [
+        {
+          "name": "Bolt pistol",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Range 8\""
+        },
+        {
+          "name": "Flamer",
+          "atk": "4",
+          "hit": "2+",
+          "dmg": "3/3",
+          "rules": "Range 8\", Saturate, Torrent 2\""
+        },
+        {
+          "name": "Meltagun",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "6/3",
+          "rules": "Range 6\", Devastating 4, Piercing 2"
+        },
+        {
+          "name": "Plasma gun (standard)",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "4/6",
+          "rules": "Piercing 1"
+        },
+        {
+          "name": "Plasma gun (supercharge)",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "5/6",
+          "rules": "Hot, Lethal 5+, Piercing 1"
+        },
+        {
+          "name": "Fists",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": ""
+        }
+      ],
+      "rules": [],
+      "keywords": "NEMESIS CLAW, CHAOS, HERETIC ASTARTES, GUNNER"
+    },
+    {
+      "id": "op_night_lord_heavy_gunner",
+      "category": "Operatives",
+      "title": "Night Lord Heavy Gunner",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "3",
+        "Move": "6\"",
+        "Save": "3+",
+        "Wounds": "14"
+      },
+      "weapons": [
+        {
+          "name": "Bolt pistol",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Range 8\""
+        },
+        {
+          "name": "Heavy bolter (focused)",
+          "atk": "5",
+          "hit": "3+",
+          "dmg": "4/5",
+          "rules": "Heavy (Reposition only), Piercing Crits 1"
+        },
+        {
+          "name": "Heavy bolter (sweeping)",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "4/5",
+          "rules": "Heavy (Reposition only), Piercing Crits 1, Torrent 1\""
+        },
+        {
+          "name": "Missile launcher (frag)",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/5",
+          "rules": "Blast 2\", Heavy (Reposition only)"
+        },
+        {
+          "name": "Missile launcher (krak)",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "5/7",
+          "rules": "Heavy (Reposition only), Piercing 1"
+        },
+        {
+          "name": "Fists",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": ""
+        }
+      ],
+      "rules": [],
+      "keywords": "NEMESIS CLAW, CHAOS, HERETIC ASTARTES, HEAVY GUNNER"
+    },
+    {
+      "id": "op_night_lord_screecher",
+      "category": "Operatives",
+      "title": "Night Lord Screecher",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "3",
+        "Move": "6\"",
+        "Save": "3+",
+        "Wounds": "14"
+      },
+      "weapons": [
+        {
+          "name": "Lightning claws",
+          "atk": "5",
+          "hit": "3+",
+          "dmg": "4/5",
+          "rules": "Ceaseless, Lethal 5+"
+        }
+      ],
+      "rules": [
+        "<b>Screecher:</b> Whenever an enemy operative within 3\" of this operative is shooting, fighting or retaliating, your opponent cannot re-roll their attack dice.",
+        "<b>Appetite for Cruelty:</b> Whenever this operative is fighting against a wounded enemy operative, this operative's lightning claws have the Lethal 4+ weapon rule."
+      ],
+      "keywords": "NEMESIS CLAW, CHAOS, HERETIC ASTARTES, SCREECHER"
+    },
+    {
+      "id": "op_night_lord_skinthief",
+      "category": "Operatives",
+      "title": "Night Lord Skinthief",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "3",
+        "Move": "6\"",
+        "Save": "3+",
+        "Wounds": "14"
+      },
+      "weapons": [
+        {
+          "name": "Bolt pistol",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Range 8\""
+        },
+        {
+          "name": "Nostraman chainglaive",
+          "atk": "5",
+          "hit": "3+",
+          "dmg": "4/6",
+          "rules": "Rending"
+        }
+      ],
+      "rules": [
+        "<b>Flay Them Alive:</b> Once per turning point, when this operative incapacitates an enemy operative within its control range, you can select one other enemy operative visible to and within 6\" of either this operative or the incapacitated enemy operative. Until the start of the next turning point, that other enemy operative cannot control markers or perform the Pick Up Marker or mission actions.",
+        "<b>Tyrant of the Skinning Pits:</b> Whenever this operative is fighting or retaliating, Normal and Critical Dmg of 3 or more inflicts 1 less damage on it."
+      ],
+      "keywords": "NEMESIS CLAW, CHAOS, HERETIC ASTARTES, SKINTHIEF"
+    },
+    {
+      "id": "op_night_lord_ventrilokar",
+      "category": "Operatives",
+      "title": "Night Lord Ventrilokar",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "3",
+        "Move": "6\"",
+        "Save": "3+",
+        "Wounds": "14"
+      },
+      "weapons": [
+        {
+          "name": "Bolt pistol",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Range 8\""
+        },
+        {
+          "name": "Chainsword",
+          "atk": "5",
+          "hit": "3+",
+          "dmg": "4/5",
+          "rules": ""
+        }
+      ],
+      "rules": [
+        "<b>Icon Bearer:</b> Whenever determining control of a marker, treat this operative's APL stat as 1 higher. Note this isn't a change to its APL stat, so any changes are cumulative with this.",
+        "<b>Disconcerting Mimicry (1 AP):</b> PSYCHIC. Select one enemy operative within 6\" of this operative, then select one of the following for that enemy operative (you can only select each option once per battle):",
+        "• Until the end of its next activation, subtract 1 from its APL stat.",
+        "• Change its order.",
+        "• Perform a free Dash action with it (specify the location for your opponent to move it to).",
+        "This operative cannot perform this action while within control range of an enemy operative."
+      ],
+      "keywords": "NEMESIS CLAW, CHAOS, HERETIC ASTARTES, PSYKER, VENTRILOKAR"
+    },
+    {
+      "id": "op_night_lord_warrior",
+      "category": "Operatives",
+      "title": "Night Lord Warrior",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "3",
+        "Move": "6\"",
+        "Save": "3+",
+        "Wounds": "14"
+      },
+      "weapons": [
+        {
+          "name": "Bolt pistol",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Range 8\""
+        },
+        {
+          "name": "Boltgun",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": ""
+        },
+        {
+          "name": "Chainsword",
+          "atk": "5",
+          "hit": "3+",
+          "dmg": "4/5",
+          "rules": ""
+        },
+        {
+          "name": "Fists",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": ""
+        }
+      ],
+      "rules": [
+        "<b>Cruel Tormenter:</b> Whenever this operative is shooting against, fighting against or retaliating against an injured enemy operative, or an enemy operative that has a Wounds stat of 7 or less, this operative's weapons have the Lethal 5+ weapon rule."
+      ],
+      "keywords": "NEMESIS CLAW, CHAOS, HERETIC ASTARTES, WARRIOR"
+    }
+  ]
+}
