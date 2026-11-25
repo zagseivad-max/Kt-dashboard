@@ -1,0 +1,596 @@
+{
+  "factionName": "Murderwing",
+  "rules": [
+    {
+      "id": "fac_jump_pack",
+      "category": "Faction Rules",
+      "title": "Jump Pack",
+      "subtitle": "Faction Rule",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Armour-mounted propulsion systems enable these warriors to traverse the battlefield in bounding, jet-assisted leaps.",
+        "Whenever a friendly MURDERWING operative is performing the Charge, Fall Back or Reposition action during its activation, at the start of any straight-line increment, as long as no part of its base is underneath Vantage terrain, it can do a BOOST for that increment. If it does, don't move it for that increment. Instead, remove it from the killzone and set it back up wholly within x\" horizontally of its original location. X is a distance of your choice (rounded up to the nearest inch, as per the Reposition action), but it's added to the total move distance used for that action (in other words, move plus BOOST cannot exceed the action's move allowance). If it would BOOST during the Charge action, its move allowance cannot be higher than 6\". If it would BOOST during the Charge action, don't add the additional 2\" to its move allowance.",
+        "That operative must be set up in a location it can be placed and cannot be set up with any part of its base underneath Vantage terrain. In addition, unless it's the Charge action, it cannot be set up within control range of an enemy operative. It can continue moving after a BOOST if it has any move distance remaining and the action allows it.",
+        "In a killzone that uses the close quarters rules, e.g. Killzone: Tomb World, the x\" cannot be measured over or through Wall terrain, and that operative cannot be set up on the other side of an access point – in other words, it cannot BOOST through an open hatchway."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "fac_boost_actions",
+      "category": "Faction Rules",
+      "title": "Boost Actions",
+      "subtitle": "Faction Rule",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Murderwings are experts in aerial combat, lashing out at flailing prey as they soar overhead on columns of flame.",
+        "Some actions are known as BOOST actions. These are actions performed during other actions when a BOOST is used. Each operative cannot perform more than one BOOST action per activation.",
+        "Most BOOST actions affect enemy operatives within a friendly MURDERWING operative's BOOST ZONE. This is the horizontal area between a friendly MURDERWING operative's current location and the location from which it used BOOST. A marker the same size as the operative's base can be temporarily placed to help determine this. Enemy operatives with any part of their base underneath Vantage terrain are not within friendly MURDERWING operatives' BOOST ZONEs."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "fac_astartes",
+      "category": "Faction Rules",
+      "title": "Astartes",
+      "subtitle": "Faction Rule",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "These genetically modified superhumans are made for one purpose: war.",
+        "During each friendly MURDERWING operative's activation, it can perform either two Shoot actions or two Fight actions. If it's two Shoot actions, a bolt pistol must be selected for at least one of them.",
+        "Each friendly MURDERWING operative can counteract regardless of its order."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_predators_above",
+      "category": "Strategy Ploys",
+      "title": "Predators Above",
+      "subtitle": "Strategy Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Murderwings excel when striking from above, using their mobility and jet-assisted might to massacre their enemies.",
+        "Whenever a friendly MURDERWING operative is at least 2\" higher than the killzone floor, its weapons have the Balanced weapon rule. Whenever a friendly MURDERWING operative does a BOOST, its weapons have the Balanced weapon rule until the end of that activation."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_cull_the_weak",
+      "category": "Strategy Ploys",
+      "title": "Cull The Weak",
+      "subtitle": "Strategy Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Opportunistic predators all, the warriors of a Murderwing seek to single out and pick off the most vulnerable prey.",
+        "Whenever a friendly MURDERWING operative is shooting or fighting, its weapons have the Punishing weapon rule if any of the following are true for the operative that friendly operative is shooting or fighting against:",
+        "• It's at least 2\" lower than that friendly operative.",
+        "• Its APL stat is less than normal.",
+        "• It was wounded at the start of the activation/counteraction."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_nightmare_on_high",
+      "category": "Strategy Ploys",
+      "title": "Nightmare On High",
+      "subtitle": "Strategy Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "So swift and elusive are the Murderwing, that even the most skilled of sharpshooters struggle to hit them as they soar above.",
+        "Whenever an operative is shooting a friendly MURDERWING operative that's at least 2\" higher than the killzone floor, or that did a BOOST during this turning point, you can re-roll one of your defence dice."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_instil_fear",
+      "category": "Strategy Ploys",
+      "title": "Instil Fear",
+      "subtitle": "Strategy Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Such is the savagery and horror of the Murderwing, that even the boldest of combatants find their hearts gripped by paralysing fear.",
+        "Whenever a friendly MURDERWING operative is fighting, Normal Dmg of 3 or more inflicts 1 less damage on it."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_malicious_narcissism",
+      "category": "Firefight Ploys",
+      "title": "Malicious Narcissism",
+      "subtitle": "Firefight Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "The Murderwing wait until fear is at its zenith before striking.",
+        "Use this firefight ploy when it's your turn to activate with a friendly operative, if only one friendly MURDERWING operative is ready. Until the end of the turning point, whenever you have less ready friendly operatives than your opponent, you can skip your activations (in other words, you can delay that friendly MURDERWING operative's activation until your opponent has only one ready operative). Note that you cannot counteract until that friendly MURDERWING operative is expended."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_murderous_descent",
+      "category": "Firefight Ploys",
+      "title": "Murderous Descent",
+      "subtitle": "Firefight Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Descending from lofty perches, Murderwings ambush unwary prey.",
+        "Use this firefight ploy when an enemy operative ends the Charge, Dash, Fall Back or Reposition action within 3\" horizontally and more than 2\" lower than a friendly MURDERWING operative (or in close quarters, within 2\" and that enemy operative must be in a different room to where it started that action). Interrupt that enemy operative's activation/counteraction and immediately perform a free Charge action with that friendly operative. It must end that action within control range of that enemy operative. If this isn't possible, the interruption is cancelled and this rule hasn't been used."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_long_forgotten_honour",
+      "category": "Firefight Ploys",
+      "title": "Long Forgotten Honour",
+      "subtitle": "Firefight Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Debased traitors all, Murderwings retain no codes of martial honour.",
+        "Use this firefight ploy when a friendly MURDERWING operative is fighting or retaliating, when you resolve a critical success. Instead of striking or blocking, end that sequence (any remaining attack dice are discarded) and immediately perform a free Fall Back action up to 3\" with that operative (then the Fight action ends). That operative can do so even if it's performed an action that prevents it from performing the Fall Back action."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_wings_of_darkness",
+      "category": "Firefight Ploys",
+      "title": "Wings Of Darkness",
+      "subtitle": "Firefight Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Warp-corrupted jump packs lend their wearers terrifying speed.",
+        "Use this firefight ploy when a friendly MURDERWING operative is performing the Fall Back or Reposition action, when it does a BOOST. That operative can be set up an additional 3\" away during that BOOST (adding this to the permitted move distance), but it cannot perform the Shoot, Fight or Carving Blow (see DEPREDATOR operative) action until the next turning point. You cannot use this ploy during the first turning point."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "eq_bladefins",
+      "category": "Faction Equipment",
+      "title": "Bladefins",
+      "subtitle": "Equipment",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Corrupted power armour and warp-infused jump packs bristle with metallic spikes and scything blades with which to rend the flesh of unsuspecting prey.",
+        "Friendly MURDERWING operatives can perform the following unique action:",
+        "<b>SLICE FROM ABOVE</b> (1AP): BOOST action. Inflict D3+1 damage on one enemy operative within this operative's BOOST ZONE.",
+        "An operative cannot perform this action normally. Instead it performs this action during the Fall Back or Reposition action after setting up from a BOOST."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "eq_clawed_armour",
+      "category": "Faction Equipment",
+      "title": "Clawed Armour",
+      "subtitle": "Equipment",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Snaring claws and sharpened spurs protrude from the grotesque power armour of these predatory warriors.",
+        "Friendly MURDERWING operatives can perform the following unique action:",
+        "<b>CLAWED CHARGE</b> (0AP): BOOST action. Inflict 1 damage on one enemy operative within this operative's control range, then the Charge action ends.",
+        "An operative cannot perform this action normally. Instead, it performs this action during the Charge action after setting up from a BOOST."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "eq_warp_fuel",
+      "category": "Faction Equipment",
+      "title": "Warp Fuel",
+      "subtitle": "Equipment",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Immersion within the warp has mutated this warrior's body, transforming their blood into high-octane fuel that burns through veins and arteries, powering muscles and jet engines alike.",
+        "Once per turning point, when an enemy operative ends the Fall Back action during its activation, if at least one friendly MURDERWING operative was within its control range at the start of that action, you can use this rule. One of those friendly operatives can immediately perform a free Reposition or Charge action, but cannot use more than 3\" of move distance. Note that if the enemy operative doesn't perform the Fall Back action during its own activation, this has no effect."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "eq_vox_casters",
+      "category": "Faction Equipment",
+      "title": "Vox-Casters",
+      "subtitle": "Equipment",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Vox-speakers wrought into the panels of corrupted power armour enhance the roar of engines and the animal cries of predatory warriors, overwhelming the senses of stunned prey.",
+        "Once per turning point, one friendly MURDERWING operative can perform the following unique action:",
+        "<b>VOX-CRY</b> (1AP): Each enemy operative within 2\" of this operative takes a stun test. For an operative to take a stun test, roll one D6: on a 3+, subtract 1 from its APL stat until the end of its next activation.",
+        "An operative cannot perform this action while it has a Conceal order."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "op_murderwing_chaos_lord",
+      "category": "Operatives",
+      "title": "Murderwing Chaos Lord",
+      "subtitle": "Leader Operative",
+      "stats": {
+        "APL": "3",
+        "Move": "6\"",
+        "Save": "3+",
+        "Wounds": "15"
+      },
+      "weapons": [
+        {
+          "name": "Bolt pistol",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Range 8\""
+        },
+        {
+          "name": "Plasma pistol (standard)",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/5",
+          "rules": "Range 8\", Piercing 1"
+        },
+        {
+          "name": "Plasma pistol (supercharge)",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "4/5",
+          "rules": "Range 8\", Hot, Lethal 5+, Piercing 1"
+        },
+        {
+          "name": "Lightning claw",
+          "atk": "5",
+          "hit": "3+",
+          "dmg": "4/5",
+          "rules": "Lethal 5+, Rending"
+        },
+        {
+          "name": "Power fist",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "5/7",
+          "rules": "Brutal, Shock"
+        },
+        {
+          "name": "Power weapon",
+          "atk": "5",
+          "hit": "3+",
+          "dmg": "4/6",
+          "rules": "Lethal 5+"
+        },
+        {
+          "name": "Relic lightning claws",
+          "atk": "5",
+          "hit": "3+",
+          "dmg": "4/6",
+          "rules": "Ceaseless, Lethal 5+, Rending"
+        }
+      ],
+      "rules": [
+        "<b>Path to Damnation:</b> This operative starts the battle with 1 Damnation point. Once per action, you can attempt to use one Boon of Damnation when it specifies (see right). If you do, roll one D6 and compare the result to the number of Damnation points this operative has; if the result is: • Higher: Resolve the rule, then this operative gains 1 Damnation point. • Equal: Do not resolve the rule. • Less: Inflict damage on this operative equal to its number of Damnation points and do not resolve the rule. If this operative has 6 Damnation points, resolve the rule without rolling. Note that you cannot make an attempt more than once per action, regardless of the D6 result.",
+        "<b>Boons of Damnation:</b> Boons of Damnation are as follows (resolved with a D6 roll, see opposite): • When an attack dice inflicts damage of 3 or more on this operative, you can ignore an amount of damage equal to this operative's Damnation points. • When this operative is fighting or retaliating and you strike with an attack dice, you can inflict an amount of additional damage equal to this operative's Damnation points."
+      ],
+      "keywords": "MURDERWING, CHAOS, HERETIC ASTARTES, LEADER, LORD"
+    },
+    {
+      "id": "op_murderwing_champion",
+      "category": "Operatives",
+      "title": "Murderwing Champion",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "3",
+        "Move": "6\"",
+        "Save": "3+",
+        "Wounds": "14"
+      },
+      "weapons": [
+        {
+          "name": "Bolt pistol",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Range 8\""
+        },
+        {
+          "name": "Plasma pistol (standard)",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/5",
+          "rules": "Range 8\", Piercing 1"
+        },
+        {
+          "name": "Plasma pistol (supercharge)",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "4/5",
+          "rules": "Range 8\", Hot, Lethal 5+, Piercing 1"
+        },
+        {
+          "name": "Power fist",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "5/7",
+          "rules": "Brutal, Shock"
+        },
+        {
+          "name": "Power weapon",
+          "atk": "5",
+          "hit": "3+",
+          "dmg": "4/6",
+          "rules": "Lethal 5+"
+        }
+      ],
+      "rules": [
+        "<b>Chaos Champion:</b> STRATEGIC GAMBIT. Remove your Challenge token from the enemy operative that has it (if any), then select one enemy operative to gain your Challenge token. Whenever this operative is fighting against or retaliating against an enemy operative that has your Challenge token, in the Select Weapons step, you can select one of the following weapon rules for this operative's melee weapons to have until the end of the sequence: Balanced, Brutal, Punishing, Severe, Shock.",
+        "<b>Path to Glory:</b> Whenever this operative incapacitates an enemy operative that has your Challenge token, you gain 1CP."
+      ],
+      "keywords": "MURDERWING, CHAOS, HERETIC ASTARTES, CHAMPION"
+    },
+    {
+      "id": "op_murderwing_curseclaw",
+      "category": "Operatives",
+      "title": "Murderwing Curseclaw",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "3",
+        "Move": "6\"",
+        "Save": "3+",
+        "Wounds": "14"
+      },
+      "weapons": [
+        {
+          "name": "Bolt pistol",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Range 8\""
+        },
+        {
+          "name": "Mutated claws",
+          "atk": "5",
+          "hit": "3+",
+          "dmg": "4/5",
+          "rules": "Rending"
+        }
+      ],
+      "rules": [
+        "<b>Frenzied Attack:</b> If this operative is incapacitated during the Fight action, you can strike the enemy operative in that sequence with one of your unresolved successes before this operative is removed from the killzone.",
+        "<b>SNATCH</b> (1AP): BOOST action. Select one enemy operative within this operative's BOOST ZONE. Both players roll one D6 and add their respective operative's Wounds stat to their result. If your result is higher, remove that enemy operative from the killzone and set it back up within this operative's BOOST ZONE or control range. It must be set up in a location it can be placed and cannot be set up further away from this operative than where it began. If that enemy operative is set up within this operative's control range, the Fall Back or Reposition action ends (allowing this operative to end that action within control range of enemy operatives). This operative cannot perform this action normally. Instead, it performs this action during the Fall Back or Reposition action after setting up from a BOOST."
+      ],
+      "keywords": "MURDERWING, CHAOS, HERETIC ASTARTES, CURSECLAW"
+    },
+    {
+      "id": "op_murderwing_depredator",
+      "category": "Operatives",
+      "title": "Murderwing Depredator",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "3",
+        "Move": "6\"",
+        "Save": "3+",
+        "Wounds": "14"
+      },
+      "weapons": [
+        {
+          "name": "Bolt pistol",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Range 8\""
+        },
+        {
+          "name": "Great chainaxe",
+          "atk": "5",
+          "hit": "4+",
+          "dmg": "5/7",
+          "rules": "Brutal"
+        }
+      ],
+      "rules": [
+        "<b>Horrifying Dismemberment:</b> Whenever this operative incapacitates an enemy operative while fighting or retaliating, select one other enemy operative visible to and within 3\" of either this operative or the incapacitated enemy operative. Subtract 1 from that enemy operative's APL stat until the end of its next activation.",
+        "<b>CARVING BLOW</b> (1AP): Inflict 2D3 damage on each other operative visible to and within 2\" of this operative in an order of your choice (roll separately for each). For the purposes of action restrictions and the Astartes faction rule, this action is treated as a Fight action. This operative cannot perform this action while it has a Conceal order, or during the same activation in which it performed the Slice from Above action (see Bladefins faction equipment), the Clawed Charge action (see Clawed Armour faction equipment) or two Fight actions (and vice versa)."
+      ],
+      "keywords": "MURDERWING, CHAOS, HERETIC ASTARTES, DEPREDATOR"
+    },
+    {
+      "id": "op_murderwing_huntmaster",
+      "category": "Operatives",
+      "title": "Murderwing Huntmaster",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "3",
+        "Move": "6\"",
+        "Save": "3+",
+        "Wounds": "14"
+      },
+      "weapons": [
+        {
+          "name": "Bolt pistol",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Range 8\""
+        },
+        {
+          "name": "Power weapon",
+          "atk": "5",
+          "hit": "3+",
+          "dmg": "4/6",
+          "rules": "Lethal 5+"
+        }
+      ],
+      "rules": [
+        "<b>Pinned Prey:</b> Whenever an enemy operative would perform the Fall Back action while within control range of this operative, if no other enemy operatives are within this operative's control range, you can use this rule. If you do, roll two D6, or one D6 if that enemy operative has a higher Wounds stat than this operative. If any result is a 4+, that enemy operative cannot perform that action during that activation/counteraction (no AP are spent on it).",
+        "<b>STRIKE FROM ABOVE</b> (1AP): BOOST action. Inflict 2D3+1 damage on one enemy operative within this operative's BOOST ZONE. This operative cannot perform this action normally. Instead, it performs this action during the Fall Back or Reposition action after setting up from a BOOST."
+      ],
+      "keywords": "MURDERWING, CHAOS, HERETIC ASTARTES, HUNTMASTER"
+    },
+    {
+      "id": "op_murderwing_raptor",
+      "category": "Operatives",
+      "title": "Murderwing Raptor",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "3",
+        "Move": "6\"",
+        "Save": "3+",
+        "Wounds": "14"
+      },
+      "weapons": [
+        {
+          "name": "Bolt pistol",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Range 8\""
+        },
+        {
+          "name": "Plasma pistol (standard)",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/5",
+          "rules": "Range 8\", Piercing 1"
+        },
+        {
+          "name": "Plasma pistol (supercharge)",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "4/5",
+          "rules": "Range 8\", Hot, Lethal 5+, Piercing 1"
+        },
+        {
+          "name": "Chainsword",
+          "atk": "5",
+          "hit": "3+",
+          "dmg": "4/5",
+          "rules": " - "
+        }
+      ],
+      "rules": [
+        "<b>Thrill of Flight:</b> Whenever this operative does a BOOST during its activation: • You can remove any changes to its APL stat. • You can ignore any changes to its stats from being injured (including its weapons' stats) until the end of the activation."
+      ],
+      "keywords": "MURDERWING, CHAOS, HERETIC ASTARTES, RAPTOR"
+    },
+    {
+      "id": "op_murderwing_shrieker",
+      "category": "Operatives",
+      "title": "Murderwing Shrieker",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "3",
+        "Move": "6\"",
+        "Save": "3+",
+        "Wounds": "14"
+      },
+      "weapons": [
+        {
+          "name": "Bolt pistol",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Range 8\""
+        },
+        {
+          "name": "Chainsword",
+          "atk": "5",
+          "hit": "3+",
+          "dmg": "4/5",
+          "rules": " - "
+        }
+      ],
+      "rules": [
+        "<b>Modified Vox-casters:</b> Whenever an enemy operative is within 3\" of this operative, your opponent must spend 1 additional AP for that enemy operative to perform the Pick Up Marker and mission actions. Whenever determining control of a marker, treat the total APL stat of enemy operatives that contest it as 1 lower if at least one of those enemy operatives is within 3\" of this operative. Note this isn't a change to the APL stat, so any changes are cumulative with this.",
+        "<b>SHRIEK</b> (1AP): Select one enemy operative that's visible to and within 6\" of this operative. Alternatively, select one enemy operative within this operative's BOOST ZONE (at which point this becomes a BOOST action). If enemy operatives are within control range of this operative, you cannot select an enemy operative that isn't. Inflict D3 damage on the selected operative and subtract 1 from its APL stat until the end of its next activation. This operative cannot perform this action while it has a Conceal order. If you're selecting an enemy operative within this operative's BOOST ZONE, this operative cannot perform this action normally. Instead, it performs this action during the Fall Back or Reposition action after setting up from a BOOST."
+      ],
+      "keywords": "MURDERWING, CHAOS, HERETIC ASTARTES, SHRIEKER"
+    },
+    {
+      "id": "op_murderwing_skysear",
+      "category": "Operatives",
+      "title": "Murderwing Skysear",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "3",
+        "Move": "6\"",
+        "Save": "3+",
+        "Wounds": "14"
+      },
+      "weapons": [
+        {
+          "name": "Bolt pistol",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Range 8\""
+        },
+        {
+          "name": "Flamer",
+          "atk": "4",
+          "hit": "2+",
+          "dmg": "3/3",
+          "rules": "Range 8\", Saturate, Torrent 2\""
+        },
+        {
+          "name": "Meltagun",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "6/3",
+          "rules": "Range 6\", Devastating 4, Piercing 2"
+        },
+        {
+          "name": "Plasma gun (standard)",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "4/6",
+          "rules": "Piercing 1"
+        },
+        {
+          "name": "Plasma gun (supercharge)",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "5/6",
+          "rules": "Hot, Lethal 5+, Piercing 1"
+        },
+        {
+          "name": "Fists",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": " - "
+        }
+      ],
+      "rules": [],
+      "keywords": "MURDERWING, CHAOS, HERETIC ASTARTES, SKYSEAR"
+    },
+    {
+      "id": "op_murderwing_warp_talon",
+      "category": "Operatives",
+      "title": "Murderwing Warp Talon",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "3",
+        "Move": "6\"",
+        "Save": "3+",
+        "Wounds": "14"
+      },
+      "weapons": [
+        {
+          "name": "Lightning claws",
+          "atk": "5",
+          "hit": "3+",
+          "dmg": "4/5",
+          "rules": "Ceaseless, Lethal 5+, Rending"
+        }
+      ],
+      "rules": [
+        "<b>Slice the Veil:</b> When setting up this operative before the battle, you can set it up in the warp instead: place it to one side instead of in the killzone. In the first Firefight phase, when this operative is activated, place one of your Warp markers wholly within your territory, then expend this operative. In the second Firefight phase, when this operative is activated, set it up with an order of your choice in a location it can be placed either wholly within your drop zone, or wholly within your territory contesting your Warp marker. Continue its activation as normal, but during that activation you cannot spend more than 2AP for it and it cannot use more than 4\" of move distance. Until the Ready step of the next Strategy phase, this operative is obscured to operatives more than 3\" from it. Whenever this operative is in the warp, it cannot be the ready friendly MURDERWING operative for the Malicious Narcissism firefight ploy."
+      ],
+      "keywords": "MURDERWING, CHAOS, HERETIC ASTARTES, WARP TALON"
+    }
+  ]
+}

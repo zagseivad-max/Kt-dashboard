@@ -39,6 +39,14 @@
     {
       "name": "Nemesis Claw",
       "path": "factions/nemesis_claw.json"
+    },
+    {
+      "name": "XV26 Stealth Battlesuits",
+      "path": "factions/xv26_stealth_battlesuits_mb2kbsidpq_tuh1yilji3.json"
+    },
+    {
+      "name": "Murderwing",
+      "path": "factions/eng_murderwing.json"
     }
   ]
 }
