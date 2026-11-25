@@ -69,29 +69,49 @@ def update_registry(faction_name: str, web_json_path: str, registry_path: str = 
     with open(registry_path, "w", encoding="utf-8") as f:
         json.dump(registry, f, indent=2, ensure_ascii=False)
 
-def generate_with_retry(client, uploaded_file, prompt: str, max_attempts: int = 5):
+def generate_with_retry(client, uploaded_file, prompt: str, max_attempts_per_model: int = 4):
+    models = ["gemini-4-hydrogen", "gemini-3.8-flash", "gemini-3.5-flash-lite"]
     base_delay = 5.0
-    for attempt in range(1, max_attempts + 1):
-        try:
-            return client.models.generate_content(
-                model="gemini-3.8-flash",
-                contents=[uploaded_file, prompt],
-                config=types.GenerateContentConfig(
-                    system_instruction=SYSTEM_INSTRUCTION,
-                    response_mime_type="application/json",
-                    response_schema=KillTeamFaction,
-                    temperature=0.1,
-                ),
-            )
-        except Exception as exc:
-            msg = str(exc)
-            is_transient = any(code in msg for code in ("503", "429", "UNAVAILABLE", "RESOURCE_EXHAUSTED"))
-            if not is_transient or attempt == max_attempts:
-                raise
-            sleep_for = base_delay * (2 ** (attempt - 1)) + random.uniform(0.5, 2.5)
-            print(f"Transient error on attempt {attempt}/{max_attempts} ({exc}). Retrying in {sleep_for:.1f}s...")
-            time.sleep(sleep_for)
+    last_exc = None
 
+    for model_idx, model_name in enumerate(models):
+        for attempt in range(1, max_attempts_per_model + 1):
+            try:
+                return client.models.generate_content(
+                    model=model_name,
+                    contents=[uploaded_file, prompt],
+                    config=types.GenerateContentConfig(
+                        system_instruction=SYSTEM_INSTRUCTION,
+                        response_mime_type="application/json",
+                        response_schema=KillTeamFaction,
+                        temperature=0.1,
+                    ),
+                )
+            except Exception as exc:
+                last_exc = exc
+                msg = str(exc)
+                is_transient = any(
+                    token in msg
+                    for token in ("503", "429", "500", "504", "UNAVAILABLE", "RESOURCE_EXHAUSTED", "DEADLINE_EXCEEDED")
+                )
+                if not is_transient:
+                    raise
+
+                if attempt < max_attempts_per_model:
+                    sleep_for = base_delay * (2 ** (attempt - 1)) + random.uniform(0.5, 2.5)
+                    print(
+                        f"[{model_name}] Transient error on attempt {attempt}/{max_attempts_per_model} ({exc}). "
+                        f"Retrying in {sleep_for:.1f}s..."
+                    )
+                    time.sleep(sleep_for)
+                else:
+                    print(f"[{model_name}] Exhausted {max_attempts_per_model} attempts due to transient error.")
+
+        if model_idx + 1 < len(models):
+            print(f"Switching from {model_name} to {models[model_idx + 1]}...")
+
+    raise last_exc
+    
 def process_pdfs() -> None:
     client = genai.Client()
     pdf_files = sorted(glob.glob("pdfs/*.pdf"))
@@ -108,7 +128,6 @@ def process_pdfs() -> None:
             continue
 
         print(f"Processing new file: {pdf_path}...")
-        uploaded_file = None
         uploaded_file = None
         try:
             uploaded_file = client.files.upload(file=pdf_path)
