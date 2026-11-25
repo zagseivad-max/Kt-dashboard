@@ -2,6 +2,7 @@ import glob
 import json
 import os
 import random
+import re
 import time
 from pathlib import Path
 from google import genai
@@ -49,6 +50,14 @@ Ignore page numbers, designer commentaries, and flavor text. Focus strictly on p
 """
 
 
+def slugify_faction_stem(pdf_path: str) -> str:
+    stem = Path(pdf_path).stem.lower()
+    stem = re.sub(r"^eng_\d{2}-\d{2}_kill_team_(?:team_)?rules_", "", stem)
+    stem = re.sub(r"_online_rules(?:-[a-z0-9]+)+$", "", stem)
+    slug = re.sub(r"[^a-z0-9]+", "_", stem).strip("_")
+    return slug or "unknown_faction"
+
+
 def update_registry(faction_name: str, web_json_path: str, registry_path: str = "factions.json") -> None:
     if os.path.exists(registry_path):
         with open(registry_path, "r", encoding="utf-8") as f:
@@ -69,9 +78,10 @@ def update_registry(faction_name: str, web_json_path: str, registry_path: str = 
     with open(registry_path, "w", encoding="utf-8") as f:
         json.dump(registry, f, indent=2, ensure_ascii=False)
 
-def generate_with_retry(client, uploaded_file, prompt: str, max_attempts_per_model: int = 4):
+
+def generate_with_retry(client, uploaded_file, prompt: str, max_attempts_per_model: int = 2):
     models = ["gemini-4-hydrogen", "gemini-3.8-flash", "gemini-3.5-flash-lite"]
-    base_delay = 5.0
+    base_delay = 3.0
     last_exc = None
 
     for model_idx, model_name in enumerate(models):
@@ -98,7 +108,7 @@ def generate_with_retry(client, uploaded_file, prompt: str, max_attempts_per_mod
                     raise
 
                 if attempt < max_attempts_per_model:
-                    sleep_for = base_delay * (2 ** (attempt - 1)) + random.uniform(0.5, 2.5)
+                    sleep_for = base_delay * (2 ** (attempt - 1)) + random.uniform(0.5, 2.0)
                     print(
                         f"[{model_name}] Transient error on attempt {attempt}/{max_attempts_per_model} ({exc}). "
                         f"Retrying in {sleep_for:.1f}s..."
@@ -111,14 +121,15 @@ def generate_with_retry(client, uploaded_file, prompt: str, max_attempts_per_mod
             print(f"Switching from {model_name} to {models[model_idx + 1]}...")
 
     raise last_exc
-    
+
+
 def process_pdfs() -> None:
     client = genai.Client()
     pdf_files = sorted(glob.glob("pdfs/*.pdf"))
     failures = []
 
     for pdf_path in pdf_files:
-        stem_slug = Path(pdf_path).stem.lower().replace(" ", "_")
+        stem_slug = slugify_faction_stem(pdf_path)
         json_filename = f"{stem_slug}.json"
         json_path = os.path.join("factions", json_filename)
         web_json_path = f"factions/{json_filename}"
@@ -127,7 +138,7 @@ def process_pdfs() -> None:
             print(f"Skipping existing JSON: {json_path}")
             continue
 
-        print(f"Processing new file: {pdf_path}...")
+        print(f"Processing new file: {pdf_path} -> {web_json_path}...")
         uploaded_file = None
         try:
             uploaded_file = client.files.upload(file=pdf_path)
@@ -135,7 +146,7 @@ def process_pdfs() -> None:
                 client,
                 uploaded_file,
                 "Extract the complete Kill Team faction ruleset from this PDF.",
-            )          
+            )
 
             if not response.text:
                 raise RuntimeError("Gemini returned an empty response.")
