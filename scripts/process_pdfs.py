@@ -88,7 +88,7 @@ def process_pdfs() -> None:
         try:
             uploaded_file = client.files.upload(file=pdf_path)
             response = client.models.generate_content(
-                model="gemini-2.5-flash",
+                model="gemini-3.8-flash",
                 contents=[uploaded_file, "Extract the complete Kill Team faction ruleset from this PDF."],
                 config=types.GenerateContentConfig(
                     system_instruction=SYSTEM_INSTRUCTION,
