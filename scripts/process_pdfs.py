@@ -58,6 +58,58 @@ def slugify_faction_stem(pdf_path: str) -> str:
     return slug or "unknown_faction"
 
 
+def classify_error_reason(exc: Exception) -> str:
+    msg = str(exc)
+    if "503" in msg or "UNAVAILABLE" in msg:
+        return "503 UNAVAILABLE (high demand)"
+    if "429" in msg or "RESOURCE_EXHAUSTED" in msg:
+        return "429 RATE_LIMIT / QUOTA"
+    if isinstance(exc, ValidationError):
+        return "Schema validation failed"
+    first_line = msg.splitlines()[0] if msg.splitlines() else msg
+    return first_line[:70]
+
+
+def print_summary_table(records: list[dict[str, str]]) -> None:
+    if not records:
+        print("\nNo PDF files found in pdfs/.")
+        return
+
+    headers = ("PDF File", "Status", "Output JSON", "Details")
+    rows = [
+        (
+            r["pdf"],
+            r["status"],
+            r["output"],
+            r["details"],
+        )
+        for r in records
+    ]
+
+    widths = [
+        max(len(headers[i]), *(len(row[i]) for row in rows))
+        for i in range(len(headers))
+    ]
+
+    def fmt_row(cols: tuple[str, ...]) -> str:
+        return "| " + " | ".join(cols[i].ljust(widths[i]) for i in range(len(headers))) + " |"
+
+    sep = "+-" + "-+-".join("-" * w for w in widths) + "-+"
+
+    print("\n=== PDF CONVERSION SUMMARY ===")
+    print(sep)
+    print(fmt_row(headers))
+    print(sep)
+    for row in rows:
+        print(fmt_row(row))
+    print(sep)
+
+    succeeded = sum(1 for r in records if r["status"] == "SUCCESS")
+    skipped = sum(1 for r in records if r["status"] == "SKIPPED")
+    failed = sum(1 for r in records if r["status"] == "FAILED")
+    print(f"Totals -> Succeeded: {succeeded} | Skipped: {skipped} | Failed: {failed}\n")
+
+
 def update_registry(faction_name: str, web_json_path: str, registry_path: str = "factions.json") -> None:
     if os.path.exists(registry_path):
         with open(registry_path, "r", encoding="utf-8") as f:
@@ -126,9 +178,11 @@ def generate_with_retry(client, uploaded_file, prompt: str, max_attempts_per_mod
 def process_pdfs() -> None:
     client = genai.Client()
     pdf_files = sorted(glob.glob("pdfs/*.pdf"))
-    failures = []
+    failures: list[tuple[str, str]] = []
+    summary_records: list[dict[str, str]] = []
 
     for pdf_path in pdf_files:
+        pdf_name = os.path.basename(pdf_path)
         stem_slug = slugify_faction_stem(pdf_path)
         json_filename = f"{stem_slug}.json"
         json_path = os.path.join("factions", json_filename)
@@ -136,6 +190,12 @@ def process_pdfs() -> None:
 
         if os.path.exists(json_path):
             print(f"Skipping existing JSON: {json_path}")
+            summary_records.append({
+                "pdf": pdf_name,
+                "status": "SKIPPED",
+                "output": web_json_path,
+                "details": "Already exists",
+            })
             continue
 
         print(f"Processing new file: {pdf_path} -> {web_json_path}...")
@@ -159,15 +219,31 @@ def process_pdfs() -> None:
 
             update_registry(parsed.factionName, web_json_path)
 
+            summary_records.append({
+                "pdf": pdf_name,
+                "status": "SUCCESS",
+                "output": web_json_path,
+                "details": f"{parsed.factionName} ({len(parsed.rules)} entries)",
+            })
+
         except (ValidationError, Exception) as exc:
+            reason = classify_error_reason(exc)
             print(f"ERROR processing {pdf_path}: {exc}")
             failures.append((pdf_path, str(exc)))
+            summary_records.append({
+                "pdf": pdf_name,
+                "status": "FAILED",
+                "output": web_json_path,
+                "details": reason,
+            })
         finally:
             if uploaded_file is not None:
                 try:
                     client.files.delete(name=uploaded_file.name)
                 except Exception as cleanup_exc:
                     print(f"Warning: failed to delete uploaded file {uploaded_file.name}: {cleanup_exc}")
+
+    print_summary_table(summary_records)
 
     if failures:
         raise RuntimeError(f"Failed to process {len(failures)} PDF(s): {[f[0] for f in failures]}")
