@@ -1,13 +1,40 @@
 {
   "factions": [
-    { "name": "Angels of Death", "path": "factions/angels-of-death.json" }, 
-    { "name": "Hierotek Circle", "path": "factions/heirotek_circle.json" },
-    { "name": "Wrecka Krew", "path": "factions/wrecka.json" },
-    { "name": "Tempestus Aquilons", "path": "factions/tempestus-aquilons.json" }, 
-    { "name": "Kasrkin", "path": "factions/kasrkin.json" }, 
-    { "name": "Celestian Insidiants", "path": "factions/celestian-insidiants.json" }, 
-    { "name": "Plague Marines", "path": "factions/plague-marines.json" },
-    { "name": "Imperial Navy Breachers", "path": "factions/breachers.json" }
+    {
+      "name": "Angels of Death",
+      "path": "factions/angels-of-death.json"
+    },
+    {
+      "name": "Hierotek Circle",
+      "path": "factions/heirotek_circle.json"
+    },
+    {
+      "name": "Wrecka Krew",
+      "path": "factions/wrecka.json"
+    },
+    {
+      "name": "Tempestus Aquilons",
+      "path": "factions/tempestus-aquilons.json"
+    },
+    {
+      "name": "Kasrkin",
+      "path": "factions/kasrkin.json"
+    },
+    {
+      "name": "Celestian Insidiants",
+      "path": "factions/celestian-insidiants.json"
+    },
+    {
+      "name": "Plague Marines",
+      "path": "factions/plague-marines.json"
+    },
+    {
+      "name": "Imperial Navy Breachers",
+      "path": "factions/breachers.json"
+    },
+    {
+      "name": "Vespid Stingwings",
+      "path": "factions/vespid_stingwings.json"
+    }
   ]
 }
-
