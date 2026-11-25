@@ -47,6 +47,10 @@
     {
       "name": "Murderwing",
       "path": "factions/eng_murderwing.json"
+    },
+    {
+      "name": "Legionary",
+      "path": "factions/legionaries_6yndlnh6ss_sj6tq9mwfg.json"
     }
   ]
 }
