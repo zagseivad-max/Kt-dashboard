@@ -1,0 +1,640 @@
+{
+  "factionName": "Deathwatch",
+  "archetypes": [
+    "Seek & Destroy",
+    "Security"
+  ],
+  "rules": [
+    {
+      "id": "fac_kill_team_selection",
+      "category": "Faction Rules",
+      "title": "Operatives",
+      "subtitle": "Kill Team Selection",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "5 DEATHWATCH operatives selected from the following list: WATCH SERGEANT, AEGIS, BLADEMASTER, BOMBARD, BREACHER, DEMOLISHER, DISRUPTOR, GUNNER, HEADTAKER, HORDE-SLAYER, MARKSMAN.",
+        "Your kill team can only include each operative on this list once, and can only include up to one GRAVIS operative."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "fac_veteran_astartes",
+      "category": "Faction Rules",
+      "title": "Veteran Astartes",
+      "subtitle": "Faction Rule",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "During each friendly DEATHWATCH operative's activation, it can perform either two Shoot actions or two Fight actions. If it's two Shoot actions and an auxiliary grenade launcher, frag cannon, heavy plasma incinerator, infernus heavy bolter, plasma pistol or stalker bolt rifle is selected for both, or if a melta bomb is selected for either, 1 additional AP must be spent for the second action.",
+        "Each friendly DEATHWATCH operative can counteract regardless of its order. Whenever it does, it can perform an additional 1AP action for free during that counteraction, but both actions must be different and you cannot perform a Fight and Shoot action during the same counteraction."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "fac_special_issue_ammunition",
+      "category": "Faction Rules",
+      "title": "Special Issue Ammunition",
+      "subtitle": "Faction Rule",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Once per turning point, when a friendly DEATHWATCH operative is performing the Shoot action, in the Select Weapon step, you can use this rule. If you do, select one of the following weapon rules for that operative's ranged weapons to have until the end of the action. This rule cannot be used with explosive grenades (see universal equipment) or melta bombs.",
+        "Blast 1\" (you cannot select this if the weapon profile being used has the Torrent weapon rule)",
+        "Devastating 1",
+        "Lethal 5+",
+        "Piercing Crits 1",
+        "Saturate",
+        "Severe"
+      ],
+      "keywords": null
+    },
+    {
+      "id": "op_deathwatch_watch_sergeant",
+      "category": "Operatives",
+      "title": "Deathwatch Watch Sergeant",
+      "subtitle": "Leader Operative",
+      "stats": {
+        "APL": "3",
+        "Move": "6\"",
+        "Save": "3+",
+        "Wounds": "15"
+      },
+      "weapons": [
+        {
+          "name": "Plasma pistol (standard)",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/5",
+          "rules": "Range 8\", Piercing 1"
+        },
+        {
+          "name": "Plasma pistol (supercharge)",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "4/5",
+          "rules": "Range 8\", Hot, Lethal 5+, Piercing 1"
+        },
+        {
+          "name": "Power weapon",
+          "atk": "5",
+          "hit": "3+",
+          "dmg": "4/6",
+          "rules": "Lethal 5+"
+        }
+      ],
+      "rules": [
+        "<b>Adaptable Armoury:</b> You can select one additional equipment option.",
+        "<b>Strategic Command:</b> You can do each of the following once per battle if this operative is in the killzone: Use a DEATHWATCH strategy ploy for 0CP. Use a DEATHWATCH firefight ploy for 0CP."
+      ],
+      "keywords": "DEATHWATCH, IMPERIUM, ADEPTUS ASTARTES, LEADER, WATCH SERGEANT"
+    },
+    {
+      "id": "op_deathwatch_aegis_veteran",
+      "category": "Operatives",
+      "title": "Deathwatch Aegis Veteran",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "3",
+        "Move": "6\"",
+        "Save": "2+",
+        "Wounds": "15"
+      },
+      "weapons": [
+        {
+          "name": "Bolt pistol",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Range 8\""
+        },
+        {
+          "name": "Power maul & storm shield",
+          "atk": "5",
+          "hit": "3+",
+          "dmg": "4/6",
+          "rules": "Shock, Shield*"
+        }
+      ],
+      "rules": [
+        "<b>*Shield:</b> Whenever this operative is fighting or retaliating with this weapon, each of your blocks can be allocated to block two unresolved successes (instead of one).",
+        "<b>Storm Shield:</b> Whenever an operative is shooting this operative, worsen the x of the Piercing weapon rule by 1 (if any). Note that Piercing 1 would therefore be ignored."
+      ],
+      "keywords": "DEATHWATCH, IMPERIUM, ADEPTUS ASTARTES, AEGIS"
+    },
+    {
+      "id": "op_deathwatch_blademaster_veteran",
+      "category": "Operatives",
+      "title": "Deathwatch Blademaster Veteran",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "3",
+        "Move": "6\"",
+        "Save": "3+",
+        "Wounds": "15"
+      },
+      "weapons": [
+        {
+          "name": "Special issue bolt pistol",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Range 8\", Piercing 1"
+        },
+        {
+          "name": "Xenophase blade (duel)",
+          "atk": "5",
+          "hit": "3+",
+          "dmg": "4/6",
+          "rules": "Brutal, Lethal 5+"
+        },
+        {
+          "name": "Xenophase blade (phase sweep)",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "4/6",
+          "rules": "Brutal, Lethal 5+, Phase Sweep*"
+        }
+      ],
+      "rules": [
+        "<b>Adaptive Swordsmanship:</b> You can ignore any changes to the Hit stat of this operative's xenophase blade. Whenever this operative is fighting or retaliating, you can resolve one of your successes before the normal order. If you do, that success must be used to block.",
+        "<b>*Phase Sweep:</b> Whenever this operative performs the Fight action with this weapon profile, if it isn't incapacitated, it can immediately perform a free Fight action afterwards, but you must select this weapon profile and it can only fight against each enemy operative within its control range once per activation or counteraction using this weapon profile. This takes precedence over action restrictions, and you can continue to perform free Fight actions until this operative is incapacitated or has fought against every enemy operative within its control range."
+      ],
+      "keywords": "DEATHWATCH, IMPERIUM, ADEPTUS ASTARTES, BLADEMASTER"
+    },
+    {
+      "id": "op_deathwatch_bombard_veteran",
+      "category": "Operatives",
+      "title": "Deathwatch Bombard Veteran",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "3",
+        "Move": "5\"",
+        "Save": "3+",
+        "Wounds": "18"
+      },
+      "weapons": [
+        {
+          "name": "Bolt pistol",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Range 8\""
+        },
+        {
+          "name": "Frag cannon (shell)",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "5/7",
+          "rules": "Piercing 1"
+        },
+        {
+          "name": "Frag cannon (shrapnel)",
+          "atk": "5",
+          "hit": "3+",
+          "dmg": "4/5",
+          "rules": "Torrent 2\""
+        },
+        {
+          "name": "Fists",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": ""
+        }
+      ],
+      "rules": [],
+      "keywords": "DEATHWATCH, IMPERIUM, ADEPTUS ASTARTES, GRAVIS, BOMBARD"
+    },
+    {
+      "id": "op_deathwatch_breacher_veteran",
+      "category": "Operatives",
+      "title": "Deathwatch Breacher Veteran",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "3",
+        "Move": "5\"",
+        "Save": "3+",
+        "Wounds": "18"
+      },
+      "weapons": [
+        {
+          "name": "Auxiliary grenade launcher (frag)",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "2/4",
+          "rules": "Blast 2\""
+        },
+        {
+          "name": "Auxiliary grenade launcher (krak)",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "4/5",
+          "rules": "Piercing 1"
+        },
+        {
+          "name": "Hellstorm bolt rifle",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "4/5",
+          "rules": "Torrent 1\""
+        },
+        {
+          "name": "Melta bomb",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "5/3",
+          "rules": "Range 3\", Devastating 3, Heavy (Reposition only), Limited 1, Piercing 2"
+        },
+        {
+          "name": "Fists",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": ""
+        }
+      ],
+      "rules": [],
+      "keywords": "DEATHWATCH, IMPERIUM, ADEPTUS ASTARTES, GRAVIS, BREACHER"
+    },
+    {
+      "id": "op_deathwatch_demolisher_veteran",
+      "category": "Operatives",
+      "title": "Deathwatch Demolisher Veteran",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "3",
+        "Move": "6\"",
+        "Save": "3+",
+        "Wounds": "15"
+      },
+      "weapons": [
+        {
+          "name": "Bolt pistol",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Range 8\""
+        },
+        {
+          "name": "Heavy thunder hammer",
+          "atk": "5",
+          "hit": "4+",
+          "dmg": "6/7",
+          "rules": "Shock, Stun"
+        }
+      ],
+      "rules": [
+        "<b>Brutal Assault:</b> Whenever this operative is fighting, its heavy thunder hammer has the Brutal weapon rule. Whenever this operative performs the Charge action, its heavy thunder hammer has the Ceaseless weapon rule until the end of the activation/counteraction.",
+        "<b>Aggressive Force:</b> Whenever this operative is fighting or retaliating, Normal and Critical Dmg of 3 or more inflicts 1 less damage on it. This isn't cumulative with the Shield that Slays strategy ploy."
+      ],
+      "keywords": "DEATHWATCH, IMPERIUM, ADEPTUS ASTARTES, DEMOLISHER"
+    },
+    {
+      "id": "op_deathwatch_disruptor_veteran",
+      "category": "Operatives",
+      "title": "Deathwatch Disruptor Veteran",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "3",
+        "Move": "7\"",
+        "Save": "3+",
+        "Wounds": "13"
+      },
+      "weapons": [
+        {
+          "name": "Marksman bolt carbine",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Lethal 5+"
+        },
+        {
+          "name": "Fists",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": ""
+        }
+      ],
+      "rules": [
+        "<b>Advanced Omni-Scrambler:</b> STRATEGIC GAMBIT. Select one enemy operative visible to or within 6\" of this operative, then roll one D6. In the Firefight phase of this turning point, that enemy operative cannot be activated or perform actions until one of the following is true: Your opponent has completed the activation of a number of enemy operatives equal to the result of the D6. It's the last enemy operative to be activated.",
+        "<b>Auspex Triangulation:</b> The Advanced Auspex Scan firefight ploy costs you 0CP when both of the following are true: This operative isn't within control range of enemy operatives. The target of that Shoot action (primary target, if relevant) is visible to this operative. Note that it doesn't have to be this operative performing the Shoot action, and that any subsequent Shoot actions during that activation/counteraction must meet these same requirements (or that ploy has no effect on those subsequent Shoot actions)."
+      ],
+      "keywords": "DEATHWATCH, IMPERIUM, ADEPTUS ASTARTES, DISRUPTOR"
+    },
+    {
+      "id": "op_deathwatch_gunner_veteran",
+      "category": "Operatives",
+      "title": "Deathwatch Gunner Veteran",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "3",
+        "Move": "6\"",
+        "Save": "3+",
+        "Wounds": "15"
+      },
+      "weapons": [
+        {
+          "name": "Bolt pistol",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Range 8\""
+        },
+        {
+          "name": "Heavy plasma incinerator (standard)",
+          "atk": "5",
+          "hit": "3+",
+          "dmg": "4/6",
+          "rules": "Piercing 1"
+        },
+        {
+          "name": "Heavy plasma incinerator (supercharge)",
+          "atk": "5",
+          "hit": "3+",
+          "dmg": "5/6",
+          "rules": "Hot, Lethal 5+, Piercing 1"
+        },
+        {
+          "name": "Fists",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": ""
+        }
+      ],
+      "rules": [],
+      "keywords": "DEATHWATCH, IMPERIUM, ADEPTUS ASTARTES, GUNNER"
+    },
+    {
+      "id": "op_deathwatch_headtaker_veteran",
+      "category": "Operatives",
+      "title": "Deathwatch Headtaker Veteran",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "3",
+        "Move": "7\"",
+        "Save": "3+",
+        "Wounds": "13"
+      },
+      "weapons": [
+        {
+          "name": "Special issue bolt pistol",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Range 8\", Piercing 1"
+        },
+        {
+          "name": "Combat knives",
+          "atk": "5",
+          "hit": "3+",
+          "dmg": "4/5",
+          "rules": ""
+        }
+      ],
+      "rules": [
+        "<b>Grav-chute and Grapnel Launcher:</b> Whenever this operative is climbing, treat the vertical distance as 2\" (regardless of how far the operative actually moves vertically). Whenever this operative is dropping, ignore the vertical distance.",
+        "<b>Clandestine Headtaker:</b> This operative can perform the Charge action while it has a Conceal order. Whenever this operative is fighting against an operative it wasn't visible to at the start of the activation/counteraction, the first time you strike during that sequence, you can immediately resolve another of your successes as a strike (before your opponent)."
+      ],
+      "keywords": "DEATHWATCH, IMPERIUM, ADEPTUS ASTARTES, HEADTAKER"
+    },
+    {
+      "id": "op_deathwatch_horde_slayer_veteran",
+      "category": "Operatives",
+      "title": "Deathwatch Horde-Slayer Veteran",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "3",
+        "Move": "5\"",
+        "Save": "3+",
+        "Wounds": "18"
+      },
+      "weapons": [
+        {
+          "name": "Bolt pistol",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Range 8\""
+        },
+        {
+          "name": "Infernus heavy bolter (flame)",
+          "atk": "5",
+          "hit": "2+",
+          "dmg": "3/3",
+          "rules": "Range 8\", Saturate, Torrent 2\""
+        },
+        {
+          "name": "Infernus heavy bolter (focused bolt)",
+          "atk": "5",
+          "hit": "3+",
+          "dmg": "4/5",
+          "rules": "Piercing Crits 1"
+        },
+        {
+          "name": "Infernus heavy bolter (sweeping bolt)",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "4/5",
+          "rules": "Piercing Crits 1, Torrent 1\""
+        },
+        {
+          "name": "Fists",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": ""
+        }
+      ],
+      "rules": [],
+      "keywords": "DEATHWATCH, IMPERIUM, ADEPTUS ASTARTES, GRAVIS, HORDE-SLAYER"
+    },
+    {
+      "id": "op_deathwatch_marksman_veteran",
+      "category": "Operatives",
+      "title": "Deathwatch Marksman Veteran",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "3",
+        "Move": "6\"",
+        "Save": "3+",
+        "Wounds": "15"
+      },
+      "weapons": [
+        {
+          "name": "Stalker bolt rifle (mobile)",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": ""
+        },
+        {
+          "name": "Stalker bolt rifle (heavy)",
+          "atk": "4",
+          "hit": "2+",
+          "dmg": "3/5",
+          "rules": "Heavy (Dash only), Lethal 5+, Piercing Crits 1"
+        },
+        {
+          "name": "Fists",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": ""
+        }
+      ],
+      "rules": [
+        "<b>Vigilant Marksman:</b> This operative can perform the Guard action during its activation regardless of the killzone (see close quarters rules, Kill Team: Tomb World).",
+        "When using the close quarters rules, once per turning point, after this operative performs a free Shoot action on guard, it can immediately perform a free Guard action. However, if it does, it cannot counteract during that turning point (nor Guard twice if it's counteracted)."
+      ],
+      "keywords": "DEATHWATCH, IMPERIUM, ADEPTUS ASTARTES, MARKSMAN"
+    },
+    {
+      "id": "ploy_mission_tactics",
+      "category": "Strategy Ploys",
+      "title": "Mission Tactics",
+      "subtitle": "Strategy Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Select Conceal or Engage. Whenever a friendly DEATHWATCH operative is shooting against, fighting against, or retaliating against an enemy operative that has that order, that friendly operative's weapons have the Balanced weapon rule."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_the_long_vigil",
+      "category": "Strategy Ploys",
+      "title": "The Long Vigil",
+      "subtitle": "Strategy Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Whenever an operative is shooting a friendly DEATHWATCH operative that's wholly within your territory, you can re-roll one of your defence dice."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_the_shield_that_slays",
+      "category": "Strategy Ploys",
+      "title": "The Shield That Slays",
+      "subtitle": "Strategy Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Whenever a friendly DEATHWATCH operative is wholly within your opponent's territory, Normal Dmg of 4 or more inflicts 1 less damage on it."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_and_they_shall_know_no_fear",
+      "category": "Strategy Ploys",
+      "title": "And They Shall Know No Fear",
+      "subtitle": "Strategy Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "You can ignore any changes to the stats of friendly DEATHWATCH operatives from being injured (including their weapons' stats)."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_suffer_not_the_alien",
+      "category": "Firefight Ploys",
+      "title": "Suffer Not The Alien",
+      "subtitle": "Firefight Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Use this firefight ploy after rolling your attack dice for a friendly DEATHWATCH operative, if it's shooting against, fighting against, or retaliating against an operative that doesn't have the CHAOS or IMPERIUM keyword. You can re-roll any of your attack dice."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_auspicator_tracking",
+      "category": "Firefight Ploys",
+      "title": "Auspicator Tracking",
+      "subtitle": "Firefight Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Use this firefight ploy when a friendly DEATHWATCH operative is counteracting, before it performs any actions. You can change its order."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_advanced_auspex_scan",
+      "category": "Firefight Ploys",
+      "title": "Advanced Auspex Scan",
+      "subtitle": "Firefight Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Use this firefight ploy when a friendly DEATHWATCH operative performs the Shoot action. Until the end of the activation/counteraction, its ranged weapons have the Saturate weapon rule and enemy operatives cannot be obscured."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_transhuman_physiology",
+      "category": "Firefight Ploys",
+      "title": "Transhuman Physiology",
+      "subtitle": "Firefight Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Use this firefight ploy when an operative is shooting a friendly DEATHWATCH operative, in the Roll Defence Dice step. You can retain one of your normal successes as a critical success instead."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "eq_digital_weapons",
+      "category": "Faction Equipment",
+      "title": "Digital Weapons",
+      "subtitle": "Faction Equipment",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Once per turning point, when a friendly DEATHWATCH operative performs the Fight action, at the start of the Roll Attack Dice step, you can use this rule. If you do, inflict 1 damage on the enemy operative in that sequence."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "eq_scrutavore_servo_thrall",
+      "category": "Faction Equipment",
+      "title": "Scrutavore Servo-Thrall",
+      "subtitle": "Faction Equipment",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Once per turning point, during a friendly DEATHWATCH operative's activation, you can use this rule. If you do, during that activation, that operative can perform a mission action for 1 less AP.",
+        "Having an enemy operative within its control range doesn't prevent that friendly operative from performing that mission action. However, in such an instance, after it does so, you and your opponent roll-off. If your opponent wins, you cannot use this equipment for the rest of the battle."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "eq_sanctus_v_bioscryer_cuffs",
+      "category": "Faction Equipment",
+      "title": "Sanctus-V Bioscryer Cuffs",
+      "subtitle": "Faction Equipment",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Once during each friendly DEATHWATCH operative's activation, before or after it performs an action, if it's not within control range of enemy operatives, you can use this rule. If you do, select one of the following: That friendly operative regains up to D3 lost wounds. Remove any changes to that friendly operative's APL stat. Remove one of the following tokens that friendly operative has (before that token's activation effects are resolved, if relevant): Neutron Fragment, Poison, Terrorchem."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "eq_ammunition_reserve",
+      "category": "Faction Equipment",
+      "title": "Ammunition Reserve",
+      "subtitle": "Faction Equipment",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Once per battle, you can use the Special Issue Ammunition faction rule for up to two Shoot actions during one turning point, but you must select different weapon rules for both uses. This takes precedence over the normal Special Issue Ammunition rules."
+      ],
+      "keywords": null
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "factionName": "Canoptek Circle",
+  "archetypes": [
+    "Recon",
+    "Security"
+  ],
+  "rules": [
+    {
+      "id": "op_geomancer",
+      "category": "Operatives",
+      "title": "Geomancer",
+      "subtitle": "Leader Operative",
+      "stats": {
+        "APL": "3",
+        "Move": "6\"",
+        "Save": "3+",
+        "Wounds": "14"
+      },
+      "weapons": [
+        {
+          "name": "Tremorglaive (part matter) (Ranged, A4, 3+, 4/5, Piercing 1, Piercing Crits 2) - Wait no!",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "4/5",
+          "rules": "Piercing 1, Piercing Crits 2"
+        },
+        {
+          "name": "Tremorglaive (quake) (Ranged, A5, 3+, 1/2, Blast 2\", Seek Light, Stun) - Wait",
+          "atk": "5",
+          "hit": "3+",
+          "dmg": "1/2",
+          "rules": "Blast 2\", Seek Light, Stun"
+        }
+      ],
+      "rules": [],
+      "keywords": "CANOPTEK CIRCLE, NECRON, LEADER, CRYPTEK, GEOMANCER"
+    }
+  ]
+}

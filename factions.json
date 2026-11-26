@@ -79,6 +79,18 @@
     {
       "name": "Mandrakes",
       "path": "factions/mandrakes_w2j9qwhaxz_oveknnlmoe.json"
+    },
+    {
+      "name": "Kommandos",
+      "path": "factions/kommandos.json"
+    },
+    {
+      "name": "Canoptek Circle",
+      "path": "factions/canoptek_circle_bycd4gthzi_muwxpurwyi.json"
+    },
+    {
+      "name": "Deathwatch",
+      "path": "factions/deathwatch_eckqbvjgev_xx8idxaee1.json"
     }
   ]
 }
