@@ -1,0 +1,582 @@
+{
+  "factionName": "Sanctifiers",
+  "archetypes": [
+    "Security",
+    "Seek & Destroy"
+  ],
+  "rules": [
+    {
+      "id": "op_sanctifier_confessor",
+      "category": "Operatives",
+      "title": "Sanctifier Confessor",
+      "subtitle": "Leader Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "6\"",
+        "Save": "5+",
+        "Wounds": "10"
+      },
+      "weapons": [
+        {
+          "name": "Mace of Censure",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "5/5",
+          "rules": "Brutal, Shock"
+        }
+      ],
+      "rules": [
+        "<b>Commanding Declamation:</b> Whenever an enemy operative would perform an action during an activation or counteraction while visible to and within 6\" of this operative, you can use this rule. If you do, roll one D6: if the result is higher than that enemy operative's APL stat: It cannot perform that action during that activation/counteraction (the AP spent on it isn't refunded). If it's a counteraction, that counteraction ends. You cannot use this rule again during the battle.",
+        "<b>Fly:</b> Whenever this operative is performing the Charge, Fall Back or Reposition action, it can FLY. If it does, don't move it. Instead, remove it from the killzone and set it back up wholly within a distance equal to its Move stat horizontally of its original location. Note that it gains no additional distance when performing the Charge action. It must be set up in a location it can be placed, and unless it's the Charge action, it cannot be set up within control range of an enemy operative.",
+        "<b>Lead the Procession:</b> In each turning point after the first, whenever this operative is an ORATOR and performs the Charge, Fall Back or Reposition action during its activation, you can use this rule before it moves. If you do, determine each other friendly SANCTIFIER operative that's benefitting from the SERMON and is visible to this operative (or vice versa). After this operative ends that action, each of those friendly SANCTIFIER operatives can immediately perform a free Charge, Fall Back or Reposition action in an order of your choice (choose separately for each), but each cannot move more than or be removed and set up more than 3\" and must end that move in a location where they are still benefitting from the SERMON. If this operative is incapacitated before this rule is fully resolved, don't remove it from the killzone until this rule has been resolved."
+      ],
+      "keywords": "SANCTIFIER, IMPERIUM, ADEPTUS MINISTORUM, LEADER, CONFESSOR"
+    },
+    {
+      "id": "op_sanctifier_cherub",
+      "category": "Operatives",
+      "title": "Sanctifier Cherub",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "7\"",
+        "Save": "5+",
+        "Wounds": "5"
+      },
+      "weapons": [
+        {
+          "name": "Incentiviser",
+          "atk": "3",
+          "hit": "5+",
+          "dmg": "1/3",
+          "rules": "Shock"
+        }
+      ],
+      "rules": [
+        "<b>Cherub:</b> Whenever determining control of an objective marker, treat this operative's APL stat as 1 lower. Note this isn't a change to its APL stat, so any changes are cumulative with this. Whenever this operative has a Conceal order and is in cover, it cannot be selected as a valid target, taking precedence over all other rules (e.g. Seek, Vantage terrain) except being within 2\". This operative cannot use any weapons that aren't on its datacard, or perform unique actions other than Incentivise.",
+        "<b>Incentivise (1AP):</b> SUPPORT. Select one other friendly SANCTIFIER operative (excluding CONFESSOR, DEATH CULT ASSASSIN, MIRACULIST and ORATOR) visible to and within 2\" of this operative. Until the end of that operative's next activation, add 1 to its APL stat. This operative cannot perform this action while within control range of an enemy operative."
+      ],
+      "keywords": "SANCTIFIER, IMPERIUM, ADEPTUS MINISTORUM, CHERUB"
+    },
+    {
+      "id": "op_sanctifier_conflagrator",
+      "category": "Operatives",
+      "title": "Sanctifier Conflagrator",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "6\"",
+        "Save": "5+",
+        "Wounds": "7"
+      },
+      "weapons": [
+        {
+          "name": "Twin hand flamers (focused)",
+          "atk": "4",
+          "hit": "2+",
+          "dmg": "3/3",
+          "rules": "Range 6\", Saturate, Torrent 2\", Blaze*"
+        },
+        {
+          "name": "Twin hand flamers (twin torrent)",
+          "atk": "4",
+          "hit": "2+",
+          "dmg": "3/3",
+          "rules": "Range 6\", Saturate, Torrent 0\", Twin Torrent¹, Blaze*"
+        },
+        {
+          "name": "Gun butts",
+          "atk": "4",
+          "hit": "4+",
+          "dmg": "2/3",
+          "rules": ""
+        }
+      ],
+      "rules": [
+        "<b>Twin Torrent:</b> Select up to two different valid targets that aren't within control range of friendly operatives. Shoot with this weapon against both of them in an order of your choice (roll each sequence separately). Torrent 0\" means you cannot select secondary targets, but this weapon still has the Torrent weapon rule for all other rules purposes.",
+        "<b>Sanctification Rack:</b> This operative can perform the Sanctification Orb action (see faction equipment). Doing so in this manner doesn't count towards the once per turning point limit."
+      ],
+      "keywords": "SANCTIFIER, IMPERIUM, ADEPTUS MINISTORUM, CONFLAGRATOR"
+    },
+    {
+      "id": "op_sanctifier_death_cult_assassin",
+      "category": "Operatives",
+      "title": "Sanctifier Death Cult Assassin",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "3",
+        "Move": "6\"",
+        "Save": "5+",
+        "Wounds": "8"
+      },
+      "weapons": [
+        {
+          "name": "Throwing knives",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "2/5",
+          "rules": "Range 6\", Silent"
+        },
+        {
+          "name": "Ritual blades",
+          "atk": "4",
+          "hit": "2+",
+          "dmg": "4/6",
+          "rules": ""
+        }
+      ],
+      "rules": [
+        "<b>Bladed Stance:</b> Whenever this operative is fighting or retaliating, you can resolve one of your successes before the normal order. If you do, that success must be used to block.",
+        "<b>Trained Assassin (1AP):</b> Change this operative's order. This operative cannot perform this action while within control range of an enemy operative."
+      ],
+      "keywords": "SANCTIFIER, IMPERIUM, ADEPTUS MINISTORUM, DEATH CULT ASSASSIN"
+    },
+    {
+      "id": "op_sanctifier_drill_abbot",
+      "category": "Operatives",
+      "title": "Sanctifier Drill Abbot",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "6\"",
+        "Save": "5+",
+        "Wounds": "7"
+      },
+      "weapons": [
+        {
+          "name": "Great hammer",
+          "atk": "4",
+          "hit": "4+",
+          "dmg": "4/4",
+          "rules": "Brutal, Shock"
+        }
+      ],
+      "rules": [
+        "<b>Schola Progenium Disciplinarian:</b> Whenever a friendly SANCTIFIER operative is within 6\" of this operative, you can ignore any changes to that operative's stats from being injured (including its weapons' stats).",
+        "<b>Null Skull:</b> Whenever an enemy operative is within 4\" of this operative, that enemy operative's APL stat cannot be added to (remove all positive APL stat changes it has). If an enemy operative that's more than 4\" from this operative has a positive APL stat change and your opponent spends its final AP to move that operative within 4\" of this operative, this can cause your opponent to have spent more AP than its APL stat – this is permitted in this situation."
+      ],
+      "keywords": "SANCTIFIER, IMPERIUM, ADEPTUS MINISTORUM, DRILL ABBOT"
+    },
+    {
+      "id": "op_sanctifier_persecutor",
+      "category": "Operatives",
+      "title": "Sanctifier Persecutor",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "6\"",
+        "Save": "5+",
+        "Wounds": "7"
+      },
+      "weapons": [
+        {
+          "name": "Hand flamer",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/3",
+          "rules": "Range 6\", Saturate, Torrent 1\", Blaze*"
+        },
+        {
+          "name": "Eviscerator",
+          "atk": "4",
+          "hit": "4+",
+          "dmg": "5/6",
+          "rules": "Brutal"
+        }
+      ],
+      "rules": [
+        "<b>Merciless Castigation:</b> The first time this operative performs the Fight action during each of its activations, if neither it nor the enemy operative in that sequence is incapacitated, this operative can immediately perform a free Fight action afterwards, but you cannot select any other enemy operative to fight against during that action (and only if it's still valid to fight against). This takes precedence over action restrictions.",
+        "<b>Fanatical Retribution:</b> If this operative is incapacitated during the Fight action, you can strike the enemy operative in that sequence with one of your unresolved successes before this operative is removed from the killzone."
+      ],
+      "keywords": "SANCTIFIER, IMPERIUM, ADEPTUS MINISTORUM, PERSECUTOR"
+    },
+    {
+      "id": "op_sanctifier_miraculist",
+      "category": "Operatives",
+      "title": "Sanctifier Miraculist",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "6\"",
+        "Save": "4+",
+        "Wounds": "7"
+      },
+      "weapons": [
+        {
+          "name": "Holy light",
+          "atk": "4",
+          "hit": "2+",
+          "dmg": "4/3",
+          "rules": "Range 8\", Devastating 3, Limited 1, Piercing 1, Saturate, Blaze*"
+        },
+        {
+          "name": "Wreathe in fire",
+          "atk": "4",
+          "hit": "2+",
+          "dmg": "4/4",
+          "rules": "Blast 1\", Limited 1, Wreathed¹, Blaze*"
+        },
+        {
+          "name": "Burning hands",
+          "atk": "1",
+          "hit": "2+",
+          "dmg": "7/8",
+          "rules": "Brutal, Limited 1, Blaze*"
+        },
+        {
+          "name": "Fists",
+          "atk": "2",
+          "hit": "5+",
+          "dmg": "1/2",
+          "rules": ""
+        }
+      ],
+      "rules": [
+        "<b>Wreathed:</b> This operative can perform the Shoot action with this weapon while within control range of an enemy operative. Don't select a valid target. Instead, this operative is always the primary target, but only shoot against secondary targets and they cannot be in cover or obscured (in other words, determine Blast from this operative, but this operative isn't affected).",
+        "<b>Miracle:</b> The first time this operative would be incapacitated during the battle, it's not incapacitated, has 1 wound remaining and cannot be incapacitated for the remainder of the action. All remaining attack dice are discarded (including yours if this operative is fighting or retaliating), then this operative can immediately perform a free Dash or Fall Back action (for the latter, it cannot move more than 3\"), even if it's performed an action that prevents it from performing those actions."
+      ],
+      "keywords": "SANCTIFIER, IMPERIUM, ADEPTUS MINISTORUM, MIRACULIST"
+    },
+    {
+      "id": "op_sanctifier_missionary",
+      "category": "Operatives",
+      "title": "Sanctifier Missionary",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "6\"",
+        "Save": "5+",
+        "Wounds": "8"
+      },
+      "weapons": [
+        {
+          "name": "Brazier of holy fire",
+          "atk": "4",
+          "hit": "2+",
+          "dmg": "4/4",
+          "rules": "Range 4\", Saturate, Torrent 1\", Blaze*"
+        },
+        {
+          "name": "Meltagun",
+          "atk": "4",
+          "hit": "4+",
+          "dmg": "6/3",
+          "rules": "Range 6\", Devastating 4, Piercing 2"
+        },
+        {
+          "name": "Ministorum flamer",
+          "atk": "4",
+          "hit": "2+",
+          "dmg": "4/4",
+          "rules": "Range 8\", Saturate, Torrent 2\", Blaze*"
+        },
+        {
+          "name": "Plasma gun (standard)",
+          "atk": "4",
+          "hit": "4+",
+          "dmg": "4/6",
+          "rules": "Piercing 1"
+        },
+        {
+          "name": "Plasma gun (supercharge)",
+          "atk": "4",
+          "hit": "4+",
+          "dmg": "5/6",
+          "rules": "Hot, Lethal 5+, Piercing 1"
+        },
+        {
+          "name": "Brazier of holy fire",
+          "atk": "4",
+          "hit": "4+",
+          "dmg": "4/4",
+          "rules": "Shock, Blaze*"
+        },
+        {
+          "name": "Chainsword",
+          "atk": "4",
+          "hit": "4+",
+          "dmg": "4/5",
+          "rules": ""
+        },
+        {
+          "name": "Gun butt",
+          "atk": "3",
+          "hit": "4+",
+          "dmg": "2/3",
+          "rules": ""
+        }
+      ],
+      "rules": [
+        "<b>Holy Relic:</b> If this operative has a holy relic, it's always benefitting from the SERMON.",
+        "<b>Spread the Word of the God-Emperor:</b> Whenever this operative is more than 6\" from other friendly operatives, its weapons have the Severe weapon rule."
+      ],
+      "keywords": "SANCTIFIER, IMPERIUM, ADEPTUS MINISTORUM, MISSIONARY"
+    },
+    {
+      "id": "op_sanctifier_preacher",
+      "category": "Operatives",
+      "title": "Sanctifier Preacher",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "6\"",
+        "Save": "5+",
+        "Wounds": "7"
+      },
+      "weapons": [
+        {
+          "name": "Hand flamer",
+          "atk": "4",
+          "hit": "2+",
+          "dmg": "3/3",
+          "rules": "Range 6\", Saturate, Torrent 1\", Blaze*"
+        },
+        {
+          "name": "Chainsword",
+          "atk": "4",
+          "hit": "4+",
+          "dmg": "4/5",
+          "rules": ""
+        }
+      ],
+      "rules": [
+        "<b>Defend the Faith:</b> Whenever this operative controls an objective marker, it's benefitting from the SERMON."
+      ],
+      "keywords": "SANCTIFIER, IMPERIUM, ADEPTUS MINISTORUM, PREACHER"
+    },
+    {
+      "id": "op_sanctifier_reliquant",
+      "category": "Operatives",
+      "title": "Sanctifier Reliquant",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "6\"",
+        "Save": "5+",
+        "Wounds": "7"
+      },
+      "weapons": [
+        {
+          "name": "Hand flamer",
+          "atk": "4",
+          "hit": "2+",
+          "dmg": "3/3",
+          "rules": "Range 6\", Saturate, Torrent 1\", Blaze*"
+        },
+        {
+          "name": "Gun butt",
+          "atk": "3",
+          "hit": "4+",
+          "dmg": "2/3",
+          "rules": ""
+        }
+      ],
+      "rules": [
+        "<b>Cult Icon:</b> Whenever determining control of a marker within 4\" of this operative, treat the total APL stat of friendly SANCTIFIER operatives that contest it as 1 higher if at least one friendly SANCTIFIER operative contests that marker. Note this isn't a change to the APL stat, so any changes are cumulative with this.",
+        "<b>Imperial Cult Devotion:</b> Once per turning point, when a ready friendly SANCTIFIER operative is incapacitated while visible to and within 6\" of this operative, you can use this rule. If you do, before that operative is removed from the killzone, it can perform one free action (excluding Fight), and you can change its order to do so. It's then removed from the killzone as normal."
+      ],
+      "keywords": "SANCTIFIER, IMPERIUM, ADEPTUS MINISTORUM, RELIQUANT"
+    },
+    {
+      "id": "op_sanctifier_salvationist",
+      "category": "Operatives",
+      "title": "Sanctifier Salvationist",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "6\"",
+        "Save": "5+",
+        "Wounds": "7"
+      },
+      "weapons": [
+        {
+          "name": "Soulstave",
+          "atk": "3",
+          "hit": "5+",
+          "dmg": "2/3",
+          "rules": ""
+        }
+      ],
+      "rules": [
+        "<b>Conversion Field:</b> Whenever an operative more than 6\" from this operative is shooting a friendly SANCTIFIER operative within 6\" of this operative, improve that friendly operative's Save stat by 1.",
+        "<b>Medikit (1AP):</b> Select one friendly SANCTIFIER operative within this operative's control range to regain up to 2D3 lost wounds. This operative cannot perform this action while within control range of an enemy operative."
+      ],
+      "keywords": "SANCTIFIER, IMPERIUM, ADEPTUS MINISTORUM, MEDIC, SALVATIONIST"
+    },
+    {
+      "id": "fac_blaze",
+      "category": "Faction Rules",
+      "title": "Blaze",
+      "subtitle": "Faction Rule",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "<b>Blaze:</b> If you inflict damage with any critical successes, the operative this weapon is being used against gains one of your Blaze tokens (if it doesn't already have one). Whenever an operative that has one of your Blaze tokens is activated, inflict D3 damage on it. Then that operative's controlling player selects one of the following: Roll one D6: on a 3+, remove that token. Subtract 1 from the operative's APL stat until the end of that activation to remove that token."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "fac_ministorum_sermon",
+      "category": "Faction Rules",
+      "title": "Ministorum Sermon",
+      "subtitle": "Faction Rule",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "<b>Strategic Gambit:</b> Select one friendly SANCTIFIER operative. If a friendly CONFESSOR operative hasn't been incapacitated, you must select it. Until you use this STRATEGIC GAMBIT again during the battle, that operative has the ORATOR keyword.",
+        "Whenever a friendly SANCTIFIER operative is within 3\" of a friendly ORATOR operative (or 6\" if the ORATOR is a CONFESSOR), that friendly SANCTIFIER operative is benefitting from the SERMON.",
+        "Whenever a friendly SANCTIFIER operative is activated within 3\" of a friendly ORATOR operative (or 6\" if the ORATOR is a CONFESSOR), that friendly SANCTIFIER operative is benefitting from the SERMON until the end of that activation (i.e. even if it then moves more than the distance requirement from the ORATOR operative).",
+        "Whenever a friendly SANCTIFIER operative is benefitting from the SERMON, Normal and Critical Dmg of 4 or more inflicts 1 less damage on it."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_strat_the_emperor_protects",
+      "category": "Strategy Ploys",
+      "title": "The Emperor Protects",
+      "subtitle": "Strategy Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Whenever an operative is shooting a friendly SANCTIFIER operative that's benefitting from the SERMON, you can re-roll any of your defence dice results of one result (e.g. results of 2)."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_strat_fervent_brawl",
+      "category": "Strategy Ploys",
+      "title": "Fervent Brawl",
+      "subtitle": "Strategy Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Whenever a friendly SANCTIFIER operative that's benefitting from the SERMON is fighting or retaliating, its melee weapons have the Ceaseless weapon rule."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_strat_zealous_persecution",
+      "category": "Strategy Ploys",
+      "title": "Zealous Persecution",
+      "subtitle": "Strategy Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Whenever a friendly SANCTIFIER operative is fighting during an activation in which it performed the Charge action, its melee weapons have the Lethal 5+ weapon rule."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_strat_rally_the_flock",
+      "category": "Strategy Ploys",
+      "title": "Rally The Flock",
+      "subtitle": "Strategy Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Each friendly SANCTIFIER operative (excluding ORATOR) that's benefitting from the SERMON can immediately perform a free Dash or Fall Back action in an order of your choice (choose separately for each and, for the latter, it cannot move more than 3\"). Each that does so must end that move closer and visible to (or vice versa) a friendly ORATOR operative. You cannot use this ploy during the first turning point."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_fire_rosarius",
+      "category": "Firefight Ploys",
+      "title": "Rosarius",
+      "subtitle": "Firefight Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Use this firefight ploy when an attack dice inflicts Normal Dmg on a friendly SANCTIFIER operative. Ignore that inflicted damage."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_fire_ardent_eradication",
+      "category": "Firefight Ploys",
+      "title": "Ardent Eradication",
+      "subtitle": "Firefight Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Use this firefight ploy after rolling your attack dice for a friendly SANCTIFIER operative, if it's shooting against or fighting against an enemy operative that's within 3\" of a friendly ORATOR operative (or 6\" if the ORATOR is a CONFESSOR). You can re-roll any of your attack dice."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_fire_redeemed_through_fire",
+      "category": "Firefight Ploys",
+      "title": "Redeemed Through Fire",
+      "subtitle": "Firefight Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Use this firefight ploy when a friendly SANCTIFIER operative that has a weapon with the Blaze weapon rule is incapacitated, before it's removed from the killzone. Each enemy operative visible to and within 2\" of it gains one of your Blaze tokens (if it doesn't already have one)."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_fire_unwavering_devotion",
+      "category": "Firefight Ploys",
+      "title": "Unwavering Devotion",
+      "subtitle": "Firefight Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Use this firefight ploy when a friendly SANCTIFIER ORATOR or SANCTIFIER MIRACULIST operative is selected as the valid target of a Shoot action or to fight against during the Fight action. Select one other friendly SANCTIFIER operative (excluding CONFESSOR, MIRACULIST and ORATOR) visible to and within 3\" of that first friendly operative to become the valid target or to be fought against (as appropriate) instead (even if it wouldn't normally be valid for this). If it's the Fight action, treat that other operative as being within the fighting operative's control range for the duration of that action. If it's the Shoot action, that other operative is only in cover or obscured if the original target was. This ploy has no effect if it's the Shoot action and the ranged weapon has the Blast or Torrent weapon rule."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "eq_sanctification_orbs",
+      "category": "Faction Equipment",
+      "title": "Sanctification Orbs",
+      "subtitle": "Equipment",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Once per turning point, one friendly SANCTIFIER operative (excluding CHERUB, DEATH CULT ASSASSIN and MIRACULIST) can perform the following unique action:",
+        "<b>Sanctification Orb (1AP):</b> Select one enemy operative visible to and within 6\" of this operative. That operative and each other enemy operative within 1\" of it takes a doused test. For an operative to take a doused test, roll one D6: on a 3+, it gains one of your Doused tokens.",
+        "Whenever a friendly SANCTIFIER operative is shooting an operative that has one of your Doused tokens with a weapon that has the Blaze weapon rule, that weapon also has the Seek weapon rule.",
+        "After a friendly SANCTIFIER operative uses a weapon that has the Blaze weapon rule against an enemy operative that has one of your Doused tokens, remove that token (even if the Seek weapon rule wasn't used).",
+        "This operative cannot perform this action while within control range of an enemy operative."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "eq_purity_seals",
+      "category": "Faction Equipment",
+      "title": "Purity Seals",
+      "subtitle": "Equipment",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Once per turning point, when a friendly SANCTIFIER operative is shooting or fighting, if you roll two or more fails, you can discard one of them to retain another as a normal success instead."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "eq_ecclesiarchy_texts",
+      "category": "Faction Equipment",
+      "title": "Ecclesiarchy Texts",
+      "subtitle": "Equipment",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "In the Ready step of each Strategy phase, roll 3D6: if the result is less than the remaining wounds of a friendly ORATOR operative, you gain 1CP. Note that this is done before the Gambit step, so if there isn't a valid ORATOR operative, you cannot use this rule during that turning point (e.g. during the first turning point)."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "eq_imperial_cult_symbols",
+      "category": "Faction Equipment",
+      "title": "Imperial Cult Symbols",
+      "subtitle": "Equipment",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Once per turning point, when an operative is shooting a friendly SANCTIFIER operative that's benefitting from the SERMON, when you collect your defence dice, you can use this rule. If you do, change one of the attacker's retained critical successes to a normal success (any weapon rules they've already resolved aren't affected, e.g. Piercing Crits)."
+      ],
+      "keywords": null
+    }
+  ]
+}

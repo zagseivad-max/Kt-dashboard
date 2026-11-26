@@ -1,0 +1,644 @@
+{
+  "factionName": "Corsair Voidscarred",
+  "archetypes": [
+    "Infiltration",
+    "Recon"
+  ],
+  "rules": [
+    {
+      "id": "fac_rifles",
+      "category": "Faction Rules",
+      "title": "Rifles",
+      "subtitle": "Faction Rule",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Whenever a friendly CORSAIR VOIDSCARRED operative is shooting with a shuriken rifle or ranger long rifle during an activation in which it hasn’t performed the Charge, Fall Back or Reposition action, that weapon has the Accurate 1 weapon rule. Note that operative isn’t restricted from performing those actions after shooting."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "fac_aeldari_raiders",
+      "category": "Faction Rules",
+      "title": "Aeldari Raiders",
+      "subtitle": "Faction Rule",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Each friendly CORSAIR VOIDSCARRED operative can perform a free Dash action during their activation."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "op_voidscarred_felarch",
+      "category": "Operatives",
+      "title": "Voidscarred Felarch",
+      "subtitle": "Leader Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "7\"",
+        "Save": "4+",
+        "Wounds": "9"
+      },
+      "weapons": [
+        {
+          "name": "Neuro disruptor",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "4/5",
+          "rules": "Range 8\", Piercing 1, Stun"
+        },
+        {
+          "name": "Shuriken pistol",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Range 8\", Rending"
+        },
+        {
+          "name": "Shuriken rifle",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Rending"
+        },
+        {
+          "name": "Power weapon",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "4/6",
+          "rules": "Lethal 5+"
+        }
+      ],
+      "rules": [
+        "<b>Veteran Raider</b>: This operative can perform a 1AP action for free during their activation as a result of the Aeldari Raiders rule (instead of the Dash action).",
+        "<b>One Step Ahead</b>: Once per battle, after an enemy operative performs an action, if this operative is ready, you can use this rule. If you do, roll one D6: if the result is higher than that enemy operative’s APL stat, you can interrupt and immediately perform either a free Shoot or a free Fight action with this operative, but you cannot select any other enemy operative as a valid target or to fight against during that action (note that secondary targets from the Blast weapon rule can still be targeted). After you perform that action, subtract 1 from this operative’s APL stat until the end of its next activation."
+      ],
+      "keywords": "CORSAIR VOIDSCARRED, AELDARI, ANHRATHE, LEADER, FELARCH"
+    },
+    {
+      "id": "op_voidscarred_fate_dealer",
+      "category": "Operatives",
+      "title": "Voidscarred Fate Dealer",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "7\"",
+        "Save": "4+",
+        "Wounds": "8"
+      },
+      "weapons": [
+        {
+          "name": "Ranger long rifle (mobile)",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "–"
+        },
+        {
+          "name": "Ranger long rifle (stationary)",
+          "atk": "4",
+          "hit": "2+",
+          "dmg": "3/3",
+          "rules": "Devastating 3, Heavy, Silent"
+        },
+        {
+          "name": "Shuriken pistol",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Range 8\", Rending"
+        },
+        {
+          "name": "Fists",
+          "atk": "3",
+          "hit": "3+",
+          "dmg": "2/3",
+          "rules": "–"
+        }
+      ],
+      "rules": [
+        "<b>Camo Cloak</b>: Whenever an operative is shooting this operative:\n• Ignore the Saturate weapon rule.\n• If you can retain any cover saves, you can retain one additional cover save, or you can retain one cover save as a critical success instead. This isn’t cumulative with improved cover saves from Vantage terrain."
+      ],
+      "keywords": "CORSAIR VOIDSCARRED, AELDARI, ANHRATHE, FATE DEALER"
+    },
+    {
+      "id": "op_voidscarred_gunner",
+      "category": "Operatives",
+      "title": "Voidscarred Gunner",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "7\"",
+        "Save": "4+",
+        "Wounds": "8"
+      },
+      "weapons": [
+        {
+          "name": "Blaster",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "4/5",
+          "rules": "Piercing 2"
+        },
+        {
+          "name": "Shredder",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "4/5",
+          "rules": "Rending, Torrent 2\""
+        },
+        {
+          "name": "Shuriken pistol",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Range 8\", Rending"
+        },
+        {
+          "name": "Fists",
+          "atk": "3",
+          "hit": "3+",
+          "dmg": "2/3",
+          "rules": "–"
+        }
+      ],
+      "rules": [],
+      "keywords": "CORSAIR VOIDSCARRED, AELDARI, ANHRATHE, GUNNER"
+    },
+    {
+      "id": "op_voidscarred_heavy_gunner",
+      "category": "Operatives",
+      "title": "Voidscarred Heavy Gunner",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "7\"",
+        "Save": "4+",
+        "Wounds": "8"
+      },
+      "weapons": [
+        {
+          "name": "Shuriken cannon (focused)",
+          "atk": "5",
+          "hit": "3+",
+          "dmg": "4/5",
+          "rules": "Heavy (Dash only), Rending"
+        },
+        {
+          "name": "Shuriken cannon (sweeping)",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "4/5",
+          "rules": "Heavy (Dash only), Rending, Torrent 1\""
+        },
+        {
+          "name": "Shuriken pistol",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Range 8\", Rending"
+        },
+        {
+          "name": "Wraithcannon",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "6/3",
+          "rules": "Devastating 4, Heavy (Dash only), Piercing 2"
+        },
+        {
+          "name": "Fists",
+          "atk": "3",
+          "hit": "3+",
+          "dmg": "2/3",
+          "rules": "–"
+        }
+      ],
+      "rules": [],
+      "keywords": "CORSAIR VOIDSCARRED, AELDARI, ANHRATHE, HEAVY GUNNER"
+    },
+    {
+      "id": "op_voidscarred_kurnathi",
+      "category": "Operatives",
+      "title": "Voidscarred Kurnathi",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "7\"",
+        "Save": "4+",
+        "Wounds": "8"
+      },
+      "weapons": [
+        {
+          "name": "Shuriken pistol",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Range 8\", Rending"
+        },
+        {
+          "name": "Dual power weapons",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "4/6",
+          "rules": "Ceaseless, Lethal 5+"
+        }
+      ],
+      "rules": [
+        "<b>Blademaster</b>: This operative can perform the Dash action during an activation in which it performed the Charge action, but can only use any remaining move distance it had from that Charge action (to a maximum of 3\").",
+        "<b>Bladed Stance</b>: Whenever this operative is fighting or retaliating, you can resolve one of your successes before the normal order. If you do, that success must be used to block."
+      ],
+      "keywords": "CORSAIR VOIDSCARRED, AELDARI, ANHRATHE, KURNATHI"
+    },
+    {
+      "id": "op_voidscarred_kurnite_hunter",
+      "category": "Operatives",
+      "title": "Voidscarred Kurnite Hunter",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "7\"",
+        "Save": "4+",
+        "Wounds": "8"
+      },
+      "weapons": [
+        {
+          "name": "Faolchú",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "1/2",
+          "rules": "Rending, Saturate, Seek Light, Silent"
+        },
+        {
+          "name": "Shuriken pistol",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Range 8\", Rending"
+        },
+        {
+          "name": "Power weapon",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "4/6",
+          "rules": "Lethal 5+"
+        }
+      ],
+      "rules": [
+        "<b>Faolchú’s Bond</b>: The first time during each turning point that this operative is retaliating, if it’s ready, in the Resolve Attack Dice step of that sequence, you resolve the first attack dice (i.e. defender instead of attacker).",
+        "<b>Erudite Hunter</b>: STRATEGIC GAMBIT. Select one enemy operative within 9\" of this operative. Once during this turning point, after that enemy operative performs an action in which it moves, you can interrupt to use this rule. If you do, this operative can immediately perform either a free Reposition action (it cannot end that move further away from that enemy operative), or a free Charge action (you can change its order to do so, and it must end that move within control range of that enemy operative). In a killzone that uses the close quarters rules (e.g. Killzone: Tomb World), ignore Wall terrain when determining further away."
+      ],
+      "keywords": "CORSAIR VOIDSCARRED, AELDARI, ANHRATHE, KURNITE HUNTER"
+    },
+    {
+      "id": "op_voidscarred_shade_runner",
+      "category": "Operatives",
+      "title": "Voidscarred Shade Runner",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "7\"",
+        "Save": "4+",
+        "Wounds": "8"
+      },
+      "weapons": [
+        {
+          "name": "Shuriken pistol",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Range 8\", Rending"
+        },
+        {
+          "name": "Throwing blades",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "2/4",
+          "rules": "Range 6\", Silent"
+        },
+        {
+          "name": "Hekatarii blades",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/5",
+          "rules": "Ceaseless, Lethal 5+"
+        }
+      ],
+      "rules": [
+        "<b>Blink Pack</b>: Whenever this operative performs the Charge, Fall Back or Reposition action, it can warp jump. If it does, don’t move it. Instead, remove it from the killzone and set it back up wholly within 7\" horizontally of its original location (in a killzone that uses the close quarters rules, e.g. Killzone: Tomb World, this distance can be measured through Wall terrain). It must be set up in a location it can be placed, and unless it’s the Charge action, it cannot be set up within control range of an enemy operative.",
+        "<b>Slicing Attack</b>: Whenever this operative performs the Reposition action with a warp jump (see other side of card), you can use this rule. If you do, after it moves, draw an imaginary line 1mm in diameter and up to 7\" long between it and its previous location. Note this doesn’t have to be a straight line. Inflict D3+2 damage on one enemy operative that line crosses. You cannot inflict damage on an enemy operative that was not visible to this operative at the start of that action. A 28mm round marker can be temporarily placed underneath this operative before it moves to help determine this."
+      ],
+      "keywords": "CORSAIR VOIDSCARRED, AELDARI, ANHRATHE, SHADE RUNNER"
+    },
+    {
+      "id": "op_voidscarred_soul_weaver",
+      "category": "Operatives",
+      "title": "Voidscarred Soul Weaver",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "7\"",
+        "Save": "4+",
+        "Wounds": "8"
+      },
+      "weapons": [
+        {
+          "name": "Shuriken pistol",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Range 8\", Rending"
+        },
+        {
+          "name": "Power weapon",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "4/6",
+          "rules": "Lethal 5+"
+        }
+      ],
+      "rules": [
+        "<b>Soul Channel (1AP)</b>: PSYCHIC. Select one other friendly CORSAIR VOIDSCARRED operative visible to and within 6\" of this operative. Until the end of that operative’s next activation, add 1 to its APL stat. This operative cannot perform this action while within control range of an enemy operative.",
+        "<b>Soul Heal (1AP)</b>: PSYCHIC. Select one friendly CORSAIR VOIDSCARRED operative visible to and within 6\" of this operative. That operative regains up to 2D3 lost wounds. This operative cannot perform this action while within control range of an enemy operative."
+      ],
+      "keywords": "CORSAIR VOIDSCARRED, AELDARI, ANHRATHE, PSYKER, MEDIC, SOUL WEAVER"
+    },
+    {
+      "id": "op_voidscarred_starstorm_duellist",
+      "category": "Operatives",
+      "title": "Voidscarred Starstorm Duellist",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "7\"",
+        "Save": "4+",
+        "Wounds": "8"
+      },
+      "weapons": [
+        {
+          "name": "Fusion pistol",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "5/3",
+          "rules": "Range 3\", Devastating 3, Piercing 2"
+        },
+        {
+          "name": "Shuriken pistol",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Range 8\", Rending"
+        },
+        {
+          "name": "Fists",
+          "atk": "3",
+          "hit": "3+",
+          "dmg": "2/3",
+          "rules": "–"
+        }
+      ],
+      "rules": [
+        "<b>Quick on the Trigger</b>: This operative can perform the Shoot action while within control range of an enemy operative. If it does, when selecting a valid target, you can only select an enemy operative within this operative’s control range, and can do so even if other friendly operatives are within that enemy operative’s control range.",
+        "<b>Pistol Barrage (1AP)</b>: Perform two free Shoot actions with this operative (this takes precedence over action restrictions). You must select its fusion pistol for one action and its shuriken pistol for the other (in any order). This operative cannot perform this action while it has a Conceal order, or during an activation in which it performed the Shoot action (or vice versa)."
+      ],
+      "keywords": "CORSAIR VOIDSCARRED, AELDARI, ANHRATHE, STARSTORM DUELLIST"
+    },
+    {
+      "id": "op_voidscarred_warrior",
+      "category": "Operatives",
+      "title": "Voidscarred Warrior",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "7\"",
+        "Save": "4+",
+        "Wounds": "8"
+      },
+      "weapons": [
+        {
+          "name": "Shuriken pistol",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Range 8\", Rending"
+        },
+        {
+          "name": "Shuriken rifle",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Rending"
+        },
+        {
+          "name": "Power weapon",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "4/6",
+          "rules": "Lethal 5+"
+        },
+        {
+          "name": "Fists",
+          "atk": "3",
+          "hit": "3+",
+          "dmg": "2/3",
+          "rules": "–"
+        }
+      ],
+      "rules": [
+        "<b>Prowling Raiders</b>: You can use the Capricious Flight and Light Fingers firefight ploys for 0CP each if a friendly WARRIOR operative is the specified CORSAIR VOIDSCARRED operative."
+      ],
+      "keywords": "CORSAIR VOIDSCARRED, AELDARI, ANHRATHE, WARRIOR"
+    },
+    {
+      "id": "op_voidscarred_way_seeker",
+      "category": "Operatives",
+      "title": "Voidscarred Way Seeker",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "7\"",
+        "Save": "4+",
+        "Wounds": "8"
+      },
+      "weapons": [
+        {
+          "name": "Freezing grasp",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "1/2",
+          "rules": "PSYCHIC, Severe, Silent, Stun"
+        },
+        {
+          "name": "Lightning strike",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "4/3",
+          "rules": "PSYCHIC, 2\" Devastating 2"
+        },
+        {
+          "name": "Shuriken pistol",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Range 8\", Rending"
+        },
+        {
+          "name": "Witch staff",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/5",
+          "rules": "PSYCHIC, Shock"
+        }
+      ],
+      "rules": [
+        "<b>Warp Fold (1AP)</b>: PSYCHIC. Select two friendly CORSAIR VOIDSCARRED operatives visible to and within 5\" of this operative. Remove them both from the killzone and set them back up in each other’s previous locations (in other words, swap their positions). If one of them performed the Charge, Fall Back or Reposition action during this turning point and the other is ready, the other cannot perform any of those actions in its activation during this turning point. This operative cannot perform this action while within control range of an enemy operative.",
+        "<b>Warding Shield (1AP)</b>: PSYCHIC. Select one friendly CORSAIR VOIDSCARRED operative visible to and within 6\" of this operative. Until the start of this operative’s next activation, until it’s incapacitated or until it performs this action again (whichever comes first), the first time an attack dice inflicts Normal Dmg on that friendly operative, ignore that inflicted damage. This operative cannot perform this action while within control range of an enemy operative."
+      ],
+      "keywords": "CORSAIR VOIDSCARRED, AELDARI, ANHRATHE, PSYKER, WAY SEEKER"
+    },
+    {
+      "id": "ploy_plunderers",
+      "category": "Strategy Ploys",
+      "title": "Plunderers",
+      "subtitle": "Strategy Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Up to D3 friendly CORSAIR VOIDSCARRED operatives can immediately perform a free Dash action in an order of your choice. This turning point, each that does so cannot perform the Dash action during their activation. You cannot use this ploy during the first turning point."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_piratical_profiteers",
+      "category": "Strategy Ploys",
+      "title": "Piratical Profiteers",
+      "subtitle": "Strategy Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Whenever a friendly CORSAIR VOIDSCARRED operative is shooting, fighting or retaliating, if it or the enemy operative in that sequence contests an objective marker or one of your mission markers, that friendly operative’s weapons have the Balanced weapon rule."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_mobile_engagement",
+      "category": "Strategy Ploys",
+      "title": "Mobile Engagement",
+      "subtitle": "Strategy Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Whenever an operative is shooting a friendly CORSAIR VOIDSCARRED operative that performed an action in which it moved during this turning point, you can re-roll one of your defence dice."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_outcasts",
+      "category": "Strategy Ploys",
+      "title": "Outcasts",
+      "subtitle": "Strategy Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Whenever a friendly CORSAIR VOIDSCARRED operative is more than 5\" from other friendly operatives, its weapons have the Punishing weapon rule."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_opportunistic_fighters",
+      "category": "Firefight Ploys",
+      "title": "Opportunistic Fighters",
+      "subtitle": "Firefight Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Use this firefight ploy when an enemy operative performs the Fall Back action. Before it moves, inflict 2D3 damage on that operative for each friendly CORSAIR VOIDSCARRED operative within its control range."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_light_fingers",
+      "category": "Firefight Ploys",
+      "title": "Light Fingers",
+      "subtitle": "Firefight Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Use this firefight ploy during a friendly CORSAIR VOIDSCARRED operative’s activation. Until the end of that activation, having an enemy operative within its control range doesn’t prevent that friendly operative from performing the Pick Up Marker or mission actions."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_capricious_flight",
+      "category": "Firefight Ploys",
+      "title": "Capricious Flight",
+      "subtitle": "Firefight Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Use this firefight ploy during a friendly CORSAIR VOIDSCARRED operative’s activation, before or after it performs an action. During that activation, that operative can perform the Fall Back action for 1 less AP."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_contemptuous_adventurer",
+      "category": "Firefight Ploys",
+      "title": "Contemptuous Adventurer",
+      "subtitle": "Firefight Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Use this firefight ploy when the first friendly CORSAIR VOIDSCARRED operative is activated during the turning point, if it’s more than 5\" from other friendly operatives. The first time that operative performs either the Shoot or Fight action during that activation, its weapons have the Relentless weapon rule. Note this ploy cannot come into effect more than once per activation (you cannot use it during both the Shoot and Fight action in the same activation)."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "eq_diuturnal_mantles",
+      "category": "Faction Equipment",
+      "title": "Diuturnal Mantles",
+      "subtitle": "Equipment",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Whenever an operative is shooting a friendly CORSAIR VOIDSCARRED operative, if the ranged weapon in that sequence has the Blast or Torrent weapon rule, you can re-roll one of your defence dice. In addition, friendly CORSAIR VOIDSCARRED operatives aren’t affected by the x\" Devastating x weapon rule (i.e. Devastating with a distance) unless they are the target during that sequence."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "eq_mistfield",
+      "category": "Faction Equipment",
+      "title": "Mistfield",
+      "subtitle": "Equipment",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Once per turning point, when an operative is shooting a friendly CORSAIR VOIDSCARRED operative more than 3\" from it, at the start of the Roll Defence Dice step, you can use this rule. If you do, worsen the x of the Piercing weapon rule by 1 (if any) until the end of that sequence. Note that Piercing 1 would therefore be ignored."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "eq_runes_of_guidance",
+      "category": "Faction Equipment",
+      "title": "Runes of Guidance",
+      "subtitle": "Equipment",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Once per turning point, when a friendly CORSAIR VOIDSCARRED WAY SEEKER or CORSAIR VOIDSCARRED SOUL WEAVER operative is performing a PSYCHIC unique action (excluding Warp Fold), you can use this rule. If you do, until the end of that action, add 3\" to its distance requirement. Note this has no effect on PSYCHIC weapons (e.g. the Devastating distance requirement of lightning strike)."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "eq_star_charts",
+      "category": "Faction Equipment",
+      "title": "Star Charts",
+      "subtitle": "Equipment",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "STRATEGIC GAMBIT. Roll one D3: if the result is higher than the number of the current turning point, you gain 1CP and cannot use this STRATEGIC GAMBIT for the rest of the battle."
+      ],
+      "keywords": null
+    }
+  ]
+}

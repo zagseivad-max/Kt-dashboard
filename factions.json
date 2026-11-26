@@ -67,6 +67,18 @@
     {
       "name": "Raveners",
       "path": "factions/raveners_h8bosc0ksi_2kdh46uw2b.json"
+    },
+    {
+      "name": "Sanctifiers",
+      "path": "factions/eng_25_02_kt_teamrules_sanctifiers_3vpsecfbfe_vclbyfaed7.json"
+    },
+    {
+      "name": "Corsair Voidscarred",
+      "path": "factions/corsair_voidscarred_3war9i1i61_vjohvdpcb9.json"
+    },
+    {
+      "name": "Mandrakes",
+      "path": "factions/mandrakes_w2j9qwhaxz_oveknnlmoe.json"
     }
   ]
 }

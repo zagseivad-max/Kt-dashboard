@@ -1,0 +1,444 @@
+{
+  "factionName": "Mandrakes",
+  "archetypes": [
+    "Infiltration",
+    "Recon"
+  ],
+  "rules": [
+    {
+      "id": "fac_soulstrike",
+      "category": "Faction Rules",
+      "title": "Soulstrike",
+      "subtitle": "Faction Rule",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "The balefire hurled by the Mandrakes burns cold and fierce, fed by the tinder of their victim’s life force and animus. Conventional armour offers little protection against this insidious force.",
+        "Some weapons in this team’s rules have the Soulstrike weapon rule below.",
+        "<b>*Soulstrike:</b> Successful defence dice are determined differently. Each result that’s equal to or less than the target’s APL stat is a success and is retained. Each result that’s higher than the target’s APL stat is a fail and is discarded. Each result of 1 is always a critical success. Each other success is a normal success. Each result of 6 is always a fail.",
+        "<b>Designer's Note:</b> Many of this kill team’s rules refer to an enemy operative’s APL stat. This would be the APL stat at the time the rule takes effect (i.e. including changes)."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "fac_shadow_passage",
+      "category": "Faction Rules",
+      "title": "Shadow Passage",
+      "subtitle": "Faction Rule",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Mandrakes can slip into the slightest patch of shadow as if vanishing into dark waters, only to crawl forth from another patch of gloom as though the intervening distance doesn’t exist. This sinister ability allows them to bypass sentries and defences unseen, and to pounce upon their victims from unexpected quarters.",
+        "<b>Shadow Passage:</b> Once per turning point, one friendly MANDRAKE operative WITHIN SHADOW can use a SHADOW PASSAGE when it performs the Reposition action. If it does, don’t move it. Instead, remove it from the killzone and set it back up WITHIN SHADOW in a location it can be placed. When you set it back up, it cannot:",
+        "• Be within control range of an enemy operative.",
+        "• Be a valid target for an enemy operative.",
+        "• Perform the Shoot or Fight action until the start of the next turning point."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "fac_umbral_entities",
+      "category": "Faction Rules",
+      "title": "Umbral Entities",
+      "subtitle": "Faction Rule",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "The Mandrakes’ physical forms shift and shudder like shadows smothering the last light of a guttering torch. Those rare survivors of their attacks describe the Mandrakes blending with the encroaching darkness, or even vanishing from sight altogether, confounding the increasingly panicked aim of their prey as they flitter ever closer.",
+        "<b>Umbral Entities:</b> Whenever an operative is shooting a friendly MANDRAKE operative, ignore the Piercing weapon rule. Whenever a friendly MANDRAKE operative is WITHIN SHADOW, improve its Save stat by 1."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "fac_within_shadow",
+      "category": "Faction Rules",
+      "title": "Within Shadow",
+      "subtitle": "Faction Rule",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Mandrakes are creatures of shadow, using the darkness to conceal their movements and close in upon their unsuspecting prey.",
+        "An operative is WITHIN SHADOW if any of the following are true:",
+        "• It’s within 1\" of Heavy terrain that’s not lower than it.",
+        "• Any part of its base is underneath Vantage terrain.",
+        "• A Shadow Portal marker is within its control range (see SHADEWEAVER)."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_creeping_horror",
+      "category": "Strategy Ploys",
+      "title": "Creeping Horror",
+      "subtitle": "Strategy Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Flitting in and out of the shadows, Mandrakes advance with unsettling speed.",
+        "<b>Creeping Horror:</b> After each enemy operative’s activation, before the next operative is activated, one friendly MANDRAKE operative that has a Conceal order can perform a free Dash action if it starts and ends that action WITHIN SHADOW. You cannot use this ploy during the first turning point, and you cannot select each friendly operative for this ploy more than once per turning point."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_gloaming_shroud",
+      "category": "Strategy Ploys",
+      "title": "Gloaming Shroud",
+      "subtitle": "Strategy Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Cloaked in shadows, a Mandrake’s form is indistinct, rendering it particularly difficult to strike from range.",
+        "<b>Gloaming Shroud:</b> Whenever an operative is shooting a friendly MANDRAKE operative that’s WITHIN SHADOW, you can retain one of your defence dice as a normal success without rolling it (in addition to a cover save, if any)."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_blade_in_the_dark",
+      "category": "Strategy Ploys",
+      "title": "Blade In The Dark",
+      "subtitle": "Strategy Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Leaping from shadow to shadow, Mandrakes appear beside unsuspecting foes with blades raised to strike.",
+        "<b>Blade In The Dark:</b> Each friendly MANDRAKE operative can perform the Charge action while it has a Conceal order if it starts or ends that action WITHIN SHADOW."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_inescapable_nightmare",
+      "category": "Strategy Ploys",
+      "title": "Inescapable Nightmare",
+      "subtitle": "Strategy Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "The nightmarish appearance of a Mandrake is matched by its terrifying speed and accuracy.",
+        "<b>Inescapable Nightmare:</b> Whenever a friendly MANDRAKE operative is shooting, fighting or retaliating, if it’s WITHIN SHADOW, you can re-roll one of your attack dice."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_slither_out_of_sight",
+      "category": "Firefight Ploys",
+      "title": "Slither Out Of Sight",
+      "subtitle": "Firefight Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Beings of umbral malice, Mandrakes may slip into shadow to evade the attentions of their confounded foes.",
+        "<b>Slither Out Of Sight:</b> Use this firefight ploy at the end of any operative’s activation. Select one friendly MANDRAKE operative that has an Engage order and is WITHIN SHADOW. Change that operative’s order to Conceal."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_soul_feast",
+      "category": "Firefight Ploys",
+      "title": "Soul Feast",
+      "subtitle": "Firefight Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Mandrakes subsist on the agonies of their victims, gaining vigour with each torturous blow inflicted upon their prey.",
+        "<b>Soul Feast:</b> Use this firefight ploy when a friendly MANDRAKE operative is shooting against, fighting against or retaliating against an enemy operative within 6\" of it, at the end of the Resolve Attack Dice step. That friendly operative regains a number of lost wounds equal to that enemy operative’s APL stat, multiplied by the number of your attack dice that inflicted damage during that sequence. Excess attack dice are ignored (i.e. if the enemy operative is incapacitated before remaining attack dice are resolved). You cannot use this ploy if that friendly MANDRAKE operative is incapacitated."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_nowhere_to_hide",
+      "category": "Firefight Ploys",
+      "title": "Nowhere To Hide",
+      "subtitle": "Firefight Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Walls and other obstructions are of no concern to Mandrakes, who fade in and out of the physical realm at their own whim.",
+        "<b>Nowhere To Hide:</b> Use this firefight ploy during a friendly MANDRAKE operative’s activation, when it performs an action in which it moves. Until the end of that activation, that operative can move through parts of terrain features as if they weren’t there, but it cannot move more than its Move stat if it’s the Charge action and must end those moves in a location it can be placed."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_shadows_bite",
+      "category": "Firefight Ploys",
+      "title": "Shadow’s Bite",
+      "subtitle": "Firefight Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "When suffused with shadow, a Mandrake moves with unnatural speed and grace, lashing out preemptively with its glimmersteel blade.",
+        "<b>Shadow’s Bite:</b> Use this firefight ploy when an enemy operative performs the Fight action during an activation in which it performed the Charge action, and selects a friendly MANDRAKE operative WITHIN SHADOW to fight against. In the Resolve Attack Dice step of that sequence, you resolve the first attack dice (i.e. defender instead of attacker)."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "eq_chain_snare",
+      "category": "Faction Equipment",
+      "title": "Chain Snare",
+      "subtitle": "Equipment",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Composed of hooked blades attached to a length of chain, this weapon bites into the flesh or armour of the wielder’s target, preventing them from fleeing.",
+        "<b>Chain Snare:</b> Whenever an enemy operative would perform the Fall Back action while within control range of a friendly MANDRAKE operative, if no other enemy operatives are within that friendly operative’s control range, you can use this rule. If you do, roll two D6, or one D6 if that enemy operative has a higher Wounds stat than that friendly operative. If any result is a 4+, that enemy operative cannot perform that action during that activation/counteraction (no AP are spent on it), and you cannot use this rule again during this turning point."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "eq_shadow_glyph",
+      "category": "Faction Equipment",
+      "title": "Shadow Glyph",
+      "subtitle": "Equipment",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Etched into the inky skin of the Mandrake, this glyph glows when activated, causing the creature to fade utterly from sight.",
+        "<b>Shadow Glyph:</b> Once per turning point, when a friendly MANDRAKE operative is activated WITHIN SHADOW, you can use this rule. If you do, until the start of its next activation, while that operative has a Conceal order and is in cover, it cannot be selected as a valid target, taking precedence over all other rules (e.g. Seek, Vantage terrain) except being within 2\"."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "eq_soul_gem",
+      "category": "Faction Equipment",
+      "title": "Soul Gem",
+      "subtitle": "Equipment",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Containing the life force of a tortured victim, this shimmering crystal emits an eerie glow and enhances the supernatural might of the bearer.",
+        "<b>Soul Gem:</b> Once per turning point, when a friendly MANDRAKE operative is performing the Shoot action and you select a baleblast, you can use this rule. If you do, until the end of that action, that weapon has the Blast 1\" weapon rule."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "eq_bone_darts",
+      "category": "Faction Equipment",
+      "title": "Bone Darts",
+      "subtitle": "Equipment",
+      "stats": null,
+      "weapons": [
+        {
+          "name": "Bone dart",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "2/4",
+          "rules": "Range 6\", Rending, Silent"
+        }
+      ],
+      "rules": [
+        "Delicately carved from the bones of the Mandrakes’ victims, these brittle but sharp projectiles are deadly when hurled accurately.",
+        "<b>Bone Darts:</b> Once per turning point, a friendly MANDRAKE operative can use the ranged weapon above."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "op_mandrake_nightfiend",
+      "category": "Operatives",
+      "title": "Mandrake Nightfiend",
+      "subtitle": "Leader Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "7\"",
+        "Save": "5+",
+        "Wounds": "9"
+      },
+      "weapons": [
+        {
+          "name": "Baleblast",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Soulstrike*"
+        },
+        {
+          "name": "Huskblade",
+          "atk": "5",
+          "hit": "3+",
+          "dmg": "4/6",
+          "rules": "Lethal 5+, Shock"
+        }
+      ],
+      "rules": [
+        "<b>Harrowing Whispers:</b> Whenever your opponent would activate an enemy operative within 6\" of this operative, you can roll one D6 (you cannot do so if you already interrupted that operative’s activation with this rule or the DIRGEMAW operative’s Haunting Focus additional rule during this turning point): if the result is higher than that enemy operative’s APL stat, your opponent cannot activate it during this activation. If there are no other enemy operatives eligible to be activated, this rule has no effect.",
+        "<b>Oubliex:</b> Whenever this operative is readied, or if this operative incapacitates an enemy operative with its huskblade, its oubliex becomes active. Whenever its oubliex is active and an attack dice would inflict damage on this operative, you can roll one D6: on a 5+, ignore the damage inflicted from that attack dice and its oubliex is no longer active."
+      ],
+      "keywords": "MANDRAKE, AELDARI, DRUKHARI, LEADER, NIGHTFIEND"
+    },
+    {
+      "id": "op_mandrake_abyssal",
+      "category": "Operatives",
+      "title": "Mandrake Abyssal",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "7\"",
+        "Save": "5+",
+        "Wounds": "8"
+      },
+      "weapons": [
+        {
+          "name": "Balesurge (blast)",
+          "atk": "5",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Blast 2\", Soulstrike*"
+        },
+        {
+          "name": "Balesurge (burn)",
+          "atk": "5",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Lethal 5+, Soulstrike*"
+        },
+        {
+          "name": "Glimmersteel blade",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "4/5",
+          "rules": "Lethal 5+"
+        }
+      ],
+      "rules": [
+        "<b>Balefire:</b> Whenever a friendly MANDRAKE operative is shooting an enemy operative that has one of your Balefire tokens, add 1 to both Dmg stats of that friendly operative’s ranged weapons, and those weapons have the Saturate weapon rule. Whenever an operative is shooting a friendly MANDRAKE operative that has one of your Balefire tokens, subtract 1 from both Dmg stats of that operative’s ranged weapons (to a minimum of 1).",
+        "<b>Wreathe In Balefire (1AP):</b> Select one operative visible to this operative that doesn’t have one of your Balefire tokens. Until the start of this operative’s next activation, until it’s incapacitated or until it performs this action again (whichever comes first), that selected operative gains one of your Balefire tokens. This operative cannot perform this action while within control range of an enemy operative."
+      ],
+      "keywords": "MANDRAKE, AELDARI, DRUKHARI, ABYSSAL"
+    },
+    {
+      "id": "op_mandrake_chooser_of_the_flesh",
+      "category": "Operatives",
+      "title": "Mandrake Chooser Of The Flesh",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "7\"",
+        "Save": "5+",
+        "Wounds": "8"
+      },
+      "weapons": [
+        {
+          "name": "Baleblast",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Soulstrike*"
+        },
+        {
+          "name": "Baleblade",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "5/6",
+          "rules": "Brutal, Lethal 5+"
+        }
+      ],
+      "rules": [
+        "<b>Soul Harvest:</b> Whenever an enemy operative is incapacitated as a result of this operative’s Part Collector rule or baleblade, you gain 1 Soul Harvest point, or two if that enemy operative had an APL stat of 3 or more. Whenever a friendly MANDRAKE operative is activated, you can spend 1 of your Soul Harvest points to either add 1 to its APL stat until the end of the battle, or have it regain up to 2D3 lost wounds. Note you can spend your Soul Harvest points even if this operative is incapacitated.",
+        "<b>Part Collector:</b> Whenever an enemy operative performs the Fall Back action while within control range of this operative, you can use this rule. If you do, inflict 2D3 damage on that enemy operative before it moves."
+      ],
+      "keywords": "MANDRAKE, AELDARI, DRUKHARI, CHOOSER OF THE FLESH"
+    },
+    {
+      "id": "op_mandrake_dirgemaw",
+      "category": "Operatives",
+      "title": "Mandrake Dirgemaw",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "7\"",
+        "Save": "5+",
+        "Wounds": "8"
+      },
+      "weapons": [
+        {
+          "name": "Baleblast",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Soulstrike*"
+        },
+        {
+          "name": "Horrifying scream",
+          "atk": "5",
+          "hit": "2+",
+          "dmg": "2/2",
+          "rules": "Range 6\", Devastating 2, Seek Light, Stun, Soulstrike*"
+        },
+        {
+          "name": "Glimmersteel blade",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "4/5",
+          "rules": "Lethal 5+"
+        }
+      ],
+      "rules": [
+        "<b>Haunting Focus:</b> STRATEGIC GAMBIT. Select one enemy operative. Until the Ready step of the next Strategy phase, it gains your Haunting Focus token. The next time your opponent would activate an enemy operative that has your Haunting Focus token, if this operative is ready, you can activate this operative first (you cannot do so if you also rolled to prevent that operative’s activation with the NIGHTFIEND operative’s Harrowing Whispers additional rule during this turning point). If you do, during that activation, this operative must shoot against or fight against that enemy operative, and cannot do so against any other enemy operatives until it does (if this isn’t possible, this operative’s activation is cancelled). After completing this operative’s activation, your opponent activates that enemy operative (if possible), or activates a different enemy operative if they can’t.",
+        "<b>Pareidolic Projection (1AP):</b> Select one enemy operative that’s a valid target for this operative or is WITHIN SHADOW. Until the start of this operative’s next activation, until it’s incapacitated or until it performs this action again (whichever comes first), worsen the Hit stat of that enemy operative’s weapons by 1 and subtract 2\" from its Move stat. This operative cannot perform this action while within control range of an enemy operative, unless the only enemy operative it’s within control range of is selected for this action."
+      ],
+      "keywords": "MANDRAKE, AELDARI, DRUKHARI, DIRGEMAW"
+    },
+    {
+      "id": "op_mandrake_shadeweaver",
+      "category": "Operatives",
+      "title": "Mandrake Shadeweaver",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "7\"",
+        "Save": "5+",
+        "Wounds": "8"
+      },
+      "weapons": [
+        {
+          "name": "Baleblast",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Soulstrike*"
+        },
+        {
+          "name": "Glimmersteel blade",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "4/5",
+          "rules": "Lethal 5+"
+        }
+      ],
+      "rules": [
+        "<b>Shadow Portal:</b> Whenever this operative performs the Reposition action using a SHADOW PASSAGE, you can use this rule. If you do, remove your Shadow Portal markers from the killzone (if any), then place one of your Shadow Portal markers within this operative’s control range before it’s removed and one within its control range after it’s set up. Each friendly MANDRAKE operative can use a SHADOW PASSAGE each turning point (this takes precedence over one operative once per turning point) if one of your Shadow Portal markers is within that operative’s control range when it’s removed, and the other is when it’s set up. Note that friendly operatives can do so even if this operative has been incapacitated, and doing so doesn’t prevent one operative from using a SHADOW PASSAGE in the normal manner.",
+        "<b>Weave Darkness (1AP):</b> Remove your Weave Darkness marker from the killzone (if any). Then place your Weave Darkness marker visible to this operative, or on Vantage terrain of a terrain feature visible to this operative. That marker creates an area of smoke with the same size and effects as a smoke grenade (see universal equipment), except you don’t remove it during the following turning point. If this operative is incapacitated, remove your Weave Darkness marker from the killzone. This operative cannot perform this action while within control range of an enemy operative."
+      ],
+      "keywords": "MANDRAKE, AELDARI, DRUKHARI, SHADEWEAVER"
+    },
+    {
+      "id": "op_mandrake_warrior",
+      "category": "Operatives",
+      "title": "Mandrake Warrior",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "7\"",
+        "Save": "5+",
+        "Wounds": "8"
+      },
+      "weapons": [
+        {
+          "name": "Baleblast",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Soulstrike*"
+        },
+        {
+          "name": "Glimmersteel blade",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "4/5",
+          "rules": "Lethal 5+"
+        }
+      ],
+      "rules": [
+        "<b>Shadow Warrior:</b> Whenever this operative is WITHIN SHADOW, add 1 to the Critical Dmg stat of its glimmersteel blade."
+      ],
+      "keywords": "MANDRAKE, AELDARI, DRUKHARI, WARRIOR"
+    }
+  ]
+}
