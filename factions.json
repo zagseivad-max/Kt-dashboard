@@ -63,6 +63,10 @@
     {
       "name": "Wolf Scouts",
       "path": "factions/eng_wolf_scouts.json"
+    },
+    {
+      "name": "Raveners",
+      "path": "factions/raveners_h8bosc0ksi_2kdh46uw2b.json"
     }
   ]
 }
