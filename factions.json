@@ -51,6 +51,18 @@
     {
       "name": "Legionary",
       "path": "factions/legionaries_6yndlnh6ss_sj6tq9mwfg.json"
+    },
+    {
+      "name": "Scout Squad",
+      "path": "factions/eng_29_04_kt_teamrules_scout_squad_gsh9kmjzgi_cx2xtxmp8b.json"
+    },
+    {
+      "name": "Battleclade",
+      "path": "factions/eng_battleclade.json"
+    },
+    {
+      "name": "Wolf Scouts",
+      "path": "factions/eng_wolf_scouts.json"
     }
   ]
 }

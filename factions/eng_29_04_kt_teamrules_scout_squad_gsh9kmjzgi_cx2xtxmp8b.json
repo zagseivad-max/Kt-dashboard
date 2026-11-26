@@ -1,0 +1,458 @@
+{
+  "factionName": "Scout Squad",
+  "rules": [
+    {
+      "id": "op_scout_sergeant",
+      "category": "Operatives",
+      "title": "Scout Sergeant",
+      "subtitle": "Leader Operative",
+      "stats": {
+        "APL": "3",
+        "Move": "6\"",
+        "Save": "4+",
+        "Wounds": "11"
+      },
+      "weapons": [
+        {
+          "name": "Astartes shotgun",
+          "atk": "4",
+          "hit": "2+",
+          "dmg": "4/4",
+          "rules": "Range 6\""
+        },
+        {
+          "name": "Bolt pistol",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Range 8\""
+        },
+        {
+          "name": "Boltgun",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "–"
+        },
+        {
+          "name": "Chainsword",
+          "atk": "5",
+          "hit": "3+",
+          "dmg": "4/5",
+          "rules": "–"
+        },
+        {
+          "name": "Fists",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "–"
+        }
+      ],
+      "rules": [
+        "<b>Guidance and Experience:</b> Once during each of this operative's activations, you can select one other friendly SCOUT SQUAD operative in the killzone. Until the end of that operative's next activation, add 1 to its APL stat.",
+        "<b>Astartes:</b> During this operative's activation, it can perform either two Shoot actions or two Fight actions. If it's two Shoot actions, an Astartes shotgun, bolt pistol or boltgun must be selected for at least one of them. This operative can counteract regardless of its order."
+      ],
+      "keywords": "SCOUT SQUAD, IMPERIUM, ADEPTUS ASTARTES, LEADER, SERGEANT"
+    },
+    {
+      "id": "op_scout_heavy_gunner",
+      "category": "Operatives",
+      "title": "Scout Heavy Gunner",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "6\"",
+        "Save": "4+",
+        "Wounds": "10"
+      },
+      "weapons": [
+        {
+          "name": "Bolt pistol",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Range 8\""
+        },
+        {
+          "name": "Heavy bolter (focused)",
+          "atk": "5",
+          "hit": "3+",
+          "dmg": "4/5",
+          "rules": "Heavy (Dash only), Piercing Crits 1"
+        },
+        {
+          "name": "Heavy bolter (sweeping)",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "4/5",
+          "rules": "Heavy (Dash only), Piercing Crits 1, Torrent 1\""
+        },
+        {
+          "name": "Missile launcher (frag)",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/5",
+          "rules": "Blast 2\", Heavy (Dash only)"
+        },
+        {
+          "name": "Missile launcher (krak)",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "5/7",
+          "rules": "Heavy (Dash only), Piercing 1"
+        },
+        {
+          "name": "Fists",
+          "atk": "3",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "–"
+        }
+      ],
+      "rules": [
+        "<b>Heavy Weapon Bipod:</b> Whenever this operative is shooting with a weapon from its datacard, if it hasn't moved during the activation, or if it's a counteraction, that weapon has the Ceaseless weapon rule; if the weapon already has that weapon rule (i.e. from the Ambush strategy ploy), it has the Relentless weapon rule instead. Note that this operative isn't restricted from moving after shooting."
+      ],
+      "keywords": "SCOUT SQUAD, IMPERIUM, ADEPTUS ASTARTES, HEAVY GUNNER"
+    },
+    {
+      "id": "op_scout_hunter",
+      "category": "Operatives",
+      "title": "Scout Hunter",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "6\"",
+        "Save": "4+",
+        "Wounds": "10"
+      },
+      "weapons": [
+        {
+          "name": "Bolt pistol",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Range 8\""
+        },
+        {
+          "name": "Combat blade",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "4/5",
+          "rules": "–"
+        }
+      ],
+      "rules": [
+        "<b>Grapnel Launcher:</b> Whenever this operative is climbing up, you can treat the vertical distance as 2\" (regardless of how far the operative actually moves vertically).",
+        "<b>Grapnel Assault:</b> Whenever this operative performs the Charge action during its activation, if it climbs, drops, jumps or its base moves underneath Vantage terrain during that action, its melee weapons have the Lethal 3+ weapon rule until the end of that activation."
+      ],
+      "keywords": "SCOUT SQUAD, IMPERIUM, ADEPTUS ASTARTES, HUNTER"
+    },
+    {
+      "id": "op_scout_sniper",
+      "category": "Operatives",
+      "title": "Scout Sniper",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "6\"",
+        "Save": "4+",
+        "Wounds": "10"
+      },
+      "weapons": [
+        {
+          "name": "Bolt pistol",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Range 8\""
+        },
+        {
+          "name": "Sniper rifle (mobile)",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "–"
+        },
+        {
+          "name": "Sniper rifle (stationary)",
+          "atk": "4",
+          "hit": "2+",
+          "dmg": "3/3",
+          "rules": "Devastating 3, Heavy (Dash only), Silent"
+        },
+        {
+          "name": "Fists",
+          "atk": "3",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "–"
+        }
+      ],
+      "rules": [
+        "<b>Camo Cloak:</b> Whenever an operative is shooting this operative:\n• Ignore the Saturate weapon rule.\n• If you can retain any cover saves, you can retain one additional cover save, or you can retain one cover save as a critical success instead. This isn't cumulative with improved cover saves from Vantage terrain.",
+        "<b>Optics (1AP):</b> Until the start of this operative's next activation, whenever it's shooting, enemy operatives cannot be obscured. This operative cannot perform this action while within control range of an enemy operative."
+      ],
+      "keywords": "SCOUT SQUAD, IMPERIUM, ADEPTUS ASTARTES, SNIPER"
+    },
+    {
+      "id": "op_scout_tracker",
+      "category": "Operatives",
+      "title": "Scout Tracker",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "6\"",
+        "Save": "4+",
+        "Wounds": "10"
+      },
+      "weapons": [
+        {
+          "name": "Boltgun",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "–"
+        },
+        {
+          "name": "Fists",
+          "atk": "3",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "–"
+        }
+      ],
+      "rules": [
+        "<b>Track Enemy (1AP):</b> Select one enemy operative within 8\" of this operative. Until the end of the turning point, whenever a friendly SCOUT SQUAD operative is shooting that enemy operative, that friendly operative's ranged weapons have the Seek Light weapon rule. This operative cannot perform this action while within control range of an enemy operative.",
+        "<b>Auspex Scan (1AP):</b> Until the start of this operative's next activation or until it's incapacitated (whichever comes first), whenever a friendly SCOUT SQUAD operative is shooting an enemy operative within 8\" of this operative, that enemy operative cannot be obscured; if that friendly operative is a SNIPER that's currently benefitting from the effects of its Optics action, its ranged weapons also have the Seek Light weapon rule. This operative cannot perform this action while within control range of an enemy operative."
+      ],
+      "keywords": "SCOUT SQUAD, IMPERIUM, ADEPTUS ASTARTES, TRACKER"
+    },
+    {
+      "id": "op_scout_warrior",
+      "category": "Operatives",
+      "title": "Scout Warrior",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "6\"",
+        "Save": "4+",
+        "Wounds": "10"
+      },
+      "weapons": [
+        {
+          "name": "Astartes shotgun",
+          "atk": "4",
+          "hit": "2+",
+          "dmg": "4/4",
+          "rules": "Range 6\""
+        },
+        {
+          "name": "Bolt pistol",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "Range 8\""
+        },
+        {
+          "name": "Boltgun",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "–"
+        },
+        {
+          "name": "Combat blade",
+          "atk": "4",
+          "hit": "3+",
+          "dmg": "4/5",
+          "rules": "–"
+        },
+        {
+          "name": "Fists",
+          "atk": "3",
+          "hit": "3+",
+          "dmg": "3/4",
+          "rules": "–"
+        }
+      ],
+      "rules": [
+        "<b>Adaptive Equipment:</b> You can do each of the following once per turning point:\n• One friendly SCOUT SQUAD WARRIOR operative can perform the Smoke Grenade action.\n• One friendly SCOUT SQUAD WARRIOR operative can perform the Stun Grenade action.\nThe rules for these actions are found in universal equipment. Performing these actions using this rule doesn't count towards their action limits (i.e. if you also select those grenades from equipment)."
+      ],
+      "keywords": "SCOUT SQUAD, IMPERIUM, ADEPTUS ASTARTES, WARRIOR"
+    },
+    {
+      "id": "fac_forward_scouting",
+      "category": "Faction Rules",
+      "title": "Forward Scouting",
+      "subtitle": "Faction Rule",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "<b>Forward Scouting:</b> At the end of the Set Up Operatives step, you can select and resolve up to six Forward Scouting options. Each option has a number in brackets, which is the maximum number of times you can select and resolve it for the battle. For example, your six selections could be Reposition (2), Trip Alarm (1), Booby Trap (1) and Diversion (1). If both players have this rule, alternate resolving selection by selection, starting with the player with initiative.",
+        "<b>Redeploy (1):</b> Change the set up of one third of your operatives (rounding up).",
+        "<b>Reposition (2):</b> Perform a free Reposition action with one friendly operative that's wholly within your drop zone. It must end that move wholly within 3\" of your drop zone.",
+        "<b>Trip Alarm (2):</b> Place one of your Trip Alarm markers more than 6\" from your opponent's drop zone. During the first and second turning point, whenever a friendly SCOUT SQUAD operative is shooting an enemy operative that's within 2\" of that marker, that friendly operative's ranged weapons have the Seek weapon rule. In the Ready step of the third Strategy phase, remove that marker.",
+        "<b>Booby Trap (1):</b> Place one of your Booby Trap markers more than 6\" from your opponent's drop zone and more than 2\" from other markers, access points and Accessible terrain. The first time your Booby Trap marker is within an enemy operative's control range, remove that marker and inflict 2D3 damage on that operative; if it isn't incapacitated, end its action (if any), even if that action's effects aren't fulfilled. If it cannot be placed, move it the minimum amount to do so.",
+        "<b>Tactical Manoeuvre (1):</b> Twice per battle STRATEGIC GAMBIT. Select one friendly operative. Until the end of that operative's next activation, add 1 to its APL stat.",
+        "<b>Diversion (1):</b> Once per battle STRATEGIC GAMBIT. Select one enemy operative within 6\" of a killzone edge. Until the end of that operative's next activation, subtract 1 from its APL stat.",
+        "<b>Devise Plan (1):</b> You gain 1CP.",
+        "<b>Designate Target (1):</b> Select one enemy operative to gain one of your Target tokens. Whenever a friendly SCOUT SQUAD operative is shooting against, fighting against or retaliating against an enemy operative that has one of your Target tokens, you can re-roll one of your attack dice.",
+        "<b>Spy (1):</b> Approved Ops only. Your opponent must reveal their selected tac op."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_guerrilla_engagement",
+      "category": "Strategy Ploys",
+      "title": "Guerrilla Engagement",
+      "subtitle": "Strategy Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "<b>Guerrilla Engagement:</b> Whenever an enemy operative is shooting a friendly SCOUT SQUAD operative, if that friendly operative is in cover and more than 6\" from enemy operatives it's visible to, you can re-roll one of your defence dice."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_ambush",
+      "category": "Strategy Ploys",
+      "title": "Ambush",
+      "subtitle": "Strategy Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "<b>Ambush:</b> Whenever a friendly SCOUT SQUAD operative is shooting or fighting during its activation, if its order was changed from Conceal to Engage at the start of that activation, or it wasn't visible to enemy operatives at the start of that activation:\n• That friendly operative's weapons have the Balanced weapon rule.\n• If the target is expended, that friendly operative's weapons have the Ceaseless weapon rule instead."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_adaptable_training",
+      "category": "Strategy Ploys",
+      "title": "Adaptable Training",
+      "subtitle": "Strategy Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "<b>Adaptable Training:</b> You can change the order of up to D3 friendly SCOUT SQUAD operatives that are more than 4\" from enemy operatives."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_stealth_relocation",
+      "category": "Strategy Ploys",
+      "title": "Stealth Relocation",
+      "subtitle": "Strategy Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "<b>Stealth Relocation:</b> Up to D3 friendly SCOUT SQUAD operatives that have a Conceal order and are more than 4\" from enemy operatives can immediately perform a free Dash action. You cannot use this ploy during the first turning point."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_astartes_training",
+      "category": "Firefight Ploys",
+      "title": "Astartes Training",
+      "subtitle": "Firefight Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "<b>Astartes Training:</b> Use this firefight ploy during a friendly SCOUT SQUAD operative's activation. Until the end of that activation, that operative can do one of the following:\n• Perform two Fight actions.\n• Perform two Shoot actions if an Astartes shotgun, bolt pistol or boltgun is selected for at least one of them.\n• Perform two Shoot actions with a heavy bolter, missile launcher or sniper rifle, but 1 additional AP must be spent for the second action."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_raw_physiology",
+      "category": "Firefight Ploys",
+      "title": "Raw Physiology",
+      "subtitle": "Firefight Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "<b>Raw Physiology:</b> Use this firefight ploy during a friendly SCOUT SQUAD operative's activation, before or after it performs an action. Until the start of its next activation, add 1\" to its Move stat and you can ignore any changes to that operative's stats from being injured (including its weapons' stats)."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_emboldened_aspirant",
+      "category": "Firefight Ploys",
+      "title": "Emboldened Aspirant",
+      "subtitle": "Firefight Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "<b>Emboldened Aspirant:</b> Use this firefight ploy when a friendly SCOUT SQUAD operative performs the Shoot or Fight action, after any re-rolls. If it's the first friendly operative to perform either of those actions during this turning point, or if the enemy operative in that action (primary target, if relevant) has a higher Wounds stat than that friendly SCOUT SQUAD operative, you can retain one of your normal successes as a critical success instead."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_covert_position",
+      "category": "Firefight Ploys",
+      "title": "Covert Position",
+      "subtitle": "Firefight Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "<b>Covert Position:</b> Use this firefight ploy during a friendly SCOUT SQUAD operative's activation. Until the start of its next activation, while that operative has a Conceal order and is in cover, it cannot be selected as a valid target, taking precedence over all other rules (e.g. Seek, Vantage terrain) except being within 2\"."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "eq_camo_cloak",
+      "category": "Faction Equipment",
+      "title": "Camo Cloak",
+      "subtitle": "Faction Equipment",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "<b>Camo Cloak:</b> Whenever an operative is shooting a friendly SCOUT SQUAD operative (excluding SNIPER), if you can retain any cover saves, you can retain one additional cover save. This isn't cumulative with improved cover saves from Vantage terrain."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "eq_targeting_oculars",
+      "category": "Faction Equipment",
+      "title": "Targeting Oculars",
+      "subtitle": "Faction Equipment",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "<b>Targeting Oculars:</b> Up to twice per turning point, when a friendly SCOUT SQUAD operative is performing the Shoot action and you're selecting a valid target, you can use this rule. If you do, until the end of that action, that friendly operative's ranged weapons have the Lethal 5+ and Saturate weapon rules."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "eq_combat_blades",
+      "category": "Faction Equipment",
+      "title": "Combat Blades",
+      "subtitle": "Faction Equipment",
+      "stats": null,
+      "weapons": [
+        {
+          "name": "Combat blade",
+          "atk": "3",
+          "hit": "3+",
+          "dmg": "4/5",
+          "rules": "–"
+        }
+      ],
+      "rules": [
+        "<b>Combat Blades:</b> Friendly SCOUT SQUAD operatives have the following melee weapon. Note that some operatives already have this weapon but with better stats; in that instance, use the better version."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "eq_tactical_vox_link",
+      "category": "Faction Equipment",
+      "title": "Tactical Vox-Link",
+      "subtitle": "Faction Equipment",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "<b>Tactical Vox-Link:</b> Once per turning point, you can use the Astartes Training or Emboldened Aspirant firefight ploy for 0CP if a friendly SERGEANT operative is in the killzone."
+      ],
+      "keywords": null
+    }
+  ]
+}
