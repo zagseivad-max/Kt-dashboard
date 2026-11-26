@@ -40,14 +40,42 @@ class RuleEntry(BaseModel):
 
 class KillTeamFaction(BaseModel):
     factionName: str = Field(description="The formal name of the Kill Team faction")
+    archetypes: list[str] = Field(
+        default_factory=list,
+        description=(
+            "Faction archetypes from the 'ARCHETYPE:' banner on the Operatives/faction card, "
+            "normalized to 'Recon', 'Seek & Destroy', 'Security', or 'Infiltration'"
+        ),
+    )
     rules: list[RuleEntry]
 
 
 SYSTEM_INSTRUCTION = """
-Extract all Warhammer Kill Team rules, operatives, ploys, and equipment from this PDF.
+Extract all Warhammer Kill Team rules, operatives, ploys, equipment, and faction archetypes from this PDF.
+Look for the 'ARCHETYPE:' banner on the Operatives or faction card (e.g., 'ARCHETYPE: RECON, SEEK & DESTROY') and map each archetype to 'Recon', 'Seek & Destroy', 'Security', or 'Infiltration'.
 Format the output perfectly to match the provided JSON schema.
 Ignore page numbers, designer commentaries, and flavor text. Focus strictly on playable game rules.
 """
+
+CANONICAL_ARCHETYPES = {
+    "recon": "Recon",
+    "seek & destroy": "Seek & Destroy",
+    "seek and destroy": "Seek & Destroy",
+    "security": "Security",
+    "infiltration": "Infiltration",
+}
+
+
+def normalize_archetypes(raw_archetypes: list[str] | None) -> list[str]:
+    if not raw_archetypes:
+        return []
+    normalized: list[str] = []
+    for arch in raw_archetypes:
+        cleaned = re.sub(r"\s+", " ", str(arch or "")).strip().lower()
+        canonical = CANONICAL_ARCHETYPES.get(cleaned)
+        if canonical and canonical not in normalized:
+            normalized.append(canonical)
+    return normalized
 
 
 def slugify_faction_stem(pdf_path: str) -> str:
@@ -205,7 +233,7 @@ def process_pdfs() -> None:
             response = generate_with_retry(
                 client,
                 uploaded_file,
-                "Extract the complete Kill Team faction ruleset from this PDF.",
+                "Extract the complete Kill Team faction ruleset, including faction archetypes, from this PDF.",
             )
 
             if not response.text:
@@ -213,17 +241,19 @@ def process_pdfs() -> None:
 
             parsed = KillTeamFaction.model_validate_json(response.text)
             normalized_dict = parsed.model_dump()
+            normalized_dict["archetypes"] = normalize_archetypes(parsed.archetypes)
 
             with open(json_path, "w", encoding="utf-8") as f:
                 json.dump(normalized_dict, f, indent=2, ensure_ascii=False)
 
             update_registry(parsed.factionName, web_json_path)
 
+            arch_label = ", ".join(normalized_dict["archetypes"]) if normalized_dict["archetypes"] else "none"
             summary_records.append({
                 "pdf": pdf_name,
                 "status": "SUCCESS",
                 "output": web_json_path,
-                "details": f"{parsed.factionName} ({len(parsed.rules)} entries)",
+                "details": f"{parsed.factionName} ({len(parsed.rules)} entries; {arch_label})",
             })
 
         except (ValidationError, Exception) as exc:
