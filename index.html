@@ -1360,18 +1360,23 @@
                         
                         if (factionData.factionName && factionData.rules) {
                             allFactions[factionData.factionName] = factionData.rules;
-                            
-                            const opt = document.createElement('option');
-                            opt.value = factionData.factionName;
-                            opt.text = factionData.factionName;
-                            dropdown.appendChild(opt);
                         }
                     } catch (err) {
                         console.warn("Failed to load faction file:", item.path, err);
                     }
                 }
 
-                const names = Object.keys(allFactions);
+                const names = Object.keys(allFactions).sort((a, b) =>
+                    a.localeCompare(b, undefined, { sensitivity: 'base' })
+                );
+
+                for (const name of names) {
+                    const opt = document.createElement('option');
+                    opt.value = name;
+                    opt.text = name;
+                    dropdown.appendChild(opt);
+                }
+
                 if (names.length > 0) {
                     switchFaction(names[0]);
                 } else {
