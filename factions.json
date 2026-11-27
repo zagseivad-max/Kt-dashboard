@@ -91,6 +91,10 @@
     {
       "name": "Deathwatch",
       "path": "factions/deathwatch_eckqbvjgev_xx8idxaee1.json"
+    },
+    {
+      "name": "Spectre Squad",
+      "path": "factions/spectre_squad_tjajenyi2s_jtwwg4lnyv.json"
     }
   ]
 }
