@@ -127,6 +127,18 @@
     {
       "name": "Pathfinders",
       "path": "factions/pathfinders_crku85mt98_cz5ppchbrp.json"
+    },
+    {
+      "name": "Hernkyn Yaegirs",
+      "path": "factions/hernkyn_yaegirs_zro9mop6gm_5dh92aq2hh.json"
+    },
+    {
+      "name": "Imperial Navy Breachers",
+      "path": "factions/imperial_navy_breachers_rewo4ec9tu_s8nxbnhi3g.json"
+    },
+    {
+      "name": "Inquisitorial Agent",
+      "path": "factions/inquisitorial_agents_wbhy621vsh_8vdslyllbw.json"
     }
   ]
 }
