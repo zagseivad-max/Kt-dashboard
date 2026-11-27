@@ -1,5 +1,14 @@
 {
   "factionName": "Legionary",
+  "archetypes": [
+    "Security",
+    "Seek & Destroy"
+  ],
+  "operativeSelection": [
+    "1 LEGIONARY operative selected from the following list: ASPIRING CHAMPION with one option from each of the following (Plasma pistol or tainted bolt pistol; Power fist, power maul, power weapon or tainted chainsword) or CHOSEN with one of the following options (Plasma pistol; daemon blade or Tainted bolt pistol; daemon blade).",
+    "5 LEGIONARY operatives selected from the following list: ANOINTED, BALEFIRE ACOLYTE, BUTCHER, GUNNER, HEAVY GUNNER, ICON BEARER, SHRIVETALON, WARRIOR.",
+    "Other than WARRIOR operatives, your kill team can only include each operative on this list once."
+  ],
   "rules": [
     {
       "id": "op_legionary_aspiring_champion",
@@ -143,7 +152,7 @@
         }
       ],
       "rules": [
-        "<b>Unleash Daemon:</b> Once per battle, when this operative is activated, you can use this rule. If you do, until the end of the battle: This operative cannot perform the Pick Up Marker or mission actions (excluding Breach and Operate Hatch). If it's carrying a marker, it must immediately perform the Place Marker action for 0AP (this takes precedence over all other rules). Normal and Critical Dmg of 4 or more inflicts 1 less damage on this operative. This isn’t cumulative with the Disgusting Vigour rule (see Marks of Chaos faction rule). Its daemonic claw has the Ceaseless and Lethal 5+ weapon rules."
+        "<b>Unleash Daemon:</b> Once per battle, when this operative is activated, you can use this rule. If you do, until the end of the battle: This operative cannot perform the Pick Up Marker or mission actions (excluding Breach and Operate Hatch). If it’s carrying a marker, it must immediately perform the Place Marker action for 0AP (this takes precedence over all other rules). Normal and Critical Dmg of 4 or more inflicts 1 less damage on this operative. This isn’t cumulative with the Disgusting Vigour rule (see Marks of Chaos faction rule). Its daemonic claw has the Ceaseless and Lethal 5+ weapon rules."
       ],
       "keywords": "LEGIONARY, CHAOS, HERETIC ASTARTES, ANOINTED"
     },
@@ -189,7 +198,7 @@
         }
       ],
       "rules": [
-        "<b>Siphon Life:</b> When you select this weapon, you can use this rule. If you do, at the start of the Resolve Attack Dice step, you can select one friendly LEGIONARY operative visible to and within 6\" of this operative. For each attack dice you resolve during that step that inflicts damage, that friendly operative regains 1 lost wound, or D3 lost wounds if it was a critical success. You cannot use this weapon rule more than once per turning point."
+        "<b>Siphon Life*:</b> When you select this weapon, you can use this rule. If you do, at the start of the Resolve Attack Dice step, you can select one friendly LEGIONARY operative visible to and within 6\" of this operative. For each attack dice you resolve during that step that inflicts damage, that friendly operative regains 1 lost wound, or D3 lost wounds if it was a critical success. You cannot use this weapon rule more than once per turning point."
       ],
       "keywords": "LEGIONARY, CHAOS, HERETIC ASTARTES, PSYKER, BALEFIRE ACOLYTE"
     },
@@ -229,7 +238,7 @@
       "id": "op_legionary_gunner",
       "category": "Operatives",
       "title": "Legionary Gunner",
-      "subtitle": "Gunner Operative",
+      "subtitle": "Operative",
       "stats": {
         "APL": "3",
         "Move": "6\"",
@@ -287,7 +296,7 @@
       "id": "op_legionary_heavy_gunner",
       "category": "Operatives",
       "title": "Legionary Heavy Gunner",
-      "subtitle": "Heavy Gunner Operative",
+      "subtitle": "Operative",
       "stats": {
         "APL": "3",
         "Move": "6\"",
@@ -491,14 +500,69 @@
       "weapons": null,
       "rules": [
         "Whenever you select a LEGIONARY operative for the battle, you must select one of the following keywords for it to have for that battle: KHORNE, NURGLE, SLAANESH, TZEENTCH, UNDIVIDED. Each operative’s keyword can be different, but a BALEFIRE ACOLYTE operative cannot have the KHORNE keyword.",
-        "Friendly LEGIONARY operatives have an additional rule determined by this keyword. In addition, LEGIONARY ploys have additional benefits for operatives with the relevant keyword.",
-        "<b>Khorne:</b> This operative’s melee weapons have the Severe weapon rule.",
-        "<b>Nurgle:</b> Whenever Normal Dmg of 3 or more is inflicted on this operative, roll one D6: on a 5+, subtract 1 from that inflicted damage.",
-        "<b>Slaanesh:</b> Add 1\" to this operative’s Move stat.",
-        "<b>Tzeentch:</b> This operative’s ranged weapons have the Severe weapon rule.",
-        "<b>Undivided:</b> Whenever this operative is shooting against, fighting against or retaliating against an enemy operative within 6\" of it, this operative’s weapons have the Ceaseless weapon rule."
+        "Friendly LEGIONARY operatives have an additional rule determined by this keyword. In addition, LEGIONARY ploys have additional benefits for operatives with the relevant keyword."
       ],
-      "keywords": "LEGIONARY, KHORNE, NURGLE, SLAANESH, TZEENTCH, UNDIVIDED"
+      "keywords": "LEGIONARY"
+    },
+    {
+      "id": "fac_khorne",
+      "category": "Faction Rules",
+      "title": "Khorne",
+      "subtitle": "Faction Rule",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "<b>Wrathful Onslaught:</b> This operative’s melee weapons have the Severe weapon rule."
+      ],
+      "keywords": "KHORNE"
+    },
+    {
+      "id": "fac_nurgle",
+      "category": "Faction Rules",
+      "title": "Nurgle",
+      "subtitle": "Faction Rule",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "<b>Disgusting Vigour:</b> Whenever Normal Dmg of 3 or more is inflicted on this operative, roll one D6: on a 5+, subtract 1 from that inflicted damage."
+      ],
+      "keywords": "NURGLE"
+    },
+    {
+      "id": "fac_slaanesh",
+      "category": "Faction Rules",
+      "title": "Slaanesh",
+      "subtitle": "Faction Rule",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "<b>Unnatural Agility:</b> Add 1\" to this operative’s Move stat."
+      ],
+      "keywords": "SLAANESH"
+    },
+    {
+      "id": "fac_tzeentch",
+      "category": "Faction Rules",
+      "title": "Tzeentch",
+      "subtitle": "Faction Rule",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "<b>Empyreal Guidance:</b> This operative’s ranged weapons have the Severe weapon rule."
+      ],
+      "keywords": "TZEENTCH"
+    },
+    {
+      "id": "fac_undivided",
+      "category": "Faction Rules",
+      "title": "Undivided",
+      "subtitle": "Faction Rule",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "<b>Vicious Reavers:</b> Whenever this operative is shooting against, fighting against or retaliating against an enemy operative within 6\" of it, this operative’s weapons have the Ceaseless weapon rule."
+      ],
+      "keywords": "UNDIVIDED"
     },
     {
       "id": "fac_astartes",
@@ -588,7 +652,7 @@
       "rules": [
         "Use this firefight ploy when a friendly LEGIONARY TZEENTCH operative is activated. Until the end of that operative’s activation, add 1 to its APL stat, but it cannot perform the same action more than once during that activation. If it’s a WARRIOR operative, that operative’s Marks of Chaos keyword cannot be changed during this turning point (see Infernal Pact additional rule)."
       ],
-      "keywords": "LEGIONARY, TZEENTCH, WARRIOR"
+      "keywords": "LEGIONARY, TZEENTCH"
     },
     {
       "id": "ploy_malignant_aura",
@@ -622,7 +686,7 @@
       "stats": null,
       "weapons": null,
       "rules": [
-        "<b>Strategic Gambit:</b> Select one friendly LEGIONARY operative. Until the Ready step of the next Strategy phase, change that operative’s Save stat to 2+."
+        "<b>STRATEGIC GAMBIT.</b> Select one friendly LEGIONARY operative. Until the Ready step of the next Strategy phase, change that operative’s Save stat to 2+."
       ],
       "keywords": "LEGIONARY"
     },
@@ -646,7 +710,7 @@
       "stats": null,
       "weapons": null,
       "rules": [
-        "<b>Strategic Gambit:</b> Select one Marks of Chaos keyword. Once during each of their activations, when a friendly LEGIONARY operative that has that keyword is shooting, fighting or retaliating, if you roll two or more fails, you can inflict D3 damage on that friendly operative to discard one of them and retain the other as a normal success instead. Note that if it’s the Shoot action and that damage incapacitates that friendly operative, the action doesn’t end (continue the sequence with your successful attack dice)."
+        "<b>STRATEGIC GAMBIT.</b> Select one Marks of Chaos keyword. Once during each of their activations, when a friendly LEGIONARY operative that has that keyword is shooting, fighting or retaliating, if you roll two or more fails, you can inflict D3 damage on that friendly operative to discard one of them and retain the other as a normal success instead. Note that if it’s the Shoot action and that damage incapacitates that friendly operative, the action doesn’t end (continue the sequence with your successful attack dice)."
       ],
       "keywords": "LEGIONARY"
     },

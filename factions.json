@@ -119,6 +119,14 @@
     {
       "name": "Blades of Khaine",
       "path": "factions/eng_29_04_killl_team_team_rules_blades_of_khaine_p7jsqt6jno_y4kh2lus1f.json"
+    },
+    {
+      "name": "Novitiates",
+      "path": "factions/novitiates_fbgjxsr6jr_n9u67y9fqg.json"
+    },
+    {
+      "name": "Pathfinders",
+      "path": "factions/pathfinders_crku85mt98_cz5ppchbrp.json"
     }
   ]
 }
