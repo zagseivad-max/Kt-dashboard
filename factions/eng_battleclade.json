@@ -1,34 +1,17 @@
 {
   "factionName": "Battleclade",
+  "archetypes": [
+    "Infiltration",
+    "Recon"
+  ],
+  "operativeSelection": [
+    "1 BATTLECLADE TECHNOARCHEOLOGIST operative",
+    "1 BATTLECLADE SERVITOR UNDERSEER operative",
+    "8 BATTLECLADE operatives selected from the following list: AUTO-PROXY SERVITOR; BREACHER SERVITOR; COMBAT SERVITOR with one of the following options (Servo-claw; incendine igniter, Servo-claw; meltagun, or Servo-claw; phosphor blaster); GUN SERVITOR with heavy arc rifle and augmetic claw; GUN SERVITOR with heavy bolter and augmetic claw; TECHNOMEDIC SERVITOR",
+    "Other than COMBAT SERVITOR operatives, your kill team can only include each operative on this list once.",
+    "Your kill team can only include up to one COMBAT SERVITOR operative with meltagun, and it can only include up to three COMBAT SERVITOR operatives with incendine igniter."
+  ],
   "rules": [
-    {
-      "id": "fac_kill_team_selection",
-      "category": "Faction Rules",
-      "title": "Battleclade Kill Team",
-      "subtitle": "Kill Team Selection",
-      "stats": null,
-      "weapons": null,
-      "rules": [
-        "<b>Archetypes:</b> Infiltration, Recon",
-        "<b>Operatives:</b> 1 BATTLECLADE TECHNOARCHEOLOGIST operative, 1 BATTLECLADE SERVITOR UNDERSEER operative, and 8 BATTLECLADE operatives selected from the following list: AUTO-PROXY SERVITOR; BREACHER SERVITOR; COMBAT SERVITOR with one of the following options (Servo-claw and incendine igniter; Servo-claw and meltagun; Servo-claw and phosphor blaster); GUN SERVITOR with heavy arc rifle and augmetic claw; GUN SERVITOR with heavy bolter and augmetic claw; TECHNOMEDIC SERVITOR.",
-        "<b>Selection Restrictions:</b> Other than COMBAT SERVITOR operatives, your kill team can only include each operative on this list once. Your kill team can only include up to one COMBAT SERVITOR operative with meltagun, and it can only include up to three COMBAT SERVITOR operatives with incendine igniter."
-      ],
-      "keywords": null
-    },
-    {
-      "id": "fac_noospheric_network",
-      "category": "Faction Rules",
-      "title": "Noospheric Network",
-      "subtitle": "Faction Rule",
-      "stats": null,
-      "weapons": null,
-      "rules": [
-        "<b>Transfer Power:</b> Once during each friendly BATTLECLADE SERVITOR operative's activation, before or after it performs an action, you can spend 1AP to TRANSFER POWER.",
-        "<b>Network Counteract:</b> After that activation, you can NETWORK COUNTERACT with one other friendly BATTLECLADE SERVITOR operative before your opponent activates. Whenever you NETWORK COUNTERACT with a friendly operative, first select its order. It can then perform a 1AP action for free, but cannot move more than 2\" during that action. Once it's done so, your opponent then activates as normal.",
-        "<b>Restrictions:</b> An operative cannot TRANSFER POWER or NETWORK COUNTERACT if it has an APL stat of less than 2 (e.g. if the stat has been changed to less than 2 by a rule). NETWORK COUNTERACT is a counteraction, but the operative doesn't need to be expended with an Engage order to do it. That means if they're ready when they NETWORK COUNTERACT, they can still be activated as normal later in the turning point. An operative that does NETWORK COUNTERACT cannot do so again, or counteract, during the same turning point."
-      ],
-      "keywords": null
-    },
     {
       "id": "op_battleclade_technoarcheologist",
       "category": "Operatives",
@@ -84,7 +67,7 @@
       ],
       "rules": [
         "<b>Achillan Eye:</b> Whenever a friendly BATTLECLADE operative is shooting an enemy operative visible to this operative, that friendly operative's ranged weapons have the Saturate weapon rule. This rule has no effect if this operative is within control range of an enemy operative.",
-        "<b>Gaze of the Omnissiah (1AP):</b> Select one enemy operative visible to this operative. Until the end of the turning point, whenever a friendly BATTLECLADE operative is shooting that enemy operative, you can use this effect. If you do: That friendly operative's ranged weapons have the Seek Light weapon rule, and that enemy operative cannot be obscured. This operative cannot perform this action while within control range of an enemy operative."
+        "<b>Gaze of the Omnissiah (1AP):</b> Select one enemy operative visible to this operative. Until the end of the turning point, whenever a friendly BATTLECLADE operative is shooting that enemy operative, you can use this effect. If you do: That friendly operative's ranged weapons have the Seek Light weapon rule; That enemy operative cannot be obscured. This operative cannot perform this action while within control range of an enemy operative."
       ],
       "keywords": "BATTLECLADE, IMPERIUM, ADEPTUS MECHANICUS, AUTO-PROXY, SERVITOR"
     },
@@ -275,6 +258,20 @@
       "keywords": "BATTLECLADE, IMPERIUM, ADEPTUS MECHANICUS, MEDIC, TECHNOMEDIC, SERVITOR"
     },
     {
+      "id": "fac_noospheric_network",
+      "category": "Faction Rules",
+      "title": "Noospheric Network",
+      "subtitle": "Faction Rule",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "<b>Noospheric Network:</b> Once during each friendly BATTLECLADE SERVITOR operative's activation, before or after it performs an action, you can spend 1AP to TRANSFER POWER.",
+        "<b>Network Counteract:</b> After that activation, you can NETWORK COUNTERACT with one other friendly BATTLECLADE SERVITOR operative before your opponent activates. Whenever you NETWORK COUNTERACT with a friendly operative, first select its order. It can then perform a 1AP action for free, but cannot move more than 2\" during that action. Once it's done so, your opponent then activates as normal.",
+        "<b>Restrictions:</b> An operative cannot TRANSFER POWER or NETWORK COUNTERACT if it has an APL stat of less than 2 (e.g. if the stat has been changed to less than 2 by a rule). NETWORK COUNTERACT is a counteraction, but the operative doesn't need to be expended with an Engage order to do it. That means if they're ready when they NETWORK COUNTERACT, they can still be activated as normal later in the turning point. An operative that does NETWORK COUNTERACT cannot do so again, or counteract, during the same turning point."
+      ],
+      "keywords": null
+    },
+    {
       "id": "ploy_noospheric_possession",
       "category": "Strategy Ploys",
       "title": "Noospheric Possession",
@@ -282,8 +279,7 @@
       "stats": null,
       "weapons": null,
       "rules": [
-        "<b>Noospheric Possession:</b> SUPPORT. Whenever a friendly BATTLECLADE SERVITOR operative is within 6\" of a friendly BATTLECLADE AUTO-PROXY or BATTLECLADE SERVITOR UNDERSEER operative, that friendly SERVITOR operative's weapons have the Accurate 1 weapon rule.",
-        "<b>Comms Device:</b> For the purposes of the Comms Device universal equipment, the operative the distance is being determined from must control your Comms Device marker to add 3\" to its distance requirement for this rule."
+        "<b>Noospheric Possession:</b> SUPPORT. Whenever a friendly BATTLECLADE SERVITOR operative is within 6\" of a friendly BATTLECLADE AUTO-PROXY or BATTLECLADE SERVITOR UNDERSEER operative, that friendly SERVITOR operative's weapons have the Accurate 1 weapon rule. For the purposes of the Comms Device universal equipment, the operative the distance is being determined from must control your Comms Device marker to add 3\" to its distance requirement for this rule."
       ],
       "keywords": null
     },
@@ -319,7 +315,7 @@
       "stats": null,
       "weapons": null,
       "rules": [
-        "<b>Prioritised Acquisition:</b> Select one objective marker or one of your mission markers. Whenever determining control of that marker, treat the total APL stat of friendly BATTLECLADE operatives that contest it as 1 higher if at least one friendly BATTLECLADE operative contests that marker. Note this isn't a change to the APL stat, so any changes are cumulative with this. Whenever a friendly BATTLECLADE operative is within 3\" of that marker, add 1 to the Atk stat of its melee weapons (to a maximum of 4)."
+        "<b>Prioritised Acquisition:</b> Select one objective marker or one of your mission markers. Whenever determining control of that marker, treat the total APL stat of friendly BATTLECLADE operatives that contest it as 1 higher if at least one friendly BATTLECLADE operative contests that marker (note this isn't a change to the APL stat, so any changes are cumulative with this). Whenever a friendly BATTLECLADE operative is within 3\" of that marker, add 1 to the Atk stat of its melee weapons (to a maximum of 4)."
       ],
       "keywords": null
     },
@@ -343,9 +339,7 @@
       "stats": null,
       "weapons": null,
       "rules": [
-        "<b>Remote Access:</b> Use this firefight ploy during a friendly BATTLECLADE TECH-PRIEST operative's activation. Once during that activation, you can use one of the following rules:",
-        "<b>Remote Mission Action:</b> That operative doesn't require a marker to be within its control range to perform a mission action that usually requires this (this takes precedence over that action's conditions). Instead, the marker must be within 4\" of it and no enemy operatives can contest that marker. However, you can ignore enemy operatives within control range of other friendly BATTLECLADE operatives when determining this.",
-        "<b>Remote Operate Hatch:</b> That operative doesn't require a hatchway's access point to be within its control range to perform an Operate Hatch action. Instead, that access point must be within 4\" of it."
+        "<b>Remote Access:</b> Use this firefight ploy during a friendly BATTLECLADE TECH-PRIEST operative's activation. Once during that activation, you can use one of the following rules: That operative doesn't require a marker to be within its control range to perform a mission action that usually requires this (this takes precedence over that action's conditions); instead, the marker must be within 4\" of it and no enemy operatives can contest that marker (however, you can ignore enemy operatives within control range of other friendly BATTLECLADE operatives when determining this). That operative doesn't require a hatchway's access point to be within its control range to perform an Operate Hatch action; instead, that access point must be within 4\" of it."
       ],
       "keywords": null
     },
@@ -369,8 +363,7 @@
       "stats": null,
       "weapons": null,
       "rules": [
-        "<b>Servile Surrogacy:</b> Use this firefight ploy when a friendly BATTLECLADE TECH-PRIEST operative is selected as the valid target of a Shoot action or to fight against during the Fight action. Select one friendly BATTLECLADE SERVITOR operative visible to and within 3\" of that first friendly operative to become the valid target or to be fought against (as appropriate) instead (even if it wouldn't normally be valid for this). If it's the Fight action, treat that SERVITOR operative as being within the fighting operative's control range for the duration of that action. If it's the Shoot action, that SERVITOR operative is only in cover or obscured if the original target was.",
-        "<b>Restriction:</b> This ploy has no effect if it's the Shoot action and the ranged weapon has the Blast or Torrent weapon rule."
+        "<b>Servile Surrogacy:</b> Use this firefight ploy when a friendly BATTLECLADE TECH-PRIEST operative is selected as the valid target of a Shoot action or to fight against during the Fight action. Select one friendly BATTLECLADE SERVITOR operative visible to and within 3\" of that first friendly operative to become the valid target or to be fought against (as appropriate) instead (even if it wouldn't normally be valid for this). If it's the Fight action, treat that SERVITOR operative as being within the fighting operative's control range for the duration of that action. If it's the Shoot action, that SERVITOR operative is only in cover or obscured if the original target was. This ploy has no effect if it's the Shoot action and the ranged weapon has the Blast or Torrent weapon rule."
       ],
       "keywords": null
     },
