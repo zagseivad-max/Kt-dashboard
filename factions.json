@@ -107,6 +107,18 @@
     {
       "name": "Warpcoven",
       "path": "factions/eng_29_04_kt_teamrules_warpcoven_dlvflmyfdc_tqfq81iy7v.json"
+    },
+    {
+      "name": "Elucidian Starstriders",
+      "path": "factions/elucidian_starstriders_4c0hnv9gz9_4fuvbi96ce.json"
+    },
+    {
+      "name": "Hearthkyn Salvagers",
+      "path": "factions/hearthkyn_salvagers_7ih6r2u7u4_sof3ovjopi.json"
+    },
+    {
+      "name": "Blades of Khaine",
+      "path": "factions/eng_29_04_killl_team_team_rules_blades_of_khaine_p7jsqt6jno_y4kh2lus1f.json"
     }
   ]
 }
