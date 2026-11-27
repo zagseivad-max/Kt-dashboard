@@ -613,7 +613,7 @@
             transition: all 0.2s;
         }
 
-        /* DOUBLE POINTS CSS OVERRIDES */
+        /* PRIMARY (+50%) CSS OVERRIDES */
         .counter-box.doubled {
             border: 2px solid var(--accent-cyan) !important;
             background-color: rgba(0, 229, 255, 0.05);
@@ -640,6 +640,28 @@
             padding: 1px 4px;
             border-radius: 4px;
             font-weight: bold;
+        }
+
+        .kill-bonus-btn {
+            width: 100%;
+            margin-top: 2px;
+            padding: 4px 6px;
+            border-radius: 5px;
+            border: 1px solid var(--border-color);
+            background-color: var(--panel-bg);
+            color: var(--text-dim);
+            font-size: 0.72rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.15s;
+            touch-action: manipulation;
+        }
+
+        .kill-bonus-btn.active {
+            border-color: var(--accent-gold);
+            background-color: rgba(243, 156, 18, 0.18);
+            color: var(--accent-gold);
         }
 
         /* TOTAL TILE CSS */
@@ -1386,7 +1408,8 @@
                     playerState[i] = { 
                         crit: 0, 
                         tac: 0, 
-                        kill: 0, 
+                        kill: 0,
+                        killOpBonus: false,
                         cp: 0, 
                         ap1: 0, 
                         ap2: 0, 
@@ -1396,6 +1419,14 @@
                     };
                 }
             }
+        }
+
+        function getEffectiveOpValue(playerNum, fieldId) {
+            const p = playerState[playerNum];
+            if (fieldId === 'kill') {
+                return p.kill + (p.killOpBonus ? 1 : 0);
+            }
+            return p[fieldId];
         }
 
         function updateLayout() {
@@ -1425,10 +1456,14 @@
 
         function getPlayerTotal(playerNum) {
             const p = playerState[playerNum];
-            let total = p.crit + p.tac + p.kill;
+            const critVal = getEffectiveOpValue(playerNum, 'crit');
+            const tacVal = getEffectiveOpValue(playerNum, 'tac');
+            const killVal = getEffectiveOpValue(playerNum, 'kill');
+            let total = critVal + tacVal + killVal;
             
             if (p.doubledOp) {
-                total += p[p.doubledOp];
+                const primaryBase = getEffectiveOpValue(playerNum, p.doubledOp);
+                total += Math.ceil(primaryBase * 0.5);
             }
             return total;
         }
@@ -1438,6 +1473,11 @@
             if (newVal < 0) newVal = 0;
             playerState[playerNum][fieldId] = newVal;
             
+            renderPlayers();
+        }
+
+        function toggleKillOpBonus(playerNum) {
+            playerState[playerNum].killOpBonus = !playerState[playerNum].killOpBonus;
             renderPlayers();
         }
 
@@ -1528,9 +1568,11 @@
                     } else if (field.id === 'kill') {
                         const isDoubled = playerState[i].doubledOp === field.id;
                         const doubledClass = isDoubled ? 'doubled' : '';
+                        const hasBonus = Boolean(playerState[i].killOpBonus);
+                        const displayedKill = getEffectiveOpValue(i, 'kill');
                         
-                        let labelHtml = `<span class="field-label clickable" onclick="toggleDouble(${i}, '${field.id}')" title="Click to apply x2 Double Points multiplier">
-                            ${field.label} ${isDoubled ? '<span class="dbl-badge">x2</span>' : ''}
+                        let labelHtml = `<span class="field-label clickable" onclick="toggleDouble(${i}, '${field.id}')" title="Click to select as Primary (+50% points)">
+                            ${field.label} ${isDoubled ? '<span class="dbl-badge">+50%</span>' : ''}
                         </span>`;
 
                         colHtml += `
@@ -1555,7 +1597,10 @@
                         
                         <div class="counter-box ${doubledClass}">
                             ${labelHtml}
-                            <div class="counter-val" id="val-p${i}-${field.id}" style="padding: 4px 0;">${playerState[i].kill}</div>
+                            <div class="counter-val" id="val-p${i}-${field.id}" style="padding: 4px 0;">${displayedKill}</div>
+                            <button class="kill-bonus-btn ${hasBonus ? 'active' : ''}" onclick="toggleKillOpBonus(${i})" title="Toggle +1 Kill Op for winning Kill Op">
+                                ${hasBonus ? '+1 Kill Op: ON' : '+1 Kill Op'}
+                            </button>
                         </div>`;
                     } else {
                         const isDoubled = field.canDouble && playerState[i].doubledOp === field.id;
@@ -1564,8 +1609,8 @@
                         
                         let labelHtml = field.label;
                         if (field.canDouble) {
-                            labelHtml = `<span class="field-label clickable" onclick="toggleDouble(${i}, '${field.id}')" title="Click to apply x2 Double Points multiplier">
-                                ${field.label} ${isDoubled ? '<span class="dbl-badge">x2</span>' : ''}
+                            labelHtml = `<span class="field-label clickable" onclick="toggleDouble(${i}, '${field.id}')" title="Click to select as Primary (+50% points)">
+                                ${field.label} ${isDoubled ? '<span class="dbl-badge">+50%</span>' : ''}
                             </span>`;
                         } else {
                             labelHtml = `<span class="field-label">${field.label}</span>`;
