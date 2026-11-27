@@ -880,8 +880,10 @@
         // REPOSITORY & DATA VARIABLES
         let allFactions = {};
         let factionArchetypesMap = {};
+        let factionOperativeSelectionMap = {};
         let activeFactionName = "";
         let activeFactionArchetypes = [];
+        let activeFactionOperativeSelection = [];
         
         let rulesDatabase = [];
         let selectedId = null;
@@ -1294,8 +1296,25 @@
             return archs.flatMap(arch => tacOpsCatalog[arch] || []);
         }
 
-        // Helper to retrieve record across database, active Tac Ops, universalEquipment, and critOps arrays
+        function getOperativeSelectionRecord() {
+            if (!activeFactionName) return null;
+            const lines = Array.isArray(activeFactionOperativeSelection) && activeFactionOperativeSelection.length > 0
+                ? activeFactionOperativeSelection
+                : ['No Operative Selection rules recorded for this faction yet. Re-run the PDF converter to extract Operative Selection.'];
+            return {
+                id: 'faction_operative_selection',
+                category: 'Operative Selection',
+                title: 'Operative Selection',
+                subtitle: activeFactionName,
+                rules: lines
+            };
+        }
+
+        // Helper to retrieve record across operative selection, database, active Tac Ops, universalEquipment, and critOps arrays
         function getRecordById(id) {
+            if (id === 'faction_operative_selection') {
+                return getOperativeSelectionRecord();
+            }
             let record = rulesDatabase.find(i => i.id === id);
             if (!record) {
                 record = getActiveFactionTacOps().find(i => i.id === id);
@@ -1594,6 +1613,9 @@
                             factionArchetypesMap[factionData.factionName] = Array.isArray(factionData.archetypes)
                                 ? factionData.archetypes
                                 : [];
+                            factionOperativeSelectionMap[factionData.factionName] = Array.isArray(factionData.operativeSelection)
+                                ? factionData.operativeSelection
+                                : [];
                         }
                     } catch (err) {
                         console.warn("Failed to load faction file:", item.path, err);
@@ -1631,10 +1653,11 @@
             
             activeFactionName = name;
             activeFactionArchetypes = factionArchetypesMap[name] || [];
+            activeFactionOperativeSelection = factionOperativeSelectionMap[name] || [];
             rulesDatabase = allFactions[name];
             pinnedIds = []; 
             rosterTrackers = []; 
-            selectedId = rulesDatabase.length > 0 ? rulesDatabase[0].id : null;
+            selectedId = 'faction_operative_selection';
             
             document.getElementById('factionDropdown').value = name;
             renderNav();
@@ -1661,6 +1684,22 @@
             const navList = document.getElementById('navList');
             navList.innerHTML = '';
             if (rulesDatabase.length === 0) return;
+
+            // Very First Section: Operative Selection
+            const opSelRecord = getOperativeSelectionRecord();
+            if (opSelRecord) {
+                const opSelHeaderRow = document.createElement('div');
+                opSelHeaderRow.className = 'category-header-row';
+                opSelHeaderRow.innerHTML = `<span class="category-title">Operative Selection</span>`;
+                navList.appendChild(opSelHeaderRow);
+
+                const opSelNavItem = document.createElement('div');
+                opSelNavItem.className = `nav-item ${opSelRecord.id === selectedId ? 'active' : ''}`;
+                opSelNavItem.setAttribute('data-title', 'operative selection roster kill team');
+                opSelNavItem.innerHTML = `<div class="nav-item-content"><span>Operative Selection</span></div>`;
+                opSelNavItem.onclick = () => selectRecord(opSelRecord.id);
+                navList.appendChild(opSelNavItem);
+            }
 
             const categories = [...new Set(rulesDatabase.map(item => item.category))];
 
