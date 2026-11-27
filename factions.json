@@ -99,6 +99,10 @@
     {
       "name": "Void-Dancer Troupe",
       "path": "factions/void_dancer_troupe_ssx3dictyj_wqetugnbsb.json"
+    },
+    {
+      "name": "Phobos Strike Team",
+      "path": "factions/phobos_strike_team.json"
     }
   ]
 }
