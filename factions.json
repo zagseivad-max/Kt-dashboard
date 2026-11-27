@@ -139,6 +139,18 @@
     {
       "name": "Inquisitorial Agent",
       "path": "factions/inquisitorial_agents_wbhy621vsh_8vdslyllbw.json"
+    },
+    {
+      "name": "Fellgor Ravagers",
+      "path": "factions/fellgor_ravagers_fqibsrozih_vevv8hkwbg.json"
+    },
+    {
+      "name": "Goremongers",
+      "path": "factions/goremongers_koq98fxysa_7cc5ewsb8n.json"
+    },
+    {
+      "name": "Hand of the Archon",
+      "path": "factions/hand_of_the_archon_1pzipa9jpj_tgfmqz67em.json"
     }
   ]
 }
