@@ -4,6 +4,14 @@
     "Recon",
     "Security"
   ],
+  "operativeSelection": [
+    "1 CANOPTEK CIRCLE GEOMANCER operative",
+    "2 CANOPTEK CIRCLE TOMB CRAWLER operatives with one of the following options (select separately for each): Twin gauss reapers; claws or Transdimensional isolator; claws",
+    "1 CANOPTEK CIRCLE ACCELERATOR operative",
+    "1 CANOPTEK CIRCLE REANIMATOR operative",
+    "3 CANOPTEK CIRCLE WARRIOR operatives with one of the following options (select separately for each): Gauss scalpel; claws & tail or Tesla caster; claws & tail",
+    "Your kill team can only include up to one transdimensional isolator."
+  ],
   "rules": [
     {
       "id": "op_geomancer",
@@ -18,22 +26,362 @@
       },
       "weapons": [
         {
-          "name": "Tremorglaive (part matter) (Ranged, A4, 3+, 4/5, Piercing 1, Piercing Crits 2) - Wait no!",
+          "name": "Tremorglaive (part matter)",
           "atk": "4",
           "hit": "3+",
           "dmg": "4/5",
           "rules": "Piercing 1, Piercing Crits 2"
         },
         {
-          "name": "Tremorglaive (quake) (Ranged, A5, 3+, 1/2, Blast 2\", Seek Light, Stun) - Wait",
+          "name": "Tremorglaive (quake)",
           "atk": "5",
           "hit": "3+",
           "dmg": "1/2",
           "rules": "Blast 2\", Seek Light, Stun"
+        },
+        {
+          "name": "Tremorglaive (sweep)",
+          "atk": "4",
+          "hit": "4+",
+          "dmg": "4/5",
+          "rules": "Severe, Shock, Stun"
+        }
+      ],
+      "rules": [
+        "<b>Obelisk Node Control:</b> Whenever this operative would perform a mission action (excluding Pick Up Marker or Retrieve, Approved Ops 2025), if it requires this operative to control an objective marker, you can instead determine control from one of your OBELISK NODE markers (see Obelisk Node Matrix faction rule). Whenever this operative would perform the Operate Hatch action, you can open or close a hatchway thats access point is within 1\" of one of your OBELISK NODE markers instead. Note that you must still fulfil the Operate Hatch action’s conditions."
+      ],
+      "keywords": "CANOPTEK CIRCLE, NECRON, LEADER, CRYPTEK, GEOMANCER"
+    },
+    {
+      "id": "op_canoptek_macrocyte_accelerator",
+      "category": "Operatives",
+      "title": "Canoptek Macrocyte Accelerator",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "7\"",
+        "Save": "4+",
+        "Wounds": "7"
+      },
+      "weapons": [
+        {
+          "name": "Spark",
+          "atk": "4",
+          "hit": "4+",
+          "dmg": "2/3",
+          "rules": "Range 4\", Piercing 1"
+        },
+        {
+          "name": "Claws & spark",
+          "atk": "3",
+          "hit": "4+",
+          "dmg": "3/4",
+          "rules": "Lethal 5+, Stun"
         }
       ],
       "rules": [],
-      "keywords": "CANOPTEK CIRCLE, NECRON, LEADER, CRYPTEK, GEOMANCER"
+      "keywords": "CANOPTEK CIRCLE, NECRON, CANOPTEK, MACROCYTE, ACCELERATOR"
+    },
+    {
+      "id": "op_canoptek_macrocyte_reanimator",
+      "category": "Operatives",
+      "title": "Canoptek Macrocyte Reanimator",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "7\"",
+        "Save": "4+",
+        "Wounds": "7"
+      },
+      "weapons": [
+        {
+          "name": "Atomiser beam",
+          "atk": "4",
+          "hit": "4+",
+          "dmg": "3/4",
+          "rules": "Range 6\", Lethal 5+"
+        },
+        {
+          "name": "Claws & tail",
+          "atk": "4",
+          "hit": "4+",
+          "dmg": "3/4",
+          "rules": ""
+        }
+      ],
+      "rules": [
+        "<b>Reanimate:</b> Once per turning point, when another friendly CANOPTEK CIRCLE operative would be incapacitated, if that operative is visible to and within 6\" of this operative, or if this and that operative are within your OBELISK NODE MATRIX, you can use this rule, providing neither this nor that operative is within control range of an enemy operative. If you do, that friendly operative isn’t incapacitated, has 1 wound remaining and cannot be incapacitated for the remainder of the action. After that action, that friendly operative can then immediately perform a free Dash action, but must end that action within this operative’s control range or within your OBELISK NODE MATRIX. Subtract 1 from this and that operative’s APL stats until the end of their next activations respectively, and if this rule was used during that friendly operative’s activation, that activation ends. You cannot use this rule if this operative is incapacitated, or if it’s a Shoot action and this operative would be a primary or secondary target."
+      ],
+      "keywords": "CANOPTEK CIRCLE, NECRON, CANOPTEK, MACROCYTE, REANIMATOR"
+    },
+    {
+      "id": "op_canoptek_macrocyte_warrior",
+      "category": "Operatives",
+      "title": "Canoptek Macrocyte Warrior",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "7\"",
+        "Save": "4+",
+        "Wounds": "7"
+      },
+      "weapons": [
+        {
+          "name": "Gauss scalpel",
+          "atk": "4",
+          "hit": "4+",
+          "dmg": "2/3",
+          "rules": "Piercing 1"
+        },
+        {
+          "name": "Tesla caster (focused)",
+          "atk": "4",
+          "hit": "4+",
+          "dmg": "2/3",
+          "rules": ""
+        },
+        {
+          "name": "Tesla caster (living lightning)",
+          "atk": "4",
+          "hit": "4+",
+          "dmg": "2/3",
+          "rules": "Blast 2\""
+        },
+        {
+          "name": "Claws & tail",
+          "atk": "3",
+          "hit": "4+",
+          "dmg": "3/4",
+          "rules": ""
+        }
+      ],
+      "rules": [
+        "<b>Aggressive Defence:</b> If this operative is incapacitated by an enemy operative within 2\" of it, before this operative is removed from the killzone, roll one D3: on a 2+, inflict 1 damage on that enemy operative equal to the result.",
+        "<b>Expendable Construct:</b> This operative is ignored for your opponent’s kill/elimination op (when it’s incapacitated, and when determining your starting number of operatives). It’s also ignored for victory conditions and scoring VPs if either require operatives to ‘escape’, ‘survive’ or be incapacitated by enemy operatives (if it escapes/survives/is incapacitated, determining how many operatives must escape/survive/be incapacitated, etc.).",
+        "<b>A Ceaseless Scuttling:</b> As a STRATEGIC GAMBIT in each turning point after the first, if you have less than three non-incapacitated friendly CANOPTEK CIRCLE WARRIOR operatives, you can set up another one ready and with a Conceal order wholly within your drop zone (you can select its weapon options as normal)."
+      ],
+      "keywords": "CANOPTEK CIRCLE, NECRON, CANOPTEK, MACROCYTE, WARRIOR"
+    },
+    {
+      "id": "op_canoptek_tomb_crawler",
+      "category": "Operatives",
+      "title": "Canoptek Tomb Crawler",
+      "subtitle": "Operative",
+      "stats": {
+        "APL": "2",
+        "Move": "5\"",
+        "Save": "3+",
+        "Wounds": "18"
+      },
+      "weapons": [
+        {
+          "name": "Transdimensional isolator",
+          "atk": "5",
+          "hit": "4+",
+          "dmg": "5/6",
+          "rules": "Dimensional Banishment*"
+        },
+        {
+          "name": "Twin gauss reapers (focused)",
+          "atk": "5",
+          "hit": "4+",
+          "dmg": "4/5",
+          "rules": "Piercing 1, Severe"
+        },
+        {
+          "name": "Twin gauss reapers (sweeping)",
+          "atk": "4",
+          "hit": "4+",
+          "dmg": "4/5",
+          "rules": "Piercing 1, Severe, Torrent 1\""
+        },
+        {
+          "name": "Claws",
+          "atk": "4",
+          "hit": "4+",
+          "dmg": "4/4",
+          "rules": ""
+        }
+      ],
+      "rules": [
+        "<b>Weapon Sentinel:</b> Whenever your opponent is selecting a valid target, if this operative has a Conceal order, it cannot use Light terrain for cover. While this can allow this operative to be targeted (assuming it’s visible), it doesn’t remove its cover save (if any).",
+        "<b>Steadfast:</b> Whenever determining control of a marker, you can treat this operative’s APL stat as 3. If you do, this takes precedence over all other rules, meaning any changes to its APL stat are ignored for this.",
+        "<b>Dimensional Banishment:</b> After this operative uses this weapon, if you inflicted damage or retained any critical successes, if the target wasn’t incapacitated, roll 2D6: if the result is higher than the target’s remaining wounds, the target is incapacitated (taking precedence over rules that prevent incapacitation, e.g. Medic!, FELLGOR RAVAGER Frenzy) and your opponent cannot place a Reanimation marker (HIEROTEK CIRCLE) for that operative, if relevant. This rule has no effect if the target is a NEMESIS operative or Red Terror NPO."
+      ],
+      "keywords": "CANOPTEK CIRCLE, NECRON, CANOPTEK, TOMB CRAWLER"
+    },
+    {
+      "id": "fac_obelisk_node_matrix",
+      "category": "Faction Rules",
+      "title": "Obelisk Node Matrix",
+      "subtitle": "Faction Rule",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "<b>Obelisk Node Matrix:</b> Obelisk nodes are concentrations of Necron technology, hubs of energy and data streams. Whether raised up from their sites of ancient burial, formed from restructured local matter or phased into place from a pocket dimension, these angular nodes can empower a Cryptek and their servants. Impelled into positions where they can connect in a matrix of power, they aid the Cryptek’s ambitions whilst hampering their foes.",
+        "As a STRATEGIC GAMBIT in the first turning point, place your three OBELISK NODE markers wholly within your territory. As a STRATEGIC GAMBIT in each turning point after the first, you can move each of your OBELISK NODE markers up to 3\" horizontally.",
+        "Your OBELISK NODE markers control other markers within 1\" of them that no enemy operatives contest (treat your OBELISK NODE markers as friendly operatives for this purpose). If more than one player would use their OBELISK NODE markers to control the same marker, no OBELISK NODE markers control it.",
+        "Whenever one of your OBELISK NODE markers is within 6\" horizontally of another of your OBELISK NODE markers, those markers and the area between them create an OBELISK NODE MATRIX above and below (in other words, their height in the killzone is irrelevant). If all three of your OBELISK NODE markers fulfil this, it creates a larger combined OBELISK NODE MATRIX.",
+        "Whenever a friendly CANOPTEK CIRCLE operative is within your OBELISK NODE MATRIX: Weapons on its datacard have the Accurate 1 weapon rule. Add 1 to its APL stat (to a maximum of 3)."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_hypershielding",
+      "category": "Strategy Ploys",
+      "title": "Hypershielding",
+      "subtitle": "Strategy Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Quantum energies radiate from the matrix, triggered by warding protocols. The haze consumes solid shot in bursts of viridian light and refracts energy blasts, while its wavering veil confounds targeters.",
+        "Whenever an operative is shooting a friendly CANOPTEK CIRCLE operative, if your OBELISK NODE MATRIX is intervening, or that friendly operative is within your OBELISK NODE MATRIX, you can re-roll any of your defence dice results of one result (e.g. results of 2)."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_transdynamic_amplification",
+      "category": "Strategy Ploys",
+      "title": "Transdynamic Amplification",
+      "subtitle": "Strategy Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Curving into arcane lenses that compress slivers of reality, the shimmering matrix magnifies the potency of the Necrons’ horrifying energistic technologies.",
+        "Whenever a friendly CANOPTEK CIRCLE operative is shooting, if your OBELISK NODE MATRIX is intervening, or the target is within your OBELISK NODE MATRIX, that friendly operative’s weapons have the Ceaseless weapon rule."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_cryptogravitic_repulsion",
+      "category": "Strategy Ploys",
+      "title": "Cryptogravitic Repulsion",
+      "subtitle": "Strategy Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "The universe’s fundamental forces have long been mastered by the Necrons. As their foes advance, thudding waves and twisting eddies of gravity amongst the obelisk nodes repel potential trespassers.",
+        "Once per action, the first time an enemy operative would move within your OBELISK NODE MATRIX, the distance is treated as an additional 1\". Note this means if that enemy operative doesn’t have sufficient move distance (e.g. it’s at the end of its move), that operative cannot move within your OBELISK NODE MATRIX."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_souldrain",
+      "category": "Strategy Ploys",
+      "title": "Souldrain",
+      "subtitle": "Strategy Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "A lifeless chill creeps into the hearts of those who would dare to breach the Necrons’ realm – an enervating leeching of strength and vitality that leaves them easy prey.",
+        "Whenever an enemy operative is within your OBELISK NODE MATRIX, or whenever it’s fighting or retaliating against a friendly CANOPTEK CIRCLE operative that’s within your OBELISK NODE MATRIX, subtract 1 from both Dmg stats of that enemy operative’s melee weapons (to a minimum of 2) until the end of the activation/counteraction. Note this means if the enemy operative moves through your OBELISK NODE MATRIX, apply this change at the end of that move action until the end of the activation/counteraction."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_shield_flare",
+      "category": "Firefight Ploys",
+      "title": "Shield Flare",
+      "subtitle": "Firefight Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "With a flash, snipers bullets are swallowed in microdimensions; blades pass through suddenly phased matter; slivers of time are erased and rewritten, the strike never connecting after all. The matrix’s energies deny the Necrons’ verminous foes of the smallest victory over their betters.",
+        "Use this firefight ploy when an attack dice inflicts Normal Dmg on a friendly CANOPTEK CIRCLE operative. If your OBELISK NODE MATRIX is intervening, or that friendly operative is within your OBELISK NODE MATRIX, ignore that inflicted damage. Note your opponent determines intervening (i.e. where on their operative’s base to draw the targeting lines from)."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_animate_obelisk_nodes",
+      "category": "Firefight Ploys",
+      "title": "Animate Obelisk Nodes",
+      "subtitle": "Firefight Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Heeding some hidden command, looming obelisk nodes surge into new positions of cosmic conjunction.",
+        "Use this firefight ploy when it’s your turn to activate or counteract with a friendly operative. Move any number of your OBELISK NODE markers instead. They can move up to 6\" horizontally combined, and distances are always rounded up to the nearest inch (so if you move a marker 1.5\", it’s treated as moving it 2\"). For example, you could move one marker 6\", three markers 1\" each, or any combination that doesn’t exceed 6\" in total. You can also move them 0\" (to effectively skip an activation). In any case, your opponent activates as normal afterwards."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_nodal_response",
+      "category": "Firefight Ploys",
+      "title": "Nodal Response",
+      "subtitle": "Firefight Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Eldritch pulses of artificial thought thrum through the obelisk nodes as they adjust the flow of energies and data in response to rapidly changing situations.",
+        "Use this firefight ploy during a friendly CANOPTEK CIRCLE operative’s activation, before or after it performs an action. You can either change one of the strategy ploys you used during this turning point (only pay additional CP if that ploy costs more), or use a strategy ploy now (pay its CP cost as normal)."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "ploy_sacrificial_thrall",
+      "category": "Firefight Ploys",
+      "title": "Sacrificial Thrall",
+      "subtitle": "Firefight Ploy",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Canoptek constructs are programmed to shield their master at all costs.",
+        "Use this firefight ploy when a friendly CANOPTEK CIRCLE GEOMANCER operative is selected as the valid target of a Shoot action or to fight against during the Fight action. Select one other friendly CANOPTEK CIRCLE CANOPTEK operative visible to and within 3\" of that first friendly operative to become the valid target or to be fought against (as appropriate) instead (even if it wouldn’t normally be valid for this). If it’s the Fight action, treat that other operative as being within the fighting operative’s control range for the duration of that action. If it’s the Shoot action, that other operative is only in cover or obscured if the original target was.",
+        "This ploy has no effect if it’s the Shoot action and the ranged weapon has the Blast or Torrent weapon rule."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "eq_matrix_manipulator",
+      "category": "Faction Equipment",
+      "title": "Matrix Manipulator",
+      "subtitle": "Equipment",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "With a flick of their digits, a skilled Geomancer can use this enhanced geomantic manipulator as a surrogate obelisk node to extend the matrix.",
+        "Once per battle, during a friendly CANOPTEK CIRCLE operative’s activation or counteraction, you can use this rule. If you do, until the end of that activation/counteraction, a friendly CANOPTEK CIRCLE GEOMANCER operative is treated as your fourth OBELISK NODE marker."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "eq_awakened_obelisk_nodes",
+      "category": "Faction Equipment",
+      "title": "Awakened Obelisk Nodes",
+      "subtitle": "Equipment",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "Seeded into place and activated long ago, these obelisk nodes have absorbed huge stores of local data, ready to gift their controller with a superior edge when the time is right.",
+        "After revealing this equipment option, roll one D3. You can use the Animate Obelisk Nodes firefight ploy for 0CP a number of times during the battle equal to the result."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "eq_nanoscarab_caskets",
+      "category": "Faction Equipment",
+      "title": "Nanoscarab Caskets",
+      "subtitle": "Equipment",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "These small devices appear to release wisps of spectral vapour. In truth, they are clouds of tiny repair constructs that seal rents in living metal.",
+        "Whenever a friendly CANOPTEK CIRCLE operative is activated, it regains up to D3 lost wounds."
+      ],
+      "keywords": null
+    },
+    {
+      "id": "eq_phase_shifter",
+      "category": "Faction Equipment",
+      "title": "Phase Shifter",
+      "subtitle": "Equipment",
+      "stats": null,
+      "weapons": null,
+      "rules": [
+        "The bearer’s form flits between dimensions like a phantom, rendering it exceedingly difficult to land a telling blow upon them.",
+        "Once per turning point, when an operative is shooting a friendly CANOPTEK CIRCLE GEOMANCER operative, at the start of the Roll Defence Dice step, you can use this rule. If you do, worsen the x of the Piercing weapon rule by 1 (if any) until the end of that sequence. Note that Piercing 1 would therefore be ignored."
+      ],
+      "keywords": null
     }
   ]
 }

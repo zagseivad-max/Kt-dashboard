@@ -95,6 +95,10 @@
     {
       "name": "Spectre Squad",
       "path": "factions/spectre_squad_tjajenyi2s_jtwwg4lnyv.json"
+    },
+    {
+      "name": "Void-Dancer Troupe",
+      "path": "factions/void_dancer_troupe_ssx3dictyj_wqetugnbsb.json"
     }
   ]
 }
