@@ -47,14 +47,29 @@ class KillTeamFaction(BaseModel):
             "normalized to 'Recon', 'Seek & Destroy', 'Security', or 'Infiltration'"
         ),
     )
+    operativeSelection: list[str] = Field(
+        default_factory=list,
+        description=(
+            "Ordered list of Operative Selection rules, roster composition limits, fire team/operative counts, "
+            "and specialist restrictions for the kill team."
+        ),
+    )
     rules: list[RuleEntry]
 
 
 SYSTEM_INSTRUCTION = """
-Extract all Warhammer Kill Team rules, operatives, ploys, equipment, and faction archetypes from this PDF.
-Look for the 'ARCHETYPE:' banner on the Operatives or faction card (e.g., 'ARCHETYPE: RECON, SEEK & DESTROY') and map each archetype to 'Recon', 'Seek & Destroy', 'Security', or 'Infiltration'.
-Format the output perfectly to match the provided JSON schema.
-Ignore page numbers, designer commentaries, and flavor text. Focus strictly on playable game rules.
+Extract all Warhammer Kill Team rules, operatives, ploys, equipment, faction archetypes, and Operative Selection rules from this PDF.
+
+Operative Selection extraction:
+- ALWAYS extract the Operative Selection section / roster building rules for the kill team into 'operativeSelection' as an ordered list of strings.
+- Include total operative counts, allowed operative types, limits/duplication rules, and any leader or specialist selection requirements.
+
+Archetype extraction:
+- Look for the 'ARCHETYPE:' banner on the Operatives or faction card (for example, 'ARCHETYPE: RECON, SEEK & DESTROY') and map each archetype to 'Recon', 'Seek & Destroy', 'Security', or 'Infiltration'.
+
+Output formatting:
+- Format the output perfectly to match the provided JSON schema.
+- Ignore page numbers, designer commentaries, and flavor text. Focus strictly on playable game rules.
 """
 
 CANONICAL_ARCHETYPES = {
@@ -76,6 +91,17 @@ def normalize_archetypes(raw_archetypes: list[str] | None) -> list[str]:
         if canonical and canonical not in normalized:
             normalized.append(canonical)
     return normalized
+
+
+def normalize_operative_selection(raw_selection: list[str] | None) -> list[str]:
+    if not raw_selection:
+        return []
+    cleaned_items: list[str] = []
+    for entry in raw_selection:
+        text = re.sub(r"\s+", " ", str(entry or "")).strip()
+        if text:
+            cleaned_items.append(text)
+    return cleaned_items
 
 
 def slugify_faction_stem(pdf_path: str) -> str:
@@ -216,24 +242,14 @@ def process_pdfs() -> None:
         json_path = os.path.join("factions", json_filename)
         web_json_path = f"factions/{json_filename}"
 
-        if os.path.exists(json_path):
-            print(f"Skipping existing JSON: {json_path}")
-            summary_records.append({
-                "pdf": pdf_name,
-                "status": "SKIPPED",
-                "output": web_json_path,
-                "details": "Already exists",
-            })
-            continue
-
-        print(f"Processing new file: {pdf_path} -> {web_json_path}...")
+        print(f"Processing file: {pdf_path} -> {web_json_path}...")
         uploaded_file = None
         try:
             uploaded_file = client.files.upload(file=pdf_path)
             response = generate_with_retry(
                 client,
                 uploaded_file,
-                "Extract the complete Kill Team faction ruleset, including faction archetypes, from this PDF.",
+                "Extract the complete Kill Team faction ruleset, including faction archetypes and operativeSelection rules, from this PDF.",
             )
 
             if not response.text:
@@ -242,23 +258,29 @@ def process_pdfs() -> None:
             parsed = KillTeamFaction.model_validate_json(response.text)
             normalized_dict = parsed.model_dump()
             normalized_dict["archetypes"] = normalize_archetypes(parsed.archetypes)
+            normalized_dict["operativeSelection"] = normalize_operative_selection(parsed.operativeSelection)
 
             with open(json_path, "w", encoding="utf-8") as f:
                 json.dump(normalized_dict, f, indent=2, ensure_ascii=False)
 
             update_registry(parsed.factionName, web_json_path)
 
+            # Remove source PDF only after JSON write and registry update succeed
+            os.remove(pdf_path)
+            print(f"Removed processed PDF: {pdf_path}")
+
             arch_label = ", ".join(normalized_dict["archetypes"]) if normalized_dict["archetypes"] else "none"
+            op_sel_count = len(normalized_dict["operativeSelection"])
             summary_records.append({
                 "pdf": pdf_name,
                 "status": "SUCCESS",
                 "output": web_json_path,
-                "details": f"{parsed.factionName} ({len(parsed.rules)} entries; {arch_label})",
+                "details": f"{parsed.factionName} ({len(parsed.rules)} entries; {op_sel_count} op-sel items; {arch_label})",
             })
 
         except (ValidationError, Exception) as exc:
             reason = classify_error_reason(exc)
-            print(f"ERROR processing {pdf_path}: {exc}")
+            print(f"ERROR processing {pdf_path} (kept in pdfs/ for retry): {exc}")
             failures.append((pdf_path, str(exc)))
             summary_records.append({
                 "pdf": pdf_name,
