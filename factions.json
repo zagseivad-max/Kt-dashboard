@@ -103,6 +103,10 @@
     {
       "name": "Phobos Strike Team",
       "path": "factions/phobos_strike_team.json"
+    },
+    {
+      "name": "Warpcoven",
+      "path": "factions/eng_29_04_kt_teamrules_warpcoven_dlvflmyfdc_tqfq81iy7v.json"
     }
   ]
 }

@@ -1,5 +1,14 @@
 {
   "factionName": "Wolf Scouts",
+  "archetypes": [
+    "Recon",
+    "Seek & Destroy"
+  ],
+  "operativeSelection": [
+    "1 WOLF SCOUT FENRISIAN WOLF",
+    "5 WOLF SCOUT operatives selected from the following list: PACK LEADER, FANGBEARER, FROSTEYE, GUNNER, TRAPMASTER, RUNE PRIEST SKJALD, HUNTER",
+    "Other than HUNTER operatives, your kill team can only include each operative on this list once."
+  ],
   "rules": [
     {
       "id": "fac_elemental_storm",
@@ -9,11 +18,10 @@
       "stats": null,
       "weapons": null,
       "rules": [
-        "<b>STRATEGIC GAMBIT.</b> Remove your Storm marker from the killzone (if any), then place it in the killzone.",
-        "Whenever an operative is wholly within 6\" horizontally of your Storm marker, it's wholly within your STORM.",
+        "<b>STRATEGIC GAMBIT.</b> Remove your Storm marker from the killzone (if any), then place it in the killzone. Whenever an operative is wholly within 6\" horizontally of your Storm marker, it's wholly within your STORM.",
         "Each friendly WOLF SCOUT operative can perform the Charge action while it has a Conceal order if it ends that action wholly within your STORM."
       ],
-      "keywords": null
+      "keywords": "WOLF SCOUT"
     },
     {
       "id": "fac_hunting_astartes",
@@ -23,10 +31,10 @@
       "stats": null,
       "weapons": null,
       "rules": [
-        "During each friendly WOLF SCOUT operative's activation, it can perform either two Shoot actions or two Fight actions. If it's two Shoot actions: 1 additional AP must be spent for the second action if both actions are using a plasma gun or plasma pistol; You cannot select two PSYCHIC ranged weapons.",
+        "During each friendly WOLF SCOUT operative's activation, it can perform either two Shoot actions or two Fight actions. If it's two Shoot actions: 1 additional AP must be spent for the second action if both actions are using a plasma gun or plasma pistol, and you cannot select two PSYCHIC ranged weapons.",
         "Each friendly WOLF SCOUT operative can counteract regardless of its order. Whenever it does so within your STORM, you can change its order first, or change its order instead of performing an action (for the latter, still treat it as having counteracted this turning point)."
       ],
-      "keywords": null
+      "keywords": "WOLF SCOUT"
     },
     {
       "id": "ploy_cloaked_by_the_storm",
@@ -38,7 +46,7 @@
       "rules": [
         "Whenever an operative is shooting a friendly WOLF SCOUT operative that's wholly within your STORM, you can re-roll one of your defence dice."
       ],
-      "keywords": null
+      "keywords": "WOLF SCOUT"
     },
     {
       "id": "ploy_tempestuous_wrath",
@@ -50,7 +58,7 @@
       "rules": [
         "Whenever a friendly WOLF SCOUT operative is fighting or retaliating, if it's wholly within your STORM or was wholly within your STORM at the start of the activation, its melee weapons have the Balanced weapon rule."
       ],
-      "keywords": null
+      "keywords": "WOLF SCOUT"
     },
     {
       "id": "ploy_storms_bite",
@@ -62,7 +70,7 @@
       "rules": [
         "Whenever a friendly WOLF SCOUT operative is fighting against an enemy operative that's within your STORM, subtract 1 from the Atk stat of that enemy operative's melee weapons (to a minimum of 3)."
       ],
-      "keywords": null
+      "keywords": "WOLF SCOUT"
     },
     {
       "id": "ploy_savage_fighters",
@@ -74,7 +82,7 @@
       "rules": [
         "Whenever a friendly WOLF SCOUT operative finishes retaliating, if it wasn't incapacitated and is still within control range of the enemy operative in that sequence, you can inflict D3+1 damage on that enemy operative."
       ],
-      "keywords": null
+      "keywords": "WOLF SCOUT"
     },
     {
       "id": "ploy_acute_senses",
@@ -86,7 +94,7 @@
       "rules": [
         "Use this firefight ploy when a friendly WOLF SCOUT operative performs the Shoot action and you're selecting a valid target. Until the end of that action, that friendly operative's ranged weapons have the Range 6\" and Seek Light weapon rules and enemy operatives cannot be obscured."
       ],
-      "keywords": null
+      "keywords": "WOLF SCOUT"
     },
     {
       "id": "ploy_counterattack",
@@ -98,7 +106,7 @@
       "rules": [
         "Use this firefight ploy at the end of an enemy operative's activation, or after an enemy operative performs the Fight action. One friendly WOLF SCOUT operative can immediately perform a free Fight action, but you cannot select any other enemy operative to fight against during that action."
       ],
-      "keywords": null
+      "keywords": "WOLF SCOUT"
     },
     {
       "id": "ploy_touched_by_lokyar",
@@ -110,7 +118,7 @@
       "rules": [
         "Use this firefight ploy after rolling your attack dice for a friendly WOLF SCOUT operative (excluding FENRISIAN WOLF), if it's fighting more than 5\" from other friendly operatives. You can re-roll any of your attack dice."
       ],
-      "keywords": null
+      "keywords": "WOLF SCOUT"
     },
     {
       "id": "ploy_transhuman_physiology",
@@ -122,7 +130,7 @@
       "rules": [
         "Use this firefight ploy when an operative is shooting a friendly WOLF SCOUT operative (excluding FENRISIAN WOLF), in the Roll Defence Dice step. You can retain one of your normal successes as a critical success instead."
       ],
-      "keywords": null
+      "keywords": "WOLF SCOUT"
     },
     {
       "id": "eq_frost_weapons",
@@ -132,9 +140,9 @@
       "stats": null,
       "weapons": null,
       "rules": [
-        "Whenever a friendly WOLF SCOUT operative is wholly within your STORM, its combat blades (if any) has the Lethal 5+ weapon rule, and one friendly WOLF SCOUT PACK LEADER operative's power weapon has the Lethal 4+ weapon rule (if any)."
+        "Whenever a friendly WOLF SCOUT operative is wholly within your STORM, its combat blade (if any) has the Lethal 5+ weapon rule."
       ],
-      "keywords": null
+      "keywords": "WOLF SCOUT"
     },
     {
       "id": "eq_runic_charms",
@@ -146,7 +154,7 @@
       "rules": [
         "Once per turning point, when an operative is shooting a friendly WOLF SCOUT operative (excluding FENRISIAN WOLF) that's wholly within your STORM, at the start of the Roll Defence Dice step, you can use this rule. If you do, worsen the x of the Piercing weapon rule by 1 (if any) until the end of that sequence. Note that Piercing 1 would therefore be ignored."
       ],
-      "keywords": null
+      "keywords": "WOLF SCOUT"
     },
     {
       "id": "eq_wolfteeth_necklaces",
@@ -158,7 +166,7 @@
       "rules": [
         "Once per turning point, when a friendly WOLF SCOUT operative (excluding FENRISIAN WOLF) is shooting, fighting or retaliating, if you roll two or more fails, you can discard one of them to retain another as a normal success instead."
       ],
-      "keywords": null
+      "keywords": "WOLF SCOUT"
     },
     {
       "id": "eq_talismanic_trophies",
@@ -168,9 +176,9 @@
       "stats": null,
       "weapons": null,
       "rules": [
-        "Whenever a friendly WOLF SCOUT operative (excluding FENRISIAN WOLF) that's wholly within your STORM is fighting or retaliating, you can subtract 1 from the damage inflicted on it from one normal success."
+        "Whenever a friendly WOLF SCOUT operative (excluding FENRISIAN WOLF) that's wholly within your STORM is fighting or retaliating, in the Resolve Attack Dice step, you can subtract 1 from the damage inflicted on it from one normal success."
       ],
-      "keywords": null
+      "keywords": "WOLF SCOUT"
     },
     {
       "id": "op_wolf_scout_pack_leader",
@@ -240,7 +248,7 @@
         }
       ],
       "rules": [
-        "<b>Spiritual Chirurgy:</b> Friendly WOLF SCOUT operatives (excluding FENRISIAN WOLF) are not affected by enemy operatives' Shock and Stun weapon rules and you can ignore any changes to their APL stat. Note that friendly operatives have this rule if you select this operative for the battle (even if it's incapacitated later).",
+        "<b>Spiritual Chirurgy:</b> You can ignore any changes to the stats of friendly WOLF SCOUT operatives (excluding FENRISIAN WOLF) from being injured (including their weapons' stats). Note that friendly operatives have this rule if you select this operative for the battle (even if it's incapacitated later).",
         "<b>HEALING BALMS (1AP):</b> Select one friendly WOLF SCOUT operative within this operative's control range to regain up to D3+3 lost wounds. This operative cannot perform this action while within control range of an enemy operative, or more than once per turning point."
       ],
       "keywords": "WOLF SCOUT, IMPERIUM, ADEPTUS ASTARTES, SPACE WOLVES, FANGBEARER"
@@ -274,7 +282,7 @@
       ],
       "rules": [
         "<b>Storm-veiled Execution:</b> Whenever this operative is wholly within your STORM: It can perform the Guard action regardless of the killzone. It can perform the Guard action while it has a Conceal order.",
-        "<b>HUNTER'S SENSES (1AP):</b> Select one of the following rules for this operative's instigator bolt carbine to have until the start of its next activation: Severe; Saturate, and whenever this operative is shooting with that weapon, enemy operatives cannot be obscured. This operative cannot perform this action while within control range of an enemy operative."
+        "<b>HUNTER'S SENSES (1AP):</b> Select one of the following rules for this operative's instigator bolt carbine to have until the start of its next activation: Severe; or Saturate, and whenever this operative is shooting with that weapon, enemy operatives cannot be obscured. This operative cannot perform this action while within control range of an enemy operative."
       ],
       "keywords": "WOLF SCOUT, IMPERIUM, ADEPTUS ASTARTES, SPACE WOLVES, FROSTEYE"
     },
@@ -313,7 +321,7 @@
         }
       ],
       "rules": [
-        "<b>Tempest's Fury:</b> Whenever this operative is wholly within your STORM: All profiles of its plasma gun have the Punishing weapon rule; Its plasma gun (supercharge) doesn't have the Hot weapon rule."
+        "<b>Tempest's Fury:</b> Whenever this operative is wholly within your STORM: All profiles of its plasma gun have the Punishing weapon rule. Its plasma gun (supercharge) doesn't have the Hot weapon rule."
       ],
       "keywords": "WOLF SCOUT, IMPERIUM, ADEPTUS ASTARTES, SPACE WOLVES, GUNNER"
     },
@@ -439,7 +447,7 @@
       ],
       "rules": [
         "<b>Haywire Mine:</b> This operative is carrying your Haywire Mine marker. It can perform the Pick Up Marker action on that marker, but that marker cannot be placed within another operative's control range (if this operative is incapacitated while carrying that marker and that marker cannot be placed, it's removed with this operative).",
-        "<b>Proximity Mine:</b> The first time your Haywire Mine marker is within another operative's control range, remove that marker, subtract 1 from that operative's APL stat until the end of its next activation, and inflict 2D3+3 damage on it (or D3+6 if that marker is within 6\" horizontally of your Storm marker); if it isn't incapacitated, end its action (if any), even if that action's effects aren't fulfilled. If it cannot be placed, move it the minimum amount to do so. Note that this operative is ignored for these effects."
+        "<b>Proximity Mine:</b> The first time your Haywire Mine marker is within another operative's control range, remove that marker, subtract 1 from that operative's APL stat until the end of its next activation, and inflict 2D3+3 damage on it (or D3+6 if that marker is within 6\" horizontally of your Storm marker); if it isn't incapacitated, end its action (if any), even if that action's effects aren't fulfilled. If it cannot be placed, move it the minimum amount to do so. Note that this operative is ignored for these effects (i.e. it cannot set it off or take damage from that marker)."
       ],
       "keywords": "WOLF SCOUT, IMPERIUM, ADEPTUS ASTARTES, SPACE WOLVES, TRAPMASTER"
     },
@@ -465,7 +473,7 @@
       ],
       "rules": [
         "<b>Instinctive Predator:</b> This operative cannot perform any actions other than Charge, Dash, Fall Back, Fight, Guard and Reposition. It cannot use any weapons that aren't on its datacard. This operative can perform the Charge action while it has a Conceal order.",
-        "<b>Pounce:</b> Once per battle STRATEGIC GAMBIT. If this operative's APL stat is 2 or more, this operative can perform a free Charge, Fall Back or Reposition action. If it does, until the end of its next activation, subtract 1 from its APL stat and it cannot perform any of the aforementioned actions."
+        "<b>Pounce:</b> Once per battle <b>STRATEGIC GAMBIT.</b> If this operative's APL stat is 2 or more, this operative can perform a free Charge, Fall Back or Reposition action. If it does, until the end of its next activation, subtract 1 from its APL stat and it cannot perform any of the aforementioned actions."
       ],
       "keywords": "WOLF SCOUT, IMPERIUM, ADEPTUS ASTARTES, SPACE WOLVES, FENRISIAN WOLF"
     }
